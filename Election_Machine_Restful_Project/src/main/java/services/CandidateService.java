@@ -76,6 +76,8 @@ public class CandidateService {
 		List<Candidate> list=readCandidate();		
 		return list;
 	}	
+	
+		// read to update
 	@GET
 	@Path("/readtoupdatecandidate/{candidate_id}")
 	@Produces(MediaType.APPLICATION_JSON)
