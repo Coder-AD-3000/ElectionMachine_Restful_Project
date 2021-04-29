@@ -26,9 +26,9 @@ background-color: grey;
 		<div class = "container2">
 			<form action='../updatecandidate' method='post'>		
 		    Candidate ID (Read Only):<input class = "greyed-background" type = 'text' name='candidate_id' value='${requestScope.candidate.candidate_id }' readonly>
-			Candidate Surname:<input type='text' name='surname' value='${requestScope.candidate.surname }'>
-			Candidate First Name:<input type='text' name='firstname' value='${requestScope.candidate.firstname }'>
-			Candidate Age:<input type='text' name='age' value='${requestScope.candidate.age }'>
+			First Name:<input type='text' name='first_name' value='${requestScope.candidate.first_name }'>
+			Last Name:<input type='text' name='last_name' value='${requestScope.candidate.last_name }'>			
+			Age:<input type='text' name='age' value='${requestScope.candidate.age }'>
 			<input type='submit' name='ok' value='OK'>
 			</form>
 		</div>
