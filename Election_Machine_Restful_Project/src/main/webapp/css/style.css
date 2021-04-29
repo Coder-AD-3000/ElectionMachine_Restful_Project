@@ -1,0 +1,917 @@
+@charset "ISO-8859-1";
+
+/* AD - This file contains all of the CSS for the entire site (external CSS).*/
+
+/* AD - Media query in respect of smaller screens.
+        Ensures that the election machine looks good
+        on smaller devices. */
+@media only screen and (max-width: 900px) {
+	
+	/* AD - Customizes the container for the dynamic question
+        inside the questionnaire question section. 
+        This media query ensures that it looks good
+        on smaller devices.*/
+	.containerDynamicQuestion {
+    max-width: 82% !important;
+	}
+	
+    .container {
+    max-width: 80% !important;
+    }
+
+    .containerMainUpdateCandidates {
+    max-width: 80% !important;
+    }
+
+    /* AD - Customizes the yellow container
+    on the adminUpdateCandidate page, which
+    contains the candidate table data */
+    .containerUpdateCandidatesTable {
+     max-width: 98% !important;
+    }
+
+    /* AD - Ensures that the registration page main 
+       yellow box, still looks good on smaller screens*/
+    .container1 {
+        max-width: 60% !important;
+    }
+
+    /* AD - Ensures that the registration page box inside of the
+        main yellow box, still looks good on smaller screens*/
+       .container1b {
+        max-width: 60% !important;
+    }
+
+    .input-radio {
+    font-size: small;
+    width: 110% !important;    
+    padding: 0.1px 10px 0.1px 10px !important;  /*AD Needed on the questionnaire page */ 
+    }  
+
+    /* AD - Customizes the NAV-bar for smaller screens */
+    .container-nav1 {                           
+        width: 97% !important;                                    
+    } 
+      
+}  
+
+/* Adjustments for a responsive website*/
+/* Small devices (landscape phones, 544px and up) */
+/*1rem = 16px*/
+@media (max-width: 544px)   {            
+    h2{font-size: 1.25rem !important;}
+    h3{font-size: 1rem !important;}
+    h5{font-size: 0.6rem !important;} 
+    
+    /* AD - Customises the container for the dynamic question
+        inside the questionnaire question section. 
+        This media query ensures that it looks good
+        on very small devices.*/
+	.containerDynamicQuestion {
+    max-width: 82% !important;
+	}   
+    
+    /* AD - ensures that the answer selection buttons look good on small devices */
+    .input-radio {
+    text-align: left !important;
+    margin-right: 0px !important; 
+    padding-left: 0px !important;            
+    } 
+
+    /* AD - Ensures that the registration page main 
+       yellow box, still looks good on very small screens*/
+    .container1 {
+    max-width: 100% !important;
+    margin: 50px 0px 60px 0px !important;
+    }  
+
+    /* AD - Ensures that the registration page box inside of the
+    main yellow box, still looks good on smaller screens*/
+    .container1b {
+    max-width: 80% !important;
+    padding: 4px;
+    margin: 0px;
+    }
+
+    /* AD - Ensures that the registration page box green box 
+    inside of the main yellow box, still looks good on smaller screens*/
+    .container1c {
+    max-width: 15% !important;
+    padding: 3px;
+    margin: 0px;
+    }
+
+    /* AD - Customises the yellow container
+    on the adminUpdateCandidate page, which
+    contains the candidate table data */
+    .containerUpdateCandidatesTable {
+    max-width: 99% !important;
+    }
+
+    /* AD - Cutomises the 'your questionnaire results'
+    and 'your suitable candidate matches' text on the
+    questionnaireResults page. Ensures that the text
+    still looks good on small screens. */
+    .textRestyle1 {
+    font-size:small !important;
+   }
+     
+}
+
+/* Medium devices (tablets, 768px and up) */
+/*1rem = 16px*/
+@media (min-width: 768px) {             
+    h2{font-size: 1.75rem !important;}
+    h3{font-size: 1.25rem !important;}
+    h5{font-size: 1rem !important;}  
+    
+}
+
+/* Large devices (desktops, 992px and up) */
+/*1rem = 16px*/
+@media (min-width: 992px) { 
+    h2{font-size: 2rem !important;}
+    h3{font-size: 1.5rem !important;} 
+    h5{font-size: 1rem !important;}  
+    
+}
+
+/* AD - Defines font size for the html page */
+html {
+    font-family: sans-serif;
+  }
+
+/* AD - Customises the body colourings */
+body{
+    background-color: #2A9D8F;
+    color: #264653;
+}
+
+/* AD - Customises the main yellow container
+on the adminUpdateCandidate page */
+.containerMainUpdateCandidates{            
+    max-width: 50%;
+    padding: 20px;
+    border-radius: 10px;         
+    background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 25px auto;                
+}
+
+/* AD - Customises the yellow container
+on the adminUpdateCandidate page, which
+contains the candidate table data */
+.containerUpdateCandidatesTable{            
+    max-width: 95%;
+    padding: 20px;
+    border-radius: 10px;         
+    background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 25px auto;   
+}
+
+/* AD - Customises the main election machine questionnaire (yellow container) */
+.container{            
+    max-width: 50%;
+    padding: 30px;
+    border-radius: 10px;         
+    background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 60px auto;                
+}
+
+/* AD - Customises the registration page main yellow container */
+.container1{            
+    max-width: 40%;
+    padding: 30px;
+    border-radius: 10px;         
+    background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 70px auto 60px auto;    
+    display: flex;
+    justify-content: center;             
+}
+
+/* AD - Customises the registration page orange box
+        (this might be obsolete, but won't be 
+        deleted until sure) */
+.container1a {
+    background-color:#F4A261;
+    border-radius: 10px;    
+    margin: 10px auto;
+    padding: 10px;
+    max-width: 30%;
+    text-align: center;
+    height: 80%;
+    color: rgba(255, 255, 255, 0.829) !important; 
+}
+
+/* AD - Customises the login and (potential) registration page 
+        main form section */
+.container1b{            
+    max-width: 60%;
+    padding: 30px;
+    border-radius: 10px;         
+    background: linear-gradient(0deg, #E76F51, 70%, #F4A261);
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 10px;    
+    display: flex;
+    justify-content: center;                 
+}
+
+/* AD - Customises the adminPortal main section */
+.containerAdminPortal{            
+    max-width: 60%;
+    padding: 30px;
+    border-radius: 10px;         
+    background: linear-gradient(0deg, #E76F51, #F4A261);
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 10px;    
+    display: flex;
+    justify-content: center;                 
+}
+
+/* AD - Amends the Admin Portal Heading
+(such as on the adminPortal.jsp) */
+.adminPortal2 {    
+    background-color: #E76F51;
+    color:rgba(255, 255, 255, 0.781); /* AD - A custom white */
+    padding: 10px;
+    border-radius: 2px;
+}
+
+/* AD - Amends the Admin Portal Menu Heading
+(such as on the adminPortal.jsp) */
+.adminPortal3 {    
+    background-color:#264653;
+    color: rgba(255, 255, 255, 0.658); 
+    padding: 5px;
+    border-radius: 2px;   
+}
+
+/* AD - a custom colour for the ACCESS BUTTON */
+.adminPortal4 {    
+    background-color:#264653;
+    color: rgba(255, 255, 255, 0.658);  /* AD - A custom white */
+    padding: 1px 4px 1px 4px;     
+    border-radius: 2px;
+}
+
+/* AD - Customises the login page (and potential registration page) 
+    smaller cyan container */
+.container1c{    
+    background: linear-gradient(270deg, #264653, 30%, #2A9D8F);  
+    border-radius: 10px;    
+    margin: 10px auto;
+    padding: 10px;
+    max-width: 20%;
+    text-align: center;
+    max-height: 90%;
+    color: rgba(255, 255, 255, 0.829) !important;             
+}
+
+/* AD - Customises the selection button section (answers) */
+.container2 {
+    text-align: left;
+    margin: 10px auto 10px auto;            
+}
+
+/* AD - Customises the registration and login links */
+.container3 {
+    text-align: center;                              
+}
+
+/* AD - Customises the disclaimer colourings */
+.container4 { 
+    background: linear-gradient(0deg, #264653, 90%, #2A9D8F);
+    border-radius: 10px; 
+    padding: 0.1px 10px 0.1px 10px;  
+    color: rgba(255, 255, 255, 0.658);                    
+}
+
+/* AD - Customises the disclaimer message
+	on the questionnaire page colourings */
+.container4a {
+    background: linear-gradient(0deg, #2A9D8F, 90%,  #264653);    
+    border-radius: 10px; 
+    padding: 0.1px 10px 0.1px 10px;  
+    color: rgba(255, 255, 255, 0.658);                    
+}
+
+/* AD - Customises the Answers hidden div
+	on the questionnaireResults page colourings */
+    .containerUserAnswers {        
+        background: linear-gradient(45deg, #264653, 50%, #2A9D8F, #F4A261);
+        color: rgba(255, 255, 255, 0.829);
+        border-radius: 10px; 
+        padding: 0.1px 10px 0.1px 10px;   
+        margin: 10px auto;     
+    }
+
+/* AD - Customises the introduction colourings on the welcome page
+        and in addition, the candidate page introductory message */
+.container5 {
+    background: linear-gradient(180deg, #264653, 20%, #2A9D8F);
+    border-radius: 10px; 
+    padding: 0.1px 10px 0.1px 10px;             
+    color: rgba(255, 255, 255, 0.658);                 
+}
+
+/* AD - Customises the question section
+        of the questionnaire page, where the
+        questions will be placed dynamically. */
+.container5a {
+    background: linear-gradient(45deg, #264653, 50%, #2A9D8F, #F4A261);
+    border-radius: 10px; 
+    padding: 0.1px 10px 0.1px 10px;
+}
+
+/* AD - Customises the Welcome message colourings */
+.container6 {
+    background: linear-gradient(180deg, #E76F51, 20%, #F4A261);
+    border-radius: 10px; 
+    padding: 0.1px 10px 0.1px 10px;  
+    margin: 10px auto;                                   
+}
+
+/* AD - Customises the section with 'Admin: Update Candidates' 
+        on the on the adminUpdateCandidates page */
+.container6a {
+    background: linear-gradient(180deg, #E76F51, 20%, #F4A261);
+    border-radius: 10px; 
+    padding: 0.1px 10px 0.1px 10px;  
+    margin: 10px auto; 
+    color: rgba(255, 255, 255, 0.829) !important;   
+}
+
+/* AD - Customises the 'please register an account' message */
+.container7 {          
+    padding: 0.1px 10px 0.1px 10px;              
+    color:#264653;                     
+}
+
+/* AD - Questionnaire guidance for the user */
+.container7a {          
+    padding: 0.1px;              
+    color:#264653; 
+    text-align: center; 
+    width: 100%;               
+}
+
+/* AD - Cutomises the 'your answers'
+and container on the
+questionnaireResults page */
+.container7b {          
+    padding: 0.1px 10px 0.1px 10px; 
+    margin-top: 0px;
+    margin-bottom: 2px;              
+    color:#264653;    
+    height: 60px; 
+}
+
+/* AD - Customises the 'your top candidate matches'
+container on the questionnaireResults page */
+.container7c {          
+    padding: 0.1px 10px 0.1px 10px; 
+    margin-top: 0px;
+    margin-bottom: 20px;              
+    color:#264653;    
+    height: 60px;   
+}
+
+/* AD - Customises the Team member overviews */
+.container8 {
+    background: linear-gradient(45deg, #264653, 50%, #2A9D8F, #F4A261);
+    color: rgba(255, 255, 255, 0.856);
+    border-radius: 10px; 
+    padding: 0.1px 10px 0.1px 10px;   
+    margin: 10px auto;      
+  }
+
+/* AD - Customises the navbar */
+.container-nav1 {
+    background-color:#2A9D8F;
+    border-radius: 10px; 
+    padding: 1px;         
+    margin: 1px auto;
+    display: flex;
+    justify-content: center;             
+    width: 90%;
+    height: 40px;                       
+}
+
+/* AD - Customises the navbar */
+.container-nav3 {
+    background-color:#2A9D8F;
+    border-radius: 10px; 
+    padding: 1px;         
+    margin: 1px;           
+    width: 100%;
+    display: flex;
+    justify-content: center;                    
+}
+
+/* AD - Customises the container inside the navbar */
+.container-nav4 {
+    background-color:#2A9D8F;
+    border-radius: 10px; 
+    padding: 1px;         
+    margin: 1px;            
+    width: 100%; 
+    display: flex;
+    justify-content: center;                               
+}
+
+/* AD - Navbar customisations */
+.container-nav-links {
+    background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);
+    border-radius: 10px; 
+    padding: 1px;         
+    margin: 4px;              
+    width: 80%;             
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    justify-content: center;
+    display: flex;
+    align-items: center; 
+    box-shadow: 0 2px 16px 2px #264653;                                      
+}
+
+/* AD - Navbar customisations */
+.container-nav-links-icon {   
+    background: linear-gradient(0deg, #264653, 10%, #2A9D8F); 
+    border-radius: 10px;         
+    margin: 4px;             
+    width: 80%;
+    display: flex;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    justify-content: center;  
+    align-items: center;
+    box-shadow: 0 2px 16px 2px #264653;
+    padding: 1px;
+    margin: 4px;       
+}
+
+/* AD - Customises the main button stylings */
+.button-main {
+    background: linear-gradient(180deg, #E76F51, 95%, #F4A261);
+    border: none;
+    color: rgba(255, 255, 255, 0.829); 
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;                      
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 10px;
+    margin: 20px 10px 0px 10px; 
+    width: 90px;            
+}
+
+/* AD - Customises the ShowHide Button stylings */
+.buttonShowHide {
+    background-color: #2A9D8F;
+    border: none;
+    color: rgba(255, 255, 255, 0.829); 
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;                      
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 10px;
+    margin: 20px 10px 0px 10px; 
+    width: 90px;    
+    font-weight: bold;     
+}
+
+/* AD - Customises the ShowHide 'ANSWERS' Button stylings */
+.buttonShowHide2 {
+    background-color: #0075ac;
+    border: none;
+    color: rgba(255, 255, 255, 0.829); 
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;                      
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 10px;
+    margin: 20px 10px 0px 10px; 
+    width: 90px;    
+    font-weight: bold;     
+}
+
+/* AD - Questionnaire button modifications */
+.questionnaireButton {
+    background-color: #2A9D8F;
+}
+
+/* AD - Customises the button hover effects */
+/* visited link */
+.button1:visited {
+color: #264653;
+text-decoration: none;
+}
+
+/* AD - mouse over link */
+.button1:hover {
+color: #264653;
+text-decoration: none;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* AD - selected link */
+.button1:active {
+color: #2A9D8F;
+text-decoration: none;
+}      
+   
+/* AD - Customises the radial buttons (answers) */
+.input-radio {
+    display: inline-block;           
+    text-align: center;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.829);  
+    margin: 10px auto;
+    padding: 0.1px 20px 0.1px 10px; 
+}
+
+/* AD - font customisation */
+.resize1 {
+    font-size: 40px;          
+}
+
+/* AD - font customisation */
+.resize2 {
+    font-size: 50px;
+}
+
+/* AD - font customisation */
+.resize3 {
+    font-size: 25px;          
+}
+
+/* AD - Customising the green home button
+        in the navbar */
+.resize3a {
+    font-size: 22px;
+    padding-top: 4px;          
+}
+
+/* AD - heading customisation */
+h2 {
+    color: rgba(255, 255, 255, 0.829);  
+}
+
+/* AD - customisation of the navbar links */
+ /* unvisited link */
+a:link {
+color: #264653;
+text-decoration: none;
+}
+
+/* AD - visited link */
+a:visited {
+color: #264653;
+text-decoration: none;
+}
+
+/* AD - mouse over link */
+a:hover {
+color: white;
+text-decoration: none;
+}
+
+/* AD - selected link */
+a:active {
+color: #2A9D8F;
+text-decoration: none;
+}  
+
+/* AD - Table heading customisation
+(such as on the adminUpdateCandidates.jsp) */
+.tableCustom1 {
+   
+background-color:#264653;
+color: rgba(255, 255, 255, 0.555);
+}
+
+/* AD - Table heading customisation
+for the update and delete buttons
+(such as on the adminUpdateCandidates.jsp) */
+.tableCustom2 {    
+    color: #98a2ff; /* AD - a custom shade */
+}
+
+/* AD - Table heading customisation
+for the add button
+(such as on the adminUpdateCandidates.jsp) */
+.tableAdd {    
+    color: #04a138; /* AD - a custom shade */
+}
+
+/* AD - Table background customisation
+for the add button (such as on the adminUpdateCandidates.jsp) */
+.tableAddBackground {    
+    background-color:#264653; /* AD - a custom colour */
+    text-align: center;
+} 
+
+/* AD - Table heading customisation
+for the update and delete buttons
+(such as on the adminUpdateCandidates.jsp) */
+.tableCustom3 {    
+    color:#ff7171; /* AD - a custom colour */
+}
+
+/* AD - Table customisation
+for the rows of the table
+(such as on the adminUpdateCandidates.jsp) */
+.tableCustom4 {    
+    background-color:rgba(255, 255, 255, 0.555); /* AD - a custom colour for deleting */
+}
+
+/* AD - Table customisation
+for specific cells (sich as update and delete
+(such as on the adminUpdateCandidates.jsp) */
+.tableCustom5 {    
+    background-color:#264653; /* AD - a custom colour */
+} 
+
+/* AD - customises the word 'select'
+    on the questionnaire page.*/
+.questionnaireSelect {
+    color: rgba(255, 255, 255, 0.856);;
+}
+
+/* AD - Customises the container for the dynamic question
+        inside the questionnaire question section. */
+.containerDynamicQuestion {
+    background: linear-gradient(0deg, #0075ac, 90%, #264653);  
+    border-radius: 10px;    
+    color: #c4ffff;    
+    margin: 5px 20px 5px 5px;
+    padding: 0.1px 10px 0.1px 10px;  
+}
+
+/* AD - Customises the container for the dynamic candidate
+        inside the questionnaire question section. */
+.containerDynamicCandidate {
+    background: linear-gradient(0deg, #0075ac, 90%, #264653);
+    border-radius: 10px;    
+    color: #c4ffff;     
+    margin: 25px;
+    padding: 25px;  
+}
+
+/* AD - Customises the compareResults container
+        under the candidate matches section
+        of the questionnaireResults page.*/
+.containerCompareResults {   
+    text-align: left;
+}
+
+/* AD - Customises the 'compareResults' Button stylings */
+.buttonShowHide3 {
+    background: linear-gradient(0deg, rgb(91, 59, 180), 90%, rgb(168, 168, 241));
+    border: none;
+    color: rgba(255, 255, 255, 0.829);    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;                      
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 10px;    
+    width: 205px;    
+    font-weight: bold;    
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-left: 07px;   
+}
+
+/* AD - Cutomises the 'your questionnaire results'
+and 'your suitable candidate matches' text on the
+questionnaireResults page */
+.textRestyle1 {
+ font-size:large;
+}
+
+/* AD - Customises the Answers hidden div
+	on the questionnaireResults page colourings */
+    .containerCompareAnswers {        
+        background: linear-gradient(0deg, rgb(91, 59, 180), 90%, rgb(168, 168, 241));
+        color: rgba(255, 255, 255, 0.829);
+        border-radius: 10px; 
+        padding: 0.1px 10px 0.1px 10px;   
+        margin: 10px auto;        
+    }
+    
+/*Les - Logout button*/
+div.container-nav-links input[type="submit" i] {
+	background-color: #E9C46A !important; 
+	color: #264653 !important;
+	border: none;
+	outline: none;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+div.container-nav-links input[type="submit" i]:hover {
+	background-color: #E9C46A !important; 
+	color: rgba(255, 255, 255, 0.829) !important;
+}
+
+/* AD - Amendments to offset boostrap 
+    font-size conflicts, such as on the
+    admintUpdateCandidates.jsp page. */
+.adminTextCorrection1 {
+    font-weight: bold;
+	font-size: 22px !important;
+    /*AD - I removed the media query as it was not working
+        due to other conflicts that would take a
+        lot of time to investigate and fix.
+        Looks OK as is, on all screen sizes. */
+}
+
+/* AD - Amendments to offset boostrap 
+    font-size conflicts, such as on the
+    admintUpdateCandidates.jsp page. */
+    .adminTextCorrection2 {
+        font-weight: bold;
+        font-size: 16px !important;
+    /*AD - I removed the media query as it was not working
+        due to other conflicts that would take a
+        lot of time to investigate and fix.
+        Looks OK as is, on all screen sizes. */
+    }
+
+    /* AD - Amendments to offset boostrap 
+    font-size conflicts, such as on the
+    admintUpdateCandidates.jsp page. */
+    .adminTextCorrection3 {
+        font-weight: bold;
+        font-size: 16px !important;
+    /*AD - I removed the media query as it was not working
+        due to other conflicts that would take a
+        lot of time to investigate and fix.
+        Looks OK as is, on all screen sizes. */
+    }
+
+    
+    /* AD - Customises the 'main login Button' Button
+          such as on the loginPage.jsp */
+.mainloginButton {
+    background: linear-gradient(180deg, #264653 , 45%, #2A9D8F );
+    border: none;
+    color: rgba(255, 255, 255, 0.829);    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;                      
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 10px;    
+    width: 100px;    
+    font-weight: bold;    
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-left: 07px;   
+}
+
+/* AD - Customises the container for some of the buttons 
+		on the questionnaire.jsp such as the 'next' and 'previous' buttons. */
+.container3a {
+    text-align: center; 
+    display: flex;
+    justify-content: center;                              
+}
+
+/* AD - Customises the 'Submit' button on the 
+		questionnaire.jsp.*/
+.buttonSubmit {
+	background: linear-gradient(180deg, #0075ac, 95%, blue);
+    background-color: #0075ac;
+    border: none;
+    color: rgba(255, 255, 255, 0.829); 
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;                      
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 10px;
+    margin: 20px 10px 0px 10px; 
+    width: 90px;    
+    font-weight: bold;
+    /*
+     background-color: #0075ac;
+    */   
+}
+
+/* AD - customises the logout fail message
+		which appears if the user fails to login
+		correctly.*/
+.logoutFail {
+	display: flex;
+    justify-content: center;	 
+	background: linear-gradient(0deg,#ff0000, 10%, #E76F51); 
+    color: #fef2da;
+    border-radius: 10px;    
+    margin: 5px auto;
+    padding: 5px;
+    max-width: 40%;
+    text-align: center;	
+}
+
+/* AD - customises the login welcome message
+		which appears if the admin successfully
+		logs in (currently a WIP).*/
+.loginAdmin {
+	display: flex;
+    justify-content: center;	 
+	background: linear-gradient(0deg,#ff0000, 10%, #E76F51); 
+    color: #fef2da;
+    border-radius: 10px;    
+    margin: 5px auto;
+    padding: 5px;
+    max-width: 40%;
+    text-align: center;	
+}
+
+/* AD - customises the login welcome message
+		which appears if the candidate successfully
+		logs in (currently a WIP).*/
+.loginCandidate {
+	display: flex;
+    justify-content: center;	 
+	background: linear-gradient(0deg,#ff0000, 10%, #E76F51); 
+    color: #fef2da;
+    border-radius: 10px;    
+    margin: 5px auto;
+    padding: 5px;
+    max-width: 40%;
+    text-align: center;	
+}
+
+/* AD - customises the logout message
+		which appears if the candidate successfully
+		logs out (currently a WIP).*/
+.logOutMessage {
+	display: flex;
+    justify-content: center;	 
+	background: linear-gradient(0deg,#ff0000, 10%, #E76F51); 
+    color: #fef2da;
+    border-radius: 10px;    
+    margin: 5px auto;
+    padding: 5px;
+    max-width: 40%;
+    text-align: center;	
+}
+
+/* AD - customises the word 'Select' on the 
+	questionnaire */
+.customText1 {
+	color: #E9C46A;
+}
+
+/* AD - customises the heading on the 
+	candidates page */
+.customCandidateHeading1 {
+	color: #F4A261; 
+} 
+
+/* AD - customises the candidate text on the 
+	candidates page */
+.customCandidateText1 {
+	font-style: italic;
+}
+
+/* AD - customises the candidate text on the 
+	candidates page */
+.customCandidateText2 {
+	 
+	color: #E9C46A; 
+}
+
+/* AD - customises the about page individual
+		headings text on the 
+		about page */
+.customAboutHeading {	 
+	color: #F4A261; 
+}
+
+/* AD - customises the about page individual
+		headings text on the 
+		about page */
+.customSiteLogin {	 
+	color: #264653; 
+}
