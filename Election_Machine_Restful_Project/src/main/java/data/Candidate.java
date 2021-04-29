@@ -19,33 +19,35 @@ public class Candidate {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private int candidate_id;
-	private String surname;
-	private String firstname;	
+	private String first_name;
+	private String last_name;
+	 
+	private String surname;		
 	private int age;
 	
 	public Candidate() {
 		
 	}
-	public Candidate(String surname, String firstname, int age) {
-		this.surname=surname;
-		this.firstname=firstname;
+	public Candidate(String first_name, String last_name, int age) {
+		this.first_name=first_name;
+		this.last_name=last_name;		
 		this.age=age;
 	}
-	public Candidate(int candidate_id, String surname, String firstname, int age) {		
+	public Candidate(int candidate_id, String first_name, String last_name, int age) {		
 		this.candidate_id=candidate_id;
-		this.surname=surname;
-		this.firstname=firstname;
+		this.first_name=first_name;
+		this.last_name=last_name;		
 		this.age=age;
 	}
-	public Candidate(String surname, String firstname, String age) {
-		this.surname=surname;
-		this.firstname=firstname;
+	public Candidate(String first_name, String last_name, String age) {
+		this.first_name=first_name;
+		this.last_name=last_name;		
 		this.setAge(age);
 	}
-	public Candidate(String candidate_id, String surname, String firstname, String age) {
+	public Candidate(String candidate_id, String first_name, String last_name, String age) {
 		this.setCandidate_id(candidate_id);
-		this.surname=surname;
-		this.firstname=firstname;
+		this.first_name=first_name;
+		this.last_name=last_name;		
 		this.setAge(age);
 	}
 	 
@@ -66,12 +68,23 @@ public class Candidate {
 	}
 	
 	
-	public String getFirstname() {
-		return firstname;
+	
+	/**
+	 * @return the first_name
+	 */
+	public String getFirst_name() {
+		return first_name;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	/**
+	 * @param first_name the first_name to set
+	 */
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
 	}
+	
+	 
+	
+	
 	public int getAge() {
 		return age;
 	}
@@ -89,19 +102,21 @@ public class Candidate {
 	}
 	
 	/**
-	 * @return the surname
+	 * @return the last_name
 	 */
-	public String getSurname() {
-		return surname;
+	public String getLast_name() {
+		return last_name;
 	}
 	/**
-	 * @param surname the surname to set
+	 * @param last_name the last_name to set
 	 */
-	public void setSurname(String surname) {
-		this.surname = surname;
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
 	}
 	
 	public String toString() {
-		return this.candidate_id+": "+this.surname+" / "+this.firstname+" / "+this.age;
+		return this.candidate_id+": "+this.first_name+" / "+this.last_name+" / "+this.age;
 	}
+	
+	
 }

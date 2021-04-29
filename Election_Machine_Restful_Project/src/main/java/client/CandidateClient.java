@@ -70,7 +70,10 @@ public class CandidateClient extends HttpServlet {
 
 	private List<Candidate> addcandidate(HttpServletRequest request) {
 		//A Candidate object to send to our web-service 
-		Candidate candidate = new Candidate(request.getParameter("surname"), request.getParameter("firstname"), request.getParameter("age"));
+		Candidate candidate = new Candidate(request.getParameter("first_name"), 
+				request.getParameter("last_name"), 
+				request.getParameter("age"));
+		
 		System.out.println(candidate);
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/addcandidate";
 		Client client = ClientBuilder.newClient();
@@ -102,7 +105,11 @@ public class CandidateClient extends HttpServlet {
 	
 	private List<Candidate> updatecandidate(HttpServletRequest request) {
 		//A Candidate object to send to our web-service 
-		Candidate candidate = new Candidate(request.getParameter("candidate_id"), request.getParameter("surname"), request.getParameter("firstname"), request.getParameter("age"));
+		Candidate candidate = new Candidate(request.getParameter("candidate_id"), 
+				request.getParameter("first_name"), 
+				request.getParameter("last_name"), 
+				request.getParameter("age"));
+		
 		System.out.println(candidate);
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/updatecandidate";
 		Client client = ClientBuilder.newClient();
