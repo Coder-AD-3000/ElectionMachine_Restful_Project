@@ -22,8 +22,8 @@ padding: 10px;
 <body>
 	<div class = "container">
 		<form action='../addcandidate' method='post'>
-		Surname: <input type='text' name='surname' value=''>
-		First Name: <input type='text' name='firstname' value=''>
+		First Name: <input type='text' name='first_name' value=''>
+		Last Name: <input type='text' name='last_name' value=''>		
 		Age:<input type='text' name='age' value=''>
 		<input type='submit' name='ok' value='OK'>
 		</form>
