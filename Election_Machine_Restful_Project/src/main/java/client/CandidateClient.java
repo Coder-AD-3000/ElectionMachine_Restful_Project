@@ -77,6 +77,7 @@ public class CandidateClient extends HttpServlet {
 				request.getParameter("age"),
 				request.getParameter("mission"),
 				request.getParameter("vision"),
+				request.getParameter("pic"),
 				request.getParameter("username"),
 				request.getParameter("password"));
 		
@@ -119,6 +120,7 @@ public class CandidateClient extends HttpServlet {
 				request.getParameter("age"),
 				request.getParameter("mission"),
 				request.getParameter("vision"),
+				request.getParameter("pic"),
 				request.getParameter("username"),
 				request.getParameter("password"));
 		
