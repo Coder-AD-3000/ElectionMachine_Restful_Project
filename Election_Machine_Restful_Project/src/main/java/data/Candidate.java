@@ -20,37 +20,43 @@ public class Candidate {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private int candidate_id;
 	private String first_name;
-	private String last_name;
-	 
-	private String surname;		
-	private int age;
+	private String last_name;	 
+	private String party;	
+	private int age;	
 	
 	public Candidate() {
 		
 	}
-	public Candidate(String first_name, String last_name, int age) {
+	public Candidate(String first_name, String last_name, String party, int age) {
 		this.first_name=first_name;
-		this.last_name=last_name;		
+		this.last_name=last_name;	
+		this.party=party;
 		this.age=age;
 	}
-	public Candidate(int candidate_id, String first_name, String last_name, int age) {		
+	public Candidate(int candidate_id, String first_name, String last_name, String party, int age) {		
 		this.candidate_id=candidate_id;
 		this.first_name=first_name;
-		this.last_name=last_name;		
+		this.last_name=last_name;
+		this.party=party;
 		this.age=age;
 	}
-	public Candidate(String first_name, String last_name, String age) {
+	public Candidate(String first_name, String last_name, String party, String age) {
 		this.first_name=first_name;
-		this.last_name=last_name;		
+		this.last_name=last_name;	
+		this.party=party;
 		this.setAge(age);
 	}
-	public Candidate(String candidate_id, String first_name, String last_name, String age) {
+	public Candidate(String candidate_id, String first_name, String last_name, String party, String age) {
 		this.setCandidate_id(candidate_id);
 		this.first_name=first_name;
-		this.last_name=last_name;		
+		this.last_name=last_name;
+		this.party=party;
 		this.setAge(age);
 	}
 	 
+	
+	
+	
 	public int getCandidate_id() {
 		return candidate_id;
 	}
@@ -85,21 +91,7 @@ public class Candidate {
 	 
 	
 	
-	public int getAge() {
-		return age;
-	}
 	
-	public void setAge(int age) {
-		this.age = age;
-	}
-	public void setAge(String age) {
-		try {
-			this.age = Integer.parseInt(age);
-		}
-		catch (NumberFormatException | NullPointerException e) {
-			//Do nothing - the value is not changed
-		}
-	}
 	
 	/**
 	 * @return the last_name
@@ -114,8 +106,49 @@ public class Candidate {
 		this.last_name = last_name;
 	}
 	
+	
+	/**
+	 * @return the party
+	 */
+	public String getParty() {
+		return party;
+	}
+	/**
+	 * @param party the party to set
+	 */
+	public void setParty(String party) {
+		this.party = party;
+	}
+	
+	/**
+	 * @return the age
+	 */
+	public int getAge() {
+		return age;
+	}
+	/**
+	 * @param age the age to set
+	 */
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public void setAge(String age) {
+		try {
+			this.age = Integer.parseInt(age);
+		}
+		catch (NumberFormatException | NullPointerException e) {
+			//Do nothing - the value is not changed
+		}
+	}
+			
+	
 	public String toString() {
-		return this.candidate_id+": "+this.first_name+" / "+this.last_name+" / "+this.age;
+		return this.candidate_id + ": "
+		+ this.first_name + " / " 
+		+ this.last_name + " / " 
+		+ this.party + " / "
+		+ this.age;
 	}
 	
 	
