@@ -23,7 +23,8 @@ padding: 10px;
 	<div class = "container">
 		<form action='../addcandidate' method='post'>
 		First Name: <input type='text' name='first_name' value=''>
-		Last Name: <input type='text' name='last_name' value=''>		
+		Last Name: <input type='text' name='last_name' value=''>
+		Party: <input type='text' name='party' value=''>		
 		Age:<input type='text' name='age' value=''>
 		<input type='submit' name='ok' value='OK'>
 		</form>
