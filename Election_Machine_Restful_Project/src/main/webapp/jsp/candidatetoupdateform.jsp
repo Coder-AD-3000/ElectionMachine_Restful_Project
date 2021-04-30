@@ -20,6 +20,7 @@ padding: 10px;
 .greyed-background {
 background-color: grey;
 }
+
 </style>
 </head>
 	<body>
@@ -33,6 +34,8 @@ background-color: grey;
 			Age:<input required type='text' name='age' value='${requestScope.candidate.age }'>
 			Mission:<input required type='text' name='mission' value='${requestScope.candidate.mission }'>
 			Vision:<input required type='text' name='vision' value='${requestScope.candidate.vision }'>
+			Username:<input required type='text' name='username' value='${requestScope.candidate.username }'>
+			Password:<input required type='text' name='password' value='${requestScope.candidate.password }'>
 			<input type='submit' name='ok' value='OK'>
 			</form>
 		</div>
