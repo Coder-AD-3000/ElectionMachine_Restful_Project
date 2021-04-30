@@ -72,6 +72,7 @@ public class CandidateClient extends HttpServlet {
 		//A Candidate object to send to our web-service 
 		Candidate candidate = new Candidate(request.getParameter("first_name"), 
 				request.getParameter("last_name"), 
+				request.getParameter("party"), 
 				request.getParameter("age"));
 		
 		System.out.println(candidate);
@@ -107,7 +108,8 @@ public class CandidateClient extends HttpServlet {
 		//A Candidate object to send to our web-service 
 		Candidate candidate = new Candidate(request.getParameter("candidate_id"), 
 				request.getParameter("first_name"), 
-				request.getParameter("last_name"), 
+				request.getParameter("last_name"),
+				request.getParameter("party"), 
 				request.getParameter("age"));
 		
 		System.out.println(candidate);
