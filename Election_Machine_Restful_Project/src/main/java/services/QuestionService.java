@@ -1,6 +1,9 @@
 package services;
 
+
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -10,6 +13,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import data.Candidate;
 import data.Question;
 
 
@@ -21,17 +25,15 @@ public class QuestionService {
 	@GET
 	@Path("/readquestion")
 	@Produces(MediaType.APPLICATION_JSON)
-//	@Consumes(MediaType.APPLICATION_JSON)
-	public ArrayList<Question> readQuestion(Question question) {
-			EntityManager em = emf.createEntityManager();
-			em.getTransaction().begin();
-			@SuppressWarnings("unchecked")
-			ArrayList<Question> arrlist = (ArrayList<Question>) em.createQuery("select * from emachinedb.question").getResultList();	
-//			ArrayList<Question> arrlist = (ArrayList<Question>) em.createQuery("select xyx from question xyx").getResultList();		
-			em.getTransaction().commit();
-			
-			System.out.println("Questions read from table..");
-			return arrlist;
-		}
+	@Consumes(MediaType.APPLICATION_JSON)
+	public List<Question> readQuestion() {
+		EntityManager entitymanager = emf.createEntityManager();
+		entitymanager.getTransaction().begin();
+		System.out.println("about to read question");
+		List<Question> list = entitymanager.createQuery("select x from Question x").getResultList();
+		System.out.println("I read the fucking question");
+		entitymanager.getTransaction().commit();
+		return list;
+	}
 
 }

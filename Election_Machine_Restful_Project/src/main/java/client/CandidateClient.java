@@ -34,6 +34,7 @@ public class CandidateClient extends HttpServlet {
 	  @Override
 	  public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
+		  
 	  String action = request.getServletPath();
 	  List<Candidate> list=null; /* AD - Candidate is the class instance*/
 	  switch (action) {

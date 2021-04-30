@@ -2,6 +2,8 @@ package client;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +18,7 @@ import javax.ws.rs.core.GenericType;
 import data.Question;
 
 
-@WebServlet(urlPatterns = {"/readquestion"})
+@WebServlet(urlPatterns = {"/readallquestion"})
 public class QuestionClient extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
@@ -41,7 +43,7 @@ public class QuestionClient extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 		throws IOException, ServletException {
 		
-		ArrayList<Question> arrlist = readQuestion(request);
+		List<Question> arrlist = readQuestion(request);
 		
 		request.setAttribute("questionlist", arrlist);
 		RequestDispatcher rd = request.getRequestDispatcher("./jsp/questionnaire.jsp");
@@ -49,7 +51,7 @@ public class QuestionClient extends HttpServlet{
 	}
 	  
 	
-	private ArrayList<Question> readQuestion(HttpServletRequest request) {
+	private List<Question> readQuestion(HttpServletRequest request) {
 		
 		String uri = "http://127.0.0.1:8080/rest/questionservice/readquestion";
 		
@@ -59,8 +61,8 @@ public class QuestionClient extends HttpServlet{
 		
 		//Create a GenericType to be able to get List of objects
 		//This will be the second parameter of post method
-		GenericType<ArrayList<Question>> gl = new GenericType<ArrayList<Question>>() {};
-		ArrayList<Question> result = b.get(gl);
+		GenericType<List<Question>> gl = new GenericType<List<Question>>() {};
+		List<Question> result = b.get(gl);
 		
 		return result;
 	}
