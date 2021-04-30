@@ -1,0 +1,159 @@
+/*
+unhashed passes:
+		id 1  - 11935
+		id 2  - 21974
+		id 3  - 31975
+		id 4  - 41934
+		id 5  - 51995
+		id 6  - 61984
+		id 7  - 71939
+		id 8  - 82000
+		id 9  - 91991
+		id 10 - 101953
+		id 11 - 111974
+		id 12 - 121939
+		id 13 - 131959
+		id 14 - 142002
+		id 15 - 151968
+		id 16 - 162001
+		id 17 - 171948
+		id 18 - 181976
+		id 19 - 191980
+		id 20 - 201958
+		admin - 9991922
+*/
+
+DROP DATABASE emachinedb;
+CREATE DATABASE emachinedb;
+USE emachinedb;
+
+# user access
+GRANT ALL ON electionmachine.* TO pena@localhost IDENTIFIED BY 'kukkuu';
+
+# utf8 encoding
+ALTER DATABASE electionmachine CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
+#####################   candidate TABLE   ###############################
+#######   create candidate table and populate from vaalikone db   #######
+#########################################################################
+
+CREATE TABLE IF NOT EXISTS candidate (
+candidate_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL UNIQUE,
+last_name VARCHAR(255) NOT NULL,
+first_name VARCHAR(255) NOT NULL,
+party VARCHAR(255) NOT NULL,
+location VARCHAR(255) NOT NULL,
+age INT NOT NULL,
+mission TEXT NOT NULL,
+vision TEXT NOT NULL,
+pic LONGBLOB,
+profession VARCHAR(255) NOT NULL,
+username VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO emachinedb.candidate (
+	last_name,
+    first_name,
+    party,
+    location,
+    age,
+    mission,
+    vision,
+    profession,
+    username,
+    password)
+SELECT LTRIM(RTRIM(SURNAME)),
+	LTRIM(RTRIM(FIRSTNAME)),
+    LTRIM(RTRIM(PARTY)),
+    LTRIM(RTRIM(LOCATION)),
+    LTRIM(RTRIM(AGE)),
+    LTRIM(RTRIM(REASON_FOR_RUNNING)),
+    LTRIM(RTRIM(AIMS_AND_GOALS)),
+    LTRIM(RTRIM(PROFESSION)),
+    LTRIM(RTRIM(USERNAME)),
+    LTRIM(RTRIM(PASSWORD))
+FROM electionmachine.candidates
+WHERE party!='employee'
+ORDER BY CANDIDATE_ID;
+
+
+####################   employee TABLE   #################################
+########   create employee table and populate from vaalikone db   #######
+#########################################################################
+
+CREATE TABLE IF NOT EXISTS employee (
+employee_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL UNIQUE,
+first_name VARCHAR(255) NOT NULL,
+last_name VARCHAR(255) NOT NULL,
+username VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO emachinedb.employee (
+	first_name,
+    last_name,
+    username,
+    password
+)
+SELECT FIRSTNAME, 
+	SURNAME,
+    USERNAME,
+    PASSWORD
+FROM electionmachine.candidates
+WHERE CANDIDATE_ID=999
+ORDER BY CANDIDATE_ID;
+
+#####################   question TABLE   ################################
+########   create question table and populate from vaalikone db   #######
+#########################################################################
+
+CREATE TABLE IF NOT EXISTS question (
+question_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL UNIQUE,
+question VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS question_draft (
+question_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL UNIQUE,
+question VARCHAR(255) NOT NULL
+);
+
+INSERT INTO emachinedb.question (question)
+SELECT QUESTION 
+FROM electionmachine.questions
+ORDER BY QUESTION_ID;
+
+
+#####################   answer TABLE   ##################################
+#########   create answer table and populate from vaalikone db   ########
+#########################################################################
+
+CREATE TABLE IF NOT EXISTS answer (
+answer_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL UNIQUE,
+candidate_id INT NOT NULL,
+question_id INT NOT NULL 
+CHECK(question_id between 1 and 25),
+answer INT NOT NULL 
+CHECK(answer between 1 and 5),
+comments VARCHAR(255) DEFAULT NULL
+);
+
+INSERT INTO emachinedb.answer (
+	candidate_id,
+    question_id,
+    answer,
+    comments)
+SELECT CANDIDATE_ID,
+	QUESTION_ID,
+    ANSWER,
+    COMMENTS
+FROM electionmachine.answers
+ORDER BY CANDIDATE_ID;
+
+UPDATE emachinedb.answer
+SET candidate_id = candidate_id - 1000 LIMIT 500;
+
+ALTER TABLE emachinedb.answer
+ADD FOREIGN KEY(candidate_id) REFERENCES candidate(candidate_id),
+ADD FOREIGN KEY(question_id) REFERENCES question(question_id);
