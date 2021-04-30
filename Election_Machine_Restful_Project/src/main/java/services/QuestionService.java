@@ -29,9 +29,13 @@ public class QuestionService {
 	public List<Question> readQuestion() {
 		EntityManager entitymanager = emf.createEntityManager();
 		entitymanager.getTransaction().begin();
+		
 		System.out.println("about to read question");
+		
 		List<Question> list = entitymanager.createQuery("select x from Question x").getResultList();
+		
 		System.out.println("I read the fucking question");
+		
 		entitymanager.getTransaction().commit();
 		return list;
 	}
