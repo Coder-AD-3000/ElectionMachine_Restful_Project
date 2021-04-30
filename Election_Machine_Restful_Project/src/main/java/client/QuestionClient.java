@@ -51,7 +51,7 @@ public class QuestionClient extends HttpServlet{
 	
 	private ArrayList<Question> readQuestion(HttpServletRequest request) {
 		
-		String uri = "http://127.0.0.1:8080/rest/questionservice/readQuestion";
+		String uri = "http://127.0.0.1:8080/rest/questionservice/readquestion";
 		
 		Client c = ClientBuilder.newClient();
 		WebTarget wt = c.target(uri);

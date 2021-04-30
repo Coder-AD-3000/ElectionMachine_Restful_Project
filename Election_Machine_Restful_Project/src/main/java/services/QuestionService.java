@@ -19,14 +19,15 @@ public class QuestionService {
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("emachinedb");
 	
 	@GET
-	@Path("/readQuestion")
+	@Path("/readquestion")
 	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
+//	@Consumes(MediaType.APPLICATION_JSON)
 	public ArrayList<Question> readQuestion(Question question) {
 			EntityManager em = emf.createEntityManager();
 			em.getTransaction().begin();
 			@SuppressWarnings("unchecked")
-			ArrayList<Question> arrlist = (ArrayList<Question>) em.createQuery("select xyx from Fish xyx").getResultList();		
+			ArrayList<Question> arrlist = (ArrayList<Question>) em.createQuery("select * from emachinedb.question").getResultList();	
+//			ArrayList<Question> arrlist = (ArrayList<Question>) em.createQuery("select xyx from question xyx").getResultList();		
 			em.getTransaction().commit();
 			
 			System.out.println("Questions read from table..");
