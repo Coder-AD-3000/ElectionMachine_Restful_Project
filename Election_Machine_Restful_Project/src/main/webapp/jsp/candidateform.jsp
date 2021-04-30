@@ -29,6 +29,8 @@ padding: 10px;
 		Age:<input required type='text' name='age' placeholder="Cannot be blank." value=''>
 		Mission:<input required type='text' name='mission' placeholder="Cannot be blank." value=''>
 		Vision:<input required type='text' name='vision' placeholder="Cannot be blank." value=''>
+		Username:<input required type='text' name='username' placeholder="Cannot be blank." value=''>
+		Password:<input required type='text' name='password' placeholder="Cannot be blank." value=''>
 		<input type='submit' name='ok' value='OK'>
 		</form>
 	</div>
