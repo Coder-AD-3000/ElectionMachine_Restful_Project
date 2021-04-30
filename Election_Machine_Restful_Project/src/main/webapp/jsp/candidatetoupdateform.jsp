@@ -26,10 +26,13 @@ background-color: grey;
 		<div class = "container2">
 			<form action='../updatecandidate' method='post'>		
 		    Candidate ID (Read Only):<input class = "greyed-background" type='text' name='candidate_id' value='${requestScope.candidate.candidate_id }' readonly>
-			First Name:<input type='text' name='first_name' value='${requestScope.candidate.first_name }'>
-			Last Name:<input type='text' name='last_name' value='${requestScope.candidate.last_name }'>
-			Party: <input type='text' name='party' value='${requestScope.candidate.party }'>		
-			Age:<input type='text' name='age' value='${requestScope.candidate.age }'>
+			First Name:<input required type='text' name='first_name' value='${requestScope.candidate.first_name }'>
+			Last Name:<input required type='text' name='last_name' value='${requestScope.candidate.last_name }'>
+			Party: <input required type='text' name='party' value='${requestScope.candidate.party }'>
+			Location: <input required type='text' name='location' value='${requestScope.candidate.location }'>		
+			Age:<input required type='text' name='age' value='${requestScope.candidate.age }'>
+			Mission:<input required type='text' name='mission' value='${requestScope.candidate.mission }'>
+			Vision:<input required type='text' name='vision' value='${requestScope.candidate.vision }'>
 			<input type='submit' name='ok' value='OK'>
 			</form>
 		</div>
