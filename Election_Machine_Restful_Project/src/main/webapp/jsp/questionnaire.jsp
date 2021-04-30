@@ -61,7 +61,7 @@
         <!-- AD - Beginning of the selection button section (answers)-->
         <div class="container2">            
 
-            <form id="form" action="/SubmitAnswer" method="POST">				
+            <form id="form" action="../addallanswer" method="POST">				
                
                 <br>                 
 	            
@@ -90,7 +90,7 @@
 					   		
                                 <!-- ******************************************************************************************************** -->
                                     
-                                    <input hidden ="question_text" type = "text" name = "question_text${question.id}"  value="${question.question}">
+                                    <input hidden ="question_id" type = "text" name = "question_id${question.id}"  value="${question.id}">
                                                           
                                     <!-- Display Radio buttons -->
                                     <label class = "questionnaireSelect">

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.TableGenerator;
 
 /**
  * @author ashley - specifies that the target is an entity
@@ -16,8 +17,18 @@ public class Answer {
 	/**
 	 * AD - Id specifies the primary key of an entity
 	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	
+//	@Id 
+//	@GeneratedValue(strategy=GenerationType.TABLE) 
+	
+	@Id 
+	@GeneratedValue(strategy=GenerationType.AUTO) 
+	
 	private int question_id;
 	private int candidate_id;
 	private int answer;
