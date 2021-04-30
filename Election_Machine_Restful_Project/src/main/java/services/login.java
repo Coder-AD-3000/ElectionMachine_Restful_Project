@@ -2,7 +2,7 @@ package services;
 
 public class login {
 	
-	//mofo
+	
 
 //	  pack class instance "u" with all:
 //		id
