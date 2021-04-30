@@ -72,8 +72,11 @@ public class CandidateClient extends HttpServlet {
 		//A Candidate object to send to our web-service 
 		Candidate candidate = new Candidate(request.getParameter("first_name"), 
 				request.getParameter("last_name"), 
-				request.getParameter("party"), 
-				request.getParameter("age"));
+				request.getParameter("party"),
+				request.getParameter("location"),
+				request.getParameter("age"),
+				request.getParameter("mission"),
+				request.getParameter("vision"));
 		
 		System.out.println(candidate);
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/addcandidate";
@@ -109,8 +112,11 @@ public class CandidateClient extends HttpServlet {
 		Candidate candidate = new Candidate(request.getParameter("candidate_id"), 
 				request.getParameter("first_name"), 
 				request.getParameter("last_name"),
-				request.getParameter("party"), 
-				request.getParameter("age"));
+				request.getParameter("party"),
+				request.getParameter("location"),
+				request.getParameter("age"),
+				request.getParameter("mission"),
+				request.getParameter("vision"));
 		
 		System.out.println(candidate);
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/updatecandidate";
