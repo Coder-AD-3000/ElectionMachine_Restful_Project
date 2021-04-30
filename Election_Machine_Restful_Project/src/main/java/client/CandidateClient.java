@@ -76,7 +76,9 @@ public class CandidateClient extends HttpServlet {
 				request.getParameter("location"),
 				request.getParameter("age"),
 				request.getParameter("mission"),
-				request.getParameter("vision"));
+				request.getParameter("vision"),
+				request.getParameter("username"),
+				request.getParameter("password"));
 		
 		System.out.println(candidate);
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/addcandidate";
@@ -116,7 +118,9 @@ public class CandidateClient extends HttpServlet {
 				request.getParameter("location"),
 				request.getParameter("age"),
 				request.getParameter("mission"),
-				request.getParameter("vision"));
+				request.getParameter("vision"),
+				request.getParameter("username"),
+				request.getParameter("password"));
 		
 		System.out.println(candidate);
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/updatecandidate";
