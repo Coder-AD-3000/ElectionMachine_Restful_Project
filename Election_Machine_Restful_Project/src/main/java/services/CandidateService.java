@@ -2,6 +2,7 @@ package services;
 
 import java.util.List;
 
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -76,8 +77,6 @@ public class CandidateService {
 		List<Candidate> list=readCandidate();		
 		return list;
 	}	
-	
-		// read to update
 	@GET
 	@Path("/readtoupdatecandidate/{candidate_id}")
 	@Produces(MediaType.APPLICATION_JSON)
