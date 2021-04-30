@@ -12,7 +12,6 @@ import javax.persistence.Id;
 @Entity
 public class Candidate {
 	
-	
 	/**
 	 * AD - Id specifies the primary key of an entity
 	 */
@@ -24,15 +23,19 @@ public class Candidate {
 	private String party;
 	private String location;
 	private int age;
-	private String mission; /* This may need to be a text variable */
-	private String vision; /* This may need to be a text variable */
+	private String mission;
+	private String vision;
+	// private byte[] pic; /* This variable type may need to be changed */
+	private String username;
+	private String password;
 	
 	public Candidate() {
 		
 	}
 	public Candidate(String first_name, String last_name, 
 					 String party, String location, int age, 
-					 String mission, String vision) {
+					 String mission, String vision, String username, 
+					 String password) {
 		
 		this.first_name=first_name;
 		this.last_name=last_name;	
@@ -40,13 +43,16 @@ public class Candidate {
 		this.location=location;
 		this.age=age;
 		this.mission=mission;
-		this.vision=vision;		
+		this.vision=vision;
+		this.username=username;	
+		this.password=password;	
 	}
 	
 	
 	public Candidate(int candidate_id, String first_name, 
 					 String last_name, String party, String location, 
-					 int age, String mission, String vision) {	
+					 int age, String mission, String vision,
+					 String username, String password) {	
 		
 		this.candidate_id=candidate_id;
 		this.first_name=first_name;
@@ -55,11 +61,14 @@ public class Candidate {
 		this.location=location;
 		this.age=age;
 		this.mission=mission;
-		this.vision=vision;	
+		this.vision=vision;
+		this.username=username;	
+		this.password=password;
 	}
 	public Candidate(String first_name, String last_name, 
 					 String party, String location, String age, 
-					 String mission, String vision) {
+					 String mission, String vision,
+					 String username, String password) {
 		
 		this.first_name=first_name;
 		this.last_name=last_name;	
@@ -68,11 +77,14 @@ public class Candidate {
 		this.setAge(age);
 		this.mission=mission;
 		this.vision=vision;
+		this.username=username;	
+		this.password=password;
 	}
 	
 	public Candidate(String candidate_id, String first_name, 
 					 String last_name, String party, String location, 
-					 String age, String mission, String vision) {
+					 String age, String mission, String vision,
+					 String username, String password) {
 		
 		this.setCandidate_id(candidate_id);
 		this.first_name=first_name;
@@ -82,8 +94,9 @@ public class Candidate {
 		this.setAge(age);
 		this.mission=mission;
 		this.vision=vision;
-	}
-	 
+		this.username=username;	
+		this.password=password;
+	}	 
 	
 	public int getCandidate_id() {
 		return candidate_id;
@@ -100,8 +113,7 @@ public class Candidate {
 			//Do nothing - the value is not changed
 		}
 	}
-	
-	
+		
 	
 	/**
 	 * @return the first_name
@@ -211,6 +223,34 @@ public class Candidate {
 	}
 	
 	
+	/**
+	 * @return the username
+	 */
+	public String getUsername() {
+		return username;
+	}
+	/**
+	 * @param username the username to set
+	 */
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+	/**
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
 	public String toString() {
 		return this.candidate_id + ": "
 		+ this.first_name + " / " 
@@ -219,7 +259,9 @@ public class Candidate {
 		+ this.location + " / "
 		+ this.age + " / "
 		+ this.mission + " / "
-		+ this.vision;
+		+ this.vision + " / "
+		+ this.username + " / "
+		+ this.password;
 	}
 	
 	
