@@ -21,41 +21,69 @@ public class Candidate {
 	private int candidate_id;
 	private String first_name;
 	private String last_name;	 
-	private String party;	
-	private int age;	
+	private String party;
+	private String location;
+	private int age;
+	private String mission; /* This may need to be a text variable */
+	private String vision; /* This may need to be a text variable */
 	
 	public Candidate() {
 		
 	}
-	public Candidate(String first_name, String last_name, String party, int age) {
+	public Candidate(String first_name, String last_name, 
+					 String party, String location, int age, 
+					 String mission, String vision) {
+		
 		this.first_name=first_name;
 		this.last_name=last_name;	
 		this.party=party;
+		this.location=location;
 		this.age=age;
+		this.mission=mission;
+		this.vision=vision;		
 	}
-	public Candidate(int candidate_id, String first_name, String last_name, String party, int age) {		
+	
+	
+	public Candidate(int candidate_id, String first_name, 
+					 String last_name, String party, String location, 
+					 int age, String mission, String vision) {	
+		
 		this.candidate_id=candidate_id;
 		this.first_name=first_name;
 		this.last_name=last_name;
 		this.party=party;
+		this.location=location;
 		this.age=age;
+		this.mission=mission;
+		this.vision=vision;	
 	}
-	public Candidate(String first_name, String last_name, String party, String age) {
+	public Candidate(String first_name, String last_name, 
+					 String party, String location, String age, 
+					 String mission, String vision) {
+		
 		this.first_name=first_name;
 		this.last_name=last_name;	
 		this.party=party;
+		this.location=location;
 		this.setAge(age);
+		this.mission=mission;
+		this.vision=vision;
 	}
-	public Candidate(String candidate_id, String first_name, String last_name, String party, String age) {
+	
+	public Candidate(String candidate_id, String first_name, 
+					 String last_name, String party, String location, 
+					 String age, String mission, String vision) {
+		
 		this.setCandidate_id(candidate_id);
 		this.first_name=first_name;
 		this.last_name=last_name;
 		this.party=party;
+		this.location=location;
 		this.setAge(age);
+		this.mission=mission;
+		this.vision=vision;
 	}
 	 
-	
-	
 	
 	public int getCandidate_id() {
 		return candidate_id;
@@ -121,6 +149,18 @@ public class Candidate {
 	}
 	
 	/**
+	 * @return the location
+	 */
+	public String getLocation() {
+		return location;
+	}
+	/**
+	 * @param location the location to set
+	 */
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	/**
 	 * @return the age
 	 */
 	public int getAge() {
@@ -143,12 +183,43 @@ public class Candidate {
 	}
 			
 	
+	/**
+	 * @return the mission
+	 */
+	public String getMission() {
+		return mission;
+	}
+	/**
+	 * @param mission the mission to set
+	 */
+	public void setMission(String mission) {
+		this.mission = mission;
+	}
+	
+	
+	/**
+	 * @return the vision
+	 */
+	public String getVision() {
+		return vision;
+	}
+	/**
+	 * @param vision the vision to set
+	 */
+	public void setVision(String vision) {
+		this.vision = vision;
+	}
+	
+	
 	public String toString() {
 		return this.candidate_id + ": "
 		+ this.first_name + " / " 
 		+ this.last_name + " / " 
 		+ this.party + " / "
-		+ this.age;
+		+ this.location + " / "
+		+ this.age + " / "
+		+ this.mission + " / "
+		+ this.vision;
 	}
 	
 	
