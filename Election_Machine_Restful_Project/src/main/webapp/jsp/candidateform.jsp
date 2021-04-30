@@ -47,7 +47,8 @@ background-color: grey;
 		Age:<input required type='text' name='age' placeholder="Cannot be blank." value=''>
 		Mission:<input required type='text' name='mission' placeholder="Cannot be blank." value=''>
 		Vision:<input required type='text' name='vision' placeholder="Cannot be blank." value=''>
-        Picture:<input readonly class = "greyed-background" type='text' name='pic' placeholder="Pic will go here." value=''> 
+        Picture:<input readonly class = "greyed-background" type='text' name='pic' placeholder="Pic will go here." value=''>
+        Profession:<input required type='text' name='profession' placeholder="Cannot be blank." value=''> 
 		Username:<input required type='text' name='username' placeholder="Cannot be blank." value=''>
 		Password:<input required type='text' name='password' placeholder="Cannot be blank." value=''>
 		<input type='submit' name='ok' value='OK'>

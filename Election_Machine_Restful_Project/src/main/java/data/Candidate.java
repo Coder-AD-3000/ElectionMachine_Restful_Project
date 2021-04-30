@@ -1,286 +1,59 @@
-package data;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-/**
- * @author ashley - specifies that the target is an entity
- *
- */
-@Entity
-public class Candidate {
-	
-	/**
-	 * AD - Id specifies the primary key of an entity
-	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)	
-	private int candidate_id;
-	private String first_name;
-	private String last_name;	 
-	private String party;
-	private String location;
-	private int age;
-	private String mission;
-	private String vision;
-	private String pic;					/* This variable type will need to be changed, perhaps to @Lob private Byte[] image; */	
-	private String username;
-	private String password;
-	
-	public Candidate() {
-		
-	}
-	public Candidate(String first_name, String last_name, 
-					 String party, String location, int age, 
-					 String mission, String vision, String pic, 
-					 String username, String password) {
-		
-		this.first_name=first_name;
-		this.last_name=last_name;	
-		this.party=party;
-		this.location=location;
-		this.age=age;
-		this.mission=mission;
-		this.vision=vision;
-		this.pic=pic;
-		this.username=username;	
-		this.password=password;	
-	}
-	
-	
-	public Candidate(int candidate_id, String first_name, 
-					 String last_name, String party, String location, 
-					 int age, String mission, String vision, String pic,
-					 String username, String password) {	
-		
-		this.candidate_id=candidate_id;
-		this.first_name=first_name;
-		this.last_name=last_name;
-		this.party=party;
-		this.location=location;
-		this.age=age;
-		this.mission=mission;
-		this.vision=vision;
-		this.pic=pic;
-		this.username=username;	
-		this.password=password;
-	}
-	public Candidate(String first_name, String last_name, 
-					 String party, String location, String age, 
-					 String mission, String vision, String pic,
-					 String username, String password) {
-		
-		this.first_name=first_name;
-		this.last_name=last_name;	
-		this.party=party;
-		this.location=location;
-		this.setAge(age);
-		this.mission=mission;
-		this.vision=vision;
-		this.pic=pic;
-		this.username=username;	
-		this.password=password;
-	}
-	
-	public Candidate(String candidate_id, String first_name, 
-					 String last_name, String party, String location, 
-					 String age, String mission, String vision, String pic,
-					 String username, String password) {
-		
-		this.setCandidate_id(candidate_id);
-		this.first_name=first_name;
-		this.last_name=last_name;
-		this.party=party;
-		this.location=location;
-		this.setAge(age);
-		this.mission=mission;
-		this.vision=vision;
-		this.pic=pic;
-		this.username=username;	
-		this.password=password;
-	}	 
-	
-	public int getCandidate_id() {
-		return candidate_id;
-	}
-	public void setCandidate_id(int candidate_id) {
-		this.candidate_id = candidate_id;
-	}
-	
-	public void setCandidate_id(String candidate_id) {
-		try {
-			this.candidate_id = Integer.parseInt(candidate_id);
-		}
-		catch (NumberFormatException | NullPointerException e) {
-			//Do nothing - the value is not changed
-		}
-	}
-		
-	
-	/**
-	 * @return the first_name
-	 */
-	public String getFirst_name() {
-		return first_name;
-	}
-	/**
-	 * @param first_name the first_name to set
-	 */
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
-	}
-	
-	
-	/**
-	 * @return the last_name
-	 */
-	public String getLast_name() {
-		return last_name;
-	}
-	/**
-	 * @param last_name the last_name to set
-	 */
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
-	}
-	
-	
-	/**
-	 * @return the party
-	 */
-	public String getParty() {
-		return party;
-	}
-	/**
-	 * @param party the party to set
-	 */
-	public void setParty(String party) {
-		this.party = party;
-	}
-	
-	/**
-	 * @return the location
-	 */
-	public String getLocation() {
-		return location;
-	}
-	/**
-	 * @param location the location to set
-	 */
-	public void setLocation(String location) {
-		this.location = location;
-	}
-	/**
-	 * @return the age
-	 */
-	public int getAge() {
-		return age;
-	}
-	/**
-	 * @param age the age to set
-	 */
-	public void setAge(int age) {
-		this.age = age;
-	}
-	
-	public void setAge(String age) {
-		try {
-			this.age = Integer.parseInt(age);
-		}
-		catch (NumberFormatException | NullPointerException e) {
-			//Do nothing - the value is not changed
-		}
-	}
-			
-	
-	/**
-	 * @return the mission
-	 */
-	public String getMission() {
-		return mission;
-	}
-	/**
-	 * @param mission the mission to set
-	 */
-	public void setMission(String mission) {
-		this.mission = mission;
-	}
-	
-	
-	/**
-	 * @return the vision
-	 */
-	public String getVision() {
-		return vision;
-	}
-	/**
-	 * @param vision the vision to set
-	 */
-	public void setVision(String vision) {
-		this.vision = vision;
-	}
-	
-	
- 
- 
-	
-	
-	
-	/**
-	 * @return the pic
-	 */
-	public String getPic() {
-		return pic;
-	}
-	/**
-	 * @param pic the pic to set
-	 */
-	public void setPic(String pic) {
-		this.pic = pic;
-	}
-	/**
-	 * @return the username
-	 */
-	public String getUsername() {
-		return username;
-	}
-	/**
-	 * @param username the username to set
-	 */
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	
-	
-	/**
-	 * @return the password
-	 */
-	public String getPassword() {
-		return password;
-	}
-	/**
-	 * @param password the password to set
-	 */
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	
-	public String toString() {
-		return this.candidate_id + ": "
-		+ this.first_name + " / " 
-		+ this.last_name + " / " 
-		+ this.party + " / "
-		+ this.location + " / "
-		+ this.age + " / "
-		+ this.mission + " / "
-		+ this.vision + " / "
-		+ this.pic + " / "
-		+ this.username + " / "
-		+ this.password;
-	}
-	
-	
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Candidate To Update Form</title>
+<style>
+.container2 {
+color: #F0FFFF;
+background-color: grey;
+width: 95%;
+display: flex;
+justify-content: center;
+border-radius: 10px;
+margin: 50px auto;
+padding: 10px;
 }
+.greyed-background {
+background-color: grey;
+}
+
+/* AD - The following 3 code sections amend the placeholder text */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #A9A9A9;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #A9A9A9;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #A9A9A9;
+}
+
+</style>
+</head>
+	<body>
+		<div class = "container2">
+			<form action='../updatecandidate' method='post'>		
+		    Candidate ID (Read Only):<input readonly class = "greyed-background" type='text' name='candidate_id' value='${requestScope.candidate.candidate_id }'>
+			First Name:<input required type='text' name='first_name' value='${requestScope.candidate.first_name }'>
+			Last Name:<input required type='text' name='last_name' value='${requestScope.candidate.last_name }'>
+			Party: <input required type='text' name='party' value='${requestScope.candidate.party }'>
+			Location: <input required type='text' name='location' value='${requestScope.candidate.location }'>		
+			Age:<input required type='text' name='age' value=' ${requestScope.candidate.age }'>
+			Mission:<input required type='text' name='mission' value='${requestScope.candidate.mission }'>
+			Vision:<input required type='text' name='vision' value='${requestScope.candidate.vision }'>
+	        Picture:<input readonly class = "greyed-background" type='text' name='pic' placeholder="Pic will go here." value='${requestScope.candidate.pic }'> 
+			Profession:<input required type='text' name='profession' value='${requestScope.candidate.profession }'>
+			Username:<input required type='text' name='username' value='${requestScope.candidate.username }'>
+			Password:<input required type='text' name='password' value='${requestScope.candidate.password }'>
+			<input type='submit' name='ok' value='OK'>
+			</form>
+		</div>
+	</body>
+</html>
