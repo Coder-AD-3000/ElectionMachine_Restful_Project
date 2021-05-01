@@ -79,7 +79,7 @@
                             <td><input required type="text" name="FIRSTNAME" placeholder="Cannot be blank." ></td>
                             <td><input required type="text" name="PARTY" placeholder="Cannot be blank." ></td>
                             <td><input required type="text" name="LOCATION" placeholder="Cannot be blank." ></td>
-                            <td><input required type="number" name="AGE" placeholder="Cannot be blank." ></td>
+                            <td><input required type="text" name="AGE" placeholder="Cannot be blank." ></td>
                             <td><input required type="text" name="REASON_FOR_RUNNING" placeholder="Cannot be blank." ></td>
                             <td><input required type="text" name="AIMS_AND_GOALS" placeholder="Cannot be blank." ></td>
                             <td><input required type="text" name="PROFESSION" placeholder="Cannot be blank." ></td>             
@@ -103,7 +103,7 @@
 					Last Name:<input required type='text' name='last_name' value='${requestScope.candidate.last_name }'>
 					Party: <input required type='text' name='party' value='${requestScope.candidate.party }'>
 					Location: <input required type='text' name='location' value='${requestScope.candidate.location }'>		
-					Age:<input required type='text' name='age' value=' ${requestScope.candidate.age }'>
+					Age:<input required type='text' name='age' value='${requestScope.candidate.age }'>
 					Mission:<input required type='text' name='mission' value='${requestScope.candidate.mission }'>
 					Vision:<input required type='text' name='vision' value='${requestScope.candidate.vision }'>
 			        Picture:<input readonly class = "greyed-background" type='text' name='pic' placeholder="Pic will go here." value='${requestScope.candidate.pic }'> 
