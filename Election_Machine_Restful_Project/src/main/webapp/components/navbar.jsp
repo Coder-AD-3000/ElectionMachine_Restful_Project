@@ -46,7 +46,7 @@ if (id!=null) {
 
                     <a href=#>
                     	<h5>
-		                    <form class=logout-button action="LogoutServlet" method="post">
+		                    <form class=logout-button action="logout" method="post">
                         <input type="submit" value="Logout" >
                         </form>
                     	</h5>

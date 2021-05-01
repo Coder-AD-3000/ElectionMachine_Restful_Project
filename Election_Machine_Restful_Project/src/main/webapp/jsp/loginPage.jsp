@@ -29,7 +29,7 @@
 
         <!-- AD - Login Section-->
         <div class = "container1b">
-            <form action="../LoginClient" method="post">      
+            <form action="../logincandidate" method="post">      
                 <legend><b>Site Login</b></legend>
                 <table>
                     <hr> 

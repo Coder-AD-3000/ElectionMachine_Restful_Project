@@ -22,7 +22,8 @@ import data.Candidate;
 /**
  * Servlet implementation class LoginClient
  */
-@WebServlet("/LoginClient")
+
+@WebServlet(urlPatterns = {"/logincandidate", "/loginemployee", "/logout"})
 public class LoginClient extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -38,46 +39,86 @@ public class LoginClient extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		************* GET ITEMS AND PARAMS **********************************************************************************
 		PrintWriter writer = response.getWriter();
+		HttpSession session = request.getSession();
+		System.out.println("Session ID: " + session.getId());
 		
 		String unInput = request.getParameter("user");
 		String pwInput = request.getParameter("pwd");
-		
-		System.out.println("unInput: " + unInput);
-		System.out.println("pwd: " + pwInput);
-		
-		List<Candidate> arrList = readcandidate(request);
-		
-		for (Candidate c: arrList)
-			if (c.getUsername().equals(unInput) && c.getPassword().equals(pwInput)) {
-				
-				System.out.println("login match with userId: " + c.getCandidate_id());
 
-				HttpSession session = request.getSession();
-				session.setAttribute("username", c.getUsername());
-				session.setAttribute("userid", c.getCandidate_id());
+//		*************** CONTROLLER ******************************************************************************************
+		String action = request.getServletPath();
+		switch (action) {
+		case "/logincandidate":
+			if (session.getAttribute("username") != null) {
+				System.out.println("Session: " + session.getId());			     
+			} 
+			else {			
+				System.out.println("Session was created");
 				
+				List<Candidate> arrList = readcandidate(request);
 				
-				writer.println("You are matched... Say Hello!");
-		        writer.println("Session ID: " + session.getId());
-		        writer.println("Creation Time: " + new Date(session.getCreationTime()));
-		        writer. println("Last Accessed Time: " + new Date(session.getLastAccessedTime()));
-		        writer.println("Logged in as: " + c.getUsername());
-		        writer.println("---------------------------------------------------------------");
-		  }
-			else {
-		        writer.println("No matching un & pw here!");	
+				for (Candidate c: arrList)					
+					if (c.getUsername().equals(unInput) && c.getPassword().equals(pwInput)) {						
+								
+						System.out.println("login match with userId: " + c.getCandidate_id() + " & username: " + c.getUsername());
+						
+						session.setAttribute("username", c.getUsername());						
+						session.setAttribute("userid", c.getCandidate_id());
+						session.setAttribute("role", "candidate");
+						
+						writer.println("You are matched... Say Hello!");				       
+						writer.println("Session ID: " + session.getId());				        
+						writer.println("Creation Time: " + new Date(session.getCreationTime()));				        
+						writer. println("Last Accessed Time: " + new Date(session.getLastAccessedTime()));				        			        
+						writer.println("---------------------------------------------------------------");
+					}				
+					else {
+					    writer.println("No matching un & pw here!");			
+					}	 	
 			}
+			
+			break;
+		case "/loginemployee":
+			/*
+			List<Employee> arrList = readcandidate(request);
+			
+			for (Employee e: arrList)					
+				if (e.getUsername().equals(unInput) && e.getPassword().equals(pwInput)) {						
+							
+					System.out.println("login match with userId: " + e.getEmployee_id());
+					
+					session.setAttribute("username", e.getUsername());						
+					session.setAttribute("userid", e.getEmployee_id());
+					session.setAttribute("role", "employee");	
+				}				
+				else {
+					writer.println("No matching un & pw here!");			
+				}	
+			break;
+			*/
+		case "/logout":
+			
+			if (request.getSession().getAttribute("username") != null) {
+			    System.out.println("a session exists");
+			    session.invalidate();
+			    System.out.println("session destroyed");
+			     
+			} else {
+				System.out.println("no session");
+			}
+			
+			/*
+			System.out.println("User was logged out!");
+			session.invalidate();
+			System.out.println("Session destroyed: " + session.getId());
+			*/
+			break;		
+		 }
 		
+//		***************** PRINTER *******************************************************************************************												
 		
-		
-		
-//		for (Candidate c: arrlist)
-//			if (c.username.equals(user) && c.password.equals(pwd)) {
-//				return c.getId(); //to string
-//				System.out.println("login match with userId: " + c.getId());
-//				//start session or add cookie
-//		  }
 		
 	}
 
@@ -85,7 +126,6 @@ public class LoginClient extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		doGet(request, response);
 	}
 	
@@ -104,6 +144,4 @@ public class LoginClient extends HttpServlet {
 		List<Candidate> returnedList = builder.get(genericList);
 		return returnedList;
 	}
-	
-	
 }
