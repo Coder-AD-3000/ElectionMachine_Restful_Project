@@ -114,8 +114,9 @@
 	                            <td><input required type="text" name="AIMS_AND_GOALS" placeholder="Cannot be blank." ></td>
 	                            <td><input required type="text" name="PROFESSION" placeholder="Cannot be blank." ></td>  
                         		 
-                        	 -->                   
-                        		<td class = "tableAddBackground"><Button type='submit' name='ok'><b class = "tableAdd">ADD</b></Button></td> 
+                        	 -->     
+                        	               
+                        		<td class = "tableAddBackground"><input type='submit' name='ok' value='OK'></td> 
                         		<td><input readonly class = "greyed-background" type='text' name='candidate_id' placeholder="Auto incremented." value=''></td> 
                         	 	<td><input required type='text' name='first_name' placeholder="Cannot be blank." value=''></td>  
 								<td><input required type='text' name='last_name' placeholder = "Cannot be blank." value=''></td>  
