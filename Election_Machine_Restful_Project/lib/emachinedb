@@ -23,15 +23,16 @@ unhashed passes:
 		admin - 9991922
 */
 
-DROP DATABASE emachinedb;
+DROP DATABASE IF EXISTS emachinedb;
 CREATE DATABASE emachinedb;
 USE emachinedb;
 
 # user access
-GRANT ALL ON electionmachine.* TO pena@localhost IDENTIFIED BY 'kukkuu';
+GRANT ALL ON emachinedb.* TO pena@localhost IDENTIFIED BY 'kukkuu';
 
 # utf8 encoding
-ALTER DATABASE electionmachine CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER DATABASE emachinedb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 
 
 #####################   candidate TABLE   ###############################

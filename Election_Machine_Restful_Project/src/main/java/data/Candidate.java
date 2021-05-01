@@ -25,7 +25,8 @@ public class Candidate {
 	private int age;
 	private String mission;
 	private String vision;
-	// private byte[] pic; /* This variable type may need to be changed */
+	private String pic; /* This variable type will need to be changed, perhaps to @Lob private Byte[] image; */	
+	private String profession; 
 	private String username;
 	private String password;
 	
@@ -34,8 +35,8 @@ public class Candidate {
 	}
 	public Candidate(String first_name, String last_name, 
 					 String party, String location, int age, 
-					 String mission, String vision, String username, 
-					 String password) {
+					 String mission, String vision, String pic, 
+					 String profession, String username, String password) {
 		
 		this.first_name=first_name;
 		this.last_name=last_name;	
@@ -44,6 +45,8 @@ public class Candidate {
 		this.age=age;
 		this.mission=mission;
 		this.vision=vision;
+		this.pic=pic;
+		this.profession=profession;
 		this.username=username;	
 		this.password=password;	
 	}
@@ -51,8 +54,8 @@ public class Candidate {
 	
 	public Candidate(int candidate_id, String first_name, 
 					 String last_name, String party, String location, 
-					 int age, String mission, String vision,
-					 String username, String password) {	
+					 int age, String mission, String vision, String pic,
+					 String profession, String username, String password) {	
 		
 		this.candidate_id=candidate_id;
 		this.first_name=first_name;
@@ -62,13 +65,15 @@ public class Candidate {
 		this.age=age;
 		this.mission=mission;
 		this.vision=vision;
+		this.pic=pic;
+		this.profession=profession;
 		this.username=username;	
 		this.password=password;
 	}
 	public Candidate(String first_name, String last_name, 
 					 String party, String location, String age, 
-					 String mission, String vision,
-					 String username, String password) {
+					 String mission, String vision, String pic,
+					 String profession, String username, String password) {
 		
 		this.first_name=first_name;
 		this.last_name=last_name;	
@@ -77,14 +82,16 @@ public class Candidate {
 		this.setAge(age);
 		this.mission=mission;
 		this.vision=vision;
+		this.pic=pic;
+		this.profession=profession;
 		this.username=username;	
 		this.password=password;
 	}
 	
 	public Candidate(String candidate_id, String first_name, 
 					 String last_name, String party, String location, 
-					 String age, String mission, String vision,
-					 String username, String password) {
+					 String age, String mission, String vision, String pic,
+					 String profession, String username, String password) {
 		
 		this.setCandidate_id(candidate_id);
 		this.first_name=first_name;
@@ -94,6 +101,8 @@ public class Candidate {
 		this.setAge(age);
 		this.mission=mission;
 		this.vision=vision;
+		this.pic=pic;
+		this.profession=profession;
 		this.username=username;	
 		this.password=password;
 	}	 
@@ -127,10 +136,6 @@ public class Candidate {
 	public void setFirst_name(String first_name) {
 		this.first_name = first_name;
 	}
-	
-	 
-	
-	
 	
 	
 	/**
@@ -222,6 +227,34 @@ public class Candidate {
 		this.vision = vision;
 	}
 	
+		
+	/**
+	 * @return the pic
+	 */
+	public String getPic() {
+		return pic;
+	}
+	/**
+	 * @param pic the pic to set
+	 */
+	public void setPic(String pic) {
+		this.pic = pic;
+	}
+	
+	
+	/**
+	 * @return the profession
+	 */
+	public String getProfession() {
+		return profession;
+	}
+	/**
+	 * @param profession the profession to set
+	 */
+	public void setProfession(String profession) {
+		this.profession = profession;
+	}
+	
 	
 	/**
 	 * @return the username
@@ -260,6 +293,8 @@ public class Candidate {
 		+ this.age + " / "
 		+ this.mission + " / "
 		+ this.vision + " / "
+		+ this.pic + " / "
+		+ this.profession + " / "
 		+ this.username + " / "
 		+ this.password;
 	}

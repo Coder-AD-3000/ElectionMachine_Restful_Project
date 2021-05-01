@@ -915,3 +915,51 @@ div.container-nav-links input[type="submit" i]:hover {
 .customSiteLogin {	 
 	color: #264653; 
 }
+
+/* AD - CSS amendements to the
+	candidates CRUD forms
+	(namely candidateform.jsp
+	and candidatetoupdateform.jsp) */
+.candidate-container {
+color: blue;
+background-color: grey;
+width: 95%;
+display: flex;
+justify-content: center;
+border-radius: 10px;
+margin: 50px auto;
+padding: 10px;
+}
+
+.candidate-container2 {
+color: #F0FFFF;
+background-color: grey;
+width: 95%;
+display: flex;
+justify-content: center;
+border-radius: 10px;
+margin: 50px auto;
+padding: 10px;
+}
+.greyed-background {
+background-color: grey;
+}
+
+/* AD - The following 3 code sections amend the placeholder text */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #A9A9A9;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #A9A9A9;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #A9A9A9;
+}
+
+
+
+
+     
