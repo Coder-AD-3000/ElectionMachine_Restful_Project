@@ -53,38 +53,83 @@
     which will scroll horizontally on small devices (under 768px). 
     When viewing on anything larger than 768px wide, 
     there is no difference:-->
+    
+    <!-- AD Testing code 
+    
+    	<div class="containerUpdateCandidatesTable">   
+                                                                                           
+           	<div class="table-responsive">
+           	
+			<form action='../addcandidate' method='post'>
+    -->
+    
+    
+    
+    
     <div class="containerUpdateCandidatesTable">   
         <div>                                                                                             
             <div class="table-responsive">
-            <form action = "/AdminAddCandidate" method="POST" id="addCandidate">          
+            
+            <!--  
+            <form action = "/AdminAddCandidate" method="POST" id="addCandidate">   
+            -->     
+            
+            <form action='../addcandidate' method='post'>  
+                
                 <table class="table">                    
                     <thead class = "tableCustom1">
                         <tr>
                             <th>ADD</th>                           
                             <th>CANDIDATE_ID</th>
-                            <th>SURNAME</th>
-                            <th>FIRSTNAME</th>
+                            <th>FIRST NAME</th>
+                            <th>LAST NAME</th>
                             <th>PARTY</th>
-                            <th>LOCATION</th>
+                            <th>LOCATION</th>                            
                             <th>AGE</th>
-                            <th>REASON FOR RUNNING</th>
-                            <th>AIMS AND GOALS</th>
+                            <th>MISSION</th>
+                            <th>VISION</th>
+                            <th>PICTURE</th>
                             <th>PROFESSION</th>
+                            <th>USERNAME</th>
+                            <th>PASSWORD</th>
                         </tr>
                     </thead>
                     <tbody>
                     
-                        <tr>                   
-                            <td class = "tableAddBackground"><Button type="submit"><b class = "tableAdd">ADD</b></Button></td>                           
-                            <td><input disabled type="text" name="CANDIDATE_ID" placeholder="Auto incremented" ></td>
-                            <td><input required type="text" name="SURNAME" placeholder="Cannot be blank." ></td>
-                            <td><input required type="text" name="FIRSTNAME" placeholder="Cannot be blank." ></td>
-                            <td><input required type="text" name="PARTY" placeholder="Cannot be blank." ></td>
-                            <td><input required type="text" name="LOCATION" placeholder="Cannot be blank." ></td>
-                            <td><input required type="number" name="AGE" placeholder="Cannot be blank." ></td>
-                            <td><input required type="text" name="REASON_FOR_RUNNING" placeholder="Cannot be blank." ></td>
-                            <td><input required type="text" name="AIMS_AND_GOALS" placeholder="Cannot be blank." ></td>
-                            <td><input required type="text" name="PROFESSION" placeholder="Cannot be blank." ></td>             
+                        <tr>      
+                        
+                        	<!-- 
+                        		<input type='submit' name='ok' value='OK'>
+                        		
+                        		 <td class = "tableAddBackground"><Button type="submit"><b class = "tableAdd">ADD</b></Button></td>  
+                        		 
+                        		<td class = "tableAddBackground"><Button type="submit"><b class = "tableAdd">ADD</b></Button></td>                           
+	                            <td><input disabled type="text" name="CANDIDATE_ID" placeholder="Auto incremented" ></td>
+	                            <td><input required type="text" name="SURNAME" placeholder="Cannot be blank." ></td>
+	                            <td><input required type="text" name="FIRSTNAME" placeholder="Cannot be blank." ></td>
+	                            <td><input required type="text" name="PARTY" placeholder="Cannot be blank." ></td>
+	                            <td><input required type="text" name="LOCATION" placeholder="Cannot be blank." ></td>
+	                            <td><input required type="number" name="AGE" placeholder="Cannot be blank." ></td>
+	                            <td><input required type="text" name="REASON_FOR_RUNNING" placeholder="Cannot be blank." ></td>
+	                            <td><input required type="text" name="AIMS_AND_GOALS" placeholder="Cannot be blank." ></td>
+	                            <td><input required type="text" name="PROFESSION" placeholder="Cannot be blank." ></td>  
+                        		 
+                        	 -->                   
+                        		<td class = "tableAddBackground"><Button type='submit' name='ok'><b class = "tableAdd">ADD</b></Button></td> 
+                        		<td><input readonly class = "greyed-background" type='text' name='candidate_id' placeholder="Auto incremented." value=''></td> 
+                        	 	<td><input required type='text' name='first_name' placeholder="Cannot be blank." value=''></td>  
+								<td><input required type='text' name='last_name' placeholder = "Cannot be blank." value=''></td>  
+								<td><input required type='text' name='party' placeholder="Cannot be blank." value=''></td>  
+								<td><input required type='text' name='location' placeholder="Cannot be blank." value=''></td>  		
+								<td><input required type='text' name='age' placeholder="Cannot be blank." value=''></td>  
+								<td><input required type='text' name='mission' placeholder="Cannot be blank." value=''></td>  
+								<td><input required type='text' name='vision' placeholder="Cannot be blank." value=''></td>  
+						        <td><input readonly class = "greyed-background" type='text' name='pic' placeholder="Pic will go here." value=''></td>  
+						        <td><input required type='text' name='profession' placeholder="Cannot be blank." value=''></td>   
+								<td><input required type='text' name='username' placeholder="Cannot be blank." value=''></td>  
+								<td><input required type='text' name='password' placeholder="Cannot be blank." value=''></td>  
+                        	           
+                                        
                         </tr>
                      
                     </tbody>                        
@@ -101,11 +146,14 @@
     
     
      
-
+		<!-- AD The original working version
+		
 		<div class="containerUpdateCandidatesTable">   
                                                                                            
            	<div class="table-responsive">
+           	
 			<form action='../addcandidate' method='post'>
+			
 			First Name: <input required type='text' name='first_name' placeholder="Cannot be blank." value=''>
 			Last Name: <input required type='text' name='last_name' placeholder = "Cannot be blank." value=''>
 			Party: <input required type='text' name='party' placeholder="Cannot be blank." value=''>
@@ -122,6 +170,8 @@
 			
 			</div>
 		</div>
+		-->
+		
 <ol>
 <c:forEach var="candidate" items="${requestScope.candidatelist }">
 	<li>${candidate} <a href='../deletecandidate?candidate_id=${candidate.candidate_id}'>Delete</a> <a href='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}'>Update</a>
