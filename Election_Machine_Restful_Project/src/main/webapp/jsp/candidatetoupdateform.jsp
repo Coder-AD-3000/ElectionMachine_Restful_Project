@@ -74,12 +74,12 @@
                     
                         <tr>                   
                             <td class = "tableAddBackground"><Button type="submit"><b class = "tableAdd">ADD</b></Button></td>                           
-                            <td><input disabled type="text" name="CANDIDATE_ID" placeholder="Auto incremented" ></td>
+                            <td><input disabled type="number" name="CANDIDATE_ID" placeholder="Auto incremented" ></td>
                             <td><input required type="text" name="SURNAME" placeholder="Cannot be blank." ></td>
                             <td><input required type="text" name="FIRSTNAME" placeholder="Cannot be blank." ></td>
                             <td><input required type="text" name="PARTY" placeholder="Cannot be blank." ></td>
                             <td><input required type="text" name="LOCATION" placeholder="Cannot be blank." ></td>
-                            <td><input required type="text" name="AGE" placeholder="Cannot be blank." ></td>
+                            <td><input required type="text" name="AGE" placeholder="Cannot be blank."></td>
                             <td><input required type="text" name="REASON_FOR_RUNNING" placeholder="Cannot be blank." ></td>
                             <td><input required type="text" name="AIMS_AND_GOALS" placeholder="Cannot be blank." ></td>
                             <td><input required type="text" name="PROFESSION" placeholder="Cannot be blank." ></td>             
@@ -103,14 +103,22 @@
 					Last Name:<input required type='text' name='last_name' value='${requestScope.candidate.last_name }'>
 					Party: <input required type='text' name='party' value='${requestScope.candidate.party }'>
 					Location: <input required type='text' name='location' value='${requestScope.candidate.location }'>		
-					Age:<input required type='text' name='age' value='${requestScope.candidate.age }'>
+					Age:<input required type='number' name='age' value='${requestScope.candidate.age }' min="18" max="100">
 					Mission:<input required type='text' name='mission' value='${requestScope.candidate.mission }'>
 					Vision:<input required type='text' name='vision' value='${requestScope.candidate.vision }'>
 			        Picture:<input readonly class = "greyed-background" type='text' name='pic' placeholder="Pic will go here." value='${requestScope.candidate.pic }'> 
 					Profession:<input required type='text' name='profession' value='${requestScope.candidate.profession }'>
 					Username:<input required type='text' name='username' value='${requestScope.candidate.username }'>
 					Password:<input required type='text' name='password' value='${requestScope.candidate.password }'>
+					<input type='submit' name='ok' value='UPDATE'>			
+					
+					<!-- AD - original code
+					
+					<td class = "tableAddBackground"><Button type='submit' name='ok' value=''><b class = "tableAdd">ADD</b></Button></td>
+					
 					<input type='submit' name='ok' value='OK'>
+					-->
+					
 					</form>
 				</div>	
 		</div>
