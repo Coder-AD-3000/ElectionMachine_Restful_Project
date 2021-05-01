@@ -20,6 +20,7 @@ public class login {
 	
 	for (Candidate c: arrlist)
 		if (c.username.equals(user) && c.password.equals(pwd)) {
+			
 			return c.getId(); //to string
 			System.out.println("login match with userId: " + c.getId());
 			//start session or add cookie
