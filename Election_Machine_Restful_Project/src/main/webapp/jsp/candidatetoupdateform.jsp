@@ -19,7 +19,7 @@
 	 <!-- AD - includes the navbarBootstrap component, 
     		which is modified version of our regular navbar,
     		in order to offset some negative effects
-    		caused by bootsrap, onto our code. -->
+    		caused by bootstrap, onto our code. -->
     <%@ include file="../components/navbarBootstrap.jsp" %> 
     
     <!-- AD - Beginning the central (yellow container)-->
@@ -110,7 +110,7 @@
 					Profession:<input required type='text' name='profession' value='${requestScope.candidate.profession }'>
 					Username:<input required type='text' name='username' value='${requestScope.candidate.username }'>
 					Password:<input required type='text' name='password' value='${requestScope.candidate.password }'>
-					<input type='submit' name='ok' value='UPDATE'>			
+					<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">			
 					
 					<!-- AD - original code
 					
