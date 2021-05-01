@@ -115,21 +115,20 @@
 	                            <td><input required type="text" name="PROFESSION" placeholder="Cannot be blank." ></td>  
                         		 
                         	 -->     
-                        	               
-                        		<td class = "tableAddBackground"><input type='submit' name='ok' value='OK'></td> 
-                        		<td><input readonly class = "greyed-background" type='text' name='candidate_id' placeholder="Auto incremented." value=''></td> 
+                        	                        	               
+                        		<td class = "tableAddBackground"><Button type='submit' name='ok' value=''><b class = "tableAdd">ADD</b></Button></td>
+                        		<td><input readonly class = "greyed-background" type='number' name='candidate_id' placeholder="Auto incremented." value=''></td> 
                         	 	<td><input required type='text' name='first_name' placeholder="Cannot be blank." value=''></td>  
 								<td><input required type='text' name='last_name' placeholder = "Cannot be blank." value=''></td>  
 								<td><input required type='text' name='party' placeholder="Cannot be blank." value=''></td>  
 								<td><input required type='text' name='location' placeholder="Cannot be blank." value=''></td>  		
-								<td><input required type='text' name='age' placeholder="Cannot be blank." value=''></td>  
+								<td><input required type='number' name='age' placeholder="Number." value='' min="18" max="100"></td>  
 								<td><input required type='text' name='mission' placeholder="Cannot be blank." value=''></td>  
 								<td><input required type='text' name='vision' placeholder="Cannot be blank." value=''></td>  
 						        <td><input readonly class = "greyed-background" type='text' name='pic' placeholder="Pic will go here." value=''></td>  
 						        <td><input required type='text' name='profession' placeholder="Cannot be blank." value=''></td>   
 								<td><input required type='text' name='username' placeholder="Cannot be blank." value=''></td>  
-								<td><input required type='text' name='password' placeholder="Cannot be blank." value=''></td>  
-                        	           
+								<td><input required type='text' name='password' placeholder="Cannot be blank." value=''></td>                       	           
                                         
                         </tr>
                      
