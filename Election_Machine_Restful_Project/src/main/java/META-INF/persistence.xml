@@ -11,6 +11,8 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org
 	<class>data.Question</class>
 	<class>data.Answer</class>
 	<class>data.Employee</class>
+	<class>data.Newquestion</class>
+
 <!-- If using MySQL 5.7 or newer -->
 <!--  
 	as a root user in the MySQL command prompt give the commands:

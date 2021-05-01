@@ -34,6 +34,7 @@ public class CandidateClient extends HttpServlet {
 	  @Override
 	  public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
+		  
 	  String action = request.getServletPath();
 	  List<Candidate> list=null; /* AD - Candidate is the class instance*/
 	  switch (action) {
@@ -77,6 +78,8 @@ public class CandidateClient extends HttpServlet {
 				request.getParameter("age"),
 				request.getParameter("mission"),
 				request.getParameter("vision"),
+				request.getParameter("pic"),
+				request.getParameter("profession"),
 				request.getParameter("username"),
 				request.getParameter("password"));
 		
@@ -119,6 +122,8 @@ public class CandidateClient extends HttpServlet {
 				request.getParameter("age"),
 				request.getParameter("mission"),
 				request.getParameter("vision"),
+				request.getParameter("pic"),
+				request.getParameter("profession"),
 				request.getParameter("username"),
 				request.getParameter("password"));
 		
