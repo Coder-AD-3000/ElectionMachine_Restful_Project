@@ -1,4 +1,6 @@
+/* AD - This does not seem to be necessary
 @charset "ISO-8859-1";
+*/
 
 /* AD - This file contains all of the CSS for the entire site (external CSS).*/
 
@@ -639,10 +641,18 @@ for the rows of the table
 }
 
 /* AD - Table customisation
-for specific cells (sich as update and delete
+for specific cells (such as update and delete
 (such as on the adminUpdateCandidates.jsp) */
 .tableCustom5 {    
     background-color:#264653; /* AD - a custom colour */
+} 
+
+
+/* AD - Table customisation
+for specific cells the update button 
+(such as on the candidate update sections) */
+.tableUpdate {    
+    color:blue;; /* AD - a custom colour */
 } 
 
 /* AD - customises the word 'select'
