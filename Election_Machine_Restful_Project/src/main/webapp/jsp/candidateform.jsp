@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 
@@ -21,7 +20,7 @@
     <!-- AD - includes the navbarBootstrap component, 
     		which is modified version of our regular navbar,
     		in order to offset some negative effects
-    		caused by bootsrap, onto our code. -->
+    		caused by bootstrap, onto our code. -->
     <%@ include file="../components/navbarBootstrap.jsp" %>
     
     
@@ -102,21 +101,22 @@
                 	<table>                    
                     	<tbody>
                     		<tr>
+                    			<br>
 								<td>								 
 									<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
 									<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">	
-									</form>		 
-						        </td>
+									</form>									 									 
+						        </td>						   
 						        <td>						                   
 									<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
 									<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">	
 									</form>
-								</td>
-						 	</tr>						
+								</td>														 
+						 	</tr>						 						
 						</tbody>
 				    </table>
 			   </div>			   
-			   
+			   	<hr>
   		</c:forEach>
 	</ol>
  </div>
