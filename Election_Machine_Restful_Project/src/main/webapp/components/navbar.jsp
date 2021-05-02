@@ -26,7 +26,7 @@ if (role != null) {
                     <a href="../jsp/about.jsp"><h5>About</h5></a>
                 </div>
                 <div class = "container-nav-links">
-                    <a href="../ShowQuestions"><h5>Questionnaire</h5></a>
+                    <a href="../readallquestion"><h5>Questionnaire</h5></a>
                 </div>
                 <div class = "container-nav-links">
                     <a href="../ShowCandidates"><h5>Candidates</h5></a>
@@ -68,7 +68,7 @@ else {
                     <a href="../jsp/about.jsp"><h5>About</h5></a>
                 </div>
                 <div class = "container-nav-links">
-                    <a href="../ShowQuestions"><h5>Questionnaire</h5></a>
+                    <a href="../readallquestion"><h5>Questionnaire</h5></a>
                 </div>
                 <div class = "container-nav-links">
                     <a href="../ShowCandidates"><h5>Candidates</h5></a>
