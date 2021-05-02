@@ -50,76 +50,152 @@
     	<!-- AD - This container contains a form (with table) to add 
     	candidates to the candidate table in the emachinedb database.-->
     <div class="containerUpdateCandidatesTable">                                                                                                
-            <div class="table-responsive">            
-	            <form action='../addcandidate' method='post'>                
-	                <table class="table">                    
-	                    <thead class = "tableCustom1">
-	                        <tr>
-	                            <th>ADD</th>                           
-	                            <th>CANDIDATE_ID</th>
-	                            <th>FIRST NAME</th>
-	                            <th>LAST NAME</th>
-	                            <th>PARTY</th>
-	                            <th>LOCATION</th>                            
-	                            <th>AGE</th>
-	                            <th>MISSION</th>
-	                            <th>VISION</th>
-	                            <th>PICTURE</th>
-	                            <th>PROFESSION</th>
-	                            <th>USERNAME</th>
-	                            <th>PASSWORD</th>
-	                        </tr>
-	                    </thead>
-	                    <tbody>                    
-	                        <tr>                                                	                        	               
-	                       		<td class = "tableAddBackground"><Button type='submit' name='ok' value=''><b class = "tableAdd">ADD</b></Button></td>
-	                       		<td><input readonly class = "greyed-background" type='number' name='candidate_id' placeholder="Auto incremented." value=''></td> 
-	                       	 	<td><input required type='text' name='first_name' placeholder="Cannot be blank." value=''></td>  
-								<td><input required type='text' name='last_name' placeholder = "Cannot be blank." value=''></td>  
-								<td><input required type='text' name='party' placeholder="Cannot be blank." value=''></td>  
-								<td><input required type='text' name='location' placeholder="Cannot be blank." value=''></td>  		
-								<td><input required type='number' name='age' placeholder="Number." value='' min="18" max="100"></td>  
-								<td><input required type='text' name='mission' placeholder="Cannot be blank." value=''></td>  
-								<td><input required type='text' name='vision' placeholder="Cannot be blank." value=''></td>  
-						        <td><input readonly class = "greyed-background" type='text' name='pic' placeholder="Pic will go here." value=''></td>  
-						        <td><input required type='text' name='profession' placeholder="Cannot be blank." value=''></td>   
-								<td><input required type='text' name='username' placeholder="Cannot be blank." value=''></td>  
-								<td><input required type='text' name='password' placeholder="Cannot be blank." value=''></td>                            
-	                        </tr>                     
-	                    </tbody>                   
-	                </table>
-                </form>
-            </div>       
-    </div>    
+       <div class="table-responsive">            
+        <form action='../addcandidate' method='post'>                
+            <table class="table">                    
+                <thead class = "tableCustom1">
+                    <tr>
+                        <th>ADD</th>                           
+                        <th>CANDIDATE_ID</th>
+                        <th>FIRST NAME</th>
+                        <th>LAST NAME</th>
+                        <th>PARTY</th>
+                        <th>LOCATION</th>                            
+                        <th>AGE</th>
+                        <th>MISSION</th>
+                        <th>VISION</th>
+                        <th>PICTURE</th>
+                        <th>PROFESSION</th>
+                        <th>USERNAME</th>
+                        <th>PASSWORD</th>
+                    </tr>
+                </thead>
+                <tbody>                    
+                    <tr>                                                	                        	               
+                   		<td class="tableAddBackground"><Button type='submit' name='ok' value=''><b class = "tableAdd">ADD</b></Button></td>
+                   		<td><input readonly class="greyed-background" type='number' name='candidate_id' placeholder="Auto incremented." value=''></td> 
+                   	 	<td><input required type='text' name='first_name' placeholder="Cannot be blank." value=''></td>  
+						<td><input required type='text' name='last_name' placeholder = "Cannot be blank." value=''></td>  
+						<td><input required type='text' name='party' placeholder="Cannot be blank." value=''></td>  
+						<td><input required type='text' name='location' placeholder="Cannot be blank." value=''></td>  		
+						<td><input required type='number' name='age' placeholder="Number." value='' min="18" max="100"></td>  
+						<td><input required type='text' name='mission' placeholder="Cannot be blank." value=''></td>  
+						<td><input required type='text' name='vision' placeholder="Cannot be blank." value=''></td>  
+				        <td><input readonly class="greyed-background" type='text' name='pic' placeholder="Pic will go here." value=''></td>  
+				        <td><input required type='text' name='profession' placeholder="Cannot be blank." value=''></td>   
+						<td><input required type='text' name='username' placeholder="Cannot be blank." value=''></td>  
+						<td><input required type='text' name='password' placeholder="Cannot be blank." value=''></td>                            
+                    </tr>                     
+                </tbody>                   
+            </table>
+           </form>
+       </div>       
+    </div>
 
- <div class="containerUpdateCandidatesTable"> 
-	 <ol>
-		<c:forEach var="candidate" items="${requestScope.candidatelist }">
-			<li>${candidate}</li>
+
+  <div class="containerUpdateCandidatesTable">   
+        <div>                                                                                             
+            <div class="table-responsive">   
+                   
+                <table class="table">                    
+                    <thead class = "tableCustom1">
+                        <tr>
+                            <th>CANDIDATE DATABASE</th>
+                           
+                        </tr>
+                    </thead>
+                 </table>                    
+               
+                    <ol>
+					<c:forEach var="candidate" items="${requestScope.candidatelist }">		
+				
+					 <li>${candidate}</li>				
+		 
+		 				<div class="table-responsive">                         
+		                	<table>                    
+		                    	<tbody>
+		                    		<tr>
+		                    			<br>
+										<td>								 
+											<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+											<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">	
+											</form>									 									 
+								        </td>						   
+								        <td>						                   
+											<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+											<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">	
+											</form>
+										</td>														 
+								 	</tr>						 						
+								</tbody>
+						    </table>
+				   		 </div>			   
+					   	<hr>
+			  		</c:forEach>
+				</ol>
+                    
+            </div>  
+        </div>
+    </div>
+                 
+                 
+                  <!-- AD 
+								</ol>
+                       			-->	                 
+	                            
+	                            
+	                            <!-- AD  
+	                            <td><textarea name ="CANDIDATE_ID" disabled>${candidate.id}</textarea></td>
+	                            <td><textarea disabled id="sname${candidate.id}" name ="SURENAME" >${candidate.SName}</textarea></td>
+	                            <td><textarea disabled id="fname${candidate.id}" name ="FIRSTNAME" > ${candidate.FName}</textarea></td>
+	                            <td><textarea disabled id="party${candidate.id}" name ="PARTY" >${candidate.party}></textarea></td>
+	                            <td><textarea disabled id="location${candidate.id}" name ="LOCATION" >${candidate.location}</textarea></td>
+	                            <td><textarea disabled id="age${candidate.id}" name ="AGE" >${candidate.age}</textarea></td>
+	                            <td><textarea disabled id="reason${candidate.id}" name ="REASON_FOR_RUNNING" >${candidate.reason}</textarea></td>
+	                            <td><textarea disabled id="goal${candidate.id}" name ="AIMS_AND_GOALS" >${candidate.goals}</textarea></td>
+	                            <td><textarea disabled id="profession${candidate.id}" name ="PROFESSION" >${candidate.profession}</textarea></td>                
+	                        	-->	  
+                 
+                 
+                 
+                 
+	 
  
- 				<div class="table-responsive">                         
-                	<table>                    
-                    	<tbody>
-                    		<tr>
-                    			<br>
-								<td>								 
-									<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-									<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">	
-									</form>									 									 
-						        </td>						   
-						        <td>						                   
-									<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-									<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">	
-									</form>
-								</td>														 
-						 	</tr>						 						
-						</tbody>
-				    </table>
-			   </div>			   
-			   	<hr>
-  		</c:forEach>
-	</ol>
- </div>
+ 				   <!-- AD  
+				 <ol>
+					<c:forEach var="candidate" items="${requestScope.candidatelist }">		
+				
+					 <li>${candidate}</li>  
+					
+					
+		 
+		 				<div class="table-responsive">                         
+		                	<table>                    
+		                    	<tbody>
+		                    		<tr>
+		                    			<br>
+										<td>								 
+											<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+											<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">	
+											</form>									 									 
+								        </td>						   
+								        <td>						                   
+											<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+											<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">	
+											</form>
+										</td>														 
+								 	</tr>						 						
+								</tbody>
+						    </table>
+					   </div>			   
+					   	<hr>
+			  		</c:forEach>
+				</ol>
+				-->	  
+		
+		
+ 
+ 
 
 <!-- AD Backup code of the original layout 
 
