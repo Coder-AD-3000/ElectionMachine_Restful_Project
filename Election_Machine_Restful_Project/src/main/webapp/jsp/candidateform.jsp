@@ -97,35 +97,36 @@
         <div>                                                                                             
             <div class="table-responsive">   
                    
-                <table class="table">                    
-                    <thead class = "tableCustom1">
-                        <tr>
-                        <th>DELETE</th>  
-                        <th>UPDATE</th>                          
-                        <th>CANDIDATE_ID</th>
-                        <th>FIRST NAME</th>
-                        <th>LAST NAME</th>
-                        <th>PARTY</th>
-                        <th>LOCATION</th>                            
-                        <th>AGE</th>
-                        <th>MISSION</th>
-                        <th>VISION</th>
-                        <th>PICTURE</th>
-                        <th>PROFESSION</th>
-                        <th>USERNAME</th>
-                        <th>PASSWORD</th>
-                        </tr>
-                    </thead>
+                <table class="table">               
+                
+					<thead class = "tableCustom1"> 						
+							<tr>                   			
+	                   			<th style = "text-align: center;" class="tableAddBackground"><button onclick="location.href='../readcandidate';" value=''>
+	                   			<b class = "tableUpdate">SHOW DATABASE</b></Button></th>                  		
+                   			</tr>
+                      </thead>               
+                                   
+	                    <thead class = "tableCustom1">
+	                        <tr>
+	                        <th>DELETE</th>  
+	                        <th>UPDATE</th>                          
+	                        <th>CANDIDATE_ID</th>
+	                        <th>FIRST NAME</th>
+	                        <th>LAST NAME</th>
+	                        <th>PARTY</th>
+	                        <th>LOCATION</th>                            
+	                        <th>AGE</th>
+	                        <th>MISSION</th>
+	                        <th>VISION</th>
+	                        <th>PICTURE</th>
+	                        <th>PROFESSION</th>
+	                        <th>USERNAME</th>
+	                        <th>PASSWORD</th>
+	                        </tr>
+	                    </thead>                   
                     
-
-					 						
-
-                     
-                    <tbody>
-                        <tr>              				
-                   			<td style = "text-align: left;" class="tableAddBackground"><button onclick="location.href='../readcandidate';" value=''>
-                   			<b class = "tableUpdate">SHOW DATABASE</b></Button></td>
-                   		</tr>	
+                   <tbody>                        
+                        	                			
                         <c:forEach var="candidate" items="${requestScope.candidatelist}">
 	                        <tr> 
 	                        <td>
