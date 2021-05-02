@@ -57,7 +57,7 @@ public class LoginClient extends HttpServlet {
 			else {			
 				System.out.println("Session was created");
 				
-				List<Candidate> arrList = readcandidate(request);
+				List<Candidate> arrList = readCandidate(request);
 				
 				for (Candidate c: arrList)					
 					if (c.getUsername().equals(unInput) && c.getPassword().equals(pwInput)) {						
@@ -68,11 +68,14 @@ public class LoginClient extends HttpServlet {
 						session.setAttribute("userid", c.getCandidate_id());
 						session.setAttribute("role", "candidate");
 						
-						writer.println("You are matched... Say Hello!");				       
-						writer.println("Session ID: " + session.getId());				        
-						writer.println("Creation Time: " + new Date(session.getCreationTime()));				        
-						writer. println("Last Accessed Time: " + new Date(session.getLastAccessedTime()));				        			        
-						writer.println("---------------------------------------------------------------");
+						
+						response.sendRedirect("jsp/index.jsp");
+						
+//						writer.println("You are matched... Say Hello!");				       
+//						writer.println("Session ID: " + session.getId());				        
+//						writer.println("Creation Time: " + new Date(session.getCreationTime()));				        
+//						writer.println("Last Accessed Time: " + new Date(session.getLastAccessedTime()));				        			        
+//						writer.println("---------------------------------------------------------------");
 					}				
 					else {
 					    writer.println("No matching un & pw here!");			
@@ -132,7 +135,7 @@ public class LoginClient extends HttpServlet {
 //	****************************************************************************************************************************
 //	*************** CUSTOM METHODS *********************************************************************************************
 //	****************************************************************************************************************************
-	private List<Candidate> readcandidate(HttpServletRequest request) {
+	private List<Candidate> readCandidate(HttpServletRequest request) {
 
 		String uri = "http://127.0.0.1:8080/rest/loginservice/readcandidate";
 		Client client = ClientBuilder.newClient();

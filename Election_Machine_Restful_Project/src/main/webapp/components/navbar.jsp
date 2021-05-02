@@ -1,24 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
-
 <% 
 // init empty vars
-String id = null;
+String role = (String) request.getSession().getAttribute("role");
 
-// grab loginCookie info
-Cookie[] login = request.getCookies();
-if(login !=null){
-for(Cookie i : login){
-/*
-* LoginServlet: loginCookie -> userName
-*/
-if(i.getName().equals("user")) id = i.getValue();
-}
-}
+
 //AD - If there is an ID showing up, then it gives you a logout button.
-if (id!=null) {
+if (role != null) {
 %>
 
     <!-- AD - This file is a 'navbar' page component, which is to 
@@ -31,10 +20,10 @@ if (id!=null) {
             <div class="container-nav4">
                 <!-- AD - icon customisation -->
                 <div class = "container-nav-links-icon">
-                <a href="../adminPortal.jsp"><i class="material-icons resize3a">account_balance</i></a>              
+                <a href="../jsp/adminPortal.jsp"><i class="material-icons resize3a">account_balance</i></a>              
                 </div>
                 <div class = "container-nav-links">
-                    <a href="../about.jsp"><h5>About</h5></a>
+                    <a href="../jsp/about.jsp"><h5>About</h5></a>
                 </div>
                 <div class = "container-nav-links">
                     <a href="../ShowQuestions"><h5>Questionnaire</h5></a>
@@ -46,7 +35,7 @@ if (id!=null) {
 
                     <a href=#>
                     	<h5>
-		                    <form class=logout-button action="logout" method="post">
+		                    <form class=logout-button action="../logout" method="post">
                         <input type="submit" value="Logout" >
                         </form>
                     	</h5>
@@ -73,10 +62,10 @@ else {
             <div class="container-nav4">
                 <!-- AD - icon customisation -->
                 <div class = "container-nav-links-icon">
-                <a href="../adminPortal.jsp"><i class="material-icons resize3a">account_balance</i></a>              
+                <a href="../jsp/adminPortal.jsp"><i class="material-icons resize3a">account_balance</i></a>              
                 </div>
                 <div class = "container-nav-links">
-                    <a href="../about.jsp"><h5>About</h5></a>
+                    <a href="../jsp/about.jsp"><h5>About</h5></a>
                 </div>
                 <div class = "container-nav-links">
                     <a href="../ShowQuestions"><h5>Questionnaire</h5></a>
@@ -85,7 +74,7 @@ else {
                     <a href="../ShowCandidates"><h5>Candidates</h5></a>
                 </div>
                 <div class = "container-nav-links">
-                  <a href="../loginPage.jsp"><h5>Login</h5></a>
+                  <a href="../jsp/loginPage.jsp"><h5>Login</h5></a>
                 </div>           
             </div>
         </div>
