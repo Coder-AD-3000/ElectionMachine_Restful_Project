@@ -100,11 +100,74 @@
                 <table class="table">                    
                     <thead class = "tableCustom1">
                         <tr>
-                            <th>CANDIDATE DATABASE</th>
-                           
+                            <th>CANDIDATE DATABASE</th>                                                       
                         </tr>
-                    </thead>
-                 </table>                    
+                    </thead>         
+                                   
+                    <tbody class = "tableCustom1" >
+                   		<tr>              				
+                   			<td style = "text-align: left;" class="tableAddBackground"><button onclick="location.href='../readcandidate';" value=''/>
+                   			<b class = "tableUpdate">SHOW DATABASE</b></Button></td>
+                   		</tr>						 						
+					</tbody>
+				</table> 
+				
+					<!-- AD Work in progress 
+				  	<div class="container3">
+                    <input class = "buttonShowHide button1" id = "btnCandResults1" 
+                    type="button" value="1st Place" onclick="ShowHideToggle1(this)" > 
+                    </div>  
+				
+					<div id="dvCandResults1" style="display: none">               
+                    <div class="container6">
+                    		Candidate Database: 
+                    	</div>
+                    </div>
+                    
+                    -->
+				
+					<!-- AD - (Work in Progress) button container, containing the UserResults          
+		            
+		            <div class="container3">
+                    <input class = "buttonShowHide button1" id = "btnCandResults1" 
+                    type="button" value="1st Place" onclick="ShowHideToggle1(this)" > 
+                    </div> 
+                    
+                    
+                    AD - This HTML markup contains a DIV, which contains inside of it
+	                another div element, which possesses show / hide functionality.
+	                The button has been assigned a JavaScript Onclick event handler.
+	                When clicked, the function is executed. Furthermore, 
+	                based on the value of the button, the HTML div toggle 
+	                functionality will be executed. AKA the div will be shown, 
+	                and the button text and colour changed.      
+	                <script type="text/javascript">
+                    function ShowHideToggle1(btnCandResults1) {
+                        var dvCandResults1 = document.getElementById("dvCandResults1");
+                        if (btnCandResults1.value == "1st Place") {
+                            dvCandResults1.style.display = "block";
+                            btnCandResults1.value = "HIDE";
+                            btnCandResults1.style.backgroundColor = "#E76F51";
+                            
+                        } else {
+                            dvCandResults1.style.display = "none";
+                            btnCandResults1.value = "1st Place";
+                            btnCandResults1.style.backgroundColor = "#2A9D8F";                           
+                        }
+                    }  
+		             
+		             
+		             This 'hidden div' shows the 1st place suitable candidate.
+                        The div becomes visible once the '1st Place Candidate'
+                        button is pressed. Conversely, the div disappears once the
+                        button is pressed again (toggle button). 
+                <div id="dvCandResults1" style="display: none">               
+                    <div class="container6">
+                    		Candidate Database: 
+                    	</div>
+                    </div>
+                    
+		            -->                              
                
                     <ol>
 					<c:forEach var="candidate" items="${requestScope.candidatelist }">		
@@ -137,90 +200,32 @@
             </div>  
         </div>
     </div>
-                 
-                 
-                  <!-- AD 
-								</ol>
-                       			-->	                 
-	                            
-	                            
-	                            <!-- AD  
-	                            <td><textarea name ="CANDIDATE_ID" disabled>${candidate.id}</textarea></td>
-	                            <td><textarea disabled id="sname${candidate.id}" name ="SURENAME" >${candidate.SName}</textarea></td>
-	                            <td><textarea disabled id="fname${candidate.id}" name ="FIRSTNAME" > ${candidate.FName}</textarea></td>
-	                            <td><textarea disabled id="party${candidate.id}" name ="PARTY" >${candidate.party}></textarea></td>
-	                            <td><textarea disabled id="location${candidate.id}" name ="LOCATION" >${candidate.location}</textarea></td>
-	                            <td><textarea disabled id="age${candidate.id}" name ="AGE" >${candidate.age}</textarea></td>
-	                            <td><textarea disabled id="reason${candidate.id}" name ="REASON_FOR_RUNNING" >${candidate.reason}</textarea></td>
-	                            <td><textarea disabled id="goal${candidate.id}" name ="AIMS_AND_GOALS" >${candidate.goals}</textarea></td>
-	                            <td><textarea disabled id="profession${candidate.id}" name ="PROFESSION" >${candidate.profession}</textarea></td>                
-	                        	-->	  
-                 
-                 
-                 
-                 
-	 
- 
- 				   <!-- AD  
-				 <ol>
-					<c:forEach var="candidate" items="${requestScope.candidatelist }">		
-				
-					 <li>${candidate}</li>  
-					
-					
-		 
-		 				<div class="table-responsive">                         
-		                	<table>                    
-		                    	<tbody>
-		                    		<tr>
-		                    			<br>
-										<td>								 
-											<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-											<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">	
-											</form>									 									 
-								        </td>						   
-								        <td>						                   
-											<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-											<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">	
-											</form>
-										</td>														 
-								 	</tr>						 						
-								</tbody>
-						    </table>
-					   </div>			   
-					   	<hr>
-			  		</c:forEach>
-				</ol>
-				-->	  
-		
-		
- 
- 
+                    
+                    
+    			<!--  AD - This HTML markup contains a DIV, which contains inside of it
+                another div element, which possesses show / hide functionality.
+                The button has been assigned a JavaScript Onclick event handler.
+                When clicked, the function is executed. Furthermore, 
+                based on the value of the button, the HTML div toggle 
+                functionality will be executed. AKA the div will be shown, 
+                and the button text and colour changed. -->    
+                <script type="text/javascript">
+                    function ShowHideToggle1(btnCandResults1) {
+                        var dvCandResults1 = document.getElementById("dvCandResults1");
+                        if (btnCandResults1.value == "1st Place") {
+                            dvCandResults1.style.display = "block";
+                            btnCandResults1.value = "HIDE";
+                            btnCandResults1.style.backgroundColor = "#E76F51";
+                            
+                        } else {
+                            dvCandResults1.style.display = "none";
+                            btnCandResults1.value = "1st Place";
+                            btnCandResults1.style.backgroundColor = "#2A9D8F";                           
+                        }
+                    } 
+                    
+                 </script>            
 
-<!-- AD Backup code of the original layout 
-
-<c:forEach var="candidate" items="${requestScope.candidatelist }">
-		<li>${candidate} <a href='../deletecandidate?candidate_id=${candidate.candidate_id}'>Delete</a> <a href='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}'>Update</a>
-</c:forEach>
-
-
- <div class="containerUpdateCandidatesTable"> 		
-	<ol>
-	<c:forEach var="candidate" items="${requestScope.candidatelist }">
-		<li>${candidate}</li> 
-		<a href='../deletecandidate?candidate_id=${candidate.candidate_id}'>Delete</a>
-		<a href='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}'>Update</a>
-	</c:forEach>
-	</ol>
-</div>
-
-
-
-<form action='../updatecandidate' method='post'>
-
-<input type='submit' name='ok' value='UPDATE'>	
-
--->
 
  <!-- AD - includes the footer component into this page 
     (albeit not visible) -->
