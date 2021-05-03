@@ -61,7 +61,10 @@
         <!-- AD - Beginning of the selection button section (answers)-->
         <div class="container2">            
 
-            <form id="form" action="../addallanswer" method="POST">				
+			<!--  
+            <form id="form" action="../addallanswer" method="POST">
+            -->
+            <form id="form" action="../questionnaireclient" method="POST">					
                
                 <br>                 
 	            
