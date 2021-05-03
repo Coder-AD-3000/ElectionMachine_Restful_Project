@@ -73,18 +73,18 @@
                 <tbody>                    
                     <tr>                                                	                        	               
                    		<td class="tableAddBackground"><Button type='submit' name='ok' value=''><b class = "tableAdd">ADD</b></Button></td>
-                   		<td><input readonly class="greyed-background" type='number' name='candidate_id' placeholder="Auto incremented." value=''></td> 
-                   	 	<td><input required type='text' name='first_name' placeholder="Cannot be blank." value=''></td>  
-						<td><input required type='text' name='last_name' placeholder = "Cannot be blank." value=''></td>  
-						<td><input required type='text' name='party' placeholder="Cannot be blank." value=''></td>  
-						<td><input required type='text' name='location' placeholder="Cannot be blank." value=''></td>  		
-						<td><input required type='number' name='age' placeholder="Number." value='' min="18" max="100"></td>  
-						<td><input required type='text' name='mission' placeholder="Cannot be blank." value=''></td>  
-						<td><input required type='text' name='vision' placeholder="Cannot be blank." value=''></td>  
-				        <td><input readonly class="greyed-background" type='text' name='pic' placeholder="Pic will go here." value=''></td>  
-				        <td><input required type='text' name='profession' placeholder="Cannot be blank." value=''></td>   
-						<td><input required type='text' name='username' placeholder="Cannot be blank." value=''></td>  
-						<td><input required type='text' name='password' placeholder="Cannot be blank." value=''></td>                            
+                   		<td><input readonly class="greyed-background" type='number' name='candidate_id' placeholder="Auto Incremented" value=''></td> 
+                   	 	<td><input required type='text' name='first_name' placeholder="Cannot be blank" value=''></td>  
+						<td><input required type='text' name='last_name' placeholder = "Cannot be blank" value=''></td>  
+						<td><input required type='text' name='party' placeholder="Cannot be blank" value=''></td>  
+						<td><input required type='text' name='location' placeholder="Cannot be blank" value=''></td>  		
+						<td><input required type='number' name='age' placeholder="Number" value='' min="18" max="100"></td>  
+						<td><input required type='text' name='mission' placeholder="Cannot be blank" value=''></td>  
+						<td><input required type='text' name='vision' placeholder="Cannot be blank" value=''></td>  
+				        <td><input readonly class="greyed-background" type='text' name='pic' placeholder="Portrait pic will go here" value=''></td>  
+				        <td><input required type='text' name='profession' placeholder="Cannot be blank" value=''></td>   
+						<td><input required type='text' name='username' placeholder="Cannot be blank" value=''></td>  
+						<td><input required type='text' name='password' placeholder="Cannot be blank" value=''></td>                            
                     </tr>                     
                 </tbody>                   
             </table>
@@ -98,8 +98,7 @@
      <!-- AD - Beginning the central (yellow container)-->
     <div class="containerUpdateCandidatesTable">
         <i class="material-icons resize3">account_balance</i>
-     
-                                                                                            
+                                                                                                 
            <div class="table-responsive">                  
                <table class="table">                
 				<thead class = "tableCustom1"> 						
@@ -158,7 +157,7 @@
 								<td>Age:<textarea disabled name='age' >${candidate.age }</textarea></td> 
 								<td>Mission:<textarea disabled name='mission' >${candidate.mission }</textarea></td> 
 								<td>Vision:<textarea disabled name='vision' >${candidate.vision }</textarea></td> 
-						        <td>Picture:<textarea disabled class = "greyed-background" name='pic' placeholder="Pic will go here.">${candidate.pic }</textarea></td>  
+						        <td>Picture:<textarea disabled class = "greyed-background" name='pic' placeholder="Portrait pic will go here">${candidate.pic }</textarea></td>  
 								<td>Profession:<textarea disabled name='profession' >${candidate.profession }</textarea></td> 
 								<td>Username:<textarea disabled name='username' >${candidate.username }</textarea></td> 
 								<td>Password:<textarea disabled name='password' >${candidate.password }</textarea></td> 
