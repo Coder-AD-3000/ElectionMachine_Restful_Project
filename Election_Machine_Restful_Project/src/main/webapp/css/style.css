@@ -969,7 +969,22 @@ background-color: grey;
   color: #A9A9A9;
 }
 
-
+/* AD - Customises the containers inside
+		update pages, such as candidateform.jsp */
+.showDatabaseContainer {	
+	max-width: 95%;
+    padding: 20px;
+    border-radius: 10px;         
+    background: linear-gradient(0deg, #264653, 6%, rgba(214, 214, 214, 0.822));
+    box-shadow: 0 2px 16px 2px #264653;           
+    margin: 25px auto 25px auto;
+   }
+   
+/* AD - Table background customisation
+for show db button on the candidates update db page */
+.tableCandidateDB {    
+    background: linear-gradient(180deg, #E76F51, 5%, #F4A261);    
+} 
 
 
      
