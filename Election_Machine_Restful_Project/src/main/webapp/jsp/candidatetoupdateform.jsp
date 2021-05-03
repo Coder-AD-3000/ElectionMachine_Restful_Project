@@ -5,9 +5,10 @@
 <html>
 <head>
 
-<!-- AD - includes the meta component, into this page 
+<!-- AD - includes the meta component, into this page -->
+
     <%@ include file="../components/meta.jsp" %>
-    -->
+   
     
     <title>Candidate To Update Form</title>
     
@@ -24,7 +25,7 @@
     
     <!-- AD - Beginning the central (yellow container)-->
     <div class="containerMainUpdateCandidates">
-        <i class="material-icons resize3">account_balance</i>
+        <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>
         
         <!-- AD - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
@@ -99,19 +100,19 @@
                             -->
                             
                      		<td class="tableAddBackground"><input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;"></td> 
-						    <td>Candidate ID (Read Only):<input readonly class = "greyed-background" type='text' name='candidate_id' value='${requestScope.candidate.candidate_id }'></td> 
-							<td>First Name:<input required type='text' name='first_name' value='${requestScope.candidate.first_name }'></td> 
-							<td>Last Name:<input required type='text' name='last_name' value='${requestScope.candidate.last_name }'></td> 
-							<td>Party: <input required type='text' name='party' value='${requestScope.candidate.party }'></td> 
-							<td>Location: <input required type='text' name='location' value='${requestScope.candidate.location }'>		
-							<td>Age:<input required type='number' name='age' value='${requestScope.candidate.age }' min="18" max="100"></td> 
-							<td>Mission:<input required type='text' name='mission' value='${requestScope.candidate.mission }'></td> 
-							<td>Vision:<input required type='text' name='vision' value='${requestScope.candidate.vision }'></td> 
-					        <td>Picture:<input readonly class = "greyed-background" type='text' name='pic' placeholder="Portrait pic will go here" value='${requestScope.candidate.pic }'></td>  
-							<td>Profession:<input required type='text' name='profession' value='${requestScope.candidate.profession }'></td> 
-							<td>Username:<input required type='text' name='username' value='${requestScope.candidate.username }'></td> 
-							<td>Password:<input required type='text' name='password' value='${requestScope.candidate.password }'></td>                          
-                                       
+						    <td><input readonly class = "greyed-background" type='text' name='candidate_id' value='${requestScope.candidate.candidate_id }'></td> 
+							<td><input required type='text' name='first_name' value='${requestScope.candidate.first_name }'></td> 
+							<td><input required type='text' name='last_name' value='${requestScope.candidate.last_name }'></td> 
+							<td><input required type='text' name='party' value='${requestScope.candidate.party }'></td> 
+							<td><input required type='text' name='location' value='${requestScope.candidate.location }'></td>		
+							<td><input required type='number' name='age' value='${requestScope.candidate.age }' min="18" max="100"></td> 
+							<td><input required type='text' name='mission' value='${requestScope.candidate.mission }'></td> 
+							<td><input required type='text' name='vision' value='${requestScope.candidate.vision }'></td> 
+					        <td><input readonly class = "greyed-background" type='text' name='pic' placeholder="Portrait pic will go here" value='${requestScope.candidate.pic }'></td>  
+							<td><input required type='text' name='profession' value='${requestScope.candidate.profession }'></td> 
+							<td><input required type='text' name='username' value='${requestScope.candidate.username }'></td> 
+							<td><input required type='text' name='password' value='${requestScope.candidate.password }'></td>                      
+                           
                         </tr>
                      
                     </tbody>                        
