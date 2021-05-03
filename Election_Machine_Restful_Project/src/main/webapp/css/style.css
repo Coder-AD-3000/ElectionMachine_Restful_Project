@@ -31,6 +31,12 @@
     .containerUpdateCandidatesTable {
      max-width: 98% !important;
     }
+    
+    /* AD - Customises the containers inside
+		update pages, such as candidateform.jsp */
+    showDatabaseContainer {
+    max-width: 98% !important;
+    }
 
     /* AD - Ensures that the registration page main 
        yellow box, still looks good on smaller screens*/
@@ -107,6 +113,12 @@
     on the adminUpdateCandidate page, which
     contains the candidate table data */
     .containerUpdateCandidatesTable {
+    max-width: 99% !important;
+    }
+    
+    /* AD - Customises the containers inside
+		update pages, such as candidateform.jsp */
+    showDatabaseContainer {
     max-width: 99% !important;
     }
 
@@ -951,22 +963,20 @@ border-radius: 10px;
 margin: 50px auto;
 padding: 10px;
 }
-.greyed-background {
-background-color: grey;
-}
+
 
 /* AD - The following 3 code sections amend the placeholder text */
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #A9A9A9;
-  opacity: 1; /* Firefox */
+  	color: #414141;
+  	opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #A9A9A9;
+ 	color: #414141;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: #A9A9A9;
+ 	color: #414141;  
 }
 
 /* AD - Customises the containers inside
@@ -974,10 +984,10 @@ background-color: grey;
 .showDatabaseContainer {	
 	max-width: 95%;
     padding: 20px;
-    border-radius: 10px;         
-    background: linear-gradient(0deg, #264653, 6%, rgba(214, 214, 214, 0.822));
+    border-radius: 3px;         
+    background: linear-gradient(180deg, #264653, 10%, rgba(214, 214, 214, 0.822));
     box-shadow: 0 2px 16px 2px #264653;           
-    margin: 25px auto 25px auto;
+    margin: 25px auto 25px auto;  
    }
    
 /* AD - Table background customisation
@@ -985,6 +995,12 @@ for show db button on the candidates update db page */
 .tableCandidateDB {    
     background: linear-gradient(180deg, #E76F51, 5%, #F4A261);    
 } 
+
+/* AD - text box customisation on the candidate updates page*/
+.greyed-background {
+background-color: #c0c0c0;
+color: #414141;
+}
 
 
      
