@@ -26,7 +26,7 @@
     
     <!-- AD - Beginning the central (yellow container)-->
     <div class="containerMainUpdateCandidates">
-        <i class="material-icons resize3">account_balance</i>
+        <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>
         
         <!-- AD - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
@@ -94,10 +94,11 @@
 
 	<!-- AD 
     <div class="containerUpdateCandidatesTable"> 
-    -->           
+    -->    
+           
      <!-- AD - Beginning the central (yellow container)-->
     <div class="containerUpdateCandidatesTable">
-        <i class="material-icons resize3">account_balance</i>
+        <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>
                                                                                                  
            <div class="table-responsive">                  
                <table class="table">                
@@ -109,10 +110,12 @@
                      </thead>                        
                 </table>                 
                             			
-                <c:forEach var="candidate" items="${requestScope.candidatelist}">                  
+                <c:forEach var="candidate" items="${requestScope.candidatelist}"> 
+                                 
                    <!-- AD
                    <div class="containerUpdateCandidatesTable"> 
                     -->  
+                    
                    <div class="showDatabaseContainer"> 
                   
                       <div class="table-responsive">                  
@@ -149,25 +152,25 @@
 								<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">
 								</form>
 								</td>
-							    <td>Candidate ID (Read Only):<textarea disabled class = "greyed-background" name='candidate_id' >${candidate.candidate_id }</textarea></td> 
-							    <td>First Name:<textarea disabled name='first_name'>${candidate.first_name }</textarea></td> 
-								<td>Last Name:<textarea disabled name='last_name' >${candidate.last_name }</textarea></td> 
-								<td>Party: <textarea disabled name='party' >${candidate.party }</textarea></td> 
-								<td>Location: <textarea disabled name='location'>${candidate.location }</textarea></td>		
-								<td>Age:<textarea disabled name='age' >${candidate.age }</textarea></td> 
-								<td>Mission:<textarea disabled name='mission' >${candidate.mission }</textarea></td> 
-								<td>Vision:<textarea disabled name='vision' >${candidate.vision }</textarea></td> 
-						        <td>Picture:<textarea disabled class = "greyed-background" name='pic' placeholder="Portrait pic will go here">${candidate.pic }</textarea></td>  
-								<td>Profession:<textarea disabled name='profession' >${candidate.profession }</textarea></td> 
-								<td>Username:<textarea disabled name='username' >${candidate.username }</textarea></td> 
-								<td>Password:<textarea disabled name='password' >${candidate.password }</textarea></td> 
+							    <td><textarea disabled class = "greyed-background" name='candidate_id' >${candidate.candidate_id }</textarea></td> 
+							    <td><textarea disabled name='first_name'>${candidate.first_name }</textarea></td> 
+								<td><textarea disabled name='last_name' >${candidate.last_name }</textarea></td> 
+								<td><textarea disabled name='party' >${candidate.party }</textarea></td> 
+								<td><textarea disabled name='location'>${candidate.location }</textarea></td>		
+								<td><textarea disabled name='age' >${candidate.age }</textarea></td> 
+								<td><textarea disabled name='mission' >${candidate.mission }</textarea></td> 
+								<td><textarea disabled name='vision' >${candidate.vision }</textarea></td> 
+						        <td><textarea disabled class = "greyed-background" name='pic' placeholder="Portrait pic will go here">${candidate.pic }</textarea></td>  
+								<td><textarea disabled name='profession' >${candidate.profession }</textarea></td> 
+								<td><textarea disabled name='username' >${candidate.username }</textarea></td> 
+								<td><textarea disabled name='password' >${candidate.password }</textarea></td> 
 							   </tr>	                        
 		                     </tbody>		                     
 	                     
                     	</table>      
-				  </div>
-				</div>  		                        
-                 </c:forEach>            
+					  </div>
+					</div>  		                        
+	             </c:forEach>            
          </div>      
     </div>         
                     
@@ -200,6 +203,7 @@
 
  <!-- AD - includes the footer component into this page 
     (albeit not visible) -->
+    
 	<%@ include file="../components/footer.jsp" %> 
 
 </body>
