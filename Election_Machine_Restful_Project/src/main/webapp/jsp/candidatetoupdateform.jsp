@@ -107,7 +107,7 @@
 							<td>Age:<input required type='number' name='age' value='${requestScope.candidate.age }' min="18" max="100"></td> 
 							<td>Mission:<input required type='text' name='mission' value='${requestScope.candidate.mission }'></td> 
 							<td>Vision:<input required type='text' name='vision' value='${requestScope.candidate.vision }'></td> 
-					        <td>Picture:<input readonly class = "greyed-background" type='text' name='pic' placeholder="Pic will go here." value='${requestScope.candidate.pic }'></td>  
+					        <td>Picture:<input readonly class = "greyed-background" type='text' name='pic' placeholder="Portrait pic will go here" value='${requestScope.candidate.pic }'></td>  
 							<td>Profession:<input required type='text' name='profession' value='${requestScope.candidate.profession }'></td> 
 							<td>Username:<input required type='text' name='username' value='${requestScope.candidate.username }'></td> 
 							<td>Password:<input required type='text' name='password' value='${requestScope.candidate.password }'></td>                          
