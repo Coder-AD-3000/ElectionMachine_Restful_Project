@@ -91,10 +91,6 @@
            </form>
        </div>       
     </div>
-
-	<!-- AD 
-    <div class="containerUpdateCandidatesTable"> 
-    -->    
            
      <!-- AD - Beginning the central (yellow container)-->
     <div class="containerUpdateCandidatesTable">
@@ -110,11 +106,7 @@
                      </thead>                        
                 </table>                 
                             			
-                <c:forEach var="candidate" items="${requestScope.candidatelist}"> 
-                                 
-                   <!-- AD
-                   <div class="containerUpdateCandidatesTable"> 
-                    -->  
+                <c:forEach var="candidate" items="${requestScope.candidatelist}">           
                     
                    <div class="showDatabaseContainer"> 
                   
@@ -201,8 +193,8 @@
                  </script>            
 
 
- <!-- AD - includes the footer component into this page 
-    (albeit not visible) -->
+	 <!-- AD - includes the footer component into this page 
+	    (albeit not visible) -->
     
 	<%@ include file="../components/footer.jsp" %> 
 
