@@ -92,20 +92,30 @@
        </div>       
     </div>
 
-
-    <div class="containerUpdateCandidatesTable">                                                                                                    
+	<!-- AD 
+    <div class="containerUpdateCandidatesTable"> 
+    -->           
+     <!-- AD - Beginning the central (yellow container)-->
+    <div class="containerUpdateCandidatesTable">
+        <i class="material-icons resize3">account_balance</i>
+     
+                                                                                            
            <div class="table-responsive">                  
                <table class="table">                
 				<thead class = "tableCustom1"> 						
 						<tr>                   			
-                   			<th style = "text-align: left;" class="tableAddBackground"><button onclick="location.href='../readcandidate';" value=''>
+                   			<th style = "text-align: left;" class="tableCandidateDB"><button onclick="location.href='../readcandidate';" value=''>
                    			<b class = "tableUpdate">SHOW DATABASE</b></Button></th>                  		
                   			</tr>
                      </thead>                        
                 </table>                 
                             			
                 <c:forEach var="candidate" items="${requestScope.candidatelist}">                  
+                   <!-- AD
                    <div class="containerUpdateCandidatesTable"> 
+                    -->  
+                   <div class="showDatabaseContainer"> 
+                  
                       <div class="table-responsive">                  
            			    <table class="table">                        
                         
