@@ -1003,4 +1003,12 @@ color: #414141;
 }
 
 
+.active, .collapsible:hover {
+  /*
+    background-color: #555;
+  */
+}
+
+
+
      
