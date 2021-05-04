@@ -17,7 +17,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import data.Newquestion;
-//This is a comment
+
 @Path("/newquestionservice")
 public class NewquestionService {
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("emachinedb");
@@ -32,6 +32,7 @@ public class NewquestionService {
 		em.getTransaction().commit();
 		return list;
 	}	
+	//Comment
 	@POST
 	@Path("/addnewquestion")
 	@Produces(MediaType.APPLICATION_JSON)
