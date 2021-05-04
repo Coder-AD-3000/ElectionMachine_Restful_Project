@@ -1,5 +1,10 @@
 package data;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Question object instances to carry columns from question table utilizing JPA.
  * 
@@ -7,8 +12,11 @@ package data;
  * @version 1.0
  * Date: April 30, 2021
  */
+@Entity
 public class Question {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	/**
 	 * Integer value representing question_id column from question table.
 	 */

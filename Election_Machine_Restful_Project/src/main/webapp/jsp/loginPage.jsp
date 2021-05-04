@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +29,7 @@
 
         <!-- AD - Login Section-->
         <div class = "container1b">
-            <form action="LoginServlet" method="post">      
+            <form action="../logincandidate" method="post">      
                 <legend><b>Site Login</b></legend>
                 <table>
                     <hr> 
