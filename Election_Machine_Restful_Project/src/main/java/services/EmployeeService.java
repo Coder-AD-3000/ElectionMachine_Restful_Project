@@ -82,10 +82,10 @@ public class EmployeeService {
 	 * @return updated complete list of employees from employee table
 	 */
 	@PUT
-	@Path("/updateEmployee")
+	@Path("/updateemployee")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Employee> jupdateEmployee(Employee emp) {
+	public List<Employee> updateEmployee(Employee emp) {
 		EntityManager entitymanager = emf.createEntityManager();
 		
 		entitymanager.getTransaction().begin();
@@ -109,7 +109,7 @@ public class EmployeeService {
 	 * @return complete updated employee table as list
 	 */
 	@DELETE
-	@Path("/deleteEmployee/{employee_id}")
+	@Path("/deleteemployee/{employee_id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public List<Employee> deleteEmployee(@PathParam("employee_id") int emp) {
@@ -137,7 +137,7 @@ public class EmployeeService {
 	 * @return Employee instance object located through employee_id from employee table
 	 */
 	@GET
-	@Path("/readtoupdateEmployee/{employee_id}")
+	@Path("/readtoupdateemployee/{employee_id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Employee readToupdateEmployee(@PathParam("employee_id") int emp) {
