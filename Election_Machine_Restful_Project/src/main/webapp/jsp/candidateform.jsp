@@ -1,7 +1,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -135,11 +134,82 @@
 	                        <tbody>	                        
 		                      <tr> 
 		                        <td>
+		                        
+		                        <!-- AD 
+		                        <button type="button" class="collapsible">Open Collapsible</button>
+									<div class="content">									
+									  <p> AD - Collapsible box</p>
+								</div>
+								
+								
+								
+									<input type="submit" class="collapsible tableCustom3" value='DELETE' style="font-weight:bold;">
+									<div class="content">									
+									  
+									  <br>
+									  <p style = "width:95px"><b style = "color:red">Are you sure?</b></p>
+									  <form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+									    <input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
+									  </form>
+
+									</div>
+								
+								
+								
+								
+								
+								
+								
+								
+								 <input class = "buttonShowHide button1" id = "btnCandResults1" 
+                    			type="button" value="1st Place" onclick="ShowHideToggle1(this)" > 
+                    
+                    
+                    			<div id="dvCandResults1" style="display: none"> 
+                    			
+                    			This works:
+                    			<input class = "buttonShowHide" id = "btnCandResults1" 
+                    				type="button" value="1st Place" onclick="ShowHideToggle1(this)" >    
+                    
+								-->	
+								
+									<input class = "tableCustom3" id = "btnCandResults1" 
+                    				type="submit" value="DELETE" onclick="ShowHideToggle1(this)" 
+                    				style="font-weight:bold;">  
+									
+									<div id ="dvCandResults1" style="display: none">								  
+									 
+									  <p style = "width:95px"><b style = "color:red">Are you sure?</b></p>
+									  
+									  <table class="table-responsive">
+										  <tbody>
+											  <tr>
+												  <td>
+													  <form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+													    <input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
+													  </form>
+													  </td>
+													  
+													  <td>
+													  <form action='../readcandidate' method='post'>
+													    <input type='submit' name='ok' value='CANCEL' class = "tableAdd" style="font-weight:bold;">
+													  </form>
+												  </td>
+											  </tr>
+									  </tbody>
+									  
+									  </table>
+
+									</div>
+								
+								<!-- AD 
 								<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
 								<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
 								</form>
+								-->	
+								
 								</td>
-								<td>
+								<td id ="buttonUpdate">
 								<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
 								<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">
 								</form>
@@ -152,7 +222,7 @@
 								<td><textarea disabled name='age' >${candidate.age }</textarea></td> 
 								<td><textarea disabled name='mission' >${candidate.mission }</textarea></td> 
 								<td><textarea disabled name='vision' >${candidate.vision }</textarea></td> 
-						        <td><textarea disabled class = "greyed-background" name='pic' placeholder="Portrait pic will go here">${candidate.pic }</textarea></td>  
+						        <td><textarea disabled class ="greyed-background" name='pic' placeholder="Portrait pic will go here">${candidate.pic }</textarea></td>  
 								<td><textarea disabled name='profession' >${candidate.profession }</textarea></td> 
 								<td><textarea disabled name='username' >${candidate.username }</textarea></td> 
 								<td><textarea disabled name='password' >${candidate.password }</textarea></td> 
@@ -178,19 +248,37 @@
                 <script type="text/javascript">
                     function ShowHideToggle1(btnCandResults1) {
                         var dvCandResults1 = document.getElementById("dvCandResults1");
-                        if (btnCandResults1.value == "1st Place") {
-                            dvCandResults1.style.display = "block";
-                            btnCandResults1.value = "HIDE";
-                            btnCandResults1.style.backgroundColor = "#E76F51";
+                        
+                        /* AD - This variable is for the update button*/
+                        var buttonUpdate = document.getElementById("buttonUpdate");
+                        
+                        if (btnCandResults1.value == "DELETE") {
+                            dvCandResults1.style.display = "block";                            
+                           
+                            btnCandResults1.style.display = "none";
+                            /* AD - The update button disappears also*/
+                            buttonUpdate.style.display = "none";
+                            
                             
                         } else {
                             dvCandResults1.style.display = "none";
-                            btnCandResults1.value = "1st Place";
+                            btnCandResults1.value = "DELETE";
                             btnCandResults1.style.backgroundColor = "#2A9D8F";                           
                         }
                     } 
-                    
-                 </script>            
+                                      
+                          
+                 	</script> 
+                 	
+                 	<!-- AD
+                 	
+                 	<button type="button" class="collapsible">Open Collapsible</button>
+						<div class="content">
+						
+						  <p> AD - Collapsible box</p>
+						</div>
+                 	
+                 	 -->           
 
 
 	 <!-- AD - includes the footer component into this page 
