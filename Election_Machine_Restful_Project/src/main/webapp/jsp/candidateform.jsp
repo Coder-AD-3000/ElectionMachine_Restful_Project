@@ -1,7 +1,5 @@
-
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-
 
 <!DOCTYPE html>
 <html>
@@ -21,13 +19,13 @@
     <!-- AD - includes the navbarBootstrap component, 
     		which is modified version of our regular navbar,
     		in order to offset some negative effects
-    		caused by bootsrap, onto our code. -->
+    		caused by bootstrap, onto our code. -->
     <%@ include file="../components/navbarBootstrap.jsp" %>
     
     
     <!-- AD - Beginning the central (yellow container)-->
     <div class="containerMainUpdateCandidates">
-        <i class="material-icons resize3">account_balance</i>
+        <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>
         
         <!-- AD - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
@@ -46,140 +44,246 @@
         </div>        
 
         <!-- AD - End of the central (yellow container)-->
+    </div>    
+    
+    	<!-- AD - This container contains a form (with table) to add 
+    	candidates to the candidate table in the emachinedb database.-->
+    <div class="containerUpdateCandidatesTable">                                                                                                
+       <div class="table-responsive">            
+        <form action='../addcandidate' method='post'>                
+            <table class="table">                    
+                <thead class = "tableCustom1">
+                    <tr>
+                        <th>ADD</th>                           
+                        <th>CANDIDATE_ID</th>
+                        <th>FIRST NAME</th>
+                        <th>LAST NAME</th>
+                        <th>PARTY</th>
+                        <th>LOCATION</th>                            
+                        <th>AGE</th>
+                        <th>MISSION</th>
+                        <th>VISION</th>
+                        <th>PICTURE</th>
+                        <th>PROFESSION</th>
+                        <th>USERNAME</th>
+                        <th>PASSWORD</th>
+                    </tr>
+                </thead>
+                <tbody>                    
+                    <tr>                                                	                        	               
+                   		<td class="tableAddBackground"><Button type='submit' name='ok' value=''><b class = "tableAdd">ADD</b></Button></td>
+                   		<td><input readonly class="greyed-background" type='number' name='candidate_id' placeholder="Auto Incremented" value=''></td> 
+                   	 	<td><input required type='text' name='first_name' placeholder="Cannot be blank" value=''></td>  
+						<td><input required type='text' name='last_name' placeholder = "Cannot be blank" value=''></td>  
+						<td><input required type='text' name='party' placeholder="Cannot be blank" value=''></td>  
+						<td><input required type='text' name='location' placeholder="Cannot be blank" value=''></td>  		
+						<td><input required type='number' name='age' placeholder="Number" value='' min="18" max="100"></td>  
+						<td><input required type='text' name='mission' placeholder="Cannot be blank" value=''></td>  
+						<td><input required type='text' name='vision' placeholder="Cannot be blank" value=''></td>  
+				        <td><input readonly class="greyed-background" type='text' name='pic' placeholder="Portrait pic will go here" value=''></td>  
+				        <td><input required type='text' name='profession' placeholder="Cannot be blank" value=''></td>   
+						<td><input required type='text' name='username' placeholder="Cannot be blank" value=''></td>  
+						<td><input required type='text' name='password' placeholder="Cannot be blank" value=''></td>                            
+                    </tr>                     
+                </tbody>                   
+            </table>
+           </form>
+       </div>       
     </div>
-    
-    <!-- AD This is a container to contain the data from the Candidate Table.
-    Created utilising bootstrap, this .table-responsive class creates a responsive table
-    which will scroll horizontally on small devices (under 768px). 
-    When viewing on anything larger than 768px wide, 
-    there is no difference:-->
-    
-    <!-- AD Testing code 
-    
-    	<div class="containerUpdateCandidatesTable">   
-                                                                                           
-           	<div class="table-responsive">
-           	
-			<form action='../addcandidate' method='post'>
-    -->
-    
-    
-    
-    
-    <div class="containerUpdateCandidatesTable">   
-        <div>                                                                                             
-            <div class="table-responsive">
-            
-            <!--  
-            <form action = "/AdminAddCandidate" method="POST" id="addCandidate">   
-            -->     
-            
-            <form action='../addcandidate' method='post'>  
-                
-                <table class="table">                    
-                    <thead class = "tableCustom1">
-                        <tr>
-                            <th>ADD</th>                           
-                            <th>CANDIDATE_ID</th>
-                            <th>FIRST NAME</th>
-                            <th>LAST NAME</th>
-                            <th>PARTY</th>
-                            <th>LOCATION</th>                            
-                            <th>AGE</th>
-                            <th>MISSION</th>
-                            <th>VISION</th>
-                            <th>PICTURE</th>
-                            <th>PROFESSION</th>
-                            <th>USERNAME</th>
-                            <th>PASSWORD</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+           
+     <!-- AD - Beginning the central (yellow container)-->
+    <div class="containerUpdateCandidatesTable">
+        <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>
+                                                                                                 
+           <div class="table-responsive">                  
+               <table class="table">                
+				<thead class = "tableCustom1"> 						
+						<tr>                   			
+                   			<th style = "text-align: left;" class="tableCandidateDB"><button onclick="location.href='../readcandidate';" value=''>
+                   			<b class = "tableUpdate">SHOW DATABASE</b></Button></th>                  		
+                  			</tr>
+                     </thead>                        
+                </table>                 
+                            			
+                <c:forEach var="candidate" items="${requestScope.candidatelist}">           
                     
-                        <tr>      
+                   <div class="showDatabaseContainer"> 
+                  
+                      <div class="table-responsive">                  
+           			    <table class="table">                        
                         
-                        	<!-- 
-                        		<input type='submit' name='ok' value='OK'>
-                        		
-                        		 <td class = "tableAddBackground"><Button type="submit"><b class = "tableAdd">ADD</b></Button></td>  
-                        		 
-                        		<td class = "tableAddBackground"><Button type="submit"><b class = "tableAdd">ADD</b></Button></td>                           
-	                            <td><input disabled type="text" name="CANDIDATE_ID" placeholder="Auto incremented" ></td>
-	                            <td><input required type="text" name="SURNAME" placeholder="Cannot be blank." ></td>
-	                            <td><input required type="text" name="FIRSTNAME" placeholder="Cannot be blank." ></td>
-	                            <td><input required type="text" name="PARTY" placeholder="Cannot be blank." ></td>
-	                            <td><input required type="text" name="LOCATION" placeholder="Cannot be blank." ></td>
-	                            <td><input required type="number" name="AGE" placeholder="Cannot be blank." ></td>
-	                            <td><input required type="text" name="REASON_FOR_RUNNING" placeholder="Cannot be blank." ></td>
-	                            <td><input required type="text" name="AIMS_AND_GOALS" placeholder="Cannot be blank." ></td>
-	                            <td><input required type="text" name="PROFESSION" placeholder="Cannot be blank." ></td>  
-                        		 
-                        	 -->                   
-                        		<td class = "tableAddBackground"><Button type='submit' name='ok'><b class = "tableAdd">ADD</b></Button></td> 
-                        		<td><input readonly class = "greyed-background" type='text' name='candidate_id' placeholder="Auto incremented." value=''></td> 
-                        	 	<td><input required type='text' name='first_name' placeholder="Cannot be blank." value=''></td>  
-								<td><input required type='text' name='last_name' placeholder = "Cannot be blank." value=''></td>  
-								<td><input required type='text' name='party' placeholder="Cannot be blank." value=''></td>  
-								<td><input required type='text' name='location' placeholder="Cannot be blank." value=''></td>  		
-								<td><input required type='text' name='age' placeholder="Cannot be blank." value=''></td>  
-								<td><input required type='text' name='mission' placeholder="Cannot be blank." value=''></td>  
-								<td><input required type='text' name='vision' placeholder="Cannot be blank." value=''></td>  
-						        <td><input readonly class = "greyed-background" type='text' name='pic' placeholder="Pic will go here." value=''></td>  
-						        <td><input required type='text' name='profession' placeholder="Cannot be blank." value=''></td>   
-								<td><input required type='text' name='username' placeholder="Cannot be blank." value=''></td>  
-								<td><input required type='text' name='password' placeholder="Cannot be blank." value=''></td>  
-                        	           
-                                        
-                        </tr>
-                     
-                    </tbody>                        
-                            
-                </table>
-                </form>
-            </div>
-        </div>
-    </div>
-    
-    
-    
-    
-    
-    
-     
-		<!-- AD The original working version
-		
-		<div class="containerUpdateCandidatesTable">   
-                                                                                           
-           	<div class="table-responsive">
-           	
-			<form action='../addcandidate' method='post'>
-			
-			First Name: <input required type='text' name='first_name' placeholder="Cannot be blank." value=''>
-			Last Name: <input required type='text' name='last_name' placeholder = "Cannot be blank." value=''>
-			Party: <input required type='text' name='party' placeholder="Cannot be blank." value=''>
-			Location: <input required type='text' name='location' placeholder="Cannot be blank." value=''>		
-			Age:<input required type='text' name='age' placeholder="Cannot be blank." value=''>
-			Mission:<input required type='text' name='mission' placeholder="Cannot be blank." value=''>
-			Vision:<input required type='text' name='vision' placeholder="Cannot be blank." value=''>
-	        Picture:<input readonly class = "greyed-background" type='text' name='pic' placeholder="Pic will go here." value=''>
-	        Profession:<input required type='text' name='profession' placeholder="Cannot be blank." value=''> 
-			Username:<input required type='text' name='username' placeholder="Cannot be blank." value=''>
-			Password:<input required type='text' name='password' placeholder="Cannot be blank." value=''>
-			<input type='submit' name='ok' value='OK'>
-			</form>
-			
-			</div>
-		</div>
-		-->
-		
-<ol>
-<c:forEach var="candidate" items="${requestScope.candidatelist }">
-	<li>${candidate} <a href='../deletecandidate?candidate_id=${candidate.candidate_id}'>Delete</a> <a href='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}'>Update</a>
-</c:forEach>
-</ol>
+	                        <thead class = "tableCustom1">
+	                          <tr>
+		                        <th>DELETE</th>  
+		                        <th>UPDATE</th>                          
+		                        <th>CANDIDATE_ID</th>
+		                        <th>FIRST NAME</th>
+		                        <th>LAST NAME</th>
+		                        <th>PARTY</th>
+		                        <th>LOCATION</th>                            
+		                        <th>AGE</th>
+		                        <th>MISSION</th>
+		                        <th>VISION</th>
+		                        <th>PICTURE</th>
+		                        <th>PROFESSION</th>
+		                        <th>USERNAME</th>
+		                        <th>PASSWORD</th>
+	                          </tr>
+	                        </thead> 
+	                        
+	                        <tbody>	                        
+		                      <tr> 
+		                        <td>
+		                        
+		                        <!-- AD 
+		                        <button type="button" class="collapsible">Open Collapsible</button>
+									<div class="content">									
+									  <p> AD - Collapsible box</p>
+								</div>
+								
+								
+								
+									<input type="submit" class="collapsible tableCustom3" value='DELETE' style="font-weight:bold;">
+									<div class="content">									
+									  
+									  <br>
+									  <p style = "width:95px"><b style = "color:red">Are you sure?</b></p>
+									  <form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+									    <input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
+									  </form>
 
- <!-- AD - includes the footer component into this page 
-    (albeit not visible) -->
+									</div>
+								
+								
+								
+								
+								
+								
+								
+								
+								 <input class = "buttonShowHide button1" id = "btnCandResults1" 
+                    			type="button" value="1st Place" onclick="ShowHideToggle1(this)" > 
+                    
+                    
+                    			<div id="dvCandResults1" style="display: none"> 
+                    			
+                    			This works:
+                    			<input class = "buttonShowHide" id = "btnCandResults1" 
+                    				type="button" value="1st Place" onclick="ShowHideToggle1(this)" >    
+                    
+								-->	
+								
+									<input class = "tableCustom3" id = "btnCandResults1" 
+                    				type="submit" value="DELETE" onclick="ShowHideToggle1(this)" 
+                    				style="font-weight:bold;">  
+									
+									<div id ="dvCandResults1" style="display: none">								  
+									 
+									  <p style = "width:95px"><b style = "color:red">Are you sure?</b></p>
+									  
+									  <table class="table-responsive">
+										  <tbody>
+											  <tr>
+												  <td>
+													  <form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+													    <input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
+													  </form>
+													  </td>
+													  
+													  <td>
+													  <form action='../readcandidate' method='post'>
+													    <input type='submit' name='ok' value='CANCEL' class = "tableAdd" style="font-weight:bold;">
+													  </form>
+												  </td>
+											  </tr>
+									  </tbody>
+									  
+									  </table>
+
+									</div>
+								
+								<!-- AD 
+								<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+								<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
+								</form>
+								-->	
+								
+								</td>
+								<td id ="buttonUpdate">
+								<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+								<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">
+								</form>
+								</td>
+							    <td><textarea disabled class = "greyed-background" name='candidate_id' >${candidate.candidate_id }</textarea></td> 
+							    <td><textarea disabled name='first_name'>${candidate.first_name }</textarea></td> 
+								<td><textarea disabled name='last_name' >${candidate.last_name }</textarea></td> 
+								<td><textarea disabled name='party' >${candidate.party }</textarea></td> 
+								<td><textarea disabled name='location'>${candidate.location }</textarea></td>		
+								<td><textarea disabled name='age' >${candidate.age }</textarea></td> 
+								<td><textarea disabled name='mission' >${candidate.mission }</textarea></td> 
+								<td><textarea disabled name='vision' >${candidate.vision }</textarea></td> 
+						        <td><textarea disabled class ="greyed-background" name='pic' placeholder="Portrait pic will go here">${candidate.pic }</textarea></td>  
+								<td><textarea disabled name='profession' >${candidate.profession }</textarea></td> 
+								<td><textarea disabled name='username' >${candidate.username }</textarea></td> 
+								<td><textarea disabled name='password' >${candidate.password }</textarea></td> 
+							   </tr>	                        
+		                     </tbody>		                     
+	                     
+                    	</table>      
+					  </div>
+					</div>  		                        
+	             </c:forEach>            
+         </div>      
+    </div>         
+                    
+    			<!-- 			
+    			
+    			AD - This HTML markup contains a DIV, which contains inside of it
+                another div element, which possesses show / hide functionality.
+                The button has been assigned a JavaScript Onclick event handler.
+                When clicked, the function is executed. Furthermore, 
+                based on the value of the button, the HTML div toggle 
+                functionality will be executed. AKA the div will be shown, 
+                and the button text and colour changed. -->    
+                <script type="text/javascript">
+                    function ShowHideToggle1(btnCandResults1) {
+                        var dvCandResults1 = document.getElementById("dvCandResults1");
+                        
+                        /* AD - This variable is for the update button*/
+                        var buttonUpdate = document.getElementById("buttonUpdate");
+                        
+                        if (btnCandResults1.value == "DELETE") {
+                            dvCandResults1.style.display = "block";                            
+                           
+                            btnCandResults1.style.display = "none";
+                            /* AD - The update button disappears also*/
+                            buttonUpdate.style.display = "none";
+                            
+                            
+                        } else {
+                            dvCandResults1.style.display = "none";
+                            btnCandResults1.value = "DELETE";
+                            btnCandResults1.style.backgroundColor = "#2A9D8F";                           
+                        }
+                    } 
+                                      
+                          
+                 	</script> 
+                 	
+                 	<!-- AD
+                 	
+                 	<button type="button" class="collapsible">Open Collapsible</button>
+						<div class="content">
+						
+						  <p> AD - Collapsible box</p>
+						</div>
+                 	
+                 	 -->           
+
+
+	 <!-- AD - includes the footer component into this page 
+	    (albeit not visible) -->
+    
 	<%@ include file="../components/footer.jsp" %> 
 
 </body>

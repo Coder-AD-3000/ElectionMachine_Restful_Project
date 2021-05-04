@@ -33,24 +33,6 @@ public class Candidate {
 	public Candidate() {
 		
 	}
-	public Candidate(String first_name, String last_name, 
-					 String party, String location, int age, 
-					 String mission, String vision, String pic, 
-					 String profession, String username, String password) {
-		
-		this.first_name=first_name;
-		this.last_name=last_name;	
-		this.party=party;
-		this.location=location;
-		this.age=age;
-		this.mission=mission;
-		this.vision=vision;
-		this.pic=pic;
-		this.profession=profession;
-		this.username=username;	
-		this.password=password;	
-	}
-	
 	
 	public Candidate(int candidate_id, String first_name, 
 					 String last_name, String party, String location, 
@@ -70,24 +52,8 @@ public class Candidate {
 		this.username=username;	
 		this.password=password;
 	}
-	public Candidate(String first_name, String last_name, 
-					 String party, String location, String age, 
-					 String mission, String vision, String pic,
-					 String profession, String username, String password) {
-		
-		this.first_name=first_name;
-		this.last_name=last_name;	
-		this.party=party;
-		this.location=location;
-		this.setAge(age);
-		this.mission=mission;
-		this.vision=vision;
-		this.pic=pic;
-		this.profession=profession;
-		this.username=username;	
-		this.password=password;
-	}
 	
+ 
 	public Candidate(String candidate_id, String first_name, 
 					 String last_name, String party, String location, 
 					 String age, String mission, String vision, String pic,
@@ -106,6 +72,7 @@ public class Candidate {
 		this.username=username;	
 		this.password=password;
 	}	 
+	 
 	
 	public int getCandidate_id() {
 		return candidate_id;
@@ -114,6 +81,7 @@ public class Candidate {
 		this.candidate_id = candidate_id;
 	}
 	
+	 
 	public void setCandidate_id(String candidate_id) {
 		try {
 			this.candidate_id = Integer.parseInt(candidate_id);
@@ -122,7 +90,7 @@ public class Candidate {
 			//Do nothing - the value is not changed
 		}
 	}
-		
+	 
 	
 	/**
 	 * @return the first_name
@@ -190,6 +158,7 @@ public class Candidate {
 		this.age = age;
 	}
 	
+ 
 	public void setAge(String age) {
 		try {
 			this.age = Integer.parseInt(age);
@@ -198,7 +167,7 @@ public class Candidate {
 			//Do nothing - the value is not changed
 		}
 	}
-			
+	 
 	
 	/**
 	 * @return the mission
