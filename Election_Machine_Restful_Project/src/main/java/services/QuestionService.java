@@ -34,7 +34,7 @@ public class QuestionService {
 		
 		List<Question> list = entitymanager.createQuery("select x from Question x").getResultList();
 		
-		System.out.println("I read the fucking question");
+		System.out.println("I read the question");
 		
 		entitymanager.getTransaction().commit();
 		return list;

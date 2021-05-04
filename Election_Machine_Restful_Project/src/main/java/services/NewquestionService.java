@@ -32,6 +32,7 @@ public class NewquestionService {
 		em.getTransaction().commit();
 		return list;
 	}	
+	//Comment
 	@POST
 	@Path("/addnewquestion")
 	@Produces(MediaType.APPLICATION_JSON)
