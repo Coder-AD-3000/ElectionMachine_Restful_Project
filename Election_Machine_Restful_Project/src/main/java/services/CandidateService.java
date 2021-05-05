@@ -89,9 +89,9 @@ public class CandidateService {
 		return cand;
 	}
 	
-	/* AD - This is a useful addition
+	/* AD - This is a useful addition */	
 	@GET
-	@Path("/readtoupdatecandidate/{candidate_id}")
+	@Path("/readtodeletecandidate/{candidate_id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Candidate readTodeletecandidate(@PathParam("candidate_id") int candidate_id) {
@@ -101,7 +101,7 @@ public class CandidateService {
 		entitymanager.getTransaction().commit();
 		return cand;
 	}
-	*/	
+	
 	
 	
 	
