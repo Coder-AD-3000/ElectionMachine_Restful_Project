@@ -75,13 +75,40 @@
                     </tr>
                 </thead>
                 <tbody>                    
-                    <tr>                                        	
-                      <td class="tableAddBackground">								
-						<input class = "tableAdd" id = "btnCandResults1" 
+                    <tr> 
+                    
+                    <!-- AD this is the original nice styling
+                    
+                    <td class="tableAddBackground">
+                    <Button type='submit' name='ok' value=''>
+                    <b class = "tableAdd">ADD</b></Button></td>
+                    
+                    And this is the new, not so nice:
+                    
+                     <td class="tableAddBackground">	  								
+						<input class = "tableAdd" id = "btnAddEntry" 
                  				value="ADD" onclick="ShowHideToggle1(this)" 
-                 				style="font-weight:bold;">  
+                 				style="font-weight:bold;"> 
+                 				
+                 				
+                 	And this is the nice delete button:
+                 	
+                 	<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+					<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
+					</form>	
+                    
+                    
+                    Turn it into this:
+                    <Button value='' onClick="window.location = '../jsp/candidateform.jsp';">
+										   <b class = "tableCustom3">CANCEL</b></Button>
+                    
+                     -->                                       	
+                     <td class="tableAddBackground">					 
+					 
+						<Button id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this)">
+						<b class = "tableAdd">ADD</b></Button>
 						
-						<div id ="dvCandResults1" style="display: none">					 
+						<div id ="dvAddEntry" style="display: none">					 
 					  		<p style = "width:95px"><b style = "color: rgba(255, 255, 255, 0.555)">Are you sure?</b></p>							  
 							  <table class="table-responsive">
 								  <tbody>
@@ -98,7 +125,9 @@
 									  </tr>								  
 								  </tbody>						  
 							   </table>
-						</div>					 
+						</div>	
+						
+									 
 	                 			 
 						<td><input readonly class="greyed-background" type='number' name='candidate_id' placeholder="Auto Incremented" value=''></td> 
 	                  	<td><input required type='text' name='first_name' placeholder="Cannot be blank" value=''></td>  
@@ -203,24 +232,24 @@
                 functionality will be executed. AKA the div will be shown, 
                 and the button text and colour changed. -->    
                 <script type="text/javascript">
-                    function ShowHideToggle1(btnCandResults1) {
-                        var dvCandResults1 = document.getElementById("dvCandResults1");
+                    function ShowHideToggle1(btnAddEntry) {
+                        var dvAddEntry = document.getElementById("dvAddEntry");
                         
                         /* AD - This variable is for the update button*/
                         var buttonUpdate = document.getElementById("buttonUpdate");
                         
-                        if (btnCandResults1.value == "ADD") {
-                            dvCandResults1.style.display = "block";                            
+                        if (btnAddEntry.value == "ADD") {
+                            dvAddEntry.style.display = "block";                            
                            
-                            btnCandResults1.style.display = "none";
+                            btnAddEntry.style.display = "none";
                             /* AD - The update button disappears also*/
                             buttonUpdate.style.display = "none";
                             
                             
                         } else {
-                            dvCandResults1.style.display = "none";
-                            btnCandResults1.value = "ADD";
-                            btnCandResults1.style.backgroundColor = "#2A9D8F";                           
+                            dvAddEntry.style.display = "none";
+                            btnAddEntry.value = "ADD";
+                            btnAddEntry.style.backgroundColor = "#2A9D8F";                           
                         }
                     } 
                                       
@@ -239,13 +268,13 @@
                  	 
                  	 
                  	 <!-- AD 					
-						<input class = "buttonShowHide button1" id = "btnCandResults1" 
+						<input class = "buttonShowHide button1" id = "btnAddEntry" 
                			type="button" value="1st Place" onclick="ShowHideToggle1(this)" > 
 		
-              			<div id="dvCandResults1" style="display: none"> 
+              			<div id="dvAddEntry" style="display: none"> 
               			
               			This works:
-              			<input class = "buttonShowHide" id = "btnCandResults1" 
+              			<input class = "buttonShowHide" id = "btnAddEntry" 
               			type="button" value="1st Place" onclick="ShowHideToggle1(this)" >                    
                 	-->	         
                 	
