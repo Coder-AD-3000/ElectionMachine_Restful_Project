@@ -22,7 +22,11 @@ import javax.ws.rs.core.MediaType;
 
 import data.Candidate;
 
-@WebServlet(urlPatterns = {"/addcandidate", "/deletecandidate","/updatecandidate","/readcandidate","/readtoupdatecandidate"})
+@WebServlet(urlPatterns = {"/addcandidate", "/deletecandidate",
+		"/updatecandidate","/readcandidate",
+		"/readtodeletecandidate","/readtoupdatecandidate"})
+
+
 public class CandidateClient extends HttpServlet {
 
 	  @Override
@@ -52,6 +56,15 @@ public class CandidateClient extends HttpServlet {
 		  RequestDispatcher reqdisp=request.getRequestDispatcher("./jsp/candidatetoupdateform.jsp");
 		  reqdisp.forward(request, response);
 		  return;
+		  
+		  // AD - I added this for readtodeletecandidate
+	  case "/readtodeletecandidate":
+		  Candidate candidateDel = readToDeleteCandidate(request);
+		  request.setAttribute("candidate", candidateDel);
+		  RequestDispatcher reqdispDel=request.getRequestDispatcher("./jsp/candidatetodeleteform.jsp");
+		  reqdispDel.forward(request, response);
+		  return;  	  
+		  
 	  }
 	  request.setAttribute("candidatelist", list);
 	  RequestDispatcher reqdisp=request.getRequestDispatcher("./jsp/candidateform.jsp");
@@ -61,6 +74,18 @@ public class CandidateClient extends HttpServlet {
 	private Candidate readToUpdateCandidate(HttpServletRequest request) {
 		String candidate_id=request.getParameter("candidate_id");
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/readtoupdatecandidate/"+candidate_id;
+		Client client = ClientBuilder.newClient();
+		WebTarget webtarget = client.target(uri);
+		Builder builder = webtarget.request();
+		Candidate candidate = builder.get(Candidate.class);  
+		return candidate;
+	}
+	
+	
+	// AD - I added this for read to delete
+	private Candidate readToDeleteCandidate(HttpServletRequest request) {
+		String candidate_id=request.getParameter("candidate_id");
+		String uri = "http://127.0.0.1:8080/rest/candidateservice/readtodeletecandidate/"+candidate_id;
 		Client client = ClientBuilder.newClient();
 		WebTarget webtarget = client.target(uri);
 		Builder builder = webtarget.request();
