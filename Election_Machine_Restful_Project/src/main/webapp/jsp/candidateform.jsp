@@ -116,12 +116,12 @@
 									  <tr>
 										 <td class="tableAddBackground">									 	
 										 						
-								 	  		<input type='submit' name='ok' value='CONFIRM' class = "tableAdd" 
+								 	  		<input type='submit' name='ok' value='ADD ENTRY' class = "tableAdd" 
 								 	  		style="font-weight:bold;">
 								 	  	 </td> 							  
 									  	 <td>
 										   <Button value='' onClick="window.location = '../jsp/candidateform.jsp';">
-										   <b class = "tableCustom3">CANCEL</b></Button>
+										   <b>CANCEL</b></Button>
 									  	</td>
 									  </tr>								  
 								  </tbody>						  
@@ -229,7 +229,7 @@
 																
 									-->
 									
-									<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+									<form action='../readtodeletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
 									<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
 									</form>
 									
