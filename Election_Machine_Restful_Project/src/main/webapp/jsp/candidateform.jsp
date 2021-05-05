@@ -229,13 +229,15 @@
 																
 									-->
 									
+									
+									
+									
+								
+									
 									<form action='../readtodeletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
 									<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
 									</form>
-									
-									
-									
-																
+																								
 									</td>
 									<td>
 									<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
@@ -273,6 +275,7 @@
                 functionality will be executed. AKA the div will be shown, 
                 and the button text and colour changed. -->    
                 <script type="text/javascript">
+                
                     function ShowHideToggle1(btnAddEntry) {
                         var dvAddEntry = document.getElementById("dvAddEntry");
                                                 
@@ -316,12 +319,11 @@
 	                     modal.style.display = "none";
 	                   }
 	                 }
-           
-                    
-                     
-                          
-                 </script> 
+                  
+                 	</script> 
                  	
+                 	
+                 	              	
                  	<!-- AD
                  	
                  	<button type="button" class="collapsible">Open Collapsible</button>
@@ -333,7 +335,8 @@
                  	 -->  
                  	 
                  	 
-                 	 <!-- AD 					
+                 	 <!-- AD 	
+                 	 				
 						<input class = "buttonShowHide button1" id = "btnAddEntry" 
                			type="button" value="1st Place" onclick="ShowHideToggle1(this)" > 
 		
@@ -341,7 +344,9 @@
               			
               			This works:
               			<input class = "buttonShowHide" id = "btnAddEntry" 
-              			type="button" value="1st Place" onclick="ShowHideToggle1(this)" >                    
+              			type="button" value="1st Place" onclick="ShowHideToggle1(this)" > 
+              			
+              			                   
                 	-->	         
                 	
                 	
