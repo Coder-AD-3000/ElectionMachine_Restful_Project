@@ -16,6 +16,9 @@
 </head>
 <body>
 
+	<!-- AD - A message in the top left to show an active session message -->
+	<div class = "adminSession"><i>Admin Session Active ${requestScope.fromfilter }</i></div> 
+
     <!-- AD - includes the navbarBootstrap component, 
     		which is modified version of our regular navbar,
     		in order to offset some negative effects
@@ -49,8 +52,10 @@
     	<!-- AD - This container contains a form (with table) to add 
     	candidates to the candidate table in the emachinedb database.-->
     <div class="containerUpdateCandidatesTable">                                                                                                
-       <div class="table-responsive">            
-        <form action='../addcandidate' method='post'>                
+       <div class="table-responsive">    
+              
+          <form action='../addcandidate' method='post'>  
+                
             <table class="table">                    
                 <thead class = "tableCustom1">
                     <tr>
@@ -70,10 +75,33 @@
                     </tr>
                 </thead>
                 <tbody>                    
-                    <tr>                                                	                        	               
-                   		<td class="tableAddBackground"><Button type='submit' name='ok' value=''><b class = "tableAdd">ADD</b></Button></td>
-                   		<td><input readonly class="greyed-background" type='number' name='candidate_id' placeholder="Auto Incremented" value=''></td> 
-                   	 	<td><input required type='text' name='first_name' placeholder="Cannot be blank" value=''></td>  
+                    <tr>                                        	
+                      <td class="tableAddBackground">								
+						<input class = "tableAdd" id = "btnCandResults1" 
+                 				value="ADD" onclick="ShowHideToggle1(this)" 
+                 				style="font-weight:bold;">  
+						
+						<div id ="dvCandResults1" style="display: none">					 
+					  		<p style = "width:95px"><b style = "color: rgba(255, 255, 255, 0.555)">Are you sure?</b></p>							  
+							  <table class="table-responsive">
+								  <tbody>
+									  <tr>
+										 <td class="tableAddBackground">									 	
+										 						
+								 	  		<input type='submit' name='ok' value='ADD ENTRY' class = "tableAdd" 
+								 	  		style="font-weight:bold;">
+								 	  	 </td> 							  
+									  	 <td>
+										   <Button value='' onClick="window.location = '../jsp/candidateform.jsp';">
+										   <b class = "tableCustom3">CANCEL</b></Button>
+									  	</td>
+									  </tr>								  
+								  </tbody>						  
+							   </table>
+						</div>					 
+	                 			 
+						<td><input readonly class="greyed-background" type='number' name='candidate_id' placeholder="Auto Incremented" value=''></td> 
+	                  	<td><input required type='text' name='first_name' placeholder="Cannot be blank" value=''></td>  
 						<td><input required type='text' name='last_name' placeholder = "Cannot be blank" value=''></td>  
 						<td><input required type='text' name='party' placeholder="Cannot be blank" value=''></td>  
 						<td><input required type='text' name='location' placeholder="Cannot be blank" value=''></td>  		
@@ -83,15 +111,15 @@
 				        <td><input readonly class="greyed-background" type='text' name='pic' placeholder="Portrait pic will go here" value=''></td>  
 				        <td><input required type='text' name='profession' placeholder="Cannot be blank" value=''></td>   
 						<td><input required type='text' name='username' placeholder="Cannot be blank" value=''></td>  
-						<td><input required type='text' name='password' placeholder="Cannot be blank" value=''></td>                            
+						<td><input required type='text' name='password' placeholder="Cannot be blank" value=''></td>	                        
                     </tr>                     
                 </tbody>                   
-            </table>
-           </form>
+            </table>            
+          </form>
        </div>       
-    </div>
+    </div>                   
            
-     <!-- AD - Beginning the central (yellow container)-->
+    <!-- AD - Beginning the central (yellow container)-->
     <div class="containerUpdateCandidatesTable">
         <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>
                                                                                                  
@@ -133,108 +161,37 @@
 	                        
 	                        <tbody>	                        
 		                      <tr> 
-		                        <td>
-		                        
-		                        <!-- AD 
-		                        <button type="button" class="collapsible">Open Collapsible</button>
-									<div class="content">									
-									  <p> AD - Collapsible box</p>
-								</div>
+		                        <td>			                        							 
 								
-								
-								
-									<input type="submit" class="collapsible tableCustom3" value='DELETE' style="font-weight:bold;">
-									<div class="content">									
-									  
-									  <br>
-									  <p style = "width:95px"><b style = "color:red">Are you sure?</b></p>
-									  <form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-									    <input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
-									  </form>
-
-									</div>
-								
-								
-								
-								
-								
-								
-								
-								
-								 <input class = "buttonShowHide button1" id = "btnCandResults1" 
-                    			type="button" value="1st Place" onclick="ShowHideToggle1(this)" > 
-                    
-                    
-                    			<div id="dvCandResults1" style="display: none"> 
-                    			
-                    			This works:
-                    			<input class = "buttonShowHide" id = "btnCandResults1" 
-                    				type="button" value="1st Place" onclick="ShowHideToggle1(this)" >    
-                    
-								-->	
-								
-									<input class = "tableCustom3" id = "btnCandResults1" 
-                    				type="submit" value="DELETE" onclick="ShowHideToggle1(this)" 
-                    				style="font-weight:bold;">  
-									
-									<div id ="dvCandResults1" style="display: none">								  
-									 
-									  <p style = "width:95px"><b style = "color:red">Are you sure?</b></p>
-									  
-									  <table class="table-responsive">
-										  <tbody>
-											  <tr>
-												  <td>
-													  <form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-													    <input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
-													  </form>
-													  </td>
-													  
-													  <td>
-													  <form action='../readcandidate' method='post'>
-													    <input type='submit' name='ok' value='CANCEL' class = "tableAdd" style="font-weight:bold;">
-													  </form>
-												  </td>
-											  </tr>
-									  </tbody>
-									  
-									  </table>
-
-									</div>
-								
-								<!-- AD 
-								<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-								<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
-								</form>
-								-->	
-								
-								</td>
-								<td id ="buttonUpdate">
-								<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-								<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">
-								</form>
-								</td>
-							    <td><textarea disabled class = "greyed-background" name='candidate_id' >${candidate.candidate_id }</textarea></td> 
-							    <td><textarea disabled name='first_name'>${candidate.first_name }</textarea></td> 
-								<td><textarea disabled name='last_name' >${candidate.last_name }</textarea></td> 
-								<td><textarea disabled name='party' >${candidate.party }</textarea></td> 
-								<td><textarea disabled name='location'>${candidate.location }</textarea></td>		
-								<td><textarea disabled name='age' >${candidate.age }</textarea></td> 
-								<td><textarea disabled name='mission' >${candidate.mission }</textarea></td> 
-								<td><textarea disabled name='vision' >${candidate.vision }</textarea></td> 
-						        <td><textarea disabled class ="greyed-background" name='pic' placeholder="Portrait pic will go here">${candidate.pic }</textarea></td>  
-								<td><textarea disabled name='profession' >${candidate.profession }</textarea></td> 
-								<td><textarea disabled name='username' >${candidate.username }</textarea></td> 
-								<td><textarea disabled name='password' >${candidate.password }</textarea></td> 
-							   </tr>	                        
-		                     </tbody>		                     
-	                     
-                    	</table>      
-					  </div>
-					</div>  		                        
-	             </c:forEach>            
-         </div>      
-    </div>         
+									<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+									<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
+									</form>							
+									</td>
+									<td>
+									<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+									<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">
+									</form>
+									</td>
+								    <td><textarea disabled class = "greyed-background" name='candidate_id' >${candidate.candidate_id }</textarea></td> 
+								    <td><textarea disabled name='first_name'>${candidate.first_name }</textarea></td> 
+									<td><textarea disabled name='last_name' >${candidate.last_name }</textarea></td> 
+									<td><textarea disabled name='party' >${candidate.party }</textarea></td> 
+									<td><textarea disabled name='location'>${candidate.location }</textarea></td>		
+									<td><textarea disabled name='age' >${candidate.age }</textarea></td> 
+									<td><textarea disabled name='mission' >${candidate.mission }</textarea></td> 
+									<td><textarea disabled name='vision' >${candidate.vision }</textarea></td> 
+							        <td><textarea disabled class ="greyed-background" name='pic' placeholder="Portrait pic will go here">${candidate.pic }</textarea></td>  
+									<td><textarea disabled name='profession' >${candidate.profession }</textarea></td> 
+									<td><textarea disabled name='username' >${candidate.username }</textarea></td> 
+									<td><textarea disabled name='password' >${candidate.password }</textarea></td> 
+								   </tr>	                        
+			                     </tbody>		                     
+	                    	</table>      
+						  </div>
+						</div>  		                        
+		             </c:forEach>            
+	         </div>      
+	    </div>         
                     
     			<!-- 			
     			
@@ -252,7 +209,7 @@
                         /* AD - This variable is for the update button*/
                         var buttonUpdate = document.getElementById("buttonUpdate");
                         
-                        if (btnCandResults1.value == "DELETE") {
+                        if (btnCandResults1.value == "ADD") {
                             dvCandResults1.style.display = "block";                            
                            
                             btnCandResults1.style.display = "none";
@@ -262,7 +219,7 @@
                             
                         } else {
                             dvCandResults1.style.display = "none";
-                            btnCandResults1.value = "DELETE";
+                            btnCandResults1.value = "ADD";
                             btnCandResults1.style.backgroundColor = "#2A9D8F";                           
                         }
                     } 
@@ -278,7 +235,22 @@
 						  <p> AD - Collapsible box</p>
 						</div>
                  	
-                 	 -->           
+                 	 -->  
+                 	 
+                 	 
+                 	 <!-- AD 					
+						<input class = "buttonShowHide button1" id = "btnCandResults1" 
+               			type="button" value="1st Place" onclick="ShowHideToggle1(this)" > 
+		
+              			<div id="dvCandResults1" style="display: none"> 
+              			
+              			This works:
+              			<input class = "buttonShowHide" id = "btnCandResults1" 
+              			type="button" value="1st Place" onclick="ShowHideToggle1(this)" >                    
+                	-->	         
+                	
+                	
+                	
 
 
 	 <!-- AD - includes the footer component into this page 
