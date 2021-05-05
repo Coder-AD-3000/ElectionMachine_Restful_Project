@@ -38,16 +38,16 @@ public class CandidateClient extends HttpServlet {
 	  List<Candidate> list=null; /* AD - Candidate is the class instance*/
 	  switch (action) {
 	  case "/addcandidate":
-		  list=addcandidate(request);break;
+		  list=addCandidate(request);break;
 	  case "/deletecandidate":
 		  //String candidate_id=request.getParameter("candidate_id"); /* AD - I can't see a use for this line */
-		  list=deletecandidate(request);break;
+		  list=deleteCandidate(request);break;
 	  case "/updatecandidate":
-		  list=updatecandidate(request);break;
+		  list=updateCandidate(request);break;
 	  case "/readcandidate":
-		  list=readcandidate(request);break;
+		  list=readCandidate(request);break;
 	  case "/readtoupdatecandidate":
-		  Candidate candidate = readtoupdatecandidate(request);
+		  Candidate candidate = readToUpdateCandidate(request);
 		  request.setAttribute("candidate", candidate);
 		  RequestDispatcher reqdisp=request.getRequestDispatcher("./jsp/candidatetoupdateform.jsp");
 		  reqdisp.forward(request, response);
@@ -58,7 +58,7 @@ public class CandidateClient extends HttpServlet {
 	  reqdisp.forward(request, response);
   }
 
-	private Candidate readtoupdatecandidate(HttpServletRequest request) {
+	private Candidate readToUpdateCandidate(HttpServletRequest request) {
 		String candidate_id=request.getParameter("candidate_id");
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/readtoupdatecandidate/"+candidate_id;
 		Client client = ClientBuilder.newClient();
@@ -68,7 +68,7 @@ public class CandidateClient extends HttpServlet {
 		return candidate;
 	}
 
-	private List<Candidate> addcandidate(HttpServletRequest request) {
+	private List<Candidate> addCandidate(HttpServletRequest request) {
 		//A Candidate object to send to our web-service 
 		Candidate candidate = new Candidate(request.getParameter("candidate_id"), 
 				request.getParameter("first_name"),
@@ -98,7 +98,7 @@ public class CandidateClient extends HttpServlet {
 		return returnedList;
 	}
 	
-	private List<Candidate> readcandidate(HttpServletRequest request) {
+	private List<Candidate> readCandidate(HttpServletRequest request) {
 		//String candidate_id = request.getParameter("candidate_id"); /* AD - I can't see a use for this line */
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/readcandidate";
 		Client client = ClientBuilder.newClient();
@@ -112,7 +112,7 @@ public class CandidateClient extends HttpServlet {
 		return returnedList;
 	}
 	
-	private List<Candidate> updatecandidate(HttpServletRequest request) {
+	private List<Candidate> updateCandidate(HttpServletRequest request) {
 		//A Candidate object to send to our web-service 
 		Candidate candidate = new Candidate(request.getParameter("candidate_id"), 
 				request.getParameter("first_name"), 
@@ -142,7 +142,7 @@ public class CandidateClient extends HttpServlet {
 		return returnedList;
 	}
 	
-	private List<Candidate> deletecandidate(HttpServletRequest request) {
+	private List<Candidate> deleteCandidate(HttpServletRequest request) {
 		String candidate_id=request.getParameter("candidate_id");
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/deletecandidate/"+candidate_id;
 		Client client = ClientBuilder.newClient();
