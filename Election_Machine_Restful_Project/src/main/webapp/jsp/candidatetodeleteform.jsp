@@ -10,7 +10,7 @@
     <%@ include file="../components/meta.jsp" %>
    
     
-    <title>Candidate To Update Form</title>
+    <title>Candidate To Delete Form</title>
     
     <!-- AD - includes the header component, into this page -->
     <%@ include file="../components/headerBootstrap.jsp" %>    
