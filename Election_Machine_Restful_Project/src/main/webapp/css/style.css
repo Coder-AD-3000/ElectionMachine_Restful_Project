@@ -1010,19 +1010,32 @@ color: #414141;
 }
 
 
-/* AD - customises the logout fail message
-		which appears if the user fails to login
+/* AD - customises the admin active session message
+		which appears on the admin website pages once 
+		the admin is logged in
 		correctly.*/
-.loginSuccess {
-	display: flex;
-  	justify-content: center;
+.adminSession {
+	display: inline-block;
+	justify-content: center;
 	background: linear-gradient(0deg,#ff0000, 10%, #E76F51); 
     color: #fef2da;
     border-radius: 10px;    
     margin: 5px 0px 0px 5px;
-    padding: 0px;
-    max-width: 9%;
-    	
+    padding: 0px 5px;   
+}
+
+/* AD - customises the candidate active session message
+		which appears on the admin website pages once 
+		the admin is logged in
+		correctly.*/
+.candidateSession {
+	display: inline-block;
+	justify-content: center;
+	background: linear-gradient(0deg,blue, 10%, #5757ff); 
+    color: #e1ffff;
+    border-radius: 10px;    
+    margin: 5px 0px 0px 5px;
+    padding: 0px 5px;     	
 }
 
 
