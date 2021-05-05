@@ -44,7 +44,8 @@
                 Regular users and candidates do not have access to this page 
                 (or its functionality).
             </h5>        
-        </div>        
+        </div>           
+       							    
 
         <!-- AD - End of the central (yellow container)-->
     </div>    
@@ -109,13 +110,13 @@
 						<b class = "tableAdd">ADD</b></Button>
 						
 						<div id ="dvAddEntry" style="display: none">					 
-					  		<p style = "width:95px"><b style = "color: rgba(255, 255, 255, 0.555)">Are you sure?</b></p>							  
+					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>							  
 							  <table class="table-responsive">
 								  <tbody>
 									  <tr>
 										 <td class="tableAddBackground">									 	
 										 						
-								 	  		<input type='submit' name='ok' value='ADD ENTRY' class = "tableAdd" 
+								 	  		<input type='submit' name='ok' value='CONFIRM' class = "tableAdd" 
 								 	  		style="font-weight:bold;">
 								 	  	 </td> 							  
 									  	 <td>
@@ -125,9 +126,7 @@
 									  </tr>								  
 								  </tbody>						  
 							   </table>
-						</div>	
-						
-									 
+						</div>								 
 	                 			 
 						<td><input readonly class="greyed-background" type='number' name='candidate_id' placeholder="Auto Incremented" value=''></td> 
 	                  	<td><input required type='text' name='first_name' placeholder="Cannot be blank" value=''></td>  
@@ -192,16 +191,58 @@
 		                      <tr> 
 		                        <td>			                        							 
 								
+									<!-- AD The original elite working code
+									
 									<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
 									<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
-									</form>							
+									</form>
+									
+									-->
+													
+									
+									<!-- AD the original modal example code
+									
+									Trigger/Open The Modal
+									<button id="myBtn">Open Modal</button>
+									
+									The Modal
+									<div id="myModal" class="modal">
+									
+									  Modal content
+									  <div class="modal-content">
+									    <span class="close">&times;</span>
+									    <p>Some text in the Modal..</p>
+									  </div>
+									
+									</div>									
+									
+									 -->
+									 
+									<!-- AD This is the original workgin code with the modal number 
+									<button id="myBtn">Open Modal</button>									
+									<div id="myModal" class="modal">									  
+									  <div class="modal-content">${candidate.candidate_id }									  	
+									    <span class="close">&times;</span>
+									    <p>Are you sure you want to delete?</p>
+									  </div>									
+									</div>								
+																
+									-->
+									
+									<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+									<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
+									</form>
+									
+									
+									
+																
 									</td>
 									<td>
 									<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
 									<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">
 									</form>
 									</td>
-								    <td><textarea disabled class = "greyed-background" name='candidate_id' >${candidate.candidate_id }</textarea></td> 
+								    <td id = "candidate number"><textarea disabled class = "greyed-background" name='candidate_id' >${candidate.candidate_id }</textarea></td> 
 								    <td><textarea disabled name='first_name'>${candidate.first_name }</textarea></td> 
 									<td><textarea disabled name='last_name' >${candidate.last_name }</textarea></td> 
 									<td><textarea disabled name='party' >${candidate.party }</textarea></td> 
@@ -234,17 +275,11 @@
                 <script type="text/javascript">
                     function ShowHideToggle1(btnAddEntry) {
                         var dvAddEntry = document.getElementById("dvAddEntry");
-                        
-                        /* AD - This variable is for the update button*/
-                        var buttonUpdate = document.getElementById("buttonUpdate");
-                        
+                                                
                         if (btnAddEntry.value == "ADD") {
                             dvAddEntry.style.display = "block";                            
                            
-                            btnAddEntry.style.display = "none";
-                            /* AD - The update button disappears also*/
-                            buttonUpdate.style.display = "none";
-                            
+                            btnAddEntry.style.display = "none";                            
                             
                         } else {
                             dvAddEntry.style.display = "none";
@@ -252,9 +287,40 @@
                             btnAddEntry.style.backgroundColor = "#2A9D8F";                           
                         }
                     } 
-                                      
+                       
+                    
+                    /* AD - This script is to create a 'modal' pop up */
+                  
+	                 // Get the modal
+	                 var modal = document.getElementById("myModal");
+	
+	                 // Get the button that opens the modal
+	                 var btn = document.getElementById("myBtn");
+	
+	                 // Get the <span> element that closes the modal
+	                 var span = document.getElementsByClassName("close")[0];
+	
+	                 // When the user clicks the button, open the modal 
+	                 btn.onclick = function() {
+	                   modal.style.display = "block";
+	                 }
+	
+	                 // When the user clicks on <span> (x), close the modal
+	                 span.onclick = function() {
+	                   modal.style.display = "none";
+	                 }
+	
+	                 // When the user clicks anywhere outside of the modal, close it
+	                 window.onclick = function(event) {
+	                   if (event.target == modal) {
+	                     modal.style.display = "none";
+	                   }
+	                 }
+           
+                    
+                     
                           
-                 	</script> 
+                 </script> 
                  	
                  	<!-- AD
                  	
