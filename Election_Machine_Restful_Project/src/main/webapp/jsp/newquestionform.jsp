@@ -8,7 +8,7 @@
 	<!-- AD - includes the meta component, into this page -->
     <%@ include file="../components/meta.jsp" %>
  
-    <title>Candidate Form</title>
+    <title>New Questions Form</title>
     
     <!-- AD - includes the header component, into this page -->
     <%@ include file="../components/headerBootstrap.jsp" %>    
@@ -32,7 +32,7 @@
         
         <!-- AD - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
-        <h3 class = "adminTextCorrection1">ADMIN PORTAL: Update Candidates</h3>
+        <h3 class = "adminTextCorrection1">ADMIN PORTAL: Update New Questions</h3>
         </div>
        
         <!-- AD - A small container to amend the admin note background section-->
@@ -56,55 +56,19 @@
     <div class="containerUpdateCandidatesTable">                                                                                                
        <div class="table-responsive">    
               
-          <form action='../addcandidate' method='post'>  
+          <form action='/addnewquestion' method='post'> 
                 
             <table class="table">                    
                 <thead class = "tableCustom1">
                     <tr>
-                        <th>ADD</th>                           
-                        <th>CANDIDATE_ID</th>
-                        <th>FIRST NAME</th>
-                        <th>LAST NAME</th>
-                        <th>PARTY</th>
-                        <th>LOCATION</th>                            
-                        <th>AGE</th>
-                        <th>MISSION</th>
-                        <th>VISION</th>
-                        <th>PICTURE</th>
-                        <th>PROFESSION</th>
-                        <th>USERNAME</th>
-                        <th>PASSWORD</th>
+                        <th>ADD</th>
+                        <th>NEW QUESTION ID</th>                         
+                        <th>NEW QUESTION</th>                
                     </tr>
                 </thead>
                 <tbody>                    
-                    <tr> 
-                    
-                    <!-- AD this is the original nice styling
-                    
-                    <td class="tableAddBackground">
-                    <Button type='submit' name='ok' value=''>
-                    <b class = "tableAdd">ADD</b></Button></td>
-                    
-                    And this is the new, not so nice:
-                    
-                     <td class="tableAddBackground">	  								
-						<input class = "tableAdd" id = "btnAddEntry" 
-                 				value="ADD" onclick="ShowHideToggle1(this)" 
-                 				style="font-weight:bold;"> 
-                 				
-                 				
-                 	And this is the nice delete button:
-                 	
-                 	<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-					<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
-					</form>	
-                    
-                    
-                    Turn it into this:
-                    <Button value='' onClick="window.location = '../jsp/candidateform.jsp';">
-										   <b class = "tableCustom3">CANCEL</b></Button>
-                    
-                     -->                                       	
+                    <tr>                     
+                                                          	
                      <td class="tableAddBackground">					 
 					 
 						<Button id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this)">
@@ -114,7 +78,7 @@
 					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
 					  		
 					  			
-					  		<!-- AD this div is for the loading animation -->
+					  		<!-- EK - animation container -->
 					  		 <div class="loader"></div> 
 					  							  								  
 							  <table class="table-responsive">
@@ -126,7 +90,7 @@
 								 	  		style="font-weight:bold;">
 								 	  	 </td> 							  
 									  	 <td>
-										   <Button value='' onClick="window.location = '../jsp/candidateform.jsp';">
+										   <Button value='' onClick="window.location = '../jsp/newquestionform.jsp';">
 										   <b>CANCEL</b></Button>
 									  	</td>
 									  </tr>								  
@@ -134,18 +98,19 @@
 							   </table>
 						</div>								 
 	                 			 
-						<td><input readonly class="greyed-background" type='number' name='candidate_id' placeholder="Auto Incremented" value=''></td> 
-	                  	<td><input required type='text' name='first_name' placeholder="Cannot be blank" value=''></td>  
-						<td><input required type='text' name='last_name' placeholder = "Cannot be blank" value=''></td>  
-						<td><input required type='text' name='party' placeholder="Cannot be blank" value=''></td>  
-						<td><input required type='text' name='location' placeholder="Cannot be blank" value=''></td>  		
-						<td><input required type='number' name='age' placeholder="Number" value='' min="18" max="100"></td>  
-						<td><input required type='text' name='mission' placeholder="Cannot be blank" value=''></td>  
-						<td><input required type='text' name='vision' placeholder="Cannot be blank" value=''></td>  
-				        <td><input readonly class="greyed-background" type='text' name='pic' placeholder="Portrait pic will go here" value=''></td>  
-				        <td><input required type='text' name='profession' placeholder="Cannot be blank" value=''></td>   
-						<td><input required type='text' name='username' placeholder="Cannot be blank" value=''></td>  
-						<td><input required type='text' name='password' placeholder="Cannot be blank" value=''></td>	                        
+						<td><input readonly class="greyed-background" type='number' name='newquestion_id' placeholder="Auto Incremented" value=''></td> 
+	                  	<td><input required type='text' name='new_question' placeholder="Cannot be blank" value=''></td>  
+												
+						<!-- EK
+						
+						<form action='/addnewquestion' method='post'>
+							<input type='text' name='new_question' value=''>
+							<input type='submit' name='ok' value='OK'>
+						</form>
+						
+						 -->
+						
+						                        
                     </tr>                     
                 </tbody>                   
             </table>            
@@ -161,13 +126,13 @@
                <table class="table">                
 				<thead class = "tableCustom1"> 						
 						<tr>                   			
-                   			<th style = "text-align: left;" class="tableCandidateDB"><button onclick="location.href='../readcandidate';" value=''>
+                   			<th style = "text-align: left;" class="tableCandidateDB"><button onclick="location.href='../readnewquestion';" value=''>
                    			<b class = "tableUpdate">SHOW DATABASE</b></Button></th>                  		
                   			</tr>
                      </thead>                        
                 </table>                 
                             			
-                <c:forEach var="candidate" items="${requestScope.candidatelist}">           
+                <c:forEach var="candidate" items="${requestScope.newquestionlist}">           
                     
                    <div class="showDatabaseContainer"> 
                   
@@ -178,67 +143,14 @@
 	                          <tr>
 		                        <th>DELETE</th>  
 		                        <th>UPDATE</th>                          
-		                        <th>CANDIDATE_ID</th>
-		                        <th>FIRST NAME</th>
-		                        <th>LAST NAME</th>
-		                        <th>PARTY</th>
-		                        <th>LOCATION</th>                            
-		                        <th>AGE</th>
-		                        <th>MISSION</th>
-		                        <th>VISION</th>
-		                        <th>PICTURE</th>
-		                        <th>PROFESSION</th>
-		                        <th>USERNAME</th>
-		                        <th>PASSWORD</th>
+		                        <th>NEW QUESTION ID</th>                         
+                        		<th>NEW QUESTION</th> 
 	                          </tr>
 	                        </thead> 
 	                        
 	                        <tbody>	                        
 		                      <tr> 
-		                        <td class="tableAddBackground">			                        							 
-								
-									<!-- AD The original elite working code
-									
-									<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-									<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
-									</form>
-									
-									-->
-													
-									
-									<!-- AD the original modal example code
-									
-									Trigger/Open The Modal
-									<button id="myBtn">Open Modal</button>
-									
-									The Modal
-									<div id="myModal" class="modal">
-									
-									  Modal content
-									  <div class="modal-content">
-									    <span class="close">&times;</span>
-									    <p>Some text in the Modal..</p>
-									  </div>
-									
-									</div>									
-									
-									 -->
-									 
-									<!-- AD This is the original workgin code with the modal number 
-									<button id="myBtn">Open Modal</button>									
-									<div id="myModal" class="modal">									  
-									  <div class="modal-content">${candidate.candidate_id }									  	
-									    <span class="close">&times;</span>
-									    <p>Are you sure you want to delete?</p>
-									  </div>									
-									</div>								
-																
-									-->
-									
-									
-									
-									
-								
+		                        <td class="tableAddBackground">							
 									
 									<form action='../readtodeletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
 									<input type='submit' name='ok' value='DELETE' class = "tableCustom3 buttonMarginCorrection1" style="font-weight:bold;">
