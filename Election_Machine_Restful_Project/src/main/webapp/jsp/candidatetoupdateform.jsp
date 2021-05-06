@@ -75,12 +75,16 @@
 	                            <th>USERNAME</th>
 	                            <th>PASSWORD</th>
 	                        </tr>
-	                    </thead>
+	                    </thead>                    
 	                    
 	                    <tbody>                    
 	                        <tr>                                                   
-	                            <td class="tableAddBackground"><input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;"></td> 
-							    
+	                            <td class="tableAddBackground">	                            
+	                            <!-- AD this div is for the loading animation -->
+					  			<div class="loaderUpdate"></div>					  			
+	                            <input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">
+	                            </td> 
+							    						    
 							    <td><input readonly class = "greyed-background" type='text' name='candidate_id' value='${requestScope.candidate.candidate_id }'></td> 
 								<td><input required type='text' name='first_name' value='${requestScope.candidate.first_name }'></td> 
 								<td><input required type='text' name='last_name' value='${requestScope.candidate.last_name }'></td> 
