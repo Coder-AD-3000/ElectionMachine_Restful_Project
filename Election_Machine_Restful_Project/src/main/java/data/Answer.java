@@ -1,5 +1,7 @@
 package data;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,7 +34,8 @@ public class Answer {
 	private int question_id;
 	private int candidate_id;
 	private int answer;
-	private String comment;	
+	private String comment;
+	private List<Question> questionList;
 	
 	
 	public Answer() {
@@ -49,6 +52,17 @@ public class Answer {
 		this.question_id = Integer.parseInt(question_id);
 		this.answer = Integer.parseInt(answer);
 		this.comment = comment;
+	}
+	public Answer(String candidate_id, int question_id, String answer, String comment) {
+		this.candidate_id = Integer.parseInt(candidate_id);
+		this.question_id = question_id;
+		this.answer = Integer.parseInt(answer);
+		this.comment = comment;
+	}
+	
+	public Answer(int question_id, String answer) {
+		this.question_id = question_id;
+		this.answer = Integer.parseInt(answer);
 	}
 	 
 	public int getCandidateId() {
