@@ -116,6 +116,10 @@
 	                        	<td class="tableAddBackground">
 	                        												 
 								  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Deletion?</b></p>							  
+										  
+										  <!-- AD this div is for the loading animation -->
+					  		 				<div class="loaderDelete"></div> 
+										  
 										  <table class="table-responsive">
 											  <tbody>
 												  <tr>
