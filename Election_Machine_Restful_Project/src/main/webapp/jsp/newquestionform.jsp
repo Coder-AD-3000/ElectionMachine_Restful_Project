@@ -71,10 +71,10 @@
                                                           	
                      <td class="tableAddBackground">					 
 					 
-						<Button id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this)">
+						<Button id = "addButton" value='ADD' onClick="toggleB(this)">
 						<b class = "tableAdd">ADD</b></Button>
 						
-						<div id ="dvAddEntry" style="display: none">					 
+						<div id ="newEntryDiv" style="display: none">					 
 					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
 					  		
 					  			
@@ -152,28 +152,19 @@
 		                      <tr> 
 		                        <td class="tableAddBackground">							
 									
-									<form action='../readtodeletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+									<form action='../readtodeletecandidate?candidate_id=${newquestion.newquestionId}' method='post'>
 									<input type='submit' name='ok' value='DELETE' class = "tableCustom3 buttonMarginCorrection1" style="font-weight:bold;">
 									</form>
 																								
 									</td>
 									<td class="tableAddBackground">
-									<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
+									<form action='../readtoupdatecandidate?candidate_id=${newquestion.newquestionId}' method='post'>
 									<input type='submit' name='ok' value='UPDATE' class = "tableUpdate buttonMarginCorrection2" style="font-weight:bold;">
 									</form>
 									</td>
-								    <td id = "candidate number"><textarea disabled class = "greyed-background" name='candidate_id' >${candidate.candidate_id }</textarea></td> 
-								    <td><textarea disabled name='first_name'>${candidate.first_name }</textarea></td> 
-									<td><textarea disabled name='last_name' >${candidate.last_name }</textarea></td> 
-									<td><textarea disabled name='party' >${candidate.party }</textarea></td> 
-									<td><textarea disabled name='location'>${candidate.location }</textarea></td>		
-									<td><textarea disabled name='age' >${candidate.age }</textarea></td> 
-									<td><textarea disabled name='mission' >${candidate.mission }</textarea></td> 
-									<td><textarea disabled name='vision' >${candidate.vision }</textarea></td> 
-							        <td><textarea disabled class ="greyed-background" name='pic' placeholder="Portrait pic will go here">${candidate.pic }</textarea></td>  
-									<td><textarea disabled name='profession' >${candidate.profession }</textarea></td> 
-									<td><textarea disabled name='username' >${candidate.username }</textarea></td> 
-									<td><textarea disabled name='password' >${candidate.password }</textarea></td> 
+								    <td id = "candidate number"><textarea disabled class = "greyed-background" name='newquestion_id' >${newquestion.newquestionId }</textarea></td> 
+								    <td><textarea disabled name='new_question'>${newquestion.new_question }</textarea></td> 
+																	
 								   </tr>	                        
 			                     </tbody>		                     
 	                    	</table>      
@@ -185,27 +176,21 @@
                     
     			<!-- 			
     			
-    			AD - This HTML markup contains a DIV, which contains inside of it
-                another div element, which possesses show / hide functionality.
-                The button has been assigned a JavaScript Onclick event handler.
-                When clicked, the function is executed. Furthermore, 
-                based on the value of the button, the HTML div toggle 
-                functionality will be executed. AKA the div will be shown, 
-                and the button text and colour changed. -->    
+    			EK - Hide toggle button -->    
                 <script type="text/javascript">
                 
-                    function ShowHideToggle1(btnAddEntry) {
-                        var dvAddEntry = document.getElementById("dvAddEntry");
+                    function toggleB(addButton) {
+                        var newEntryDiv = document.getElementById("newEntryDiv");
                                                 
-                        if (btnAddEntry.value == "ADD") {
-                            dvAddEntry.style.display = "block";                            
+                        if (addButton.value == "ADD") {
+                            newEntryDiv.style.display = "block";                            
                            
-                            btnAddEntry.style.display = "none";                            
+                            addButton.style.display = "none";                            
                             
                         } else {
-                            dvAddEntry.style.display = "none";
-                            btnAddEntry.value = "ADD";
-                            btnAddEntry.style.backgroundColor = "#2A9D8F";                           
+                            newEntryDiv.style.display = "none";
+                            addButton.value = "ADD";
+                            addButton.style.backgroundColor = "#2A9D8F";                           
                         }
                     } 
                        
@@ -242,39 +227,12 @@
 	                 
 	                 
                  	</script> 
-                 	
-                 	
                  	              	
-                 	<!-- AD
-                 	
-                 	<button type="button" class="collapsible">Open Collapsible</button>
-						<div class="content">
-						
-						  <p> AD - Collapsible box</p>
-						</div>
-                 	
-                 	 -->  
-                 	 
-                 	 
-                 	 <!-- AD 	
-                 	 				
-						<input class = "buttonShowHide button1" id = "btnAddEntry" 
-               			type="button" value="1st Place" onclick="ShowHideToggle1(this)" > 
-		
-              			<div id="dvAddEntry" style="display: none"> 
-              			
-              			This works:
-              			<input class = "buttonShowHide" id = "btnAddEntry" 
-              			type="button" value="1st Place" onclick="ShowHideToggle1(this)" > 
-              			
-              			                   
-                	-->	         
-                	
+                 
                 	
                 	
 
-
-	 <!-- AD - includes the footer component into this page 
+	 <!-- EK - includes the footer component into this page 
 	    (albeit not visible) -->
     
 	<%@ include file="../components/footer.jsp" %> 
