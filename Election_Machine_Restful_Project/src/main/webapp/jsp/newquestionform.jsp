@@ -100,17 +100,7 @@
 	                 			 
 						<td><input readonly class="greyed-background" type='number' name='newquestion_id' placeholder="Auto Incremented" value=''></td> 
 	                  	<td><input required type='text' name='new_question' placeholder="Cannot be blank" value=''></td>  
-												
-						<!-- EK
-						
-						<form action='/addnewquestion' method='post'>
-							<input type='text' name='new_question' value=''>
-							<input type='submit' name='ok' value='OK'>
-						</form>
-						
-						 -->
-						
-						                        
+										                        
                     </tr>                     
                 </tbody>                   
             </table>            
@@ -132,7 +122,7 @@
                      </thead>                        
                 </table>                 
                             			
-                <c:forEach var="candidate" items="${requestScope.newquestionlist}">           
+                <c:forEach var="newquestion" items="${requestScope.newquestionlist}">           
                     
                    <div class="showDatabaseContainer"> 
                   
@@ -150,20 +140,20 @@
 	                        
 	                        <tbody>	                        
 		                      <tr> 
-		                        <td class="tableAddBackground">							
+		                        <td class="tableAddBackground">	                        							
 									
-									<form action='../readtodeletecandidate?candidate_id=${newquestion.newquestionId}' method='post'>
+									<form action='../deletenewquestion?newquestion_id=${newquestion.newquestionId}' method='post'>
 									<input type='submit' name='ok' value='DELETE' class = "tableCustom3 buttonMarginCorrection1" style="font-weight:bold;">
 									</form>
 																								
 									</td>
 									<td class="tableAddBackground">
-									<form action='../readtoupdatecandidate?candidate_id=${newquestion.newquestionId}' method='post'>
+									<form action='../readtoupdatenewquestion?newquestion_id=${newquestion.newquestionId}' method='post'>
 									<input type='submit' name='ok' value='UPDATE' class = "tableUpdate buttonMarginCorrection2" style="font-weight:bold;">
 									</form>
 									</td>
 								    <td id = "candidate number"><textarea disabled class = "greyed-background" name='newquestion_id' >${newquestion.newquestionId }</textarea></td> 
-								    <td><textarea disabled name='new_question'>${newquestion.new_question }</textarea></td> 
+								    <td><textarea disabled name='new_question'>${newquestion.new_question }</textarea></td> 						
 																	
 								   </tr>	                        
 			                     </tbody>		                     
@@ -223,12 +213,8 @@
 	                   }
 	                 }
                   
-	              
-	                 
-	                 
-                 	</script> 
-                 	              	
-                 
+	                               
+                 	</script>     
                 	
                 	
 
