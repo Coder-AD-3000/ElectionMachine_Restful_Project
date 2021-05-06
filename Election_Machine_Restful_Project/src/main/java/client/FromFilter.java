@@ -30,7 +30,7 @@ public class FromFilter extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		RequestDispatcher rd=request.getRequestDispatcher("/jsp/print.jsp");
-		request.setAttribute("fromservlet", "Coming back from the servlet FromFilter");
+		request.setAttribute("fromfilter", "Coming back from the servlet FromFilter");
 		rd.forward(request, response);
 	}
 
