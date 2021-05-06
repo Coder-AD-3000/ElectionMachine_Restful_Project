@@ -22,7 +22,11 @@ import javax.ws.rs.core.MediaType;
 
 import data.Candidate;
 
-@WebServlet(urlPatterns = {"/addcandidate", "/deletecandidate","/updatecandidate","/readcandidate","/readtoupdatecandidate"})
+@WebServlet(urlPatterns = {"/addcandidate", "/deletecandidate",
+		"/updatecandidate","/readcandidate",
+		"/readtodeletecandidate","/readtoupdatecandidate"})
+
+
 public class CandidateClient extends HttpServlet {
 
 	  @Override
@@ -38,27 +42,36 @@ public class CandidateClient extends HttpServlet {
 	  List<Candidate> list=null; /* AD - Candidate is the class instance*/
 	  switch (action) {
 	  case "/addcandidate":
-		  list=addcandidate(request);break;
+		  list=addCandidate(request);break;
 	  case "/deletecandidate":
 		  //String candidate_id=request.getParameter("candidate_id"); /* AD - I can't see a use for this line */
-		  list=deletecandidate(request);break;
+		  list=deleteCandidate(request);break;
 	  case "/updatecandidate":
-		  list=updatecandidate(request);break;
+		  list=updateCandidate(request);break;
 	  case "/readcandidate":
-		  list=readcandidate(request);break;
+		  list=readCandidate(request);break;
 	  case "/readtoupdatecandidate":
-		  Candidate candidate = readtoupdatecandidate(request);
+		  Candidate candidate = readToUpdateCandidate(request);
 		  request.setAttribute("candidate", candidate);
 		  RequestDispatcher reqdisp=request.getRequestDispatcher("./jsp/candidatetoupdateform.jsp");
 		  reqdisp.forward(request, response);
 		  return;
+		  
+		  // AD - I added this for readtodeletecandidate
+	  case "/readtodeletecandidate":
+		  Candidate candidateDel = readToDeleteCandidate(request);
+		  request.setAttribute("candidate", candidateDel);
+		  RequestDispatcher reqdispDel=request.getRequestDispatcher("./jsp/candidatetodeleteform.jsp");
+		  reqdispDel.forward(request, response);
+		  return;  	  
+		  
 	  }
 	  request.setAttribute("candidatelist", list);
 	  RequestDispatcher reqdisp=request.getRequestDispatcher("./jsp/candidateform.jsp");
 	  reqdisp.forward(request, response);
   }
 
-	private Candidate readtoupdatecandidate(HttpServletRequest request) {
+	private Candidate readToUpdateCandidate(HttpServletRequest request) {
 		String candidate_id=request.getParameter("candidate_id");
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/readtoupdatecandidate/"+candidate_id;
 		Client client = ClientBuilder.newClient();
@@ -67,8 +80,20 @@ public class CandidateClient extends HttpServlet {
 		Candidate candidate = builder.get(Candidate.class);  
 		return candidate;
 	}
+	
+	
+	// AD - I added this for read to delete
+	private Candidate readToDeleteCandidate(HttpServletRequest request) {
+		String candidate_id=request.getParameter("candidate_id");
+		String uri = "http://127.0.0.1:8080/rest/candidateservice/readtodeletecandidate/"+candidate_id;
+		Client client = ClientBuilder.newClient();
+		WebTarget webtarget = client.target(uri);
+		Builder builder = webtarget.request();
+		Candidate candidate = builder.get(Candidate.class);  
+		return candidate;
+	}
 
-	private List<Candidate> addcandidate(HttpServletRequest request) {
+	private List<Candidate> addCandidate(HttpServletRequest request) {
 		//A Candidate object to send to our web-service 
 		Candidate candidate = new Candidate(request.getParameter("candidate_id"), 
 				request.getParameter("first_name"),
@@ -98,7 +123,7 @@ public class CandidateClient extends HttpServlet {
 		return returnedList;
 	}
 	
-	private List<Candidate> readcandidate(HttpServletRequest request) {
+	private List<Candidate> readCandidate(HttpServletRequest request) {
 		//String candidate_id = request.getParameter("candidate_id"); /* AD - I can't see a use for this line */
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/readcandidate";
 		Client client = ClientBuilder.newClient();
@@ -112,7 +137,7 @@ public class CandidateClient extends HttpServlet {
 		return returnedList;
 	}
 	
-	private List<Candidate> updatecandidate(HttpServletRequest request) {
+	private List<Candidate> updateCandidate(HttpServletRequest request) {
 		//A Candidate object to send to our web-service 
 		Candidate candidate = new Candidate(request.getParameter("candidate_id"), 
 				request.getParameter("first_name"), 
@@ -142,7 +167,7 @@ public class CandidateClient extends HttpServlet {
 		return returnedList;
 	}
 	
-	private List<Candidate> deletecandidate(HttpServletRequest request) {
+	private List<Candidate> deleteCandidate(HttpServletRequest request) {
 		String candidate_id=request.getParameter("candidate_id");
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/deletecandidate/"+candidate_id;
 		Client client = ClientBuilder.newClient();
