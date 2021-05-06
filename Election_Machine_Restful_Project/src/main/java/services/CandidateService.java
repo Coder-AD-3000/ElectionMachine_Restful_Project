@@ -36,7 +36,7 @@ public class CandidateService {
 	@Path("/addcandidate")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Candidate> addcandidate(Candidate candidate) {
+	public List<Candidate> addCandidate(Candidate candidate) {
 		EntityManager entitymanager = emf.createEntityManager();
 		entitymanager.getTransaction().begin();
 		entitymanager.persist(candidate);//The actual insertion line
@@ -49,7 +49,7 @@ public class CandidateService {
 	@Path("/updatecandidate")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Candidate> updatecandidate(Candidate candidate) {
+	public List<Candidate> updateCandidate(Candidate candidate) {
 		EntityManager entitymanager = emf.createEntityManager();
 		entitymanager.getTransaction().begin();
 		Candidate cand = entitymanager.find(Candidate.class, candidate.getCandidate_id());
@@ -65,7 +65,7 @@ public class CandidateService {
 	@Path("/deletecandidate/{candidate_id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Candidate> deletecandidate(@PathParam("candidate_id") int candidate_id) {
+	public List<Candidate> deleteCandidate(@PathParam("candidate_id") int candidate_id) {
 		EntityManager entitymanager=emf.createEntityManager();
 		entitymanager.getTransaction().begin();
 		Candidate cand = entitymanager.find(Candidate.class, candidate_id);
@@ -81,11 +81,28 @@ public class CandidateService {
 	@Path("/readtoupdatecandidate/{candidate_id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Candidate readToupdatecandidate(@PathParam("candidate_id") int candidate_id) {
+	public Candidate readToUpdateCandidate(@PathParam("candidate_id") int candidate_id) {
 		EntityManager entitymanager=emf.createEntityManager();
 		entitymanager.getTransaction().begin();
 		Candidate cand=entitymanager.find(Candidate.class, candidate_id);
 		entitymanager.getTransaction().commit();
 		return cand;
-	}	
+	}
+	
+	/* AD - This is a useful addition */	
+	@GET
+	@Path("/readtodeletecandidate/{candidate_id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Candidate readTodeletecandidate(@PathParam("candidate_id") int candidate_id) {
+		EntityManager entitymanager=emf.createEntityManager();
+		entitymanager.getTransaction().begin();
+		Candidate cand=entitymanager.find(Candidate.class, candidate_id);
+		entitymanager.getTransaction().commit();
+		return cand;
+	}
+	
+	
+	
+	
 }
