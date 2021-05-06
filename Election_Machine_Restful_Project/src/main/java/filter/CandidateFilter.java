@@ -49,7 +49,7 @@ public class CandidateFilter implements Filter {
 		HttpSession session = ((HttpServletRequest)request).getSession(true);
 		String role = (String) session.getAttribute("role");
 		System.out.println("Candidate filter for role: " + role);
-		if (!role.equals("employee") ) {
+		if (role == null || !role.equals("employee")) {
 			((HttpServletResponse) response).sendRedirect("/jsp/index.jsp");
 			return;
 		}

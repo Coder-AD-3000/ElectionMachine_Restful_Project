@@ -49,7 +49,7 @@ public class EmployeeFilter implements Filter {
 		HttpSession session = ((HttpServletRequest)request).getSession(true);
 		String role = (String) session.getAttribute("role");
 		System.out.println("Employee filter for role: " + role);
-		if (!role.equals("candidate")) {
+		if (role == null || !role.equals("candidate")) {
 			((HttpServletResponse) response).sendRedirect("/jsp/index.jsp");
 			return;
 		}
