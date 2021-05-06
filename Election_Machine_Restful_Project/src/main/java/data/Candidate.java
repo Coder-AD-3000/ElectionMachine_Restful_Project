@@ -1,5 +1,7 @@
 package data;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,6 +32,7 @@ public class Candidate {
 	private String username;
 	private String password;
 	private String role;
+	private List<Question> questionList;
 	
 	public Candidate() {
 		
