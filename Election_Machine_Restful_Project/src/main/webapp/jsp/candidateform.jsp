@@ -48,7 +48,8 @@
        							    
 
         <!-- AD - End of the central (yellow container)-->
-    </div>    
+    </div>  
+    
     
     	<!-- AD - This container contains a form (with table) to add 
     	candidates to the candidate table in the emachinedb database.-->
@@ -110,7 +111,12 @@
 						<b class = "tableAdd">ADD</b></Button>
 						
 						<div id ="dvAddEntry" style="display: none">					 
-					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>							  
+					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
+					  		
+					  			
+					  		<!-- AD this div is for the loading animation -->
+					  		 <div class="loader"></div> 
+					  							  								  
 							  <table class="table-responsive">
 								  <tbody>
 									  <tr>
@@ -189,7 +195,7 @@
 	                        
 	                        <tbody>	                        
 		                      <tr> 
-		                        <td>			                        							 
+		                        <td class="tableAddBackground">			                        							 
 								
 									<!-- AD The original elite working code
 									
@@ -235,13 +241,13 @@
 								
 									
 									<form action='../readtodeletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-									<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
+									<input type='submit' name='ok' value='DELETE' class = "tableCustom3 buttonMarginCorrection1" style="font-weight:bold;">
 									</form>
 																								
 									</td>
-									<td>
+									<td class="tableAddBackground">
 									<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-									<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">
+									<input type='submit' name='ok' value='UPDATE' class = "tableUpdate buttonMarginCorrection2" style="font-weight:bold;">
 									</form>
 									</td>
 								    <td id = "candidate number"><textarea disabled class = "greyed-background" name='candidate_id' >${candidate.candidate_id }</textarea></td> 
@@ -320,6 +326,9 @@
 	                   }
 	                 }
                   
+	              
+	                 
+	                 
                  	</script> 
                  	
                  	
