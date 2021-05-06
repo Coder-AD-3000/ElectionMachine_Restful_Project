@@ -29,6 +29,7 @@ public class Candidate {
 	private String profession; 
 	private String username;
 	private String password;
+	private String role;
 	
 	public Candidate() {
 		
@@ -51,9 +52,26 @@ public class Candidate {
 		this.profession=profession;
 		this.username=username;	
 		this.password=password;
+		this.role = "candidate";
 	}
 	
  
+	/**
+	 * Used when we add a new candidate
+	 * @param candidate_id
+	 * @param first_name
+	 * @param last_name
+	 * @param party
+	 * @param location
+	 * @param age
+	 * @param mission
+	 * @param vision
+	 * @param pic
+	 * @param profession
+	 * @param username
+	 * @param password
+	 * @param role
+	 */
 	public Candidate(String candidate_id, String first_name, 
 					 String last_name, String party, String location, 
 					 String age, String mission, String vision, String pic,
@@ -71,8 +89,9 @@ public class Candidate {
 		this.profession=profession;
 		this.username=username;	
 		this.password=password;
-	}	 
-	 
+		this.role = "candidate"; // Will define user role for login system
+	}	
+	
 	
 	public int getCandidate_id() {
 		return candidate_id;
@@ -252,6 +271,19 @@ public class Candidate {
 		this.password = password;
 	}
 	
+	/**
+	 * @return the user role
+	 */
+	public String getRole() {
+		return role;
+	}
+
+	/**
+	 * @param role the role to set
+	 */
+	public void setRole(String role) {
+		this.role = role;
+	}
 	
 	public String toString() {
 		return this.candidate_id + ": "
@@ -267,6 +299,6 @@ public class Candidate {
 		+ this.username + " / "
 		+ this.password;
 	}
-	
+
 	
 }

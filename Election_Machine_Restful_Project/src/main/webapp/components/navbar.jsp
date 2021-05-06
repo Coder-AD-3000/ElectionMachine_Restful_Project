@@ -5,9 +5,8 @@
 // init empty vars
 String role = (String) request.getSession().getAttribute("role");
 
-
-//AD - If there is an ID showing up, then it gives you a logout button.
-if (role != null) {
+//If there is an ID showing up, then it gives you a logout button.
+if (role == "employee") {
 %>
 
     <!-- AD - This file is a 'navbar' page component, which is to 

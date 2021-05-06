@@ -33,6 +33,14 @@ public class LoginService {
 		return list;
 	}	
 	
+	
+	@GET
+	@Path("/hello")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String sayHello() {
+		return "Hello from a protected service method";
+	}
+	
 
 
 //	@POST

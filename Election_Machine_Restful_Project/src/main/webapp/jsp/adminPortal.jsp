@@ -19,11 +19,6 @@
     <%@ include file="../components/navbar.jsp" %>    
     
     <!-- if not logged in as admin -> index page -->
-    <%
-    
-    if ((role == null) || (role == "candidate")) {
-    	response.sendRedirect("index.jsp");
-	} %> 
 
     <div class = "container1">
         <div class = "container1c">          
