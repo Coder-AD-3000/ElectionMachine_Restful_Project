@@ -23,7 +23,8 @@ import javax.servlet.http.HttpSession;
 				DispatcherType.INCLUDE, 
 				DispatcherType.ERROR
 		}
-		, urlPatterns = { "/jsp/adminPortal.jsp","/jsp/adminUpdateCandidates.jsp", "/rest/candidateservice/*" })
+		, urlPatterns = { "/jsp/adminPortal.jsp","/jsp/adminUpdateCandidates.jsp"})
+//, urlPatterns = { "/jsp/adminPortal.jsp","/jsp/adminUpdateCandidates.jsp", "/rest/candidateservice/*" })
 public class CandidateFilter implements Filter {
 
     /**
