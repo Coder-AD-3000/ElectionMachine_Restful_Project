@@ -62,7 +62,10 @@
                 <thead class = "tableCustom1">
                     <tr>
                         <th>ADD</th>
+                        
+                        <!-- EK 
                         <th>NEW QUESTION ID</th>                         
+                        -->
                         <th>NEW QUESTION</th>                
                     </tr>
                 </thead>
@@ -97,8 +100,10 @@
 								  </tbody>						  
 							   </table>
 						</div>								 
-	                 			 
+	                 	
+	                 	<!-- EK
 						<td><input readonly class="greyed-background" type='number' name='newquestion_id' placeholder="Auto Incremented" value=''></td> 
+	                  	 -->	 
 	                  	<td><input required type='text' name='new_question' placeholder="Cannot be blank" value=''></td>  
 										                        
                     </tr>                     
@@ -122,7 +127,7 @@
                      </thead>                        
                 </table>                 
                             			
-                <c:forEach var="newquestion" items="${requestScope.newquestionlist}">           
+                <c:forEach var="newquestion" items="${requestScope.newquestionlist }">           
                     
                    <div class="showDatabaseContainer"> 
                   
@@ -152,8 +157,21 @@
 									<input type='submit' name='ok' value='UPDATE' class = "tableUpdate buttonMarginCorrection2" style="font-weight:bold;">
 									</form>
 									</td>
+								    
+								    <!--  
 								    <td id = "candidate number"><textarea disabled class = "greyed-background" name='newquestion_id' >${newquestion.newquestionId }</textarea></td> 
+								    -->
+								    
 								    <td><textarea disabled name='new_question'>${newquestion.new_question }</textarea></td> 						
+									
+									<!-- 
+									<c:forEach var="newquestion" items="${requestScope.newquestionlist }">
+										<li>${newquestion} <a href='../deletenewquestion?newquestion_id=${newquestion.newquestionId}'>Delete</a> <a href='../readtoupdatenewquestion?newquestion_id=${newquestion.newquestionId}'>Update</a>
+									</c:forEach>
+									
+									
+									 -->
+									
 																	
 								   </tr>	                        
 			                     </tbody>		                     
