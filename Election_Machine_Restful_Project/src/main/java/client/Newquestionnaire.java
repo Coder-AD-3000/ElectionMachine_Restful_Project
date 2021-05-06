@@ -66,7 +66,7 @@ public class Newquestionnaire extends HttpServlet {
 	}
 
 	private List<Newquestion> addnewquestion(HttpServletRequest request) {
-		//A Fish object to send to our web-service 
+		//A Newquestion object to send to our web-service 
 		Newquestion nq=new Newquestion(request.getParameter("new_question"));
 		System.out.println("req.getParam(new_question)" + nq);
 		
@@ -74,13 +74,13 @@ public class Newquestionnaire extends HttpServlet {
 		Client c=ClientBuilder.newClient();
 		WebTarget wt=c.target(uri);
 		Builder b=wt.request();
-		//Here we create an Entity of a Fish object as JSON string format
+		//Here we create an Entity of a Newquestion object as JSON string format
 		Entity<Newquestion> e=Entity.entity(nq,MediaType.APPLICATION_JSON);
 		//Create a GenericType to be able to get List of objects
 		//This will be the second parameter of post method
 		GenericType<List<Newquestion>> genericList = new GenericType<List<Newquestion>>() {};
 		
-		//Posting data (Entity<ArrayList<DogBreed>> e) to the given address
+		//Posting data (Entity<ArrayList<Newquestion>> e) to the given address
 		List<Newquestion> returnedList=b.post(e, genericList);
 		return returnedList;
 	}
@@ -100,20 +100,20 @@ public class Newquestionnaire extends HttpServlet {
 	}
 	
 	private List<Newquestion> updatenewquestion(HttpServletRequest request) {
-		//A Fish object to send to our web-service 
+		//A Newquestion object to send to our web-service 
 		Newquestion nq=new Newquestion(request.getParameter("newquestion_id"), request.getParameter("new_question"));
 		System.out.println(nq);
 		String uri = "http://127.0.0.1:8080/rest/newquestionservice/updatenewquestion";
 		Client c=ClientBuilder.newClient();
 		WebTarget wt=c.target(uri);
 		Builder b=wt.request();
-		//Here we create an Entity of a Fish object as JSON string format
+		//Here we create an Entity of a Newquestion object as JSON string format
 		Entity<Newquestion> e=Entity.entity(nq,MediaType.APPLICATION_JSON);
 		//Create a GenericType to be able to get List of objects
 		//This will be the second parameter of post method
 		GenericType<List<Newquestion>> genericList = new GenericType<List<Newquestion>>() {};
 		
-		//Posting data (Entity<ArrayList<DogBreed>> e) to the given address
+		//Posting data (Entity<ArrayList<Newquestion>> e) to the given address
 		List<Newquestion> returnedList=b.put(e, genericList);
 		return returnedList;
 	}
@@ -128,7 +128,7 @@ public class Newquestionnaire extends HttpServlet {
 		//This will be the second parameter of post method
 		GenericType<List<Newquestion>> genericList = new GenericType<List<Newquestion>>() {};
 		
-		//Posting data (Entity<ArrayList<DogBreed>> e) to the given address
+		//Posting data (Entity<ArrayList<Newquestion>> e) to the given address
 		List<Newquestion> returnedList=b.delete(genericList);
 		return returnedList;
 	}
