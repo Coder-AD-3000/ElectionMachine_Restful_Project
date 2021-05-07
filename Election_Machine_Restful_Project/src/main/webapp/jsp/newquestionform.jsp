@@ -132,29 +132,7 @@
 				 href='../readtoupdatenewquestion?newquestion_id=${newquestion.newquestionId}'>				 
 				 <b class = "buttonColourMod1">UPDATE</b></a> 
 				 </div>
-				 
-				 
-				  
-				 
-				 <!-- AD
-				 
-				  <div class = "button-main button1">
-				 <a href='../deletenewquestion?newquestion_id=${newquestion.newquestionId}'>
-				 <b>DELETE</b>
-				 </a> 
-				 </div>
-				 
-				 
-				 <div class = "buttonShowHide2 button1">
-				 <a href='../readtoupdatenewquestion?newquestion_id=${newquestion.newquestionId}'>
-				 <b class = "buttonColourMod1">UPDATE</b>
-				 </a> 
-				 </div>
-				 
-				 
-				  -->
-				 
-			 
+				 		 
 			</div>
 				 			
 			

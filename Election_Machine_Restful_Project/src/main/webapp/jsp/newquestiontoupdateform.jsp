@@ -94,7 +94,7 @@
 						<div id ="dvAddEntry" style="display:none">					 
 					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Update?</b></p>	
 					  						  		 
-					  		 <div class="loader"></div> 
+					  		 <div class="loaderNewQuestions"></div> 
 					  							  								  
 							  <table class="table-responsive">
 								  <tbody>
