@@ -75,7 +75,8 @@
            		<tbody>
             		<tr>
             			<td> 	
-						<input readonly class = "greyed-background" style = "width:25%" type='text' name='newquestion_id' value='${requestScope.newquestion.newquestionId }'>
+						<input readonly class = "greyed-background" style = "width:25%" 
+						type='text' name='newquestion_id' value='${requestScope.newquestion.newquestionId }'>
 						</td>
 						<td>
 						<input style = "width:100%" type='text' name='new_question' value='${requestScope.newquestion.newquestion }'>
@@ -91,7 +92,7 @@
 						<b class = "tableAdd">ADD</b></Button>
 						
 						<div id ="dvAddEntry" style="display: none">					 
-					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Amendment?</b></p>	
+					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Update?</b></p>	
 					  						  		 
 					  		 <div class="loader"></div> 
 					  							  								  
@@ -100,11 +101,11 @@
 									  <tr>
 										 <td class="tableAddBackground">									 	
 										 						
-								 	  		<input type='submit' name='ok' value='ADD ENTRY' class = "tableAdd" 
+								 	  		<input type='submit' name='ok' value='CONFIRM' class = "tableAdd" 
 								 	  		style="font-weight:bold;">
 								 	  	 </td> 							  
 									  	 <td>
-										   <Button value='' onClick="window.location = '../jsp/candidateform.jsp';">
+										   <Button type="button" value='' onClick="window.location = '../readnewquestion';">
 										   <b>CANCEL</b></Button>
 									  	</td>
 									  </tr>								  
@@ -165,18 +166,12 @@
 						
 					</tr>
             	</tbody>
-			</table>
-			
-			</div>
-						
-			</form>
-			
-			
-		 
+			</table>			
 							<div id="myProgress" style="display: none">
 						  		<div id="myBar">10%</div>
-							</div>
-
+							</div>				
+			</div>						
+			</form>		
  		</div>
 	</div>
 	
