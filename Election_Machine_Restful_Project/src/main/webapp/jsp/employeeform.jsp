@@ -115,7 +115,7 @@
 			<form action='/addemployee' method='post'>
 			
 			
-		 <div class="containerInnerCandidatesTable"> 	
+		 <div class="containerInnerCandidatesTable3"> 	
 			
 				<table class="table">                    
 	                <thead class = "tableCustom1">
@@ -124,19 +124,23 @@
 							<th>LAST NAME:</th>
 							<th>USERNAME:</th>
 							<th>PASSWORD:</th>
-							<th>SUBMIT</th>							
+							<th></th>							
 					 	</tr>
 	            </thead>		
 				
 	            <tbody>
 	            	<tr>
-	            		<td>  		
-	            		
+	            		<td>            		
 	            		<input type='text' name='first_name' value=''>
+	            		</td>
+	            		<td>  
 						<input type='text' name='last_name' value=''>
+						</td>
+						<td>
 						<input type='text' name='username' value=''>
-						<input type='text' name='password' value=''>           		
-	            		
+						</td>
+						<td> 
+						<input type='text' name='password' value=''>            		
 	            		</td>
 	            		
 	            	    <td>

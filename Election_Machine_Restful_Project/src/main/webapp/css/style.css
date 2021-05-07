@@ -39,6 +39,11 @@
     containerInnerCandidatesTable2 {
      max-width: 95% !important;
     }
+    
+    /* LH - For the new employee adding container */
+    containerInnerCandidatesTable3 {
+     max-width: 95% !important;
+    }
 
     /* AD - Customizes the yellow container
     on the adminUpdateCandidate page, which
@@ -145,6 +150,11 @@
     containerInnerCandidatesTable2 {
      max-width: 99% !important;
     } 
+    
+    /* LH - For the new employee adding container */
+    containerInnerCandidatesTable3 {
+     max-width: 99% !important;
+    }
         
     /* AD - Customises the containers inside
 		update pages, such as candidateform.jsp */
@@ -186,6 +196,11 @@
      max-width: 99%;
     } 
     
+    /* LH - For the new employee adding container */
+    containerInnerCandidatesTable3 {
+     max-width: 99%;
+    }
+    
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -209,6 +224,11 @@
     containerInnerCandidatesTable2 {
      max-width: 99%;
     } 
+    
+    /* LH - For the new employee adding container */
+    containerInnerCandidatesTable3 {
+     max-width: 99%;
+    }
     
 }
 
@@ -1272,6 +1292,20 @@ on the new questions pages */
  buttons */
 .buttonMarginCorrection2 {
 	padding: 0px 0px 20px 0px;	
+}
+
+/* LH - Update to the new employee 
+		add container*/
+.containerInnerCandidatesTable3{
+	max-width: 80%;
+    padding: 20px;
+    border-radius: 10px;         
+    background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 25px auto;
+    
+    align-content: center; 
+	
 }
 
 
