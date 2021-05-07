@@ -85,6 +85,8 @@ public class EmployeeClient extends HttpServlet{
 				request.getParameter("username"),
 				request.getParameter("password"));
 		
+		// LH - Role may need to be added 
+		
 		System.out.println(emp);
 		
 		String uri = "http://127.0.0.1:8080/rest/employeeservice/addemployee";

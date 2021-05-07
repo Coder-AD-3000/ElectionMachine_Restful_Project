@@ -50,13 +50,69 @@
         <!-- LH - End of the central (yellow container)-->
     </div>  
 
+		
+		
+		<!-- LH
+		
+			<form action='/addnewquestion' method='post'>
+			
+			<input type='text' name='new_question' value=''>
+			<input type='submit' name='ok' value='OK'>
+			
+			</form>
+			
+			
+			
+			
+			
+			
+	<ol>
+		<c:forEach var="newquestion" items="${requestScope.newquestionlist }">
+			<li>${newquestion} <a href='../deletenewquestion?newquestion_id=${newquestion.newquestionId}'>Delete</a> <a href='../readtoupdatenewquestion?newquestion_id=${newquestion.newquestionId}'>Update</a>
+		</c:forEach>
+	</ol>
+		
+		
+		
+		
+		
+		
+		
+		
+		LH fields:
+		
+			<input type='text' name='new_question' value=''>
+			<input type='submit' name='ok' value='OK'>
+			
+			
+				("employee_id"), 
+				request.getParameter("first_name"),
+				request.getParameter("last_name"), 
+				request.getParameter("username"),
+				request.getParameter("password"));
+			
+		
+			<input type='text' name='first_name' value=''>
+			<input type='text' name='last_name' value='OK'>
+			<input type='text' name='username' value=''>
+			<input type='text' name='password' value='OK'>
+		
+		
+		
+		
+		 -->
+
+			
+
+
+
 	
 		<!-- LH - This container contains a form (with table) to add 
     	candidates to the candidate table in the emachinedb database.-->
     <div class="containerUpdateCandidatesTable">                                                                                                
        <div class="table-responsive"> 
 	
-			<form action='/addnewquestion' method='post'>
+			<form action='/addemployee' method='post'>
 			
 			
 		 <div class="containerInnerCandidatesTable"> 	
@@ -64,15 +120,28 @@
 				<table class="table">                    
 	                <thead class = "tableCustom1">
 	                    <tr>		
-							<th>NEW QUESTION:</th>
+							<th>FIRST NAME:</th>
+							<th>LAST NAME:</th>
+							<th>USERNAME:</th>
+							<th>PASSWORD:</th>
 							<th>SUBMIT</th>							
 					 	</tr>
 	            </thead>		
 				
 	            <tbody>
 	            	<tr>
-	            		<td>            	
+	            		<td>  
+	            		
+	            		<!--          	
 	            		<input type='text' style = "width:100%" name='new_question' value=''>				
+	            		 --> 
+	            		<input type='text' name='first_name' value=''>
+						<input type='text' name='last_name' value=''>
+						<input type='text' name='username' value=''>
+						<input type='text' name='password' value=''>
+	            		
+	            		
+	            		
 	            		</td>
 	            		<td>
 	            		<input type='submit' name='ok' value='OK'>
