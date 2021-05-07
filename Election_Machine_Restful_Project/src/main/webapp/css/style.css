@@ -1376,33 +1376,8 @@ background: linear-gradient(0deg,#F4A261, 10%, #E9C46A)
 
 /* EK - For the New Questions
 		Update button*/		
-.buttonGreen {
-background-color: linear-gradient(180deg, #04a138 , 45%, #049935);
-	background-color: #049935;
-	/*	
-	background-color: #049935;
-	
-	linear-gradient(180deg, #264653 , 45%, #2A9D8F )
-	
+.buttonGreen { 
 	background-color: #04a138;
-	
-	color: #00007b;
-	
-	background-color: #0075ac;
-    border: none;
-    color: rgba(255, 255, 255, 0.829); 
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;                      
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    border-radius: 10px;
-    margin: 20px 10px 0px 10px; 
-    width: 90px;    
-    font-weight: bold;   
-	*/	
 }
 
 
