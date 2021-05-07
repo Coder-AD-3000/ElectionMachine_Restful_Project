@@ -1164,9 +1164,12 @@ color: #414141;
     border-radius: 10px;         
     background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
     box-shadow: 0 2px 16px 2px #264653;         
-    margin: 25px auto 25px auto;
-    
-    
+    margin: 25px auto 25px auto;    
+}
+
+.colourAmendment {
+	background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);
+    box-shadow: 0 2px 16px 2px #264653;
 }
 
  
