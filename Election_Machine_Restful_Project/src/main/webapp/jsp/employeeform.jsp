@@ -117,6 +117,7 @@
 			
 		 <div class="containerInnerCandidatesTable3"> 	
 			
+			<div class="table-responsive"> 
 				<table class="table">                    
 	                <thead class = "tableCustom1">
 	                    <tr>		
@@ -159,7 +160,7 @@
 		           	</tr>
 	            </tbody>
 				</table>
-			
+			</div>
 		</div>	
 			
 			</form>
