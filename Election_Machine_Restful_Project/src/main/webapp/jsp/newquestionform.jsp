@@ -114,7 +114,7 @@
         	<div class="containerInnerCandidatesTable1">
         	
         		<div class="containerInnerCandidatesTable2">
-					<li>${newquestion}</li> 
+					<li><b class="buttonColourMod2">New Question Number: </b>${newquestion}</li> 
 				</div>
 				<hr>
 				 

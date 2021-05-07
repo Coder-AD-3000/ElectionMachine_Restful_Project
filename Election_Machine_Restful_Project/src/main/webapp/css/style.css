@@ -1250,6 +1250,8 @@ on the new questions pages */
     box-shadow: 0 2px 16px 2px #264653;         
     margin: 5px;
     
+    padding: 10px 10px 10px 30px;
+    
     display: flex;
   	justify-content: center; 
 }
@@ -1260,6 +1262,10 @@ on the new questions pages */
 
 .buttonColourMod1 {
 	color: #eefcff;
+}
+
+.buttonColourMod2 {
+	color: #00007b;
 }
 
 /* EK - Margin correction for the new questions
