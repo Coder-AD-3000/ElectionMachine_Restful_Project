@@ -1159,12 +1159,12 @@ color: #414141;
 
 /* AD - Updates to the candidate profile page */
 .containerCandidateProfile {
-	max-width: 70%;
-    padding: 20px 200px;
+	max-width: 95%;
+    padding: 20px 80px;
     border-radius: 10px;         
     background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
     box-shadow: 0 2px 16px 2px #264653;         
-    margin: 25px auto 25px auto;    
+    margin: 25px auto 25px auto;   
 }
 
 .colourAmendment {
