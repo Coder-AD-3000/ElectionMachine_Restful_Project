@@ -93,9 +93,10 @@
 						
 						<div id ="dvAddEntry" style="display:none">					 
 					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Update?</b></p>	
-					  						  		 
+					  			
+							<!--  		  		 
 					  		 <div class="loaderNewQuestions"></div> 
-					  							  								  
+					  		-->					  								  
 							  <table class="table-responsive">
 								  <tbody>
 									  <tr>
@@ -107,6 +108,9 @@
 									  	 <td>
 										   <Button type="button" value='' onClick="window.location = '../readnewquestion';">
 										   <b>CANCEL</b></Button>
+									  	</td>
+									  	<td>
+									  	<div class="loaderNewQuestions"></div> 
 									  	</td>
 									  </tr>								  
 								  </tbody>						  

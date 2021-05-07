@@ -1226,19 +1226,21 @@ color: #414141;
 
 /* EK - for the loaderNewQuestions animation */
 .loaderNewQuestions {
-  border: 6px solid #264653;
-  border-top: 6px solid #04a138;
-  border-bottom: 6px solid #04a138; 
-      
-  border-radius: 40%;
-  width: 40px;
+  border: 12px solid green;
+  border-top: 6px solid #c8ffc8;
+  border-bottom: 6px solid #c8ffc8;      
+  border-radius: 50%;
+  width: 60px;
   height: 20px;
   animation: spin 1s linear infinite;  
   display: inline-block;
   justify-content: center;  
-  margin: 0px 0px 10px 0px; 
+  margin: 0px 0px 25px 35px;
   
   /* 
+  
+  margin: 0px 0px 10px 20px; 
+  
   
   border: 6px solid #264653;
      width: 40px;
