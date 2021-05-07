@@ -82,16 +82,17 @@
 						</td>
 						
 											
-						<td class="tableAddBackground">					 
-					 
-						<Button type = "button" id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this)">
+						<td class="tableAddBackground">			
+						
+						<!-- EK - This button activates two separate functions. 
+							      One function reveals the hidden div, 
+							      and the other loads the loading bar animation. -->					 
+						<Button type = "button" id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this); move();">
 						<b class = "tableAdd">ADD</b></Button>
 						
 						<div id ="dvAddEntry" style="display: none">					 
-					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
-					  		
-					  			
-					  		 AD this div is for the loading animation 
+					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Amendment?</b></p>	
+					  						  		 
 					  		 <div class="loader"></div> 
 					  							  								  
 							  <table class="table-responsive">
@@ -174,16 +175,17 @@
 	</div>
 	
 	
-	<!-- EK - Loading animation bar -->
-	<div id="myProgress">
-  		<div id="myBar">10%</div>
-	</div>
-
-	<br>
-	
-	<button onclick="move()">Click Me
-	</button> 
-	
+							<!-- EK - Loading animation bar -->
+							<div id="myProgress">
+						  		<div id="myBar">10%</div>
+							</div>
+						
+							<br>
+							
+							<!-- EK 
+							<button onclick="move()">Click Me
+							</button> 
+							-->
 	
 	
 	
