@@ -24,6 +24,26 @@
     .containerMainUpdateCandidates {
     max-width: 80% !important;
     }
+    
+    /* EK - For the inner candidates container */
+    .containerInnerCandidatesTable {
+    max-width: 95% !important;
+    }
+    
+     /* EK - For the inner candidates container2 */
+    containerInnerCandidatesTable1 {
+     max-width: 95% !important;
+    }
+    
+    /* EK - For the inner candidates container2 */
+    containerInnerCandidatesTable2 {
+     max-width: 95% !important;
+    }
+    
+    /* LH - For the new employee adding container */
+    containerInnerCandidatesTable3 {
+     max-width: 95% !important;
+    }
 
     /* AD - Customizes the yellow container
     on the adminUpdateCandidate page, which
@@ -115,12 +135,32 @@
     .containerUpdateCandidatesTable {
     max-width: 99% !important;
     }
+        
+    /* EK - For the inner candidates container */
+    .containerInnerCandidatesTable {
+    max-width: 99% !important;
+    } 
     
+     /* EK - For the inner candidates container2 */
+    containerInnerCandidatesTable1 {
+     max-width: 99% !important;
+    }
+    
+    /* EK - For the inner candidates container2 */
+    containerInnerCandidatesTable2 {
+     max-width: 99% !important;
+    } 
+    
+    /* LH - For the new employee adding container */
+    containerInnerCandidatesTable3 {
+     max-width: 99% !important;
+    }
+        
     /* AD - Customises the containers inside
 		update pages, such as candidateform.jsp */
     showDatabaseContainer {
     max-width: 99% !important;
-    }
+    }    
 
     /* AD - Cutomises the 'your questionnaire results'
     and 'your suitable candidate matches' text on the
@@ -139,6 +179,28 @@
     h3{font-size: 1.25rem !important;}
     h5{font-size: 1rem !important;}  
     
+    
+    
+     /* EK - For the inner candidates container */
+    .containerInnerCandidatesTable {
+    max-width: 99%;
+    } 
+    
+     /* EK - For the inner candidates container2 */
+    containerInnerCandidatesTable1 {
+     max-width: 99%;
+    }
+    
+    /* EK - For the inner candidates container2 */
+    containerInnerCandidatesTable2 {
+     max-width: 99%;
+    } 
+    
+    /* LH - For the new employee adding container */
+    containerInnerCandidatesTable3 {
+     max-width: 99%;
+    }
+    
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -147,6 +209,26 @@
     h2{font-size: 2rem !important;}
     h3{font-size: 1.5rem !important;} 
     h5{font-size: 1rem !important;}  
+    
+     /* EK - For the inner candidates container */
+    .containerInnerCandidatesTable {
+    max-width: 99%;
+    } 
+    
+     /* EK - For the inner candidates container2 */
+    containerInnerCandidatesTable1 {
+     max-width: 99%;
+    }
+    
+    /* EK - For the inner candidates container2 */
+    containerInnerCandidatesTable2 {
+     max-width: 99%;
+    } 
+    
+    /* LH - For the new employee adding container */
+    containerInnerCandidatesTable3 {
+     max-width: 99%;
+    }
     
 }
 
@@ -172,7 +254,7 @@ on the adminUpdateCandidate page */
     margin: 25px auto 25px auto;                
 }
 
-/* AD - Customises the main container
+/* AD - Customises the yellow container
 on the adminUpdateCandidate page, which
 contains the candidate table data */
 .containerUpdateCandidatesTable{            
@@ -1075,12 +1157,7 @@ color: #414141;
   float: right;
   font-size: 28px;
   font-weight: bold;
-  
-  /*
-  color: #aaaaaa;
-  
-  */
-  
+
   
 }
 
@@ -1157,24 +1234,79 @@ color: #414141;
 	margin: 11px 10px 0px 0px;	
 }
 
-/* AD - Updates to the candidate profile page */
-.containerCandidateProfile {
-	max-width: 75%;
-    padding: 20px 0px;
+/* EK - Customises the inner container
+on the new questions pages */
+.containerInnerCandidatesTable{            
+    max-width: 54%;
+    padding: 20px;
+    border-radius: 10px;         
+    background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 25px auto;
+    
+    align-content: center; 
+     
+}
+
+.containerInnerCandidatesTable1 {
+	max-width: 90%;
+    padding: 20px;
+    border-radius: 10px;         
+    background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 25px auto;
+    
+     
+     
+}
+
+/* EK - Container for the buttons
+	on the new questions page*/
+.containerInnerCandidatesTable2 {
+	max-width: 100%;
+    padding: 2px;
     border-radius: 10px;         
     background-color:rgba(214, 214, 214, 0.822);
     box-shadow: 0 2px 16px 2px #264653;         
-    margin: 25px auto 25px auto; 
+    margin: 5px;
+    
+    padding: 10px 10px 10px 30px;
+    
+    display: flex;
+  	justify-content: center; 
 }
 
-/* AD - colour Amendment on the candidate profile page*/
-.colourAmendment {
-	background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);
-    box-shadow: 0 2px 16px 2px #264653;
+.newQuestionCentered {
+	display: flex;	 
 }
 
-/* AD - Margin Amendment on the candidate profile page*/
-.marginAmendment {
-	margin-top: 42px;	
+.buttonColourMod1 {
+	color: #eefcff;
 }
+
+.buttonColourMod2 {
+	color: #00007b;
+}
+
+/* EK - Margin correction for the new questions
+ buttons */
+.buttonMarginCorrection2 {
+	padding: 0px 0px 20px 0px;	
+}
+
+/* LH - Update to the new employee 
+		add container*/
+.containerInnerCandidatesTable3{
+	max-width: 80%;
+    padding: 20px;
+    border-radius: 10px;         
+    background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 25px auto;
+    
+    align-content: center; 
+	
+}
+
+
  
