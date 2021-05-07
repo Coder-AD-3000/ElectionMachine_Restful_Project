@@ -1235,7 +1235,7 @@ color: #414141;
   animation: spin 1s linear infinite;  
   display: inline-block;
   justify-content: center;  
-  margin: 0px 0px 27px 12px;
+  margin: 0px 0px 27px 11px;
  
 }
 
@@ -1323,7 +1323,8 @@ on the new questions pages */
 	
 }
 
-/* EK - New Questions animation(s) */
+/* EK - New Questions alternative
+	(might not use in the end) animation(s) */
 
 .animation1 {
   width: 25px;
@@ -1344,19 +1345,6 @@ on the new questions pages */
   75%  {background-color:green; left:0px; top:50px;}
   100% {background-color:red; left:0px; top:0px;}
 	
-	
-	
-/* 
-
-background: linear-gradient(0deg,#F4A261, 10%, #E9C46A)
-
-
-  0%   {background-color:red; left:0px; top:0px;}
-  25%  {background-color:yellow; left:200px; top:0px;}
-  50%  {background-color:blue; left:200px; top:200px;}
-  75%  {background-color:green; left:0px; top:200px;}
-  100% {background-color:red; left:0px; top:0px;}
-*/
 
 }
 
