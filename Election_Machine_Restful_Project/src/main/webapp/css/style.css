@@ -24,6 +24,11 @@
     .containerMainUpdateCandidates {
     max-width: 80% !important;
     }
+    
+    /* EK - For the inner candidates container */
+    .containerInnerCandidatesTable {
+    max-width: 85% !important;
+    }
 
     /* AD - Customizes the yellow container
     on the adminUpdateCandidate page, which
@@ -115,12 +120,17 @@
     .containerUpdateCandidatesTable {
     max-width: 99% !important;
     }
-    
+        
+    /* EK - For the inner candidates container */
+    .containerInnerCandidatesTable {
+    max-width: 99% !important;
+    }    
+        
     /* AD - Customises the containers inside
 		update pages, such as candidateform.jsp */
     showDatabaseContainer {
     max-width: 99% !important;
-    }
+    }    
 
     /* AD - Cutomises the 'your questionnaire results'
     and 'your suitable candidate matches' text on the
@@ -1156,4 +1166,17 @@ color: #414141;
 .buttonMarginCorrection2 {
 	margin: 11px 10px 0px 0px;	
 }
+
+/* EK - Customises the inner container
+on the new questions pages */
+.containerInnerCandidatesTable{            
+    max-width: 54%;
+    padding: 20px;
+    border-radius: 10px;         
+    background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 25px auto;   
+}
+
+
  
