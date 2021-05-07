@@ -17,7 +17,6 @@ import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 
-import data.Candidate;
 import data.Employee;
 
 @WebServlet(urlPatterns = {"/reademployee", "/addemployee", "/updateemployee", "/deleteemployee", "/readtoupdateemployee"})
