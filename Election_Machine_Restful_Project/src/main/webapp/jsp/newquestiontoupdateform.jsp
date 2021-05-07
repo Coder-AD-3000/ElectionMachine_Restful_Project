@@ -89,7 +89,7 @@
 							      One function reveals the hidden div, 
 							      and the other loads the loading bar animation. -->					 
 						<Button type = "button" id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this); move();">
-						<b class = "tableAdd">ADD</b></Button>
+						<b class = "tableAdd">UPDATE</b></Button>
 						
 						<div id ="dvAddEntry" style="display:none">					 
 					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Update?</b></p>	
