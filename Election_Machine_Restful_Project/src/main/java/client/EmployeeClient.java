@@ -59,7 +59,7 @@ public class EmployeeClient extends HttpServlet{
 		  }
 		  
 		  request.setAttribute("employeelist", list);
-		  RequestDispatcher reqdisp = request.getRequestDispatcher("./jsp/candidateform.jsp");
+		  RequestDispatcher reqdisp = request.getRequestDispatcher("./jsp/employeeform.jsp");
 		  reqdisp.forward(request, response);
 	  }
 
@@ -83,6 +83,8 @@ public class EmployeeClient extends HttpServlet{
 				request.getParameter("last_name"), 
 				request.getParameter("username"),
 				request.getParameter("password"));
+		
+		// LH - Role may need to be added 
 		
 		System.out.println(emp);
 		
