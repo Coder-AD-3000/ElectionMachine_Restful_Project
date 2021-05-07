@@ -1192,9 +1192,26 @@ on the new questions pages */
     margin: 25px auto 25px auto;
 }
 
+/* EK - Container for the buttons
+	on the new questions page*/
+.containerInnerCandidatesTable2 {
+	max-width: 90%;
+    padding: 3px;
+    border-radius: 10px;         
+    background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 10px auto 10px auto;
+    
+    display: inline-block;
+  	justify-content: center; 
+}
+
 .newQuestionCentered {
-	display: flex;
-	 
+	display: flex;	 
+}
+
+.buttonColourMod1 {
+	color: #eefcff;
 }
 
 
