@@ -75,18 +75,13 @@
            		<tbody>
             		<tr>
             			<td> 	
-						<input style = "width:25%" type='text' name='newquestion_id' value='${requestScope.newquestion.newquestionId }'>
+						<input readonly class = "greyed-background" style = "width:25%" type='text' name='newquestion_id' value='${requestScope.newquestion.newquestionId }'>
 						</td>
 						<td>
 						<input style = "width:100%" type='text' name='new_question' value='${requestScope.newquestion.newquestion }'>
 						</td>
 						
-						
-						
-						
-						
-						
-						
+											
 						<td class="tableAddBackground">					 
 					 
 						<Button type = "button" id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this)">
