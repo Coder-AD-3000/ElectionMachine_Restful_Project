@@ -66,15 +66,17 @@
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
 	                            <th>PROFILE PAGE</th>
-	                            <th>UPDATE FIELD</th>                    
+	                            <th>YOUR DETAILS</th>                    
 	                        </tr>
 	                    </thead>            
 	                    <tbody>                    
 	                        <tr> 
 	                        
-	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='candidate_id' 
-	                            placeholder="Your Candidate Number"
+	                        <!-- AD - candidate number field -->
+	                         <td class="tableAddBackground ">                
+	                            <input readonly type='text' class = "colourAmendment"
+	                            name='candidate_id' 
+	                            placeholder="Candidate Number"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
@@ -87,6 +89,7 @@
 	                    </tbody>                            
 	                </table>
 	                
+	                 <!-- AD - first name field -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -97,20 +100,22 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='candidate_id' 
-	                            placeholder="Your Candidate Number"
+	                            <input readonly type='text' name='first_name' 
+	                            placeholder="First Name"
+	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly class = "greyed-background" 
+	                            <input readonly 
 	                            type='text' name='candidate_id' 
-	                            placeholder="1019">
+	                            placeholder="Mikko">
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
+	                <!-- AD - last name field -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -121,20 +126,22 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='candidate_id' 
-	                            placeholder="Your Candidate Number"
+	                            <input readonly type='text' name='last_name' 
+	                            placeholder="Last Name"
+	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly class = "greyed-background" 
+	                            <input readonly
 	                            type='text' name='candidate_id' 
-	                            placeholder="1019">
+	                            placeholder="Koskenranta">
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
+	                <!-- AD - party field -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -145,20 +152,22 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='candidate_id' 
-	                            placeholder="Your Candidate Number"
+	                            <input readonly type='text' name='party' 
+	                            placeholder="Political Party"
+	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly class = "greyed-background" 
+	                            <input readonly 
 	                            type='text' name='candidate_id' 
-	                            placeholder="1019">
+	                            placeholder="The Green Party">
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
+	                <!-- AD - Location field -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -169,20 +178,22 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='candidate_id' 
-	                            placeholder="Your Candidate Number"
+	                            <input readonly type='text' name='location' 
+	                            placeholder="Location"
+	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly class = "greyed-background" 
+	                            <input readonly 
 	                            type='text' name='candidate_id' 
-	                            placeholder="1019">
+	                            placeholder="Helsinki">
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
+	                <!-- AD - Age field -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -193,20 +204,22 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='candidate_id' 
-	                            placeholder="Your Candidate Number"
+	                            <input readonly type='text' name='age' 
+	                            placeholder="Age"
+	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly class = "greyed-background" 
+	                            <input readonly 
 	                            type='text' name='candidate_id' 
-	                            placeholder="1019">
+	                            placeholder="52">
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
+	                <!-- AD - Mission field -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -217,20 +230,47 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='candidate_id' 
-	                            placeholder="Your Candidate Number"
+	                            <input readonly type='text' name='mission' 
+	                            placeholder="Mission"
+	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly class = "greyed-background" 
+	                            <input readonly 
 	                            type='text' name='candidate_id' 
-	                            placeholder="1019">
+	                            placeholder="Better Social Welfare">
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
+	                <!-- AD - Vision field -->
+	                <table class="table">                    
+	                    <thead class = "tableCustom1">
+	                        <tr>                                                                      
+	                                          
+	                        </tr>
+	                    </thead>            
+	                    <tbody>                    
+	                        <tr>	                        
+	                         <td class="tableAddBackground">                
+	                            <input readonly type='text' name='vision' 
+	                            placeholder="Vision"
+	                            class = "colourAmendment"
+	                            style="font-weight:bold;">
+	                         </td> 
+	                         
+	                         <td>
+	                            <input readonly 
+	                            type='text' name='candidate_id' 
+	                            placeholder="A poverty-free country">
+	                         </td>	                                        
+	                        </tr>	                     
+	                    </tbody>                            
+	                </table>
+	                
+	                <!-- AD - picture field -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -241,20 +281,22 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='candidate_id' 
-	                            placeholder="Your Candidate Number"
+	                            <input readonly type='text' name='pic' 
+	                            placeholder="Portrait Picture"
+	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly class = "greyed-background" 
+	                            <input readonly 
 	                            type='text' name='candidate_id' 
-	                            placeholder="1019">
+	                            placeholder="Portrait Picture">
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
+	                <!-- AD - profession field -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -265,20 +307,22 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='candidate_id' 
-	                            placeholder="Your Candidate Number"
+	                            <input readonly type='text' name='profession' 
+	                            placeholder="Profession"
+	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly class = "greyed-background" 
+	                            <input readonly 
 	                            type='text' name='candidate_id' 
-	                            placeholder="1019">
+	                            placeholder="Engineer">
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
+	                <!-- AD - Username field -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -289,43 +333,52 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='candidate_id' 
-	                            placeholder="Your Candidate Number"
+	                            <input readonly type='text' name='username' 
+	                            placeholder="Username"
+	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly class = "greyed-background" 
+	                            <input readonly
 	                            type='text' name='candidate_id' 
-	                            placeholder="1019">
+	                            placeholder="GreenMikko21">
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
 	                
-	                
-	                
-	                
-	                
-	                
-	                
-	                
-	                
+	                <!-- AD - Password field -->
+	                <table class="table">                    
+	                    <thead class = "tableCustom1">
+	                        <tr>                                                                      
+	                                          
+	                        </tr>
+	                    </thead>            
+	                    <tbody>                    
+	                        <tr> 
+	                        
+	                         <td class="tableAddBackground">                
+	                            <input readonly type='text' name='password' 
+	                            placeholder="Password"
+	                            class = "colourAmendment"
+	                            style="font-weight:bold;">
+	                         </td> 
+	                         
+	                         <td>
+	                            <input readonly
+	                            type='text' name='candidate_id' 
+	                            placeholder="Green33214a">
+	                         </td>	                                        
+	                        </tr>	                     
+	                    </tbody>                            
+	                </table>             
 	                
                 </form>
             </div>
         </div>
-    </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    </div>     
         
         
         
