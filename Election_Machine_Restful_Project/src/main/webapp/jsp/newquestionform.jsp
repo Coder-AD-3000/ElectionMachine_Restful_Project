@@ -120,7 +120,25 @@
 				 
 			<div class="containerInnerCandidatesTable2 buttonMarginCorrection2">	 
 				 
-				 <div class = "button-main button1">
+				 <div>
+				 <a class = "button-main button1" 
+				 href='../deletenewquestion?newquestion_id=${newquestion.newquestionId}'>				 
+				 <b>DELETE</b></a> 
+				 </div>
+				 
+				 
+				 <div>
+				 <a class = "buttonShowHide2 button1" 
+				 href='../readtoupdatenewquestion?newquestion_id=${newquestion.newquestionId}'>				 
+				 <b class = "buttonColourMod1">UPDATE</b></a> 
+				 </div>
+				 
+				 
+				  
+				 
+				 <!-- AD
+				 
+				  <div class = "button-main button1">
 				 <a href='../deletenewquestion?newquestion_id=${newquestion.newquestionId}'>
 				 <b>DELETE</b>
 				 </a> 
@@ -132,6 +150,9 @@
 				 <b class = "buttonColourMod1">UPDATE</b>
 				 </a> 
 				 </div>
+				 
+				 
+				  -->
 				 
 			 
 			</div>
