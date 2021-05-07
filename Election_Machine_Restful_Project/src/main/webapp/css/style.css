@@ -172,7 +172,7 @@ on the adminUpdateCandidate page */
     margin: 25px auto 25px auto;                
 }
 
-/* AD - Customises the yellow container
+/* AD - Customises the main container
 on the adminUpdateCandidate page, which
 contains the candidate table data */
 .containerUpdateCandidatesTable{            
@@ -1156,4 +1156,17 @@ color: #414141;
 .buttonMarginCorrection2 {
 	margin: 11px 10px 0px 0px;	
 }
+
+/* AD - Updates to the candidate profile page */
+.containerCandidateProfile {
+	max-width: 70%;
+    padding: 20px 200px;
+    border-radius: 10px;         
+    background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 25px auto;
+    
+    
+}
+
  
