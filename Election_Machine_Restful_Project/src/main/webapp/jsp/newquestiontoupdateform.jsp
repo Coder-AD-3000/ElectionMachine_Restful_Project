@@ -81,10 +81,91 @@
 						<input style = "width:100%" type='text' name='new_question' value='${requestScope.newquestion.newquestion }'>
 						</td>
 						
+						
+						
+						
+						
+						
+						
+						<td class="tableAddBackground">					 
+					 
+						<Button type = "button" id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this)">
+						<b class = "tableAdd">ADD</b></Button>
+						
+						<div id ="dvAddEntry" style="display: none">					 
+					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
+					  		
+					  			
+					  		 AD this div is for the loading animation 
+					  		 <div class="loader"></div> 
+					  							  								  
+							  <table class="table-responsive">
+								  <tbody>
+									  <tr>
+										 <td class="tableAddBackground">									 	
+										 						
+								 	  		<input type='submit' name='ok' value='ADD ENTRY' class = "tableAdd" 
+								 	  		style="font-weight:bold;">
+								 	  	 </td> 							  
+									  	 <td>
+										   <Button value='' onClick="window.location = '../jsp/candidateform.jsp';">
+										   <b>CANCEL</b></Button>
+									  	</td>
+									  </tr>								  
+								  </tbody>						  
+							   </table>
+						</div>	
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						<!--  
 						 <td>
 						 <input class = "buttonShowHide2 button1 buttonColourMod1 "type='submit' name='ok' value='UPDATE'>					 
 						 </td>
+						-->
 						
+						
+						
+						
+						<!-- 
+						
+						<td class="tableAddBackground">					 
+					 
+						<Button id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this)">
+						<b class = "tableAdd">ADD</b></Button>
+						
+						<div id ="dvAddEntry" style="display: none">					 
+					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
+					  		
+					  			
+					  		 AD this div is for the loading animation 
+					  		 <div class="loader"></div> 
+					  							  								  
+							  <table class="table-responsive">
+								  <tbody>
+									  <tr>
+										 <td class="tableAddBackground">									 	
+										 						
+								 	  		<input type='submit' name='ok' value='ADD ENTRY' class = "tableAdd" 
+								 	  		style="font-weight:bold;">
+								 	  	 </td> 							  
+									  	 <td>
+										   <Button value='' onClick="window.location = '../jsp/candidateform.jsp';">
+										   <b>CANCEL</b></Button>
+									  	</td>
+									  </tr>								  
+								  </tbody>						  
+							   </table>
+						</div>							
+												
+						 -->
 						
 					</tr>
             	</tbody>
@@ -95,7 +176,62 @@
 			</form>
 
  		</div>
-	</div>      
+	</div>
+	
+	
+	<!-- EK - Loading animation bar -->
+	<div id="myProgress">
+  		<div id="myBar">10%</div>
+	</div>
+
+	<br>
+	
+	<button onclick="move()">Click Me
+	</button> 
+	
+	
+	
+	
+			<!-- EK - animation JavaScript script -->
+			<script>			
+			var i = 0;
+			function move() {
+			  if (i == 0) {
+			    i = 1;
+			    var elem = document.getElementById("myBar");
+			    var width = 10;
+			    var id = setInterval(frame, 10);
+			    function frame() {
+			      if (width >= 100) {
+			        clearInterval(id);
+			        i = 0;
+			      } else {
+			        width++;
+			        elem.style.width = width + "%";
+			        elem.innerHTML = width  + "%";
+			      }
+			    }
+			  }
+			}
+						
+			
+			/* EK - Toggle button to reveal the update button */			
+			 function ShowHideToggle1(btnAddEntry) {
+                     var dvAddEntry = document.getElementById("dvAddEntry");
+                                             
+                     if (btnAddEntry.value == "ADD") {
+                         dvAddEntry.style.display = "block";                            
+                        
+                         btnAddEntry.style.display = "none";                            
+                         
+                     } else {
+                         dvAddEntry.style.display = "none";
+                         btnAddEntry.value = "ADD";
+                         btnAddEntry.style.backgroundColor = "#2A9D8F";                           
+                     }
+                 } 	
+			
+			</script>      
 		
 	
  <!-- AD - includes the footer component into this page 
