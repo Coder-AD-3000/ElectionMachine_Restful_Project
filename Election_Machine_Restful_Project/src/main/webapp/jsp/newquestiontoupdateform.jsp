@@ -85,15 +85,7 @@
 						 <input class = "buttonShowHide2 button1 buttonColourMod1 "type='submit' name='ok' value='UPDATE'>					 
 						 </td>
 						
-						<!-- EK 
-						<td>
-						<input type='submit' name='ok' value='OK'>
-						</td>
 						
-						<div class = "buttonShowHide2 button1">
-							-->
-			
-			
 					</tr>
             	</tbody>
 			</table>
@@ -104,52 +96,9 @@
 
  		</div>
 	</div>      
+		
 	
-	
-	<!-- 
-	
-    <div class="containerUpdateCandidatesTable">                                                                                                
-       <div class="table-responsive"> 
-	
-			<form action='/addnewquestion' method='post'>
-			
-			<table class="table">                    
-                <thead class = "tableCustom1">
-                    <tr>		
-						<th>NEW QUESTION:</th>						
-				 	</tr>
-            </thead>		
-			
-            <tbody>
-            	<tr>
-            		<td>            	
-            		<input type='text' name='new_question' value=''>				
-            		</td>
-            		<td>
-            		<input type='submit' name='ok' value='OK'>
-           			</td>
-	           	</tr>
-            </tbody>
-			</table>
-			
-			</form>
-			
-		</div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	 --> 	
-
-
-	 <!-- AD - includes the footer component into this page 
+ <!-- AD - includes the footer component into this page 
 	    (albeit not visible) -->
     
 	<%@ include file="../components/footer.jsp" %> 
