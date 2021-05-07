@@ -1160,27 +1160,22 @@ color: #414141;
 /* AD - Updates to the candidate profile page */
 .containerCandidateProfile {
 	max-width: 75%;
-    padding: 20px 10px;
+    padding: 20px 0px;
     border-radius: 10px;         
     background-color:rgba(214, 214, 214, 0.822);
     box-shadow: 0 2px 16px 2px #264653;         
     margin: 25px auto 25px auto; 
     
-    /*
-    max-width: 95%;
-    padding: 20px 80px;
-    border-radius: 10px;         
-    background-color:rgba(214, 214, 214, 0.822);
-    box-shadow: 0 2px 16px 2px #264653;         
-    margin: 25px auto 25px auto;     
-    */
-   
-    
 }
 
+/* AD - colour Amendment on the candidate profile page*/
 .colourAmendment {
 	background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);
     box-shadow: 0 2px 16px 2px #264653;
 }
 
+/* AD - Margin Amendment on the candidate profile page*/
+.marginAmendment {
+	margin-top: 35px;
+}
  
