@@ -130,22 +130,28 @@
 				
 	            <tbody>
 	            	<tr>
-	            		<td>  
+	            		<td>  		
 	            		
-	            		<!--          	
-	            		<input type='text' style = "width:100%" name='new_question' value=''>				
-	            		 --> 
 	            		<input type='text' name='first_name' value=''>
 						<input type='text' name='last_name' value=''>
 						<input type='text' name='username' value=''>
-						<input type='text' name='password' value=''>
-	            		
-	            		
+						<input type='text' name='password' value=''>           		
 	            		
 	            		</td>
+	            		
+	            	    <td>
+	            	     
+						 <input style = "width:80%" class = "buttonShowHide2 button1" 
+						 type='submit' name='ok' value='SUBMIT'>						 
+						  					 
+						</td>
+	            		
+	            		<!-- LH
 	            		<td>
 	            		<input type='submit' name='ok' value='OK'>
 	           			</td>
+		           	 	-->
+		           	 	
 		           	</tr>
 	            </tbody>
 				</table>
@@ -203,26 +209,7 @@
 				 </div>
 				 
 			 
-			</div>
-				 
-			
-				<!-- LH
-				<a href='../deletenewquestion?newquestion_id=${newquestion.newquestionId}'>Delete</a> 
-				<a href='../readtoupdatenewquestion?newquestion_id=${newquestion.newquestionId}'>Update</a>
-				
-				
-				<li>${newquestion} <a href='../deletenewquestion?newquestion_id=${newquestion.newquestionId}'>Delete</a> 
-				<a href='../readtoupdatenewquestion?newquestion_id=${newquestion.newquestionId}'>Update</a>
-				
-				<th style = "text-align: left;" class="tableCandidateDB">
-				<button onclick="location.href='../readcandidate';" value=''>
-                 <b class = "tableUpdate">SHOW DATABASE</b></Button></th>
-				
-				<input type='submit' name='ok' value='DELETE' 
-				class = "tableCustom3 buttonMarginCorrection1" 
-				style="font-weight:bold;">
-				
-				 -->
+			</div>		
 			
 			</div>
 			
