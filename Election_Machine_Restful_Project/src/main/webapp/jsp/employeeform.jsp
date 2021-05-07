@@ -169,12 +169,12 @@
 			
 			
 		<ol>
-			<c:forEach var="newquestion" items="${requestScope.newquestionlist }">
+			<c:forEach var="newquestion" items="${requestScope.employeelist }">
 			
 			<table class="table">                    
 	                <thead class = "tableCustom1">
 	                    <tr>		
-							<th>NEW QUESTION DATABASE ENTRY</th>												
+							<th>NEW EMPLOYEE DATABASE ENTRY</th>												
 					 	</tr>
 	            </thead>
 	            
@@ -183,21 +183,21 @@
         	<div class="containerInnerCandidatesTable1">
         	
         		<div class="containerInnerCandidatesTable2">
-					<li><b class="buttonColourMod2">New Question Number: </b>${newquestion}</li> 
+					<li><b class="buttonColourMod2">New Employee Number: </b>${employee}</li> 
 				</div>
 				<hr>
 				 
 			<div class="containerInnerCandidatesTable2 buttonMarginCorrection2">	 
 				 
 				 <div class = "button-main button1">
-				 <a href='../deletenewquestion?newquestion_id=${newquestion.newquestionId}'>
+				 <a href='../deletenewquestion?newquestion_id=${employee.employee_id}'>
 				 <b>DELETE</b>
 				 </a> 
 				 </div>
 				 
 				 
 				 <div class = "buttonShowHide2 button1">
-				 <a href='../readtoupdatenewquestion?newquestion_id=${newquestion.newquestionId}'>
+				 <a href='../readtoupdatenewquestion?newquestion_id=${employee.employee_id}'>
 				 <b class = "buttonColourMod1">UPDATE</b>
 				 </a> 
 				 </div>
