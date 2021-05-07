@@ -60,7 +60,7 @@ public class EmployeeClient extends HttpServlet{
 		  }
 		  
 		  request.setAttribute("employeelist", list);
-		  RequestDispatcher reqdisp = request.getRequestDispatcher("./jsp/candidateform.jsp");
+		  RequestDispatcher reqdisp = request.getRequestDispatcher("./jsp/employeeform.jsp");
 		  reqdisp.forward(request, response);
 	  }
 
