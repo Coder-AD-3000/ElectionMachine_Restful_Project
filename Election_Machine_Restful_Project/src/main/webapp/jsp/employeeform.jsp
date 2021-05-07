@@ -190,14 +190,14 @@
 			<div class="containerInnerCandidatesTable2 buttonMarginCorrection2">	 
 				 
 				 <div class = "button-main button1">
-				 <a href='../deletenewquestion?newquestion_id=${employee.employee_id}'>
+				 <a href='../deleteemployee?employee_id=${employee.employee_id}'>
 				 <b>DELETE</b>
 				 </a> 
 				 </div>
 				 
 				 
 				 <div class = "buttonShowHide2 button1">
-				 <a href='../readtoupdatenewquestion?newquestion_id=${employee.employee_id}'>
+				 <a href='../readtoupdateemployee?employee_id=${employee.employee_id}'>
 				 <b class = "buttonColourMod1">UPDATE</b>
 				 </a> 
 				 </div>
