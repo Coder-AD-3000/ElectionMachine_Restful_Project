@@ -128,7 +128,7 @@
 				 
 				 
 				 <div>
-				 <a class = "buttonShowHide2 button1" 
+				 <a class = "buttonShowHide2 button1 buttonGreen" 
 				 href='../readtoupdatenewquestion?newquestion_id=${newquestion.newquestionId}'>				 
 				 <b class = "buttonColourMod1">UPDATE</b></a> 
 				 </div>
