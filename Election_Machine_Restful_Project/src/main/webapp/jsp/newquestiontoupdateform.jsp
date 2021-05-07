@@ -59,12 +59,15 @@
 
 			<form action='../updatenewquestion' method='post'>
 			
+			<div class="containerInnerCandidatesTable"> 	
+			
 			<table class="table">                    
                 <thead class = "tableCustom1">
                     <tr>
 			
-					<th>NEW QUESTION ID:</th>
+					<th style = "width:30%">NEW QUESTION ID:</th>
 					<th>NEW QUESTION:</th>
+					<th></th>
 			
 					</tr>
            		</thead>
@@ -72,18 +75,31 @@
            		<tbody>
             		<tr>
             			<td> 	
-						<input type='text' name='newquestion_id' value='${requestScope.newquestion.newquestionId }'>
+						<input style = "width:25%" type='text' name='newquestion_id' value='${requestScope.newquestion.newquestionId }'>
 						</td>
 						<td>
-						<input type='text' name='new_question' value='${requestScope.newquestion.newquestion }'>
+						<input style = "width:100%" type='text' name='new_question' value='${requestScope.newquestion.newquestion }'>
 						</td>
+						
+						 <td>
+						 <input class = "buttonShowHide2 button1 buttonColourMod1 "type='submit' name='ok' value='UPDATE'>					 
+						 </td>
+						
+						<!-- EK 
 						<td>
 						<input type='submit' name='ok' value='OK'>
 						</td>
 						
+						<div class = "buttonShowHide2 button1">
+							-->
+			
+			
 					</tr>
             	</tbody>
-			</table>			
+			</table>
+			
+			</div>
+						
 			</form>
 
  		</div>
