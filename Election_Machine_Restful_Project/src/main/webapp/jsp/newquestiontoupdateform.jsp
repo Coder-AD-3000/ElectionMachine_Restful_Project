@@ -66,7 +66,7 @@
                     <tr>
 			
 					<th style = "width:30%">NEW QUESTION ID:</th>
-					<th>NEW QUESTION:</th>
+					<th style = "width:100%">NEW QUESTION:</th>
 					<th></th>
 			
 					</tr>

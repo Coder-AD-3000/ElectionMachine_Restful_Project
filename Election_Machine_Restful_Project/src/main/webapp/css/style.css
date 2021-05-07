@@ -1235,27 +1235,8 @@ color: #414141;
   animation: spin 1s linear infinite;  
   display: inline-block;
   justify-content: center;  
-  margin: 0px 0px 25px 35px;
-  
-  /* 
-  
-  margin: 0px 0px 10px 20px; 
-  
-  
-  border: 6px solid #264653;
-     width: 40px;
-  height: 40px;
-    
-    
-  border-right: 6px solid #f3f3f3;
-  border-left: 6px solid #f3f3f3;
-  
-  border-radius: 50%;
-  
-  border-top: 6px solid #04a138;
-  border-bottom: 6px solid #04a138;
-  
-  */ 
+  margin: 0px 0px 27px 12px;
+ 
 }
 
 /* AD - Margin correction for the delete button */
