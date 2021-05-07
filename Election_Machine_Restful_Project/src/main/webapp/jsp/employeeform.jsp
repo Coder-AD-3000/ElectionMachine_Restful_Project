@@ -169,7 +169,7 @@
 			
 			
 		<ol>
-			<c:forEach var="newquestion" items="${requestScope.employeelist }">
+			<c:forEach var="employee" items="${requestScope.employeelist }">
 			
 			<table class="table">                    
 	                <thead class = "tableCustom1">
