@@ -58,7 +58,7 @@
     there is no difference:-->
     <div class="containerCandidateProfile">
     
-                                                                                                
+      <form action='../updatecandidate' method='post'>                                                                                         
         <!-- AD - Responsive columns 
         
         <div class="row">
@@ -79,7 +79,7 @@
              	<a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>  
             
             <div class="table-responsive">            
-             <form action='../updatecandidate' method='post'>               
+                         
 	                
 	                
 	                <table class="table">                    
@@ -288,33 +288,7 @@
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
-	                </table>
-	                
-	                <!-- AD - picture field -->
-	                <table class="table">                    
-	                    <thead class = "tableCustom1">
-	                        <tr>                                                                      
-	                                          
-	                        </tr>
-	                    </thead>            
-	                    <tbody>                    
-	                        <tr> 
-	                        
-	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='pic' 
-	                            placeholder="Portrait Picture"
-	                            class = "colourAmendment"
-	                            style="font-weight:bold;">
-	                         </td> 
-	                         
-	                         <td>
-	                            <input readonly 
-	                            type='text' name='pic' 
-	                            placeholder="Portrait Picture">
-	                         </td>	                                        
-	                        </tr>	                     
-	                    </tbody>                            
-	                </table>
+	                </table>       
 	                
 	                <!-- AD - profession field -->
 	                <table class="table">                    
@@ -395,7 +369,7 @@
 	                    </tbody>                            
 	                </table>             
 	                
-                </form>
+              
             </div>        
     
     </div> <!-- AD - End of md-7 -->
@@ -416,19 +390,138 @@
                     <textarea disabled rows="8" cols="28" name='pic' 
                     placeholder="Portrait Picture"
                     style="font-weight:bold;"></textarea>
-                 </td>               	                                        
+                 </td>                                     
+	                                        	                                        
                 </tr>	                     
             </tbody>                            
         </table>
         
+        <!-- AD - Portrait Upload field -->
+        <table class="table">                    
+                        
+            <tbody>                    
+                <tr>               
+                <!-- AD - Portrait Display Area -->
+                 <td class="tableAddBackground">                
+                    <input readonly type='text' name='pic' 
+                    placeholder="Portrait Picture"
+                    class = "colourAmendment"
+                    style="font-weight:bold;">
+                 </td>                                	                                        
+                </tr>	                     
+            </tbody>                            
+        </table>
+        
+         <table class="table">                    
+            <thead class = "tableCustom1">
+                <tr>                                                                      
+                    <th>GUIDANCE: Click UPDATE to update your profile
+                    and DELETE to delete your profile completely. Please
+                    be warned once your profile has been deleted, it 
+                    cannot be recovered.</th>                                      
+                </tr>
+            </thead>            
+            <tbody>                    
+                <tr> 
+                
+                <!-- AD - Portrait Display Area -->
+                 <td class="tableAddBackground ">                
+                    <textarea disabled rows="2" cols="28" name='pic' 
+                    placeholder="Extra Guidance"
+                    style="font-weight:bold;"></textarea>
+                 </td>                                     
+	                                        	                                        
+                </tr>	                     
+            </tbody>                            
+        </table>
+        
+        <!-- AD - Portrait Upload field -->
+        <table class="table">                    
+                        
+            <tbody>                    
+                <tr>               
+                <!-- AD - Portrait Display Area -->
+                 <td class="tableAddBackground">                
+                    <input readonly type='text' name='pic' 
+                    placeholder="UPLOAD"
+                    class = "colourAmendment"
+                    style="font-weight:bold;">
+                 </td>                                	                                        
+                </tr>	                     
+            </tbody> 
+            
+            <tbody>                    
+                <tr>               
+                <!-- AD - Portrait Display Area -->
+                 <td class="tableAddBackground">                
+                    <input readonly type='text' name='pic' 
+                    placeholder="DELETE"
+                    class = "colourAmendment"
+                    style="font-weight:bold;">
+                 </td>                                	                                        
+                </tr>	                     
+            </tbody> 
+            
+            
+            <tbody>                    
+                <tr>               
+                <!-- AD - Portrait Display Area -->
+                 <td class="tableAddBackground">                
+                    <input readonly type='text' name='pic' 
+                    placeholder="BACK"
+                    class = "colourAmendment"
+                    style="font-weight:bold;">
+                 </td>                                	                                        
+                </tr>	                     
+            </tbody> 
+            
+            <tbody>                    
+                <tr>               
+                <!-- AD - Portrait Display Area -->
+                 <td class="tableAddBackground">                
+                    <input readonly type='text' name='pic' 
+                    placeholder="HOME"
+                    class = "colourAmendment"
+                    style="font-weight:bold;">
+                 </td>                                	                                        
+                </tr>	                     
+            </tbody>
+            
+                                       
+        </table>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+    
+    
+   
+        
     </div>  
+    
+    
+    
+    
+      
     
     <div class="col-md-1">
     </div> 
          	
          	    
   
-  </div> <!-- AD - End of row -->   
+  </div> <!-- AD - End of row -->
+  
+    </form>   
   	    
  </div> <!-- AD - End of containerCandidateProfile -->      
    
