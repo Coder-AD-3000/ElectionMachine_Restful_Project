@@ -29,6 +29,11 @@
     .containerInnerCandidatesTable {
     max-width: 85% !important;
     }
+    
+     /* EK - For the inner candidates container2 */
+    containerInnerCandidatesTable1 {
+     max-width: 85% !important;
+    }
 
     /* AD - Customizes the yellow container
     on the adminUpdateCandidate page, which
@@ -124,7 +129,12 @@
     /* EK - For the inner candidates container */
     .containerInnerCandidatesTable {
     max-width: 99% !important;
-    }    
+    } 
+    
+     /* EK - For the inner candidates container2 */
+    containerInnerCandidatesTable1 {
+     max-width: 98% !important;
+    }   
         
     /* AD - Customises the containers inside
 		update pages, such as candidateform.jsp */
@@ -1171,6 +1181,15 @@ on the new questions pages */
     background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
     box-shadow: 0 2px 16px 2px #264653;         
     margin: 25px auto 25px auto;   
+}
+
+.containerInnerCandidatesTable1 {
+	max-width: 90%;
+    padding: 20px;
+    border-radius: 10px;         
+    background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 25px auto;
 }
 
 .newQuestionCentered {

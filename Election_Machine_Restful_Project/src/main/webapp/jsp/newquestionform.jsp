@@ -95,11 +95,28 @@
        <div class="table-responsive"> 		
 		
 		
-		<div class="containerInnerCandidatesTable"> 	
+		<div class="containerInnerCandidatesTable">
+		
+			
 			
 		<ol>
 			<c:forEach var="newquestion" items="${requestScope.newquestionlist }">
+			
+			<table class="table">                    
+	                <thead class = "tableCustom1">
+	                    <tr>		
+							<th>NEW QUESTION DATABASE ENTRY</th>												
+					 	</tr>
+	            </thead>
+	            
+        	</table> 
+        
+        	<div class="containerInnerCandidatesTable1">
+        
 				<li>${newquestion} <a href='../deletenewquestion?newquestion_id=${newquestion.newquestionId}'>Delete</a> <a href='../readtoupdatenewquestion?newquestion_id=${newquestion.newquestionId}'>Update</a>
+			
+			</div>
+			
 			</c:forEach>
 		</ol>
 		
