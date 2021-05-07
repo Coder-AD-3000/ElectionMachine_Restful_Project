@@ -8,7 +8,7 @@
 	<!-- LH - includes the meta component, into this page -->
     <%@ include file="../components/meta.jsp" %>
  
-    <title>New Question To Update Form</title>
+    <title>New Employee To Update Form</title>
     
     <!-- LH - includes the header component, into this page -->
     <%@ include file="../components/headerBootstrap.jsp" %>    
@@ -57,7 +57,7 @@
        <div class="table-responsive"> 
 
 
-			<form action='../updatenewquestion' method='post'>
+			<form action='../updateemployee' method='post'>
 			
 			<div class="containerInnerCandidatesTable"> 	
 			
@@ -65,8 +65,11 @@
                 <thead class = "tableCustom1">
                     <tr>
 			
-					<th style = "width:30%">NEW QUESTION ID:</th>
-					<th>NEW QUESTION:</th>
+					<th style = "width:30%">NEW EMPLOYEE ID:</th>
+					<th>FIRST NAME:</th>
+					<th>LAST NAME:</th>
+					<th>USERNAME:</th>
+					<th>PASSWORD:</th>
 					<th></th>
 			
 					</tr>
@@ -74,18 +77,60 @@
            		
            		<tbody>
             		<tr>
+            		
+	            		<!-- 
+	            		
+	            		<td> 	
+							<input style = "width:25%" type='text' name='newquestion_id' value='${requestScope.newquestion.newquestionId }'>
+							</td>
+							<td>
+							<input style = "width:100%" type='text' name='new_question' value='${requestScope.newquestion.newquestion }'>
+						</td>
+	            		     		
+	            		 -->
+            		
             			<td> 	
-						<input style = "width:25%" type='text' name='newquestion_id' value='${requestScope.newquestion.newquestionId }'>
+						<input style = "width:25%" type='text' name='employee_id' value='${requestScope.employee.employee_id }'>
 						</td>
 						<td>
-						<input style = "width:100%" type='text' name='new_question' value='${requestScope.newquestion.newquestion }'>
+						<input style = "width:100%" type='text' name='first_name' value='${requestScope.employee.first_name }'>
+						</td>
+						<td>
+						<input style = "width:100%" type='text' name='last_name' value='${requestScope.employee.last_name }'>
+						</td>
+						<td>
+						<input style = "width:100%" type='text' name='username' value='${requestScope.employee.username }'>
+						</td>
+						<td>
+						<input style = "width:100%" type='text' name='password' value='${requestScope.employee.password }'>
 						</td>
 						
 						 <td>
 						 <input class = "buttonShowHide2 button1 buttonColourMod1 "type='submit' name='ok' value='UPDATE'>					 
 						 </td>
 						
-						<!-- LH 
+						<!-- LH
+						
+						("employee_id"), 
+						request.getParameter("first_name"),
+						request.getParameter("last_name"), 
+						request.getParameter("username"),
+						request.getParameter("password"));
+					
+				
+						<input type='text' name='first_name' value=''>
+						<input type='text' name='last_name' value='OK'>
+						<input type='text' name='username' value=''>
+						<input type='text' name='password' value='OK'>
+						
+						
+						
+						
+						
+						
+						
+						
+						 
 						<td>
 						<input type='submit' name='ok' value='OK'>
 						</td>
