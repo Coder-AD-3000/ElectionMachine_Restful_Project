@@ -112,12 +112,13 @@
         	</table> 
         
         	<div class="containerInnerCandidatesTable1">
-        
-				<li>${newquestion} 
-				
+        	
+        		<div class="containerInnerCandidatesTable2">
+					<li>${newquestion}</li> 
+				</div>
 				<hr>
 				 
-			<div class="containerInnerCandidatesTable1">	 
+			<div class="containerInnerCandidatesTable2 buttonMarginCorrection2">	 
 				 
 				 <div class = "button-main button1">
 				 <a href='../deletenewquestion?newquestion_id=${newquestion.newquestionId}'>
