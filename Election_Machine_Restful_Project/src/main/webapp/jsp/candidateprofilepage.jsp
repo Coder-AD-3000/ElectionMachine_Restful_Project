@@ -56,8 +56,28 @@
     which will scroll horizontally on small devices (under 768px). 
     When viewing on anything larger than 768px wide, 
     there is no difference:-->
-    <div class="containerCandidateProfile">   
-        <div>                                                                                             
+    <div class="containerCandidateProfile">
+    
+                                                                                                
+        <!-- AD - Responsive columns 
+        
+        <div class="row">
+		  <div class="col-sm-4">.col-sm-4</div>
+		  <div class="col-sm-4">.col-sm-4</div>
+		  <div class="col-sm-4">.col-sm-4</div>
+		</div> 
+        
+        
+        -->
+         <div class="row"> 
+         
+         	<div class="col-md-1">
+         	</div> 
+         	 
+            	<div class="col-md-8">
+            
+             	<a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>  
+            
             <div class="table-responsive">            
              <form action='../updatecandidate' method='post'>               
 	                
@@ -376,12 +396,18 @@
 	                </table>             
 	                
                 </form>
-            </div>
-        </div>
-    </div>     
-        
-        
-        
+            </div>        
+    
+    </div> <!-- AD - End of md-7 -->
+  
+  	<div class="col-md-3">
+   		Portrait picture displayed here	
+    </div>      
+  
+  </div> <!-- AD - End of row -->   
+  	    
+ </div> <!-- AD - End of containerCandidateProfile -->      
+   
          						<!-- AD this div is for the loading animation 
 					  			<div class="loaderUpdate"></div>
 					  			-->	
