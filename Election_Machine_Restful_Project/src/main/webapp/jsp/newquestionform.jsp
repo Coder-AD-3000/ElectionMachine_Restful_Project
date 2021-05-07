@@ -135,25 +135,7 @@
 				 
 			 
 			</div>
-				 
-			
-				<!-- AD
-				<a href='../deletenewquestion?newquestion_id=${newquestion.newquestionId}'>Delete</a> 
-				<a href='../readtoupdatenewquestion?newquestion_id=${newquestion.newquestionId}'>Update</a>
-				
-				
-				<li>${newquestion} <a href='../deletenewquestion?newquestion_id=${newquestion.newquestionId}'>Delete</a> 
-				<a href='../readtoupdatenewquestion?newquestion_id=${newquestion.newquestionId}'>Update</a>
-				
-				<th style = "text-align: left;" class="tableCandidateDB">
-				<button onclick="location.href='../readcandidate';" value=''>
-                 <b class = "tableUpdate">SHOW DATABASE</b></Button></th>
-				
-				<input type='submit' name='ok' value='DELETE' 
-				class = "tableCustom3 buttonMarginCorrection1" 
-				style="font-weight:bold;">
-				
-				 -->
+				 			
 			
 			</div>
 			
