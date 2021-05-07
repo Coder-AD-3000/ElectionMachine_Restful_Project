@@ -170,19 +170,29 @@
 			</div>
 						
 			</form>
+			
+			
+		 
+							<div id="myProgress" style="display: none">
+						  		<div id="myBar">10%</div>
+							</div>
 
  		</div>
 	</div>
 	
 	
-							<!-- EK - Loading animation bar -->
+							<!-- EK - Loading animation bar 
 							<div id="myProgress">
 						  		<div id="myBar">10%</div>
 							</div>
+							-->
 						
+						
+						
+							<!-- EK 
+							
 							<br>
 							
-							<!-- EK 
 							<button onclick="move()">Click Me
 							</button> 
 							-->
@@ -212,12 +222,15 @@
 			}
 						
 			
-			/* EK - Toggle button to reveal the update button */			
+			/* EK - Toggle button to reveal the hidden div */			
 			 function ShowHideToggle1(btnAddEntry) {
                      var dvAddEntry = document.getElementById("dvAddEntry");
                                              
                      if (btnAddEntry.value == "ADD") {
-                         dvAddEntry.style.display = "block";                            
+                         dvAddEntry.style.display = "block";
+                         
+                         /* EK - This is for the loading bar */
+                         myProgress.style.display = "block";
                         
                          btnAddEntry.style.display = "none";                            
                          
