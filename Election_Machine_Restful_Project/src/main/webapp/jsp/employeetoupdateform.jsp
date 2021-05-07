@@ -90,7 +90,7 @@
 	            		 -->
             		
             			<td> 	
-						<input style = "width:25%" type='text' name='employee_id' value='${requestScope.employee.employee_id }'>
+						<input readonly class="greyed-background" style = "width:25%" type='text' name='employee_id' value='${requestScope.employee.employee_id }'>
 						</td>
 						<td>
 						<input style = "width:100%" type='text' name='first_name' value='${requestScope.employee.first_name }'>
