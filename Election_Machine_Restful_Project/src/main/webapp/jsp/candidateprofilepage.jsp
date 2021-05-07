@@ -74,7 +74,7 @@
          	<div class="col-md-1">
          	</div> 
          	 
-            	<div class="col-md-8">
+            	<div class="col-md-7">
             
              	<a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>  
             
@@ -128,7 +128,7 @@
 	                         
 	                         <td>
 	                            <input readonly 
-	                            type='text' name='candidate_id' 
+	                            type='text' name='first_name' 
 	                            placeholder="Mikko">
 	                         </td>	                                        
 	                        </tr>	                     
@@ -154,7 +154,7 @@
 	                         
 	                         <td>
 	                            <input readonly
-	                            type='text' name='candidate_id' 
+	                            type='text' name='last_name' 
 	                            placeholder="Koskenranta">
 	                         </td>	                                        
 	                        </tr>	                     
@@ -180,7 +180,7 @@
 	                         
 	                         <td>
 	                            <input readonly 
-	                            type='text' name='candidate_id' 
+	                            type='text' name='party' 
 	                            placeholder="The Green Party">
 	                         </td>	                                        
 	                        </tr>	                     
@@ -206,7 +206,7 @@
 	                         
 	                         <td>
 	                            <input readonly 
-	                            type='text' name='candidate_id' 
+	                            type='text' name='location' 
 	                            placeholder="Helsinki">
 	                         </td>	                                        
 	                        </tr>	                     
@@ -232,7 +232,7 @@
 	                         
 	                         <td>
 	                            <input readonly 
-	                            type='text' name='candidate_id' 
+	                            type='text' name='age' 
 	                            placeholder="52">
 	                         </td>	                                        
 	                        </tr>	                     
@@ -258,7 +258,7 @@
 	                         
 	                         <td>
 	                            <input readonly 
-	                            type='text' name='candidate_id' 
+	                            type='text' name='mission' 
 	                            placeholder="Better Social Welfare">
 	                         </td>	                                        
 	                        </tr>	                     
@@ -283,7 +283,7 @@
 	                         
 	                         <td>
 	                            <input readonly 
-	                            type='text' name='candidate_id' 
+	                            type='text' name='vision' 
 	                            placeholder="A poverty-free country">
 	                         </td>	                                        
 	                        </tr>	                     
@@ -309,7 +309,7 @@
 	                         
 	                         <td>
 	                            <input readonly 
-	                            type='text' name='candidate_id' 
+	                            type='text' name='pic' 
 	                            placeholder="Portrait Picture">
 	                         </td>	                                        
 	                        </tr>	                     
@@ -335,7 +335,7 @@
 	                         
 	                         <td>
 	                            <input readonly 
-	                            type='text' name='candidate_id' 
+	                            type='text' name='profession' 
 	                            placeholder="Engineer">
 	                         </td>	                                        
 	                        </tr>	                     
@@ -361,7 +361,7 @@
 	                         
 	                         <td>
 	                            <input readonly
-	                            type='text' name='candidate_id' 
+	                            type='text' name='username' 
 	                            placeholder="GreenMikko21">
 	                         </td>	                                        
 	                        </tr>	                     
@@ -388,7 +388,7 @@
 	                         
 	                         <td>
 	                            <input readonly
-	                            type='text' name='candidate_id' 
+	                            type='text' name='password' 
 	                            placeholder="Green33214a">
 	                         </td>	                                        
 	                        </tr>	                     
@@ -401,8 +401,32 @@
     </div> <!-- AD - End of md-7 -->
   
   	<div class="col-md-3">
-   		Portrait picture displayed here	
-    </div>      
+   		
+		<table class="table marginAmendment">                    
+            <thead class = "tableCustom1">
+                <tr>                                                                      
+                    <th>CANDIDATE PORTRAIT</th>                                      
+                </tr>
+            </thead>            
+            <tbody>                    
+                <tr> 
+                
+                <!-- AD - Portrait Display Area -->
+                 <td class="tableAddBackground ">                
+                    <textarea disabled rows="8" cols="28" name='pic' 
+                    placeholder="Portrait Picture"
+                    style="font-weight:bold;"></textarea>
+                 </td>               	                                        
+                </tr>	                     
+            </tbody>                            
+        </table>
+        
+    </div>  
+    
+    <div class="col-md-1">
+    </div> 
+         	
+         	    
   
   </div> <!-- AD - End of row -->   
   	    
