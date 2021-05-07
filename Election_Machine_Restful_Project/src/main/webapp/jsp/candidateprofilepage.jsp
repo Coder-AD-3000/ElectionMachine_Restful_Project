@@ -58,7 +58,11 @@
     there is no difference:-->
     <div class="containerCandidateProfile">
     
-      <form action='../updatecandidate' method='post'>                                                                                         
+    	<!-- AD - This will need fixing 
+      <form action='../updatecandidate' method='post'> 
+      -->
+      <form action='' method='post'> 
+                                                                                              
         <!-- AD - Responsive columns 
         
         <div class="row">
@@ -439,28 +443,86 @@
         <table class="table">                    
                         
             <tbody>                    
-                <tr>               
-                <!-- AD - Portrait Display Area -->
-                 <td class="tableAddBackground">                
-                    <input readonly type='text' name='pic' 
-                    placeholder="UPLOAD"
-                    class = "colourAmendment"
-                    style="font-weight:bold;">
-                 </td>                                	                                        
+                <tr> 
+                
+                <!-- AD Button code -->
+                
+                <td class="tableAddBackground">					 
+					 
+						<Button id = "btnUpdateProfile" value='ADD' onClick="toggleProfile1(this)">
+						<b class = "tableUpdate">UPDATE</b></Button>
+						
+						<div id ="dvUpdateProfile" style="display: none">					 
+					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
+					  		
+					  			
+					  		<!-- AD this div is for the loading animation -->
+					  		 <div class="loaderUpdate"></div> 
+					  							  								  
+							  <table class="table-responsive">
+								  <tbody>
+									  <tr>
+										 <td class="tableAddBackground">									 	
+										 						
+								 	  		<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" 
+								 	  		style="font-weight:bold;">
+								 	  	 </td> 							  
+									  	 <td>
+										   <Button value='' onClick="window.location = '../jsp/candidateprofileform.jsp';">
+										   <b>CANCEL</b></Button>
+										   <!-- AD 
+										   Add prevent default										   
+										    -->
+									  	</td>
+									  </tr>								  
+								  </tbody>						  
+							   </table>
+						</div>                      	                                        
                 </tr>	                     
             </tbody> 
             
+            
+            
+            
             <tbody>                    
-                <tr>               
-                <!-- AD - Portrait Display Area -->
-                 <td class="tableAddBackground">                
-                    <input readonly type='text' name='pic' 
-                    placeholder="DELETE"
-                    class = "colourAmendment"
-                    style="font-weight:bold;">
-                 </td>                                	                                        
+                <tr> 
+                
+                <!-- AD Button code -->
+                
+                <td class="tableAddBackground">					 
+					 
+						<Button id = "btnUpdateProfile" value='ADD' onClick="toggleProfile1(this)">
+						<b class = "tableCustom3">DELETE</b></Button>
+						
+						<div id ="dvUpdateProfile" style="display: none">					 
+					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
+					  		
+					  			
+					  		<!-- AD this div is for the loading animation -->
+					  		 <div class="loaderDelete"></div> 
+					  							  								  
+							  <table class="table-responsive">
+								  <tbody>
+									  <tr>
+										 <td class="tableAddBackground">									 	
+										 						
+								 	  		<input type='submit' name='ok' value='DELETE' class = "tableCustom3" 
+								 	  		style="font-weight:bold;">
+								 	  	 </td> 							  
+									  	 <td>
+										   <Button value='' onClick="window.location = '../jsp/candidateprofileform.jsp';">
+										   <b>CANCEL</b></Button>
+										   <!-- AD 
+										   Add prevent default										   
+										    -->
+									  	</td>
+									  </tr>								  
+								  </tbody>						  
+							   </table>
+						</div>                      	                                        
                 </tr>	                     
             </tbody> 
+            
             
             
             <tbody>                    
@@ -595,18 +657,18 @@
                 and the button text and colour changed. -->    
                 <script type="text/javascript">
                 
-                    function ShowHideToggle1(btnAddEntry) {
-                        var dvAddEntry = document.getElementById("dvAddEntry");
+                    function toggleProfile1(btnUpdateProfile) {
+                        var dvUpdateProfile = document.getElementById("dvUpdateProfile");
                                                 
-                        if (btnAddEntry.value == "ADD") {
-                            dvAddEntry.style.display = "block";                            
+                        if (btnUpdateProfile.value == "ADD") {
+                            dvUpdateProfile.style.display = "block";                            
                            
-                            btnAddEntry.style.display = "none";                            
+                            btnUpdateProfile.style.display = "none";                            
                             
                         } else {
-                            dvAddEntry.style.display = "none";
-                            btnAddEntry.value = "ADD";
-                            btnAddEntry.style.backgroundColor = "#2A9D8F";                           
+                            dvUpdateProfile.style.display = "none";
+                            btnUpdateProfile.value = "ADD";
+                            btnUpdateProfile.style.backgroundColor = "#2A9D8F";                           
                         }
                     } 
                        
