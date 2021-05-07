@@ -64,14 +64,15 @@
 				<table class="table">                    
 	                <thead class = "tableCustom1">
 	                    <tr>		
-							<th>NEW QUESTION:</th>						
+							<th>NEW QUESTION:</th>
+							<th>SUBMIT</th>							
 					 	</tr>
 	            </thead>		
 				
 	            <tbody>
 	            	<tr>
 	            		<td>            	
-	            		<input type='text' name='new_question' value=''>				
+	            		<input type='text' style = "width:100%" name='new_question' value=''>				
 	            		</td>
 	            		<td>
 	            		<input type='submit' name='ok' value='OK'>
