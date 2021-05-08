@@ -84,6 +84,8 @@ Version: 1
 						<div id ="dvAddEntry" style="display:none">					 
 					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Update?</b></p>	
 					  			
+					  			
+					  			<div class="loaderEmployee2"></div>
 													  
 							  <table class="table-responsive">
 								  <tbody>
@@ -101,7 +103,12 @@ Version: 1
 									  	<!-- The Spinning animation
 									  	<div class="loaderNewQuestions"></div>
 									  	-->
-									  	<div class="loaderEmployee"></div>
+									  	
+									  	<!--
+									  	<div class="loaderEmployee2"></div>
+									  	
+									  	-->
+									  	
 									  	</td>
 									  </tr>								  
 								  </tbody>						  
