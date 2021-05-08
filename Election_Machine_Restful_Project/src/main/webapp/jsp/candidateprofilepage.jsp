@@ -98,7 +98,7 @@
 	                        
 	                        <!-- AD - candidate number field -->
 	                         <td class="tableAddBackground ">                
-	                            <input readonly type='text' class = "colourAmendment"
+	                            <input readonly type='text' class = "greyed-background"
 	                            name='candidate_id' 
 	                            placeholder="Candidate Number"
 	                            style="font-weight:bold;">
@@ -449,12 +449,24 @@
                 
                 <td class="tableAddBackground">					 
 					 
-						<Button id = "btnUpdateProfile" value='ADD' onClick="toggleProfile1(this)">
-						<b class = "tableUpdate">UPDATE</b></Button>
+						<Button type = "button" id = "btnUpdateProfile" value='UPDATEvisible' onClick="toggleProfileUpdate(this)">
+						<b class = "tableUpdate">EDIT PROFILE</b></Button>
 						
-						<div id ="dvUpdateProfile" style="display: none">					 
-					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
+						<div id ="dvUpdateProfile" style="display: none">
+							
+							<!--  					 
+					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Profile Changes?</b></p>	
+					  		-->
 					  		
+					  		<table style = "width:250px" class="table">                    
+				            <thead class = "tableCustom1">
+				                <tr>                                                                      
+				                    <th><i style = "color:#cfdefe">NOTICE!</i> - You are about to update your profile.
+				                    If you click cancel, all changes will be lost.
+				                    Confirm profile Changes?</th>                                      
+				                </tr>
+				            </thead>
+				            </table>
 					  			
 					  		<!-- AD this div is for the loading animation -->
 					  		 <div class="loaderUpdate"></div> 
@@ -468,7 +480,7 @@
 								 	  		style="font-weight:bold;">
 								 	  	 </td> 							  
 									  	 <td>
-										   <Button value='' onClick="window.location = '../jsp/candidateprofileform.jsp';">
+										   <Button type = "button" value='' onClick="window.location.reload();">
 										   <b>CANCEL</b></Button>
 										   <!-- AD 
 										   Add prevent default										   
@@ -491,15 +503,25 @@
                 
                 <td class="tableAddBackground">					 
 					 
-						<Button id = "btnUpdateProfile" value='ADD' onClick="toggleProfile1(this)">
+						<Button type = "button" id = "btnDeleteProfile" value='ADD' onClick="toggleProfileDelete(this)">
 						<b class = "tableCustom3">DELETE</b></Button>
 						
-						<div id ="dvUpdateProfile" style="display: none">					 
-					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
+						<div id ="dvDeleteProfile" style="display: none">							
+											  		 
+						  	<table style = "width:250px" class="table">                    
+				            <thead class = "tableCustom1">
+				                <tr>                                                                      
+				                    <th style = "color:#FFE4E1"><i style = "color:#ff4444">WARNING!</i> - You are about to delete your entire profile!
+				                    Once Deleted your profile cannot be recovered.
+				                    Confirm Profile Deletion?</th>                                      
+				                </tr>
+				            </thead>
+				            </table>
 					  		
 					  			
 					  		<!-- AD this div is for the loading animation -->
-					  		 <div class="loaderDelete"></div> 
+					  		 <div class="loaderDelete">
+					  		 </div> 
 					  							  								  
 							  <table class="table-responsive">
 								  <tbody>
@@ -510,7 +532,7 @@
 								 	  		style="font-weight:bold;">
 								 	  	 </td> 							  
 									  	 <td>
-										   <Button value='' onClick="window.location = '../jsp/candidateprofileform.jsp';">
+										   <Button type = "button" value='' onClick="window.location.reload();">
 										   <b>CANCEL</b></Button>
 										   <!-- AD 
 										   Add prevent default										   
@@ -554,34 +576,19 @@
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
     </div>
-    
-    
-   
+     
         
     </div>  
-    
-    
-    
-    
+      
       
     
     <div class="col-md-1">
     </div> 
          	
-         	    
+     	    
   
-  </div> <!-- AD - End of row -->
+  		</div> <!-- AD - End of row -->
   
     </form>   
   	    
@@ -632,16 +639,24 @@
 	                       		
 	                       		-->
         
-        
-        
-        
-    
-	<div class="containerCandidateProfile">                                                                                          
-        <div class="table-responsive">
-                  		
-		</div>			
-	</div>
                   
+             
+     <!-- AD - The footer container note -->
+    <div class="containerProfileFooter">      
+        <!-- AD - A small container to amend the admin note background section-->
+        <div class="container4">             
+            <!-- AD - Introductory statement about the ADMIN: Update Candidates page -->
+            <h5 class = "adminTextCorrection2">CANDIDATE NOTE: If you have any queries, 
+            or if you experience any technical issues, please contact our IT Admin team at 
+        	technicalsupport@theglobalheraldnewspaper.com .
+            <br><br>
+            Only Global Herald IT Admins and yourself have access to your confidential data.
+            </h5>        
+        </div>           
+       							    
+
+        <!-- AD - End of the central (yellow container)-->
+    </div>      
                   
                   
                   
@@ -657,49 +672,39 @@
                 and the button text and colour changed. -->    
                 <script type="text/javascript">
                 
-                    function toggleProfile1(btnUpdateProfile) {
+                    function toggleProfileUpdate(btnUpdateProfile) {
                         var dvUpdateProfile = document.getElementById("dvUpdateProfile");
                                                 
-                        if (btnUpdateProfile.value == "ADD") {
+                        if (btnUpdateProfile.value == "UPDATEvisible") {
                             dvUpdateProfile.style.display = "block";                            
                            
                             btnUpdateProfile.style.display = "none";                            
                             
                         } else {
                             dvUpdateProfile.style.display = "none";
-                            btnUpdateProfile.value = "ADD";
+                            btnUpdateProfile.value = "UPDATEvisible";
                             btnUpdateProfile.style.backgroundColor = "#2A9D8F";                           
                         }
                     } 
-                       
                     
-                    /* AD - This script is to create a 'modal' pop up */
-                  
-	                 // Get the modal
-	                 var modal = document.getElementById("myModal");
-	
-	                 // Get the button that opens the modal
-	                 var btn = document.getElementById("myBtn");
-	
-	                 // Get the <span> element that closes the modal
-	                 var span = document.getElementsByClassName("close")[0];
-	
-	                 // When the user clicks the button, open the modal 
-	                 btn.onclick = function() {
-	                   modal.style.display = "block";
-	                 }
-	
-	                 // When the user clicks on <span> (x), close the modal
-	                 span.onclick = function() {
-	                   modal.style.display = "none";
-	                 }
-	
-	                 // When the user clicks anywhere outside of the modal, close it
-	                 window.onclick = function(event) {
-	                   if (event.target == modal) {
-	                     modal.style.display = "none";
-	                   }
-	                 }
+                    
+                    
+                    /* AD - This is for the delete profile button */
+                    function toggleProfileDelete(btnDeleteProfile) {
+                        var dvDeleteProfile = document.getElementById("dvDeleteProfile");
+                                                
+                        if (btnDeleteProfile.value == "ADD") {
+                        	dvDeleteProfile.style.display = "block";                            
+                           
+                            btnDeleteProfile.style.display = "none";                            
+                            
+                        } else {
+                        	dvDeleteProfile.style.display = "none";
+                            btnDeleteProfile.value = "ADD";
+                            btnDeleteProfile.style.backgroundColor = "#2A9D8F";                           
+                        }
+                    } 
+                                    
                   	                 
                  	</script> 
                  	
