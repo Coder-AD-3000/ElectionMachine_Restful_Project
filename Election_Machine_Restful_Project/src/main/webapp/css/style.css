@@ -254,9 +254,9 @@ on the adminUpdateCandidate page */
     margin: 25px auto 25px auto;                
 }
 
-/* AD - Customises the yellow container
-on the adminUpdateCandidate page, which
-contains the candidate table data */
+/* AD - Customises the main container
+on the admin candidate database page 
+(containing candidate database data) */
 .containerUpdateCandidatesTable{            
     max-width: 95%;
     padding: 20px;
@@ -838,7 +838,7 @@ div.container-nav-links input[type="submit" i]:hover {
 	color: rgba(255, 255, 255, 0.829) !important;
 }
 
-/* AD - Amendments to offset boostrap 
+/* AD - Amendments to offset bootstrap 
     font-size conflicts, such as on the
     admintUpdateCandidates.jsp page. */
 .adminTextCorrection1 {
@@ -850,7 +850,7 @@ div.container-nav-links input[type="submit" i]:hover {
         Looks OK as is, on all screen sizes. */
 }
 
-/* AD - Amendments to offset boostrap 
+/* AD - Amendments to offset bootstrap 
     font-size conflicts, such as on the
     admintUpdateCandidates.jsp page. */
     .adminTextCorrection2 {
@@ -862,7 +862,7 @@ div.container-nav-links input[type="submit" i]:hover {
         Looks OK as is, on all screen sizes. */
     }
 
-    /* AD - Amendments to offset boostrap 
+    /* AD - Amendments to offset bootstrap 
     font-size conflicts, such as on the
     admintUpdateCandidates.jsp page. */
     .adminTextCorrection3 {
@@ -1224,13 +1224,28 @@ color: #414141;
   margin: 0px 0px 2px 0px; 
 }
 
+/* EK - for the loaderNewQuestions animation */
+.loaderNewQuestions {
+  border: 12px solid green;
+  border-top: 6px solid #c8ffc8;
+  border-bottom: 6px solid #c8ffc8;      
+  border-radius: 50%;
+  width: 60px;
+  height: 20px;
+  animation: spin 1s linear infinite;  
+  display: inline-block;
+  justify-content: center;  
+  margin: 0px 0px 27px 11px;
+ 
+}
+
 /* AD - Margin correction for the delete button */
 .buttonMarginCorrection1 {
 	margin: 11px 0px 0px 10px;	
 }
 
 /* AD - Margin correction for the update button */
-.buttonMarginCorrection2 {
+.buttonMarginCorrection3 {
 	margin: 11px 10px 0px 0px;	
 }
 
@@ -1286,7 +1301,7 @@ on the new questions pages */
 
 .buttonColourMod2 {
 	color: #00007b;
-}
+	}
 
 /* EK - Margin correction for the new questions
  buttons */
@@ -1308,5 +1323,83 @@ on the new questions pages */
 	
 }
 
+/* EK - New Questions alternative
+	(might not use in the end) animation(s) */
 
+.animation1 {
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  border-radius: 50%;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+	
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:linear-gradient(0deg,#F4A261, 10%, #E9C46A); left:50px; top:0px;}
+  50%  {background-color:linear-gradient(0deg, #E76F51, 70%, #F4A261); left:50px; top:50px;}
+  75%  {background-color:green; left:0px; top:50px;}
+  100% {background-color:red; left:0px; top:0px;}
+	
+
+}
+
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 10%;
+  height: 30px;
+  background-color: #04AA6D;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+/* EK - For the New Questions
+		Update button*/		
+.buttonGreen { 
+	background-color: #04a138;
+}
+
+/* AD - Customises the main container
+on the candidate profile page */
+.containerCandidateProfile{            
+    max-width: 70%;
+    padding: 40px 30px 40px 0px;
+    border-radius: 10px;         
+    background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 25px auto;   
+}
+
+.colourAmendment {
+	background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);
+    box-shadow: 0 2px 16px 2px #264653;	
+}
+
+.marginAmendment {
+	margin: 50px 0px 0px 0px;	 
+}
+
+.candidateProfilepadding {
+	padding: 20px 20px 20px 20px;
+}
+
+/* AD - Customises the main yellow container
+on the adminUpdateCandidate page */
+.containerProfileFooter{            
+    max-width: 70%;
+    padding: 20px;
+    border-radius: 10px;         
+    background-color:rgba(214, 214, 214, 0.822);
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 25px auto;                
+}
  
