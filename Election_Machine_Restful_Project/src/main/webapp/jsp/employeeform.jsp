@@ -18,7 +18,6 @@ Version: 1
     <%@ include file="../components/headerBootstrap.jsp" %>        
 </head>
 <body>
-
 	<div class = "adminSession"><i>Admin Session Active ${requestScope.fromfilter }</i></div> 
     <%@ include file="../components/navbarBootstrap.jsp" %>
     <!-- central yellow container-->
@@ -35,9 +34,8 @@ Version: 1
 	                Regular users and candidates do not have access to this page 
 	                (or its functionality).
 	            </h5>        
-	        </div>           
-
-    </div>  
+			</div>           
+    	</div>  
 	
 	<!-- 	create employees -> empoloyee.emachinedb	-->
     <div class="containerUpdateCandidatesTable">                                                                                                
@@ -88,27 +86,22 @@ Version: 1
 										  </tbody>						  
 									   </table>
 								</div>
-				            	       	
-				            	
-				            		<!-- LH - Bonus addition -->
 				            		<td>
 				            		<input readonly class="greyed-background" type='number' 
 				            		name='employee_id' placeholder="Auto Incremented" value=''>
 				            		</td>			            	
 				            		<td>            		
-				            			<input required type='text' name='first_name' value='' placeholder="Required">
+				            			<input required type='text' name='first_name' value='' placeholder="Required..">
 				            		</td>
 				            		<td>  
-										<input required type='text' name='last_name' value='' placeholder="Required">
+										<input required type='text' name='last_name' value='' placeholder="Required..">
 									</td>
 									<td>
-										<input required type='text' name='username' value='' placeholder="Required">
+										<input required type='text' name='username' value='' placeholder="Required..">
 									</td>
 									<td> 
-										<input required type='text' name='password' value='' placeholder="Required">            		
+										<input required type='text' name='password' value='' placeholder="Required..">            		
 				            		</td>
-				            				            		
-					           	
 					           	</tr>
 				            </tbody>
 						</table>
@@ -206,27 +199,22 @@ Version: 1
 	 	</div>
 	</div>
 	
-					<!-- LH - JavaScript for the hidden 'add employee' div -->
-					<script type="text/javascript">
-                
-                    function employeeToggle(buttonAddEmployee) {
-                        var divAddEmployee = document.getElementById("divAddEmployee");
-                                                
-                        if (buttonAddEmployee.value == "ADD") {
-                        	divAddEmployee.style.display = "block";                            
-                           
-                            buttonAddEmployee.style.display = "none";                            
-                            
-                        } else {
-                        	divAddEmployee.style.display = "none";
-                            buttonAddEmployee.value = "ADD";
-                            buttonAddEmployee.style.backgroundColor = "#2A9D8F";                           
-                        }
-                    }                                        
-                  	                 
-                 	</script> 
-	
-	
+	<!-- js for 'add employee' div -->
+	<script type="text/javascript">
+		function employeeToggle(buttonAddEmployee) {
+		    var divAddEmployee = document.getElementById("divAddEmployee");
+		                            
+		    if (buttonAddEmployee.value == "ADD") {
+		    	divAddEmployee.style.display = "block";                            
+		       
+		        buttonAddEmployee.style.display = "none";                            
+		    } else {
+		    	divAddEmployee.style.display = "none";
+		        buttonAddEmployee.value = "ADD";
+		        buttonAddEmployee.style.backgroundColor = "#2A9D8F";                           
+		    }
+		}                                                     
+	</script> 
     
 	<%@ include file="../components/footer.jsp" %> 
 </body>
