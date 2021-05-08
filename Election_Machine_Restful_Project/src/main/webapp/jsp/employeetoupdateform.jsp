@@ -46,7 +46,7 @@ Version: 1
 					<table class="table">                    
 	            		<thead class = "tableCustom1">
 		                    <tr>
-								<th style = "width:30%">NEW EMPLOYEE ID:</th>
+								<th style = "width:15%">NEW EMPLOYEE ID:</th>
 								<th>FIRST NAME:</th>
 								<th>LAST NAME:</th>
 								<th>USERNAME:</th>
@@ -57,19 +57,19 @@ Version: 1
 	           			<tbody>
 		            		<tr>         		
 		            			<td> 	
-									<input readonly class="greyed-background" style = "width:25%" type='text' name='employee_id' value='${requestScope.employee.employee_id }'>
+									<input readonly class="greyed-background" style = "width:20%" type='text' name='employee_id' value='${requestScope.employee.employee_id }'>
 								</td>
 								<td>
-									<input style = "width:100%" type='text' name='first_name' value='${requestScope.employee.first_name }'>
+									<input required style = "width:100%" type='text' name='first_name' value='${requestScope.employee.first_name }'>
 								</td>
 								<td>
-									<input style = "width:100%" type='text' name='last_name' value='${requestScope.employee.last_name }'>
+									<input required style = "width:100%" type='text' name='last_name' value='${requestScope.employee.last_name }'>
 								</td>
 								<td>
-									<input style = "width:100%" type='text' name='username' value='${requestScope.employee.username }'>
+									<input required style = "width:100%" type='text' name='username' value='${requestScope.employee.username }'>
 								</td>
 								<td>
-									<input style = "width:100%" type='text' name='password' value='${requestScope.employee.password }'>
+									<input required style = "width:100%" type='text' name='password' value='${requestScope.employee.password }'>
 								</td>
 								
 								

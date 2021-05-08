@@ -45,10 +45,15 @@
      max-width: 95% !important;
     }
     
+    /* LH - For the employee create container */
+    containerEmployeeCreate {
+     max-width: 95% !important;
+    }    
+    
     /* LH - Media query for the inner container
     	on the employee page */
     containerUpdateEmployeeTable {
-    max-width: 95% !important;
+    max-width: 97% !important;
     }
 
     /* AD - Customizes the yellow container
@@ -167,6 +172,11 @@
     containerUpdateEmployeeTable {
     max-width: 99% !important;
     }
+    
+    /* LH - For the employee create container */
+    containerEmployeeCreate {
+     max-width: 99% !important;
+    }  
         
     /* AD - Customises the containers inside
 		update pages, such as candidateform.jsp */
@@ -216,8 +226,13 @@
     /* LH - Media query for the inner container
     	on the employee page */
     containerUpdateEmployeeTable {
-    max-width: 99%;
+    max-width: 99% !important; /* AD - Important might need to be removed */ 
     }
+    
+    /* LH - For the employee create container */
+    containerEmployeeCreate {
+     max-width: 99% !important;
+    }  
     
 }
 
@@ -251,8 +266,13 @@
     /* LH - Media query for the inner container
     	on the employee page */
     containerUpdateEmployeeTable {
-    max-width: 99%;
+    max-width: 99% !important; /* AD - Important might need to be removed */ 
     }
+    
+    /* LH - For the employee create container */
+    containerEmployeeCreate {
+     max-width: 99%;
+    }  
     
 }
 
@@ -1341,10 +1361,20 @@ on the new questions pages */
     border-radius: 10px;         
     background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
     box-shadow: 0 2px 16px 2px #264653;         
-    margin: 25px auto 25px auto;
-    
-    align-content: center; 
-	
+    margin: 25px auto 25px auto;    
+    align-content: center;	
+}
+
+/* LH - Update to the new employee 
+		add container*/
+.containerEmployeeCreate{
+	max-width: 90%;
+    padding: 20px;
+    border-radius: 10px;         
+    background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 25px auto;    
+    align-content: center;	
 }
 
 /* EK - New Questions alternative

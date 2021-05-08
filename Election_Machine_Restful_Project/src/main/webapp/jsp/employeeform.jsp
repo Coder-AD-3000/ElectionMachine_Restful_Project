@@ -43,11 +43,13 @@ Version: 1
     <div class="containerUpdateCandidatesTable">                                                                                                
        <div class="table-responsive"> 
 			<form action='/addemployee' method='post'>	
-				 <div class="containerInnerCandidatesTable3"> 		
+				 <div class="containerEmployeeCreate"> 		
 					<div class="table-responsive"> 
 						<table class="table">                    
 			                <thead class = "tableCustom1">
-			                    <tr>		
+			                    <tr>
+			                    	<th></th>
+			                    	<th>EMPLOYEE_ID</th>		
 									<th>FIRST NAME:</th>
 									<th>LAST NAME:</th>
 									<th>USERNAME:</th>
@@ -57,22 +59,73 @@ Version: 1
 			            	</thead>		
 				            <tbody>
 				            	<tr>
+				            	
+				            	<td class="tableAddBackground">					 
+					 
+								<Button type = "button" id = "buttonAddEmployee" value='ADD' onClick="employeeToggle(this)">
+								<b class = "tableAdd">SUBMIT</b></Button>
+								
+								<div id ="divAddEmployee" style="display: none">					 
+							  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
+							  		
+							  			
+							  		<!-- AD this div is for the loading animation -->
+							  		 <div class="loader"></div> 
+							  							  								  
+									  <table class="table-responsive">
+										  <tbody>
+											  <tr>
+												 <td class="tableAddBackground">									 	
+												 						
+										 	  		<input type='submit' name='ok' value='ADD ENTRY' class = "tableAdd" 
+										 	  		style="font-weight:bold;">
+										 	  	 </td> 							  
+											  	 <td>
+												   <Button type = "button" value='' onClick="window.location = '../jsp/employeeform.jsp';">
+												   <b>CANCEL</b></Button>
+												   <!-- AD 
+												   Add prevent default										   
+												    -->
+											  	</td>
+											  </tr>								  
+										  </tbody>						  
+									   </table>
+								</div>
+				            	
+				            	
+				            	
+				            	
+				            	
+				            	
+				            	
+				            	
+				            		<!-- LH - Bonus addition -->
+				            		<td>
+				            		<input readonly class="greyed-background" type='number' 
+				            		name='employee_id' placeholder="Auto Incremented" value=''>
+				            		</td>			            	
 				            		<td>            		
-				            			<input type='text' name='first_name' value=''>
+				            			<input required type='text' name='first_name' value='' placeholder="Required">
 				            		</td>
 				            		<td>  
-										<input type='text' name='last_name' value=''>
+										<input required type='text' name='last_name' value='' placeholder="Required">
 									</td>
 									<td>
-										<input type='text' name='username' value=''>
+										<input required type='text' name='username' value='' placeholder="Required">
 									</td>
 									<td> 
-										<input type='text' name='password' value=''>            		
-				            		</td>	
+										<input required type='text' name='password' value='' placeholder="Required">            		
+				            		</td>
+				            		
+				            		
+				            		<!-- 	
 				            	    <td>
 									 	<input style = "width:80%" class = "buttonShowHide2 button1" 
 									 	type='submit' name='ok' value='SUBMIT'> 					 
 									</td>
+					           	 	-->
+					           	
+					           	
 					           	</tr>
 				            </tbody>
 						</table>
@@ -168,7 +221,34 @@ Version: 1
 				</ol>
 			</div>
 	 	</div>
-	</div>       	
+	</div>
+	
+	
+					<script type="text/javascript">
+                
+                    function employeeToggle(buttonAddEmployee) {
+                        var divAddEmployee = document.getElementById("divAddEmployee");
+                                                
+                        if (buttonAddEmployee.value == "ADD") {
+                        	divAddEmployee.style.display = "block";                            
+                           
+                            buttonAddEmployee.style.display = "none";                            
+                            
+                        } else {
+                        	divAddEmployee.style.display = "none";
+                            buttonAddEmployee.value = "ADD";
+                            buttonAddEmployee.style.backgroundColor = "#2A9D8F";                           
+                        }
+                    } 
+                                        
+                  	                 
+                 	</script> 
+	
+	
+	
+	
+	
+	       	
     
 	<%@ include file="../components/footer.jsp" %> 
 </body>
