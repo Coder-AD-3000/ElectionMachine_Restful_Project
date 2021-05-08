@@ -391,7 +391,7 @@
                 
                 <!-- AD - Portrait Display Area -->
                  <td class="tableAddBackground ">                
-                    <textarea disabled rows="8" cols="28" name='pic' 
+                    <textarea disabled rows="8" cols="20" name='pic' 
                     placeholder="Portrait Picture"
                     style="font-weight:bold;"></textarea>
                  </td>                                     
@@ -401,7 +401,7 @@
         </table>
         
         <!-- AD - Portrait Upload field -->
-        <table class="table">                    
+        <table class="table marginAmendment2">                    
                         
             <tbody>                    
                 <tr>               
@@ -416,7 +416,7 @@
             </tbody>                            
         </table>
         
-         <table class="table">                    
+         <table class="table marginAmendment2">                    
             <thead class = "tableCustom1">
                 <tr>                                                                      
                     <th>GUIDANCE: Click UPDATE to update your profile
@@ -429,8 +429,8 @@
                 <tr> 
                 
                 <!-- AD - Portrait Display Area -->
-                 <td class="tableAddBackground ">                
-                    <textarea disabled rows="2" cols="28" name='pic' 
+                 <td class="tableAddBackground">                
+                    <textarea disabled rows="2" cols="20" name='pic' 
                     placeholder="Extra Guidance"
                     style="font-weight:bold;"></textarea>
                  </td>                                     
@@ -440,7 +440,7 @@
         </table>
         
         <!-- AD - Portrait Upload field -->
-        <table class="table">                    
+        <table class="table marginAmendment2">                    
                         
             <tbody>                    
                 <tr> 
@@ -458,7 +458,7 @@
 					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Profile Changes?</b></p>	
 					  		-->
 					  		
-					  		<table style = "width:250px" class="table">                    
+					  		<table style = "width:215px" class="table">                    
 				            <thead class = "tableCustom1">
 				                <tr>                                                                      
 				                    <th><i style = "color:#cfdefe">NOTICE!</i> - You are about to update your profile.
@@ -508,7 +508,7 @@
 						
 						<div id ="dvDeleteProfile" style="display: none">							
 											  		 
-						  	<table style = "width:250px" class="table">                    
+						  	<table style = "width:215px" class="table">                    
 				            <thead class = "tableCustom1">
 				                <tr>                                                                      
 				                    <th style = "color:#FFE4E1"><i style = "color:#ff4444">WARNING!</i> - You are about to delete your entire profile!
@@ -594,51 +594,7 @@
   	    
  </div> <!-- AD - End of containerCandidateProfile -->      
    
-         						<!-- AD this div is for the loading animation 
-					  			<div class="loaderUpdate"></div>
-					  			-->	
-        
-        						<!--
-	                            <th>CANDIDATE_ID</th>
-	                            <th>FIRST NAME</th>
-	                            <th>FIRST NAME</th>
-	                            <th>LAST NAME</th>
-	                            <th>PARTY</th>
-	                            <th>LOCATION</th>                            
-	                            <th>AGE</th>
-	                            <th>MISSION</th>
-	                            <th>VISION</th>
-	                            <th>PICTURE</th>
-	                            <th>PROFESSION</th>
-	                            <th>USERNAME</th>
-	                            <th>PASSWORD</th>
-	                            -->
-	                            
-	                            
-	                              <!--
-							    <input readonly class = "greyed-background" type='text' name='candidate_id' value='${requestScope.candidate.candidate_id }'>
-	                            
-							     
-							    <td><input required type='text' name='first_name' value='${requestScope.candidate.first_name }'></td> 						    
-							    <td><input readonly class = "greyed-background" type='text' name='candidate_id' value='${requestScope.candidate.candidate_id }'></td> 
-								<td><input required type='text' name='first_name' value='${requestScope.candidate.first_name }'></td> 
-								<td><input required type='text' name='last_name' value='${requestScope.candidate.last_name }'></td> 
-								<td><input required type='text' name='party' value='${requestScope.candidate.party }'></td> 
-								<td><input required type='text' name='location' value='${requestScope.candidate.location }'></td>		
-								<td><input required type='number' name='age' value='${requestScope.candidate.age }' min="18" max="100"></td> 
-								<td><input required type='text' name='mission' value='${requestScope.candidate.mission }'></td> 
-								<td><input required type='text' name='vision' value='${requestScope.candidate.vision }'></td> 
-						        <td><input readonly class = "greyed-background" type='text' name='pic' placeholder="Portrait pic will go here" value='${requestScope.candidate.pic }'></td>  
-								<td><input required type='text' name='profession' value='${requestScope.candidate.profession }'></td> 
-								<td><input required type='text' name='username' value='${requestScope.candidate.username }'></td> 
-								<td><input required type='text' name='password' value='${requestScope.candidate.password }'></td>                                      
-	                       		
-	                       		<td class="tableAddBackground">                  
-	                            <input type='submit' name='ok' value='UPDATE' class = "tableUpdate" style="font-weight:bold;">
-	                            </td> 
-	                       		
-	                       		-->
-        
+         				 
                   
              
      <!-- AD - The footer container note -->
@@ -704,11 +660,9 @@
                             btnDeleteProfile.style.backgroundColor = "#2A9D8F";                           
                         }
                     } 
-                                    
-                  	                 
+                                      
                  	</script> 
-                 	
-                 	                 	
+                 	  	
                  	              	
                  	<!-- AD - This script is for the AJAX -->
                  	<script>
@@ -732,14 +686,10 @@
 						xhttp.open("POST","./rest/hunterservice2/addprey",true);
 						xhttp.setRequestHeader("Content-type","application/json");
 						xhttp.send(jsonPrey);					
-					}
-					
+					}					
 					
 					</script>     
                 	
-                	
-                	
-
 
 	 <!-- AD - includes the footer component into this page 
 	    (albeit not visible) -->
