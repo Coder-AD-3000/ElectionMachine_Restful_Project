@@ -29,7 +29,7 @@ Version: 1
         </div>
         <div class="container4">             
             <h5 class = "adminTextCorrection2">ADMIN NOTE: Once logged in, this page allows for a 'Global Herald Newspaper' 
-                IT Admin to add, edit and remove employee information.
+                IT Admin to update employee information.
                 <br>
                 <br>
                 Regular users and candidates do not have access to this page 
@@ -71,16 +71,128 @@ Version: 1
 								<td>
 									<input style = "width:100%" type='text' name='password' value='${requestScope.employee.password }'>
 								</td>
+								
+								
+								<!--  
 							 	<td>
 							 		<input class = "buttonShowHide2 button1 buttonColourMod1 "type='submit' name='ok' value='UPDATE'>					 
 							 	</td>
+							 	-->
+							 	
+							 	
+							 	<td class="tableAddBackground">			
+						
+						<!-- LH - This button activates two separate functions. 
+							      One function reveals the hidden div, 
+							      and the other loads the loading bar animation. -->					 
+						<Button type = "button" id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this); move();">
+						<b class = "tableAdd">UPDATE</b></Button>
+						
+						<div id ="dvAddEntry" style="display:none">					 
+					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Update?</b></p>	
+					  			
+													  
+							  <table class="table-responsive">
+								  <tbody>
+									  <tr>
+										 <td class="tableAddBackground">									 	
+										 						
+								 	  		<input type='submit' name='ok' value='CONFIRM' class = "tableAdd" 
+								 	  		style="font-weight:bold;">
+								 	  	 </td> 							  
+									  	 <td>
+										   <Button type="button" value='' onClick="window.location = '../reademployee';">
+										   <b>CANCEL</b></Button>
+									  	</td>
+									  	<td>
+									  	<!-- The Spinning animation -->
+									  	<div class="loaderNewQuestions"></div> 
+									  	</td>
+									  </tr>								  
+								  </tbody>						  
+							   </table>
+							 	
+							 </div>	
+							 	
+							 	
+							 	
+							 	
+							 	
+							 	
+							 	
+							 	
+							 	
+							 	
+							 	
+							 	
+							 	
+							 	
+							 	
+							 	
 							</tr>
 						</tbody>
 					</table>
+					
+							<!-- The loading bar -->
+							<div id="myProgress" style="display: none">
+						  		<div id="myBar">10%</div>
+							</div>
+					
+					
+					
 				</div>
 			</form>
 		</div>
 	</div>   
+	
+	
+					<!-- LH - animation JavaScript script -->
+					<script>			
+					var i = 0;
+					function move() {
+					  if (i == 0) {
+					    i = 1;
+					    var elem = document.getElementById("myBar");
+					    var width = 10;
+					    var id = setInterval(frame, 10);
+					    function frame() {
+					      if (width >= 100) {
+					        clearInterval(id);
+					        i = 0;
+					      } else {
+					        width++;
+					        elem.style.width = width + "%";
+					        elem.innerHTML = width  + "%";
+					      }
+					    }
+					  }
+					}
+								
+					
+					/* LH - Toggle button to reveal the hidden div */			
+					 function ShowHideToggle1(btnAddEntry) {
+		                     var dvAddEntry = document.getElementById("dvAddEntry");
+		                                             
+		                     if (btnAddEntry.value == "ADD") {
+		                         dvAddEntry.style.display = "block";
+		                         
+		                         /* LH - This is for the loading bar */
+		                         myProgress.style.display = "block";
+		                        
+		                         btnAddEntry.style.display = "none";                            
+		                         
+		                     } else {
+		                         dvAddEntry.style.display = "none";
+		                         btnAddEntry.value = "ADD";
+		                         btnAddEntry.style.backgroundColor = "#2A9D8F";                           
+		                     }
+		                 } 	
+					
+					</script>      	
+	
+	
+	
+	
 	<%@ include file="../components/footer.jsp" %> 
 </body>
 </html>
