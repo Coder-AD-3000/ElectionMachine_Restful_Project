@@ -99,15 +99,7 @@ Version: 1
 										   <Button type="button" value='' onClick="window.location = '../reademployee';">
 										   <b>CANCEL</b></Button>
 									  	</td>
-									  	<td>
-									  	<!-- The Spinning animation
-									  	<div class="loaderNewQuestions"></div>
-									  	-->
-									  	
-									  	<!--
-									  	<div class="loaderEmployee2"></div>
-									  	
-									  	-->
+									  	<td>								  
 									  	
 									  	</td>
 									  </tr>								  
@@ -123,8 +115,7 @@ Version: 1
 							<!-- The loading bar -->
 							<div id="myProgress" style="display: none">
 						  		<div id="myBar">10%</div>
-							</div>	
-					
+							</div>		
 					
 				</div>
 			</form>
