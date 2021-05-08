@@ -67,12 +67,7 @@ Version: 1
 								
 								<div id ="divAddEmployee" style="display: none">					 
 							  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
-							  		
-							  			
-							  		<!-- AD this div is for the loading animation 
-							  		 <div class="loader"></div> 
-							  		-->	
-							  		
+							  								  		
 							  		<div class="loaderEmployee"></div> 
 							  		
 							  						  								  
@@ -87,9 +82,7 @@ Version: 1
 											  	 <td>
 												   <Button type = "button" value='' onClick="window.location = '../jsp/employeeform.jsp';">
 												   <b>CANCEL</b></Button>
-												   <!-- AD 
-												   Add prevent default										   
-												    -->
+												   
 											  	</td>
 											  </tr>								  
 										  </tbody>						  
@@ -213,7 +206,7 @@ Version: 1
 	 	</div>
 	</div>
 	
-	
+					<!-- LH - JavaScript for the hidden 'add employee' div -->
 					<script type="text/javascript">
                 
                     function employeeToggle(buttonAddEmployee) {
@@ -229,8 +222,7 @@ Version: 1
                             buttonAddEmployee.value = "ADD";
                             buttonAddEmployee.style.backgroundColor = "#2A9D8F";                           
                         }
-                    } 
-                                        
+                    }                                        
                   	                 
                  	</script> 
 	

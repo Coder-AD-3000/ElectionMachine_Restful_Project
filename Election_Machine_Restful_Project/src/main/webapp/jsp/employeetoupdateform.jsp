@@ -38,7 +38,7 @@ Version: 1
         </div>           
     </div>  
 
-	<!-- 	update employees -> empoloyee.emachinedb	-->
+	<!-- 	update employees -> employee.emachinedb	-->
     <div class="containerUpdateCandidatesTable">                                                                                                
     	<div class="table-responsive"> 
 			<form action='../updateemployee' method='post'>
