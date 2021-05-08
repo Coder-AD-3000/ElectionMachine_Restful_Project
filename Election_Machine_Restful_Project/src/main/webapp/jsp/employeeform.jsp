@@ -1,5 +1,5 @@
 <!--
-
+JSP code creates view pane for performing post-create CRUD operations on employee.emachinedb
 
 Author: Les
 Date: May 7, 2021
