@@ -1465,8 +1465,49 @@ on the adminUpdateCandidate page */
     border-radius: 10px;         
     background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
     box-shadow: 0 2px 16px 2px #264653;         
-    margin: 25px auto 25px auto;
-    
-    align-content: center;   
-	
+    margin: 25px auto 25px auto;    
+    align-content: center;	
 }
+
+.loaderEmployee {
+  border: 6px solid #264653;  
+  border-right: 6px solid #04a138;
+  border-left: 6px solid #04a138;  
+  border-radius: 1%;
+  width: 30px;
+  height: 30px;
+  animation: spin 0.2s linear infinite;  
+  display: inline-block;
+  justify-content: center;  
+  margin: 0px 0px 10px 0px; 	
+}
+
+.loaderEmployee {
+  border: 12px solid blue;
+  border-top: 6px solid #c8ffc8;
+  border-bottom: 6px solid #c8ffc8;      
+  border-radius: 50%;
+  width: 60px;
+  height: 20px;
+  animation: spin 5s linear infinite;  
+  display: inline-block;
+  justify-content: center;  
+  margin: 0px 0px 27px 11px;
+  
+  /*
+    border: 12px solid blue;
+  border-top: 6px solid #c8ffc8;
+  border-bottom: 6px solid #c8ffc8;      
+  border-radius: 50%;
+  width: 60px;
+  height: 20px;
+  animation: spin 5s linear infinite;  
+  display: inline-block;
+  justify-content: center;  
+  margin: 0px 0px 27px 11px;	
+  
+  
+  */	
+}
+
+

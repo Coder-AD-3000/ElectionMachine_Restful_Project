@@ -69,9 +69,13 @@ Version: 1
 							  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
 							  		
 							  			
-							  		<!-- AD this div is for the loading animation -->
+							  		<!-- AD this div is for the loading animation 
 							  		 <div class="loader"></div> 
-							  							  								  
+							  		-->	
+							  		
+							  		<div class="loaderEmployee"></div> 
+							  		
+							  						  								  
 									  <table class="table-responsive">
 										  <tbody>
 											  <tr>

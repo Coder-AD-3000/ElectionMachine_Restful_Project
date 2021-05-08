@@ -98,8 +98,10 @@ Version: 1
 										   <b>CANCEL</b></Button>
 									  	</td>
 									  	<td>
-									  	<!-- The Spinning animation -->
-									  	<div class="loaderNewQuestions"></div> 
+									  	<!-- The Spinning animation
+									  	<div class="loaderNewQuestions"></div>
+									  	-->
+									  	<div class="loaderEmployee"></div>
 									  	</td>
 									  </tr>								  
 								  </tbody>						  
