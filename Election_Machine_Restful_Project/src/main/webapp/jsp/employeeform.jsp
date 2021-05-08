@@ -84,7 +84,19 @@ Version: 1
 			
 	<!-- delete/update options-->
     <div class="containerUpdateCandidatesTable">                                                                                                
-    	<div class="table-responsive"> 		
+    	<div class="table-responsive"> 	
+    	
+    		<div class="table-responsive">                  
+               <table class="table">                
+				<thead class = "tableCustom1"> 						
+						<tr>                   			
+                   			<th style = "text-align: left;" class="tableCandidateDB"><button onclick="location.href='../reademployee';" value=''>
+                   			<b class = "tableUpdate">SHOW DATABASE</b></Button></th>                  		
+                  			</tr>
+                     </thead>                        
+                </table> 
+    		</div> 	
+    		
 			<div class="containerInnerCandidatesTable">	
 				<ol>
 					<c:forEach var="employee" items="${requestScope.employeelist }">
