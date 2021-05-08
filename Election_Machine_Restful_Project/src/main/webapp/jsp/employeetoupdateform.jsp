@@ -42,7 +42,7 @@ Version: 1
     <div class="containerUpdateCandidatesTable">                                                                                                
     	<div class="table-responsive"> 
 			<form action='../updateemployee' method='post'>
-				<div class="containerInnerCandidatesTable"> 	
+				<div class="containerUpdateEmployeeTable"> 	
 					<table class="table">                    
 	            		<thead class = "tableCustom1">
 		                    <tr>
