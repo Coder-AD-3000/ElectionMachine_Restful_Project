@@ -91,13 +91,7 @@ Version: 1
 										  </tbody>						  
 									   </table>
 								</div>
-				            	
-				            	
-				            	
-				            	
-				            	
-				            	
-				            	
+				            	       	
 				            	
 				            		<!-- LH - Bonus addition -->
 				            		<td>
@@ -116,15 +110,7 @@ Version: 1
 									<td> 
 										<input required type='text' name='password' value='' placeholder="Required">            		
 				            		</td>
-				            		
-				            		
-				            		<!-- 	
-				            	    <td>
-									 	<input style = "width:80%" class = "buttonShowHide2 button1" 
-									 	type='submit' name='ok' value='SUBMIT'> 					 
-									</td>
-					           	 	-->
-					           	
+				            				            		
 					           	
 					           	</tr>
 				            </tbody>
@@ -245,10 +231,6 @@ Version: 1
                  	</script> 
 	
 	
-	
-	
-	
-	       	
     
 	<%@ include file="../components/footer.jsp" %> 
 </body>

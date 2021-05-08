@@ -51,7 +51,7 @@ Version: 1
 								<th>LAST NAME:</th>
 								<th>USERNAME:</th>
 								<th>PASSWORD:</th>
-								<th></th><!-- intentionally left blank for submit -->
+								<th></th><!-- intentionally left blank for UPDATE button -->
 							</tr>
 	           			</thead>
 	           			<tbody>
@@ -73,13 +73,6 @@ Version: 1
 								</td>
 								
 								
-								<!--  
-							 	<td>
-							 		<input class = "buttonShowHide2 button1 buttonColourMod1 "type='submit' name='ok' value='UPDATE'>					 
-							 	</td>
-							 	-->
-							 	
-							 	
 							 	<td class="tableAddBackground">			
 						
 						<!-- LH - This button activates two separate functions. 
@@ -114,21 +107,6 @@ Version: 1
 							 	
 							 </div>	
 							 	
-							 	
-							 	
-							 	
-							 	
-							 	
-							 	
-							 	
-							 	
-							 	
-							 	
-							 	
-							 	
-							 	
-							 	
-							 	
 							</tr>
 						</tbody>
 					</table>
@@ -136,8 +114,7 @@ Version: 1
 							<!-- The loading bar -->
 							<div id="myProgress" style="display: none">
 						  		<div id="myBar">10%</div>
-							</div>
-					
+							</div>	
 					
 					
 				</div>
