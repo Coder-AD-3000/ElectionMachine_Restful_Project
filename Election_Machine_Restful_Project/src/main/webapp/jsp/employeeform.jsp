@@ -147,17 +147,21 @@ Version: 1
 								</li> 
 							</div>
 							<hr> 
-							<div class="containerInnerCandidatesTable2 buttonMarginCorrection2">	  
-								<div class = "button-main button1">
-									<a href='../deleteemployee?employee_id=${employee.employee_id}'>
-										<b>DELETE</b>
-									</a> 
-								 </div>
-								 <div class = "buttonShowHide2 button1">
-								 	<a href='../readtoupdateemployee?employee_id=${employee.employee_id}'>
-								 		<b class = "buttonColourMod1">UPDATE</b>
-									</a> 
+							<div class="containerInnerCandidatesTable2 buttonMarginCorrection2">
+										
+								<div>
+								 <a class = "button-main button1" 
+								 href='../deleteemployee?employee_id=${employee.employee_id}'>				 
+								 <b>DELETE</b>
+								 </a> 
 								</div>
+															
+								 <div>
+								 <a class = "buttonShowHide2 button1" 
+								 href='../readtoupdateemployee?employee_id=${employee.employee_id}'>				 
+								 <b class = "buttonColourMod1">UPDATE</b></a> 
+								</div>				
+					
 							</div>			
 						</div>	
 					</c:forEach>
