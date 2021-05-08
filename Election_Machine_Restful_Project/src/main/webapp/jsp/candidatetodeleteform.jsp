@@ -85,33 +85,7 @@
 	                    </thead>
 	                    
 	                    <tbody>                    
-	                        <tr>   
-	                                                	 
-	                        	 <!--  AD The New Hidden button code 
-	                        	 <td class="tableAddBackground">					 
-					 
-									<Button id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this)">
-									<b class = "tableAdd">ADD</b></Button>
-									
-									<div id ="dvAddEntry" style="display: none">					 
-								  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>							  
-										  <table class="table-responsive">
-											  <tbody>
-												  <tr>
-													 <td class="tableAddBackground">									 	
-													 						
-											 	  		<input type='submit' name='ok' value='CONFIRM' class = "tableAdd" 
-											 	  		style="font-weight:bold;">
-											 	  	 </td> 							  
-												  	 <td>
-													   <Button value='' onClick="window.location = '../jsp/candidateform.jsp';">
-													   <b class = "tableCustom3">CANCEL</b></Button>
-												  	</td>
-												  </tr>								  
-											  </tbody>						  
-										   </table>
-									</div>
-	                        	       -->   	 
+	                        <tr>                 	 
 	                        	
 	                        	<td class="tableAddBackground">
 	                        												 
@@ -133,7 +107,7 @@
 											 	  		</form>
 											 	  	 </td> 							  
 												  	 <td>
-													   <Button value='' onClick="window.location = '../readcandidate';">
+													   <Button type = "button" value='' onClick="window.location = '../readcandidate';">
 													   <b>CANCEL</b></Button>
 												  	</td>
 												  </tr>								  
