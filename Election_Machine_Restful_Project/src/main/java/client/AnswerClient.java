@@ -47,9 +47,11 @@ public class AnswerClient extends HttpServlet {
 		  for (Answer answer : answerList) {
 			System.out.println("answer: " + answer.getAnswer());
 		}
+	
 		  
 //		  ************ EVALUATE OR SAVE BASED ON ROLE *******************************************************************************  
-		  String role = request.getSession().getAttribute("role").toString();
+//		  String role = request.getSession().getAttribute("role").toString();
+		  String role = "voter";
 		  System.out.println("role from session is: " + role);
 		  
 		  switch (role) {
@@ -62,7 +64,8 @@ public class AnswerClient extends HttpServlet {
 			  for (Candidate c : candidateListStacked) {
 //				  Getting candidate_id and reading associated answers from DB
 				  int candidateId = c.getCandidate_id();
-				  List<Answer> candidateAnswers = readAnswers(request, candidateId);
+				  List<Answer> oneCandidateAnswers = readOneCandidateAnswers(request, candidateId);
+				  System.out.println("answers of " + candidateId + oneCandidateAnswers);
 				  
 			}
 			  
@@ -86,8 +89,8 @@ public class AnswerClient extends HttpServlet {
 		  
 		  // Getting candidate_id
 		  HttpSession session = request.getSession(true);			
-		  String userId = session.getAttribute("userid").toString();
-//		  String userId = "1034";
+//		  String userId = session.getAttribute("userid").toString();
+		  String userId = "1034";
 		  
 		  // The answer params from the JSP will be amended with question_ids and saved as answer object => List.
 		  for (Question q : questionList) {
@@ -178,8 +181,8 @@ public class AnswerClient extends HttpServlet {
 		}
 	  
 	  private List<Answer> readAnswers(HttpServletRequest request, int candidateId) {
-		  //String candidate_id = request.getParameter("candidate_id"); /* AD - I can't see a use for this line */
-		  String uri = "http://127.0.0.1:8080/rest/candidateservice/readcandidate";
+		  //String candidate_id = request.getParameter("candidate_id");
+		  String uri = "http://127.0.0.1:8080/rest/answerservice/readonecandidateanswers";
 		  Client client = ClientBuilder.newClient();
 		  WebTarget webtarget = client.target(uri);
 		  Builder builder = webtarget.request();
@@ -187,6 +190,16 @@ public class AnswerClient extends HttpServlet {
 		  List<Answer> returnedList = builder.get(genericList);
 
 		  return returnedList;
+	  }
+	  
+	  private List<Answer> readOneCandidateAnswers(HttpServletRequest request, int candidate_id) {
+			String uri = "http://127.0.0.1:8080/rest/candidateservice/readtodeletecandidate/"+candidate_id;
+			Client client = ClientBuilder.newClient();
+			WebTarget webtarget = client.target(uri);
+			Builder builder = webtarget.request();
+			GenericType<List<Answer>> genericList = new GenericType<List<Answer>>() {};
+			List<Answer> returnedList = builder.get(genericList); 
+			return returnedList;
 	  }
 	
 	  private List<Candidate> readAllCandidates(HttpServletRequest request) {
