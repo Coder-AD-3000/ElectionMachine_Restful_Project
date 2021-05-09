@@ -6,10 +6,8 @@
 </head>
 <body>
 <h1>Select file to upload</h1>
-<form action="/uploadclient" method="post" enctype="multipart/form-data">
-    Select a file : <input type="file" name="file" accept=".png" /><br>
-    Photographer : <input type="text" name="photo" /><br>
-    Camera : <input type="text" name="camera" /><br>
+<form action="/rest/uploadservice/uploadiamge" method="post" enctype="multipart/form-data">
+    Select a file : <input type="file" name="file" accept=".jpg" /><br>
     <input type="submit" value="Upload" />
 </form>
 </body>

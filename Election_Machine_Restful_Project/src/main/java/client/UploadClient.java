@@ -2,6 +2,10 @@ package client;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -41,44 +45,16 @@ public class UploadClient extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			
-			System.out.println("request.getParts(): " + request.getParts());
-			
-			// Get the image upload dd
-		    Part inputFile = request.getPart("file");
-		    String fileName = inputFile.getSubmittedFileName();
-		    System.out.println("inputFile" + inputFile);
-		    System.out.println("fileName" + fileName);
-		    
-		    File file = new File(fileName);
-		    
-		    System.out.println("file.getAbsolutePath(): " + file.getAbsolutePath());
-		    System.out.println("file.getAbsolutePath(): " + 		    file.getPath());
-
-		    System.out.println("file: " + file);
-		    
-		    
-		    // Create input stream
-//		    InputStream filecontent = inputFile.getInputStream();
-//		    System.out.println("filecontent: " + filecontent);
-		    
-		    // Convert to File
-		    
-		    
-//			
-//			InputStream fileInputStream = request.getInputStream();
-//			System.out.println("fileInputStream: " + fileInputStream);		
-//			fileInputStream.toString();
-//			System.out.println("fileInputStream.toString(): " + fileInputStream.toString());
-			
-
-//			FileDataBodyPart filePart = new FileDataBodyPart("file", new File(fileMetaData.getFileName()));
-			FileDataBodyPart filePart = new FileDataBodyPart("file", new File("D:/123.jpg"));
+			// get absolute path ddd
+			System.out.println(System.getProperty("user.home"));
+			 		    
+			String uploadPath = System.getProperty("user.home") + "/git/ElectionMachine_Restful_Project/Election_Machine_Restful_Project/src/main/webapp/img/";
+		    FileDataBodyPart filePart = new FileDataBodyPart("file", new File(uploadPath));
 		    System.out.println("****filePart: " + filePart);
-
 
 		    FormDataMultiPart formDataMultiPart = new FormDataMultiPart();
 		    System.out.println("FormDataMultipart created");
+		    
 		    FormDataMultiPart multipart = (FormDataMultiPart) formDataMultiPart.bodyPart(filePart);
 		    System.out.println("formDataMultiPart.bodyPart(filePart)"); 
 		    

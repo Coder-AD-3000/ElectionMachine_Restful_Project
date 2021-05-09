@@ -22,6 +22,78 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 @Path("/uploadservice")
 public class UploadService {
 	@POST
+	@Path("/uploadiamge")
+	@Consumes({MediaType.MULTIPART_FORM_DATA})
+	public Response uploadImage( @FormDataParam("file") InputStream fileInputStream,
+            @FormDataParam("file") FormDataContentDisposition fileMetaData,
+            @Context ServletContext sc) 
+            		throws Exception
+	{
+		System.out.println("upload service started");
+		System.out.println("fileMetaData: " + fileMetaData);
+		System.out.println("fileMetaData: " + fileMetaData.getFileName());
+		String UPLOAD_PATH = System.getProperty("user.home") + "/git/ElectionMachine_Restful_Project/Election_Machine_Restful_Project/src/main/webapp/tmp/";
+	    try{
+	        int read = 0;
+	        byte[] bytes = new byte[1024];
+	        
+	        System.out.println("Identifying extension: ");
+	        String fileName = fileMetaData.getFileName();
+	        String ext = fileName.substring(fileName.lastIndexOf('.'));
+	        System.out.println("ext: " + ext);
+	        OutputStream out = new FileOutputStream(new File(UPLOAD_PATH + "profile" + ext));
+	        while ((read = fileInputStream.read(bytes)) != -1) 
+	        {
+	            out.write(bytes, 0, read);
+	        }
+	        out.flush();
+	        out.close();
+	        
+	    } 
+	    catch (IOException e){
+	        throw new WebApplicationException("Error while uploading file. Please try again !!");
+	    }
+	    return Response.ok("Data uploaded successfully !!").build();
+	}
+	
+	@POST
+	@Path("/saveprofileimg")
+	@Consumes({MediaType.MULTIPART_FORM_DATA})
+	public Response saveImage( @FormDataParam("file") InputStream fileInputStream,
+            @FormDataParam("file") FormDataContentDisposition fileMetaData, 
+            @FormDataParam("photo") String photographer,
+            @FormDataParam("camera") String camera,
+            @Context ServletContext sc) 
+            		throws Exception
+	{
+		System.out.println("upload service started");
+		System.out.println("fileMetaData: " + fileMetaData);
+		System.out.println("fileMetaData: " + fileMetaData.getFileName());
+		String UPLOAD_PATH = System.getProperty("user.home") + "/git/ElectionMachine_Restful_Project/Election_Machine_Restful_Project/src/main/webapp/img/";
+	    try{
+	        int read = 0;
+	        byte[] bytes = new byte[1024];
+	 
+	        OutputStream out = new FileOutputStream(new File(UPLOAD_PATH + fileMetaData.getFileName()));
+	        while ((read = fileInputStream.read(bytes)) != -1) 
+	        {
+	            out.write(bytes, 0, read);
+	        }
+	        out.flush();
+	        out.close();
+	        
+	    } 
+	    catch (IOException e){
+	        throw new WebApplicationException("Error while uploading file. Please try again !!");
+	    }
+	    return Response.ok("Data uploaded successfully !!"+
+	    					" Phographer: "+photographer+
+	    					" Camera: "+camera).build();
+	}
+	
+	
+	/*
+	@POST
 	@Path("/fileupload")
 	@Consumes({MediaType.MULTIPART_FORM_DATA})
 	public Response uploadFile( @FormDataParam("file") InputStream fileInputStream,
@@ -57,7 +129,7 @@ public class UploadService {
 	    					" Phographer: "+photographer+
 	    					" Camera: "+camera).build();
 	}
-	
+	*/
 	
 }
 
