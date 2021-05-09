@@ -58,6 +58,7 @@
     there is no difference:-->
     <div class="containerCandidateProfile">
     
+     
     	<!-- AD - This will need fixing 
       <form action='../updatecandidate' method='post'> 
       -->
@@ -393,7 +394,7 @@
                  <td class="tableAddBackground ">                
                     <textarea disabled rows="8" cols="20" name='pic' 
                     placeholder="Portrait Picture"
-                    style="font-weight:bold;"></textarea>
+                    style="font-weight:bold; background-color:#87CEFA;"></textarea>
                  </td>                                     
 	                                        	                                        
                 </tr>	                     
@@ -408,9 +409,10 @@
                 <!-- AD - Portrait Display Area -->
                  <td class="tableAddBackground">                
                     <input readonly type='text' name='pic' 
-                    placeholder="Portrait Picture"
+                    placeholder="Upload Portrait Picture"
+                    onmouseover="this.style.cursor='pointer';"
                     class = "colourAmendment"
-                    style="font-weight:bold;">
+                    style="font-weight:bold; text-align: center;">
                  </td>                                	                                        
                 </tr>	                     
             </tbody>                            
@@ -425,19 +427,26 @@
                     cannot be recovered.</th>                                      
                 </tr>
             </thead>            
-            <tbody>                    
+            <tbody class = "tableCustom1">                    
                 <tr> 
                 
-                <!-- AD - Portrait Display Area -->
-                 <td class="tableAddBackground">                
-                    <textarea disabled rows="2" cols="20" name='pic' 
-                    placeholder="Extra Guidance"
-                    style="font-weight:bold;"></textarea>
+                <!-- AD - Displays Current time and date
+                		 via the utilisation of a JS script -->
+                 <td class="tableAddBackground">
+                 	Time and date (Europe / Helsinki):                
+                    <textarea id="displayTimeAndDate"                    
+                    disabled rows="1" cols="18" name='pic'                    
+                    style="font-weight:bold; color:#B22222; text-align: center;">                  
+                    </textarea>
                  </td>                                     
 	                                        	                                        
                 </tr>	                     
             </tbody>                            
         </table>
+        
+        <!--  
+        <p id="displayTimeAndDate"></p>
+        -->
         
         <!-- AD - Portrait Upload field -->
         <table class="table marginAmendment2">                    
@@ -511,7 +520,8 @@
 						  	<table style = "width:215px" class="table">                    
 				            <thead class = "tableCustom1">
 				                <tr>                                                                      
-				                    <th style = "color:#FFE4E1"><i style = "color:#ff4444">WARNING!</i> - You are about to delete your entire profile!
+				                    <th style = "color:#FFE4E1"><i style = "color:#ff4444">WARNING!</i> 
+				                    - You are about to delete your entire profile!
 				                    Once Deleted your profile cannot be recovered.
 				                    Confirm Profile Deletion?</th>                                      
 				                </tr>
@@ -550,11 +560,13 @@
             <tbody>                    
                 <tr>               
                 <!-- AD - Portrait Display Area -->
-                 <td class="tableAddBackground">                
+                 <td class="tableAddBackground">
+                 	<a href="../index.jsp">                
                     <input readonly type='text' name='pic' 
-                    placeholder="BACK"
-                    class = "colourAmendment"
-                    style="font-weight:bold;">
+                    placeholder="BACK" onmouseover="this.style.cursor='pointer';"
+                    class = "colourAmendment profilePageButtonMod1"
+                    style="font-weight:bold; text-align: center;">
+                    </a>
                  </td>                                	                                        
                 </tr>	                     
             </tbody> 
@@ -563,14 +575,22 @@
                 <tr>               
                 <!-- AD - Portrait Display Area -->
                  <td class="tableAddBackground">                
-                    <input readonly type='text' name='pic' 
-                    placeholder="HOME"
-                    class = "colourAmendment"
-                    style="font-weight:bold;">
+                    <a href="../index.jsp"><input readonly type='text' name='pic' 
+                    placeholder="HOME" onmouseover="this.style.cursor='pointer';"
+                    class = "colourAmendment profilePageButtonMod1"
+                    style="font-weight:bold; text-align: center;">
+                    </a>
                  </td>                                	                                        
                 </tr>	                     
             </tbody>
             
+            <!-- 
+            <div>
+				 <a class = "button-main button1" 
+				 href='../deletenewquestion?newquestion_id=${newquestion.newquestionId}'>				 
+				 <b>DELETE</b></a> 
+			</div>
+             -->
                                        
         </table>
         
@@ -579,7 +599,7 @@
     </div>
      
         
-    </div>  
+    </div>  <!-- AD - End of row -->
       
       
     
@@ -588,23 +608,21 @@
          	
      	    
   
-  		</div> <!-- AD - End of row -->
+  	 
   
     </form>   
   	    
  </div> <!-- AD - End of containerCandidateProfile -->      
    
-         				 
-                  
-             
+         
      <!-- AD - The footer container note -->
     <div class="containerProfileFooter">      
         <!-- AD - A small container to amend the admin note background section-->
         <div class="container4">             
             <!-- AD - Introductory statement about the ADMIN: Update Candidates page -->
             <h5 class = "adminTextCorrection2">CANDIDATE NOTE: If you have any queries, 
-            or if you experience any technical issues, please contact our IT Admin team at 
-        	technicalsupport@theglobalheraldnewspaper.com .
+            or if you experience any technical issues, please contact our IT Admin team 
+        	(support@theherald.com).
             <br><br>
             Only Global Herald IT Admins and yourself have access to your confidential data.
             </h5>        
@@ -687,6 +705,19 @@
 						xhttp.setRequestHeader("Content-type","application/json");
 						xhttp.send(jsonPrey);					
 					}					
+					
+					
+					
+					/* AD - JS function to show the current time */
+					var displayTimeAndDate = document.getElementById("displayTimeAndDate");
+
+					function refreshTime() {
+					  var dateString = new Date().toLocaleString("en-GB", {timeZone: "Europe/Helsinki"});
+					  var formattedString = dateString.replace(", ", " - ");
+					  displayTimeAndDate.innerHTML = formattedString;
+					}
+					
+					setInterval(refreshTime, 1000);
 					
 					</script>     
                 	
