@@ -44,7 +44,7 @@
     containerInnerCandidatesTable3 {
      max-width: 95% !important;
     }
-    
+
     /* LH - For the employee create container */
     containerEmployeeCreate {
      max-width: 95% !important;
@@ -55,6 +55,7 @@
     containerUpdateEmployeeTable {
     max-width: 97% !important;
     }
+
 
     /* AD - Customizes the yellow container
     on the adminUpdateCandidate page, which
@@ -161,6 +162,7 @@
     containerInnerCandidatesTable2 {
      max-width: 99% !important;
     } 
+
     
     /* LH - For the new employee adding container */
     containerInnerCandidatesTable3 {
@@ -177,6 +179,7 @@
     containerEmployeeCreate {
      max-width: 99% !important;
     }  
+
         
     /* AD - Customises the containers inside
 		update pages, such as candidateform.jsp */
@@ -223,6 +226,7 @@
      max-width: 99%;
     }
     
+
     /* LH - Media query for the inner container
     	on the employee page */
     containerUpdateEmployeeTable {
@@ -263,6 +267,7 @@
      max-width: 99%;
     }
     
+
     /* LH - Media query for the inner container
     	on the employee page */
     containerUpdateEmployeeTable {
@@ -1360,7 +1365,7 @@ on the new questions pages */
     padding: 20px;
     border-radius: 10px;         
     background-color:rgba(214, 214, 214, 0.822); /* AD -A unique shade for the data in the tables*/
-    box-shadow: 0 2px 16px 2px #264653;         
+    box-shadow: 0 2px 16px 2px #264653;        	
     margin: 25px auto 25px auto;    
     align-content: center;	
 }
@@ -1421,6 +1426,7 @@ on the new questions pages */
 .buttonGreen { 
 	background-color: #04a138;
 }
+
 
 /* AD - Customises the main container
 on the candidate profile page */
