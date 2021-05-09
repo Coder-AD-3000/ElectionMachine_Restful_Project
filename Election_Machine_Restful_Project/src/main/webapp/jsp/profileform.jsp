@@ -229,7 +229,7 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='age' 
+	                            <input readonly type='number' name='age' 
 	                            placeholder="Age"
 	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
@@ -237,7 +237,7 @@
 	                         
 	                         <td>
 	                            <input readonly 
-	                            type='text' name='age' 
+	                            type='number' name='age' 
 	                            placeholder="52">
 	                         </td>	                                        
 	                        </tr>	                     
