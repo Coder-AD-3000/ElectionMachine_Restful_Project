@@ -1438,6 +1438,9 @@ on the candidate profile page */
     box-shadow: 0 2px 16px 2px #264653;	
 }
 
+/*.marginAmendment {
+	margin: 50px 0px 0px 0px;	*/ 
+
 /* AD - Margin amendments for the 
    candidate update page */
 .marginAmendment {
@@ -1513,4 +1516,5 @@ on the adminUpdateCandidate page */
 .profilePageButtonMod1 {
   background: linear-gradient(0deg, #E76F51, 70%, #F4A261);
 }
+
 
