@@ -3,7 +3,7 @@
 <%@ page import="data.Answer" %>   
 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +64,7 @@
 			<!--  
             <form id="form" action="../addallanswer" method="POST">
             -->
-            <form id="form" action="../questionnaireclient" method="POST">					
+            <form id="form" action="../answerclient" method="POST">					
                
                 <br>                 
 	            

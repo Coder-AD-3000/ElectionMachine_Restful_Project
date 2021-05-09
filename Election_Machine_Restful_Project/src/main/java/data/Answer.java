@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.TableGenerator;
+import javax.persistence.Transient;
 
 /**
  * @author ashley - specifies that the target is an entity
@@ -35,6 +36,8 @@ public class Answer {
 	private int candidate_id;
 	private int answer;
 	private String comment;
+	// Transient will prevent this attribute being persisted
+	@Transient
 	private List<Question> questionList;
 	
 	
