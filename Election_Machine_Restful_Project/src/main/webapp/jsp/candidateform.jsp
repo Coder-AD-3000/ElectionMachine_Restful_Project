@@ -48,8 +48,7 @@
        							    
 
         <!-- AD - End of the central (yellow container)-->
-    </div>  
-
+    </div>
     
     	<!-- AD - This container contains a form (with table) to add 
     	candidates to the candidate table in the emachinedb database.-->
@@ -195,7 +194,10 @@
 							        <td><textarea disabled class ="greyed-background" name='pic' placeholder="Portrait pic will go here">${candidate.pic }</textarea></td>  
 									<td><textarea disabled name='profession' >${candidate.profession }</textarea></td> 
 									<td><textarea disabled name='username' >${candidate.username }</textarea></td> 
+									<td><input readonly class = "greyed-background" type='password' name='password' value='${candidate.password }'></td> 
+									<!--  
 									<td><textarea disabled name='password' >${candidate.password }</textarea></td> 
+								   	-->
 								   </tr>	                        
 			                     </tbody>		                     
 	                    	</table>      
@@ -229,12 +231,9 @@
                             btnAddEntry.value = "ADD";
                             btnAddEntry.style.backgroundColor = "#2A9D8F";                           
                         }
-                    } 
-                                        
+                    }                                    
                   	                 
-                 	</script> 
-                 	
-                 	                 	
+                 	</script>                  	         	
                  	              	
                  	<!-- AD - This script is for the AJAX -->
                  	<script>
@@ -258,15 +257,10 @@
 						xhttp.open("POST","./rest/hunterservice2/addprey",true);
 						xhttp.setRequestHeader("Content-type","application/json");
 						xhttp.send(jsonPrey);					
-					}
-					
+					}			
 					
 					</script>     
                 	
-                	
-                	
-
-
 	 <!-- AD - includes the footer component into this page 
 	    (albeit not visible) -->
     
