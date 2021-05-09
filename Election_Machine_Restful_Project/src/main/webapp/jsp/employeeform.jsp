@@ -199,7 +199,7 @@ Version: 1
 	 	</div>
 	</div>
 	
-	<!-- js for 'add employee' div -->
+	<!-- 'add employee' div -->
 	<script type="text/javascript">
 		function employeeToggle(buttonAddEmployee) {
 		    var divAddEmployee = document.getElementById("divAddEmployee");
