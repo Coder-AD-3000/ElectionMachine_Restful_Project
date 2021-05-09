@@ -27,7 +27,7 @@
     
     <!-- AD - Beginning the central (yellow container)-->
     <div class="containerMainUpdateCandidates">
-        <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>
+        <a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>
         
         <!-- AD - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
@@ -46,8 +46,7 @@
         </div>        
 
         <!-- AD - End of the central (yellow container)-->
-    </div>
-    
+    </div>    
     
     <!-- AD This is a container to contain the data from the Candidate Table.
     Created utilising bootstrap, this .table-responsive class creates a responsive table
@@ -103,16 +102,13 @@
                 </form>
             </div>
         </div>
-    </div>
-        
+    </div>        
     
 	<div class="containerUpdateCandidatesTable">                                                                                          
         <div class="table-responsive">
                   		
 		</div>			
 	</div>
-				
-		
 	
 	<!-- AD - includes the footer component into this page 
     (albeit not visible) -->

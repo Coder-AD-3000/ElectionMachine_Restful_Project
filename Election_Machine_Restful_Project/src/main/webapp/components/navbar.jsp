@@ -37,7 +37,7 @@
                     <a href="../readallquestion"><h5>Questionnaire</h5></a>
                 </div>
                 <div class = "container-nav-links">
-                    <a href="../ShowCandidates"><h5>Candidates</h5></a>
+                    <a href="../jsp/candidates.jsp"><h5>Candidates</h5></a>
                 </div>
                 <!-- Dan: ****** MULTIPLE OPTIONS BASED ON USER ROLE ******** -->
                 <div class = "container-nav-links">

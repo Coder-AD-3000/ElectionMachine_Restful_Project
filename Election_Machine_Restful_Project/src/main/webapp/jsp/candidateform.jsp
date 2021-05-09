@@ -28,7 +28,7 @@
     
     <!-- AD - Beginning the central (yellow container)-->
     <div class="containerMainUpdateCandidates">
-        <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>
+        <a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>
         
         <!-- AD - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
@@ -48,8 +48,7 @@
        							    
 
         <!-- AD - End of the central (yellow container)-->
-    </div>  
-    
+    </div>
     
     	<!-- AD - This container contains a form (with table) to add 
     	candidates to the candidate table in the emachinedb database.-->
@@ -78,36 +77,10 @@
                 </thead>
                 <tbody>                    
                     <tr> 
-                    
-                    <!-- AD this is the original nice styling
-                    
-                    <td class="tableAddBackground">
-                    <Button type='submit' name='ok' value=''>
-                    <b class = "tableAdd">ADD</b></Button></td>
-                    
-                    And this is the new, not so nice:
-                    
-                     <td class="tableAddBackground">	  								
-						<input class = "tableAdd" id = "btnAddEntry" 
-                 				value="ADD" onclick="ShowHideToggle1(this)" 
-                 				style="font-weight:bold;"> 
-                 				
-                 				
-                 	And this is the nice delete button:
-                 	
-                 	<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-					<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
-					</form>	
-                    
-                    
-                    Turn it into this:
-                    <Button value='' onClick="window.location = '../jsp/candidateform.jsp';">
-										   <b class = "tableCustom3">CANCEL</b></Button>
-                    
-                     -->                                       	
+                                                        	
                      <td class="tableAddBackground">					 
 					 
-						<Button id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this)">
+						<Button type = "button" id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this)">
 						<b class = "tableAdd">ADD</b></Button>
 						
 						<div id ="dvAddEntry" style="display: none">					 
@@ -126,8 +99,11 @@
 								 	  		style="font-weight:bold;">
 								 	  	 </td> 							  
 									  	 <td>
-										   <Button value='' onClick="window.location = '../jsp/candidateform.jsp';">
+										   <Button type = "button" value='' onClick="window.location = '../jsp/candidateform.jsp';">
 										   <b>CANCEL</b></Button>
+										   <!-- AD 
+										   Add prevent default										   
+										    -->
 									  	</td>
 									  </tr>								  
 								  </tbody>						  
@@ -155,7 +131,7 @@
            
     <!-- AD - Beginning the central (yellow container)-->
     <div class="containerUpdateCandidatesTable">
-        <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>
+        <a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>
                                                                                                  
            <div class="table-responsive">                  
                <table class="table">                
@@ -195,50 +171,7 @@
 	                        
 	                        <tbody>	                        
 		                      <tr> 
-		                        <td class="tableAddBackground">			                        							 
-								
-									<!-- AD The original elite working code
-									
-									<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-									<input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;">
-									</form>
-									
-									-->
-													
-									
-									<!-- AD the original modal example code
-									
-									Trigger/Open The Modal
-									<button id="myBtn">Open Modal</button>
-									
-									The Modal
-									<div id="myModal" class="modal">
-									
-									  Modal content
-									  <div class="modal-content">
-									    <span class="close">&times;</span>
-									    <p>Some text in the Modal..</p>
-									  </div>
-									
-									</div>									
-									
-									 -->
-									 
-									<!-- AD This is the original workgin code with the modal number 
-									<button id="myBtn">Open Modal</button>									
-									<div id="myModal" class="modal">									  
-									  <div class="modal-content">${candidate.candidate_id }									  	
-									    <span class="close">&times;</span>
-									    <p>Are you sure you want to delete?</p>
-									  </div>									
-									</div>								
-																
-									-->
-									
-									
-									
-									
-								
+		                        <td class="tableAddBackground">			
 									
 									<form action='../readtodeletecandidate?candidate_id=${candidate.candidate_id}' method='post'>
 									<input type='submit' name='ok' value='DELETE' class = "tableCustom3 buttonMarginCorrection1" style="font-weight:bold;">
@@ -247,7 +180,7 @@
 									</td>
 									<td class="tableAddBackground">
 									<form action='../readtoupdatecandidate?candidate_id=${candidate.candidate_id}' method='post'>
-									<input type='submit' name='ok' value='UPDATE' class = "tableUpdate buttonMarginCorrection2" style="font-weight:bold;">
+									<input type='submit' name='ok' value='UPDATE' class = "tableUpdate buttonMarginCorrection3" style="font-weight:bold;">
 									</form>
 									</td>
 								    <td id = "candidate number"><textarea disabled class = "greyed-background" name='candidate_id' >${candidate.candidate_id }</textarea></td> 
@@ -261,7 +194,10 @@
 							        <td><textarea disabled class ="greyed-background" name='pic' placeholder="Portrait pic will go here">${candidate.pic }</textarea></td>  
 									<td><textarea disabled name='profession' >${candidate.profession }</textarea></td> 
 									<td><textarea disabled name='username' >${candidate.username }</textarea></td> 
+									<td><input readonly class = "greyed-background" type='password' name='password' value='${candidate.password }'></td> 
+									<!--  
 									<td><textarea disabled name='password' >${candidate.password }</textarea></td> 
+								   	-->
 								   </tr>	                        
 			                     </tbody>		                     
 	                    	</table>      
@@ -295,73 +231,36 @@
                             btnAddEntry.value = "ADD";
                             btnAddEntry.style.backgroundColor = "#2A9D8F";                           
                         }
-                    } 
-                       
-                    
-                    /* AD - This script is to create a 'modal' pop up */
-                  
-	                 // Get the modal
-	                 var modal = document.getElementById("myModal");
-	
-	                 // Get the button that opens the modal
-	                 var btn = document.getElementById("myBtn");
-	
-	                 // Get the <span> element that closes the modal
-	                 var span = document.getElementsByClassName("close")[0];
-	
-	                 // When the user clicks the button, open the modal 
-	                 btn.onclick = function() {
-	                   modal.style.display = "block";
-	                 }
-	
-	                 // When the user clicks on <span> (x), close the modal
-	                 span.onclick = function() {
-	                   modal.style.display = "none";
-	                 }
-	
-	                 // When the user clicks anywhere outside of the modal, close it
-	                 window.onclick = function(event) {
-	                   if (event.target == modal) {
-	                     modal.style.display = "none";
-	                   }
-	                 }
-                  
-	              
-	                 
-	                 
-                 	</script> 
-                 	
-                 	
+                    }                                    
+                  	                 
+                 	</script>                  	         	
                  	              	
-                 	<!-- AD
-                 	
-                 	<button type="button" class="collapsible">Open Collapsible</button>
-						<div class="content">
+                 	<!-- AD - This script is for the AJAX -->
+                 	<script>
+					function sendData(){
+						//Create a new Javascript object
+						var prey=new Object();
+						prey.breed=document.getElementById("breed").value;
+						prey.weight=document.getElementById("weight").value;
 						
-						  <p> AD - Collapsible box</p>
-						</div>
-                 	
-                 	 -->  
-                 	 
-                 	 
-                 	 <!-- AD 	
-                 	 				
-						<input class = "buttonShowHide button1" id = "btnAddEntry" 
-               			type="button" value="1st Place" onclick="ShowHideToggle1(this)" > 
-		
-              			<div id="dvAddEntry" style="display: none"> 
-              			
-              			This works:
-              			<input class = "buttonShowHide" id = "btnAddEntry" 
-              			type="button" value="1st Place" onclick="ShowHideToggle1(this)" > 
-              			
-              			                   
-                	-->	         
+						var jsonPrey=JSON.stringify(prey);
+						var xhttp = new XMLHttpRequest();
+						
+						xhttp.onreadystatechange = function() {
+						  if (this.readyState == 4 && this.status == 200) {
+						   document.getElementById("responseView").innerHTML = this.responseText;
+						   var returned=JSON.parse(this.responseText);
+						   document.getElementById("inparts").innerHTML="ID="+returned.id+" Breed="+returned.breed+" Weight="+returned.weight;
+						  }
+						};
+						
+						xhttp.open("POST","./rest/hunterservice2/addprey",true);
+						xhttp.setRequestHeader("Content-type","application/json");
+						xhttp.send(jsonPrey);					
+					}			
+					
+					</script>     
                 	
-                	
-                	
-
-
 	 <!-- AD - includes the footer component into this page 
 	    (albeit not visible) -->
     

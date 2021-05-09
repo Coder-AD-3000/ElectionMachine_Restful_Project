@@ -27,7 +27,7 @@
     
     <!-- AD - Beginning the central (yellow container)-->
     <div class="containerMainUpdateCandidates">
-        <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>
+        <a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>
         
         <!-- AD - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
@@ -56,14 +56,7 @@
     there is no difference:-->
     <div class="containerUpdateCandidatesTable">   
         <div>                                                                                             
-            <div class="table-responsive">   
-                     <!-- AD 
-             <form action='../updatecandidate' method='post'> 
-                      -->     
-                      
-                      <!-- AD 
-            
-					-->
+            <div class="table-responsive">       
                       
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
@@ -85,33 +78,7 @@
 	                    </thead>
 	                    
 	                    <tbody>                    
-	                        <tr>   
-	                                                	 
-	                        	 <!--  AD The New Hidden button code 
-	                        	 <td class="tableAddBackground">					 
-					 
-									<Button id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this)">
-									<b class = "tableAdd">ADD</b></Button>
-									
-									<div id ="dvAddEntry" style="display: none">					 
-								  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>							  
-										  <table class="table-responsive">
-											  <tbody>
-												  <tr>
-													 <td class="tableAddBackground">									 	
-													 						
-											 	  		<input type='submit' name='ok' value='CONFIRM' class = "tableAdd" 
-											 	  		style="font-weight:bold;">
-											 	  	 </td> 							  
-												  	 <td>
-													   <Button value='' onClick="window.location = '../jsp/candidateform.jsp';">
-													   <b class = "tableCustom3">CANCEL</b></Button>
-												  	</td>
-												  </tr>								  
-											  </tbody>						  
-										   </table>
-									</div>
-	                        	       -->   	 
+	                        <tr>                 	 
 	                        	
 	                        	<td class="tableAddBackground">
 	                        												 
@@ -133,61 +100,33 @@
 											 	  		</form>
 											 	  	 </td> 							  
 												  	 <td>
-													   <Button value='' onClick="window.location = '../readcandidate';">
+													   <Button type = "button" value='' onClick="window.location = '../readcandidate';">
 													   <b>CANCEL</b></Button>
 												  	</td>
 												  </tr>								  
 											  </tbody>						  
-										   </table>
+										   </table>              	
+							    
+							    
+										    <td id = "candidate number"><textarea disabled class = "greyed-background" name='candidate_id' >${candidate.candidate_id }</textarea></td> 
+											<td><textarea disabled name='first_name'>${candidate.first_name }</textarea></td> 
+											<td><textarea disabled name='last_name' >${candidate.last_name }</textarea></td> 
+											<td><textarea disabled name='party' >${candidate.party }</textarea></td> 
+											<td><textarea disabled name='location'>${candidate.location }</textarea></td>		
+											<td><textarea disabled name='age' >${candidate.age }</textarea></td> 
+											<td><textarea disabled name='mission' >${candidate.mission }</textarea></td> 
+											<td><textarea disabled name='vision' >${candidate.vision }</textarea></td> 
+									        <td><textarea disabled class ="greyed-background" name='pic' placeholder="Portrait pic will go here">${candidate.pic }</textarea></td>  
+											<td><textarea disabled name='profession' >${candidate.profession }</textarea></td> 
+											<td><textarea disabled name='username' >${candidate.username }</textarea></td> 
+											<td><input readonly class = "greyed-background" type='password' name='password' value='${candidate.password }'></td> 
 								
-	                        	
-	                        	
-	                        	
-                                <!--  AD 
-                               
-							   
-							   The elite code that works
-							   <td class="tableAddBackground"><input type='submit' name='ok' value='DELETE' class = "tableCustom3" style="font-weight:bold;"></td> 
-							    
-							    --> 
-							    
-							    
-							    <td id = "candidate number"><textarea disabled class = "greyed-background" name='candidate_id' >${candidate.candidate_id }</textarea></td> 
-								<td><textarea disabled name='first_name'>${candidate.first_name }</textarea></td> 
-								<td><textarea disabled name='last_name' >${candidate.last_name }</textarea></td> 
-								<td><textarea disabled name='party' >${candidate.party }</textarea></td> 
-								<td><textarea disabled name='location'>${candidate.location }</textarea></td>		
-								<td><textarea disabled name='age' >${candidate.age }</textarea></td> 
-								<td><textarea disabled name='mission' >${candidate.mission }</textarea></td> 
-								<td><textarea disabled name='vision' >${candidate.vision }</textarea></td> 
-						        <td><textarea disabled class ="greyed-background" name='pic' placeholder="Portrait pic will go here">${candidate.pic }</textarea></td>  
-								<td><textarea disabled name='profession' >${candidate.profession }</textarea></td> 
-								<td><textarea disabled name='username' >${candidate.username }</textarea></td> 
-								<td><textarea disabled name='password' >${candidate.password }</textarea></td> 
-							    
-							    
-							    <!--  
-							    <td><input readonly class = "greyed-background" type='text' name='candidate_id' value='${requestScope.candidate.candidate_id }'></td> 
-								<td><input required type='text' name='first_name' value='${requestScope.candidate.first_name }'></td> 
-								<td><input required type='text' name='last_name' value='${requestScope.candidate.last_name }'></td> 
-								<td><input required type='text' name='party' value='${requestScope.candidate.party }'></td> 
-								<td><input required type='text' name='location' value='${requestScope.candidate.location }'></td>		
-								<td><input required type='number' name='age' value='${requestScope.candidate.age }' min="18" max="100"></td> 
-								<td><input required type='text' name='mission' value='${requestScope.candidate.mission }'></td> 
-								<td><input required type='text' name='vision' value='${requestScope.candidate.vision }'></td> 
-						        <td><input readonly class = "greyed-background" type='text' name='pic' placeholder="Portrait pic will go here" value='${requestScope.candidate.pic }'></td>  
-								<td><input required type='text' name='profession' value='${requestScope.candidate.profession }'></td> 
-								<td><input required type='text' name='username' value='${requestScope.candidate.username }'></td> 
-								<td><input required type='text' name='password' value='${requestScope.candidate.password }'></td> 
-								-->
-								                                     
+											<!--  
+											<td><textarea disabled name='password' >${candidate.password }</textarea></td> 
+										    --> 
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
-	                
-	                
-	                
-				
 	            
 	            <!--  AD    
                 </form>

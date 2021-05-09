@@ -26,13 +26,14 @@ public class NewquestionService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public List<Newquestion> readNewquestion() {
+//Creation of the EntityManager from the EntityManagerFactory
 		EntityManager em=emf.createEntityManager();
-		em.getTransaction().begin();
+		em.getTransaction().begin();	
+//Reading all the data from the database table newquestion and returns a list of objects in JSON string format
 		List<Newquestion> list=em.createQuery("select xyx from Newquestion xyx").getResultList();		
 		em.getTransaction().commit();
 		return list;
 	}	
-	//Comment
 	@POST
 	@Path("/addnewquestion")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -40,9 +41,10 @@ public class NewquestionService {
 	public List<Newquestion> addNewquestion(Newquestion newquestion) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
+//In the method below, a newquestion object is persisted (inserted) into the database.
 		em.persist(newquestion);//The actual insertion line
 		em.getTransaction().commit();
-		//Calling the method readFish() of this service
+//The readNewquestion() method of this service is called.
 		List<Newquestion> list=readNewquestion();		
 		return list;
 	}	
@@ -53,12 +55,13 @@ public class NewquestionService {
 	public List<Newquestion> updateNewquestion(Newquestion newquestion) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
+//The function find is called to ensure, that in the database is a record with the same id.
 		Newquestion nq=em.find(Newquestion.class, newquestion.getNewquestionId());
 		if (nq!=null) {
 			em.merge(newquestion);//The actual update line
 		}
 		em.getTransaction().commit();
-		//Calling the method readFish() of this service
+//Calling the method readNewquestion() of this service
 		List<Newquestion> list=readNewquestion();		
 		return list;
 	}	
@@ -74,7 +77,7 @@ public class NewquestionService {
 			em.remove(nq);//The actual insertion line
 		}
 		em.getTransaction().commit();
-		//Calling the method readFish() of this service
+//Calling the method readNewquestion() of this service
 		List<Newquestion> list=readNewquestion();		
 		return list;
 	}	
@@ -85,6 +88,9 @@ public class NewquestionService {
 	public Newquestion readToUpdateNewquestion(@PathParam("newquestion_id") int newquestion_id) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
+//In the code below a Newquestion type object with id value id is read from the database. 
+//The find function needs two parameters: the class of entity and an id. 
+//The first parameter (here: Newquestion.class) tells the table name where to search.		
 		Newquestion nq=em.find(Newquestion.class, newquestion_id);
 		em.getTransaction().commit();
 		return nq;
