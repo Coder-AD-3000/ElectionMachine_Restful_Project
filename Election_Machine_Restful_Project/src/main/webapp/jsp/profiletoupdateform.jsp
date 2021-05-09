@@ -367,8 +367,8 @@
 	                         
 	                         <td>
 	                            <input readonly
-	                            type='text' name='password' 
-	                            placeholder="Green33214a">
+	                            type='password' name='password'>
+	                            <!-- AD - This will need to be linked later -->	                            
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
@@ -502,9 +502,6 @@
                 </tr>	                     
             </tbody> 
             
-            
-            
-            
             <tbody>                    
                 <tr> 
                 
@@ -528,7 +525,6 @@
 				            </thead>
 				            </table>
 					  		
-					  			
 					  		<!-- AD this div is for the loading animation -->
 					  		 <div class="loaderDelete">
 					  		 </div> 
@@ -554,7 +550,6 @@
 						</div>                      	                                        
                 </tr>	                     
             </tbody> 
-            
             
             
             <tbody>                    
@@ -594,22 +589,14 @@
                                        
         </table>
         
-        
-        
     </div>
-     
-        
+             
     </div>  <!-- AD - End of row -->
-      
       
     
     <div class="col-md-1">
     </div> 
          	
-     	    
-  
-  	 
-  
     </form>   
   	    
  </div> <!-- AD - End of containerCandidateProfile -->      
@@ -632,9 +619,6 @@
         <!-- AD - End of the central (yellow container)-->
     </div>      
                   
-                  
-                  
-                    
     			<!-- 			
     			
     			AD - This HTML markup contains a DIV, which contains inside of it
@@ -659,8 +643,8 @@
                             btnUpdateProfile.value = "UPDATEvisible";
                             btnUpdateProfile.style.backgroundColor = "#2A9D8F";                           
                         }
-                    } 
-                                        
+                    }                     
+                    
                     /* AD - This is for the delete profile button */
                     function toggleProfileDelete(btnDeleteProfile) {
                         var dvDeleteProfile = document.getElementById("dvDeleteProfile");
@@ -677,7 +661,8 @@
                         }
                     } 
                                       
-                 	</script>                  	  	
+                 	</script> 
+                 	  	
                  	              	
                  	<!-- AD - This script is for the AJAX -->
                  	<script>
@@ -701,8 +686,7 @@
 						xhttp.open("POST","./rest/hunterservice2/addprey",true);
 						xhttp.setRequestHeader("Content-type","application/json");
 						xhttp.send(jsonPrey);					
-					}					
-					
+					}		
 					
 					/* AD - JS function to show the current time */
 					var displayTimeAndDate = document.getElementById("displayTimeAndDate");
