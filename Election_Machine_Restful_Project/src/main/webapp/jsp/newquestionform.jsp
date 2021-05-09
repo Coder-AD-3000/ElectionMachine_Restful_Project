@@ -52,7 +52,7 @@
 
 	
 		<!-- EK - This container contains a form (with table) to add 
-    	candidates to the candidate table in the emachinedb database.-->
+    	newquestions to the newquestion table in the emachinedb database.-->
     <div class="containerUpdateCandidatesTable">                                                                                                
        <div class="table-responsive"> 
 	
@@ -90,7 +90,7 @@
 			
 			
 	<!-- EK - This container contains a form (with table) to add 
-    	candidates to the candidate table in the emachinedb database.-->
+    	newquestions to the newquestion table in the emachinedb database.-->
     <div class="containerUpdateCandidatesTable">                                                                                                
        <div class="table-responsive"> 		
 		
