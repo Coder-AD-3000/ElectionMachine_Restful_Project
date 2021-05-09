@@ -83,7 +83,28 @@
             
              	<a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>  
             
-            <div class="table-responsive">            
+            <div class="table-responsive">
+            
+            
+            <!-- 
+            
+              <td><input readonly class = "greyed-background" type='text' name='candidate_id' value='${requestScope.candidate.candidate_id }'></td> 
+				<td><input required type='text' name='first_name' value='${requestScope.candidate.first_name }'></td> 
+				<td><input required type='text' name='last_name' value='${requestScope.candidate.last_name }'></td> 
+				<td><input required type='text' name='party' value='${requestScope.candidate.party }'></td> 
+				<td><input required type='text' name='location' value='${requestScope.candidate.location }'></td>		
+				<td><input required type='number' name='age' value='${requestScope.candidate.age }' min="18" max="100"></td> 
+				<td><input required type='text' name='mission' value='${requestScope.candidate.mission }'></td> 
+				<td><input required type='text' name='vision' value='${requestScope.candidate.vision }'></td> 
+		        <td><input readonly class = "greyed-background" type='text' name='pic' placeholder="Portrait pic will go here" value='${requestScope.candidate.pic }'></td>  
+				<td><input required type='text' name='profession' value='${requestScope.candidate.profession }'></td> 
+				<td><input required type='text' name='username' value='${requestScope.candidate.username }'></td> 
+				<td><input required type='text' name='password' value='${requestScope.candidate.password }'></td> 
+            
+            
+            
+            
+             -->            
                          
 	                
 	                
@@ -97,7 +118,13 @@
 	                    <tbody>                    
 	                        <tr> 
 	                        
-	                        <!-- AD - candidate number field -->
+	                        <!-- AD - candidate number field 
+	                        
+	                        <td><input readonly class = "greyed-background" 
+	                        type='text' name='candidate_id' 
+	                        value='${requestScope.candidate.candidate_id }'></td>
+	                        
+	                        -->
 	                         <td class="tableAddBackground ">                
 	                            <input readonly type='text' class = "greyed-background"
 	                            name='candidate_id' 
@@ -108,13 +135,19 @@
 	                         <td>
 	                            <input readonly class = "greyed-background" 
 	                            type='text' name='candidate_id' 
-	                            placeholder="1019">
+	                            value='${requestScope.candidate.candidate_id }'>
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
-	                 <!-- AD - first name field -->
+	                 <!-- AD - first name field 
+	                 
+	                 <td><input required type='text' 
+	                 name='first_name' 
+	                 value='${requestScope.candidate.first_name }'></td> 
+	                 
+	                 -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -132,15 +165,22 @@
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly 
+	                            <input required 
 	                            type='text' name='first_name' 
-	                            placeholder="Mikko">
+	                            value='${requestScope.candidate.first_name }'>
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
-	                <!-- AD - last name field -->
+	                <!-- AD - last name field 
+	                
+	                <td><input required type='text' 
+	                name='last_name' 
+	                value='${requestScope.candidate.last_name }'></td>
+	                
+	                -->
+	                
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -158,15 +198,20 @@
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly
+	                            <input required
 	                            type='text' name='last_name' 
-	                            placeholder="Koskenranta">
+	                            value='${requestScope.candidate.last_name }'>
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
-	                <!-- AD - party field -->
+	                <!-- AD - party field 
+	                
+	                <td><input required type='text' 
+	                name='party' value='${requestScope.candidate.party }'></td>
+	                
+	                -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -184,15 +229,20 @@
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly 
+	                            <input required 
 	                            type='text' name='party' 
-	                            placeholder="The Green Party">
+	                            value='${requestScope.candidate.party }'>
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
-	                <!-- AD - Location field -->
+	                <!-- AD - Location field 
+	                
+	                <td><input required type='text' 
+	                name='location' value='${requestScope.candidate.location }'></td>
+	                
+	                -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -210,15 +260,21 @@
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly 
+	                            <input required 
 	                            type='text' name='location' 
-	                            placeholder="Helsinki">
+	                            value='${requestScope.candidate.location }'>
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
-	                <!-- AD - Age field -->
+	                <!-- AD - Age field 
+	                
+	                <td><input required type='number' 
+	                name='age' value='${requestScope.candidate.age }' 
+	                min="18" max="100"></td>
+	                
+	                -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -229,22 +285,28 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='age' 
+	                            <input readonly type='number' name='age' 
 	                            placeholder="Age"
 	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly 
-	                            type='text' name='age' 
-	                            placeholder="52">
+	                            <input required 
+	                            type='number' name='age' 
+	                            value='${requestScope.candidate.age }'>
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
-	                <!-- AD - Mission field -->
+	                <!-- AD - Mission field 
+	                
+	                <td><input required type='text' 
+	                name='mission' value='${requestScope.candidate.mission }'>
+	                </td> 
+	                
+	                -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -262,15 +324,20 @@
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly 
+	                            <input required 
 	                            type='text' name='mission' 
-	                            placeholder="Better Social Welfare">
+	                            value='${requestScope.candidate.mission }'>
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
-	                <!-- AD - Vision field -->
+	                <!-- AD - Vision field 
+	                
+	                <td><input required type='text' 
+	                name='vision' value='${requestScope.candidate.vision }'></td>
+	                
+	                -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -287,15 +354,21 @@
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly 
+	                            <input required 
 	                            type='text' name='vision' 
-	                            placeholder="A poverty-free country">
+	                            value='${requestScope.candidate.vision }'>
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>       
 	                
-	                <!-- AD - profession field -->
+	                <!-- AD - profession field 
+	                
+	                <td><input required type='text' 
+	                name='profession' 
+	                value='${requestScope.candidate.profession }'></td>
+	                
+	                -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -313,15 +386,21 @@
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly 
+	                            <input required 
 	                            type='text' name='profession' 
-	                            placeholder="Engineer">
+	                            value='${requestScope.candidate.profession }'>
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
-	                <!-- AD - Username field -->
+	                <!-- AD - Username field 
+	                
+	                <td><input required type='text' 
+	                name='username' value='${requestScope.candidate.username }'></td> 
+	                
+	                -->
+	                
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -339,16 +418,22 @@
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly
+	                            <input required
 	                            type='text' name='username' 
-	                            placeholder="GreenMikko21">
+	                            value='${requestScope.candidate.username }'>
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>
 	                
 	                
-	                <!-- AD - Password field -->
+	                <!-- AD - Password field 
+	                
+	                <td><input required type='text' 
+	                name='password' 
+	                value='${requestScope.candidate.password }'></td>
+	                
+	                -->
 	                <table class="table">                    
 	                    <thead class = "tableCustom1">
 	                        <tr>                                                                      
@@ -366,15 +451,14 @@
 	                         </td> 
 	                         
 	                         <td>
-	                            <input readonly
-	                            type='password' name='password'>
+	                            <input required
+	                            type='password' name='password'
+	                            value='${requestScope.candidate.password }'>
 	                            <!-- AD - This will need to be linked later -->	                            
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
 	                </table>             
-	                
-              
             </div>        
     
     </div> <!-- AD - End of md-7 -->
@@ -406,7 +490,14 @@
                         
             <tbody>                    
                 <tr>               
-                <!-- AD - Portrait Display Area -->
+                <!-- AD - Portrait Display Area 
+                
+                <td><input readonly class = "greyed-background" 
+                type='text' name='pic' 
+                placeholder="Portrait pic will go here" 
+                value='${requestScope.candidate.pic }'></td>
+                
+                -->
                  <td class="tableAddBackground">                
                     <input readonly type='text' name='pic' 
                     placeholder="Upload Portrait Picture"
