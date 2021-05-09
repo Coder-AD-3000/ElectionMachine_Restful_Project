@@ -288,13 +288,14 @@
 	                            <input readonly type='number' name='age' 
 	                            placeholder="Age"
 	                            class = "colourAmendment"
-	                            style="font-weight:bold;">
+	                            style="font-weight:bold; width: 50%;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input required 
-	                            type='number' name='age' 
-	                            value='${requestScope.candidate.age }'>
+	                            <input required type='number' 
+	                            name='age' value='${requestScope.candidate.age }' 
+	                            min="18" max="100"
+	                            style = "width: 100%;">
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
