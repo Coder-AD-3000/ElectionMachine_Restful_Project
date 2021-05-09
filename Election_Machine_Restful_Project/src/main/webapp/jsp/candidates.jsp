@@ -1,7 +1,6 @@
 
 <%@ page import="java.util.ArrayList" %>   
 <%@ page import="data.Candidate" %>   
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
 
 <html lang="en">
 <head>
@@ -22,7 +21,7 @@
  
     <!-- AD - Beginning the central (yellow container)-->
     <div class="container">
-        <a href="../index.jsp"><i class="material-icons resize1">account_balance</i></a>
+        <a href="../jsp/index.jsp"><i class="material-icons resize1">account_balance</i></a>
         
         <!-- AD - customises the welcome message-->
         <div class="container6"> 

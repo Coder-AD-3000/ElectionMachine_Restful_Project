@@ -23,7 +23,7 @@
     <div class = "container1">
         <div class = "container1c">          
             <h5>WELCOME</h5>     
-            <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>   
+            <a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>   
             <h5>ELECTION MACHINE</h5>            
         </div>
 
@@ -35,9 +35,10 @@
                     <legend class = "adminPortal3"><b>MENU: </b></legend>
                     <hr>  
                     <table>                    
-					<tr><td><b class = "adminPortal4">Access:</b><a href="/siteArchitecture.jsp" target="_blank"> <u><b>Site Architecture </b></u></a></td></tr>
-                    <tr><td><b class = "adminPortal4">Access:</b><a href="/AdminCandidates" target="_blank"> <u><b>Candidate Data </b></u></a></td></tr>                  
-                    <tr><td><b class = "adminPortal4">Access:</b><a href="/AdminNewQuestions" target="_blank"> <u><b>New Questions </b></u></a></td></tr>                                      
+					<tr><td><b class = "adminPortal4">Access:</b><a href="/jsp/employeeform.jsp" target="_blank"> <u><b>Employee Data </b></u></a></td></tr> 
+                    <tr><td><b class = "adminPortal4">Access:</b><a href="/jsp/candidateform.jsp" target="_blank"> <u><b>Candidate Data </b></u></a></td></tr>                  
+                    <tr><td><b class = "adminPortal4">Access:</b><a href="/jsp/newquestionform.jsp" target="_blank"> <u><b>New Questions </b></u></a></td></tr>                                      
+                    <tr><td><b class = "adminPortal4">Access:</b><a href="/jsp/index.jsp" target="_blank"> <u><b>Home Page </b></u></a></td></tr>
                     <tr><td></td><td><br>
                     </table>
                     <hr>        

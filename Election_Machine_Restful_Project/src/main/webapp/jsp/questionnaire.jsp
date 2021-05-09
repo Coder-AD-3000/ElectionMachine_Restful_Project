@@ -25,7 +25,7 @@
 
     <!-- AD - Beginning of the main yellow container-->
     <div class="container">
-        <a href="../index.jsp"><i class="material-icons resize1">account_balance</i></a>
+        <a href="../jsp/index.jsp"><i class="material-icons resize1">account_balance</i></a>
         
         <!-- AD - customises the welcome message-->
         <div class="container6"> 
@@ -330,7 +330,7 @@
 		
 		function toMain()
 		{
-			window.location = "/index.jsp";
+			window.location = "/jsp/index.jsp";
 		}
 		// SOME USEFUL LINES:
 		//div.style.visibility = 'hidden';

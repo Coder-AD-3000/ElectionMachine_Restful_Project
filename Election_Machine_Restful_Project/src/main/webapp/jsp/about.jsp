@@ -19,7 +19,7 @@
 
     <!-- AD - Beginning the central (yellow container)-->
     <div class="container">
-        <a href="../index.jsp"><i class="material-icons resize1">account_balance</i></a>
+        <a href="../jsp/index.jsp"><i class="material-icons resize1">account_balance</i></a>
         
         <!-- AD - customises the welcome message-->
         <div class="container6"> 
@@ -175,9 +175,9 @@
             <!-- AD - button container, containing buttons-->
             <div class="container3">
            
-                <button class="button-main button1"><a href="../index.jsp"><b>Home</b></a></button>
+                <button class="button-main button1"><a href="../jsp/index.jsp"><b>Home</b></a></button>
                 
-                <button class="button-main button1" onclick="window.location.href='/ShowQuestions'"><b>Take Quiz</b></button>               
+                <button class="button-main button1" onclick="window.location.href='/readallquestion'"><b>Take Quiz</b></button>               
 
             </div>
         

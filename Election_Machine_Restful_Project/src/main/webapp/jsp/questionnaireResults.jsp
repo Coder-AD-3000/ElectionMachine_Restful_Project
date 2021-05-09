@@ -6,8 +6,7 @@
     
     <%@ page import="java.util.ArrayList" %>   
 	<%@ page import="data.Question" %>   
-	<%@ page import="data.Answer" %>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+	<%@ page import="data.Answer" %> 
   <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
      
     <title>Questionnaire Results</title>
@@ -342,9 +341,9 @@
             <!-- AD - button container, containing buttons-->
             <div class="container3">
 
-                <button class="button-main button1" onclick="window.location.href='/ShowQuestions'"><b>Restart</b></button>
+                <button class="button-main button1" onclick="window.location.href='/readallquestion'"><b>Restart</b></button>
                 
-                <button class="button-main button1"><a href="../index.jsp"><b>Home</b></a></button>
+                <button class="button-main button1"><a href="../jsp/index.jsp"><b>Home</b></a></button>
 
             </div>
         

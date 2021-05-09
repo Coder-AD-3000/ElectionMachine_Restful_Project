@@ -22,7 +22,7 @@ Version: 1
     <%@ include file="../components/navbarBootstrap.jsp" %>
     <!-- central yellow container-->
     <div class="containerMainUpdateCandidates">
-        <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>
+        <a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>
         <div class="container6a"> 
         <h3 class = "adminTextCorrection1">ADMIN PORTAL: Update Employees</h3>
         </div>

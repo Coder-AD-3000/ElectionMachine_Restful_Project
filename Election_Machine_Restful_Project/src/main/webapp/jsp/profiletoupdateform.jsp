@@ -28,7 +28,7 @@
     
     <!-- AD - Beginning the central (yellow container)-->
     <div class="containerMainUpdateCandidates">
-        <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>
+        <a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>
         
         <!-- AD - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
@@ -81,7 +81,7 @@
          	 
             	<div class="col-md-7">
             
-             	<a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>  
+             	<a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>  
             
             <div class="table-responsive">
             
@@ -648,7 +648,7 @@
                 <tr>               
                 <!-- AD - Portrait Display Area -->
                  <td class="tableAddBackground">
-                 	<a href="../index.jsp">                
+                 	<a href="../jsp/index.jsp">                
                     <input readonly type='text' name='pic' 
                     placeholder="BACK" onmouseover="this.style.cursor='pointer';"
                     class = "colourAmendment profilePageButtonMod1"
@@ -662,7 +662,7 @@
                 <tr>               
                 <!-- AD - Portrait Display Area -->
                  <td class="tableAddBackground">                
-                    <a href="../index.jsp"><input readonly type='text' name='pic' 
+                    <a href="../jsp/index.jsp"><input readonly type='text' name='pic' 
                     placeholder="HOME" onmouseover="this.style.cursor='pointer';"
                     class = "colourAmendment profilePageButtonMod1"
                     style="font-weight:bold; text-align: center;">

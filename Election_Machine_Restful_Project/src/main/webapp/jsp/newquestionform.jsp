@@ -28,7 +28,7 @@
     
     <!-- EK - Beginning the central (yellow container)-->
     <div class="containerMainUpdateCandidates">
-        <a href="../index.jsp"><i class="material-icons resize3">account_balance</i></a>
+        <a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>
         
         <!-- EK - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
