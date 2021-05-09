@@ -1438,8 +1438,19 @@ on the candidate profile page */
     box-shadow: 0 2px 16px 2px #264653;	
 }
 
+/*.marginAmendment {
+	margin: 50px 0px 0px 0px;	*/ 
+
+/* AD - Margin amendments for the 
+   candidate update page */
 .marginAmendment {
-	margin: 50px 0px 0px 0px;	 
+	margin: 50px 20px 0px 23px;	  
+}
+
+/* AD - Margin amendments for the 
+   candidate update page */
+.marginAmendment2 {
+	margin: 0px 20px 0px 23px;	  
 }
 
 .candidateProfilepadding {
@@ -1495,4 +1506,15 @@ on the adminUpdateCandidate page */
   justify-content: center;  
   margin: 0px 0px 9px 0px;
 }
+
+.timeAndDateMod1 {
+  display: inline-block;
+  justify-content: center;
+  align-contents: center; 
+}
+
+.profilePageButtonMod1 {
+  background: linear-gradient(0deg, #E76F51, 70%, #F4A261);
+}
+
 
