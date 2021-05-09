@@ -660,9 +660,7 @@
                             btnUpdateProfile.style.backgroundColor = "#2A9D8F";                           
                         }
                     } 
-                    
-                    
-                    
+                                        
                     /* AD - This is for the delete profile button */
                     function toggleProfileDelete(btnDeleteProfile) {
                         var dvDeleteProfile = document.getElementById("dvDeleteProfile");
@@ -679,8 +677,7 @@
                         }
                     } 
                                       
-                 	</script> 
-                 	  	
+                 	</script>                  	  	
                  	              	
                  	<!-- AD - This script is for the AJAX -->
                  	<script>
@@ -705,7 +702,6 @@
 						xhttp.setRequestHeader("Content-type","application/json");
 						xhttp.send(jsonPrey);					
 					}					
-					
 					
 					
 					/* AD - JS function to show the current time */
