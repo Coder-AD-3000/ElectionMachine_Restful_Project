@@ -1504,3 +1504,13 @@ on the adminUpdateCandidate page */
   margin: 0px 0px 9px 0px;
 }
 
+.timeAndDateMod1 {
+  display: inline-block;
+  justify-content: center;
+  align-contents: center; 
+}
+
+.profilePageButtonMod1 {
+  background: linear-gradient(0deg, #E76F51, 70%, #F4A261);
+}
+
