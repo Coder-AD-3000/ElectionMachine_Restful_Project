@@ -62,7 +62,7 @@
     	<!-- AD - This will need fixing 
       <form action='../updatecandidate' method='post'> 
       -->
-      <form action='/readmyprofile' method='post'> 
+      <form action='/updatemyprofile' method='post'> 
                                                                                               
         <!-- AD - Responsive columns 
         
@@ -105,7 +105,7 @@
             
             
              -->            
-                         
+                    <input readonly class = "greyed-background" type='hidden' name='pic' placeholder="Portrait pic will go here" value='${requestScope.candidate.pic }'>    
 	                
 	                
 	                <table class="table">                    
@@ -458,7 +458,8 @@
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
-	                </table>             
+	                </table>
+	                             
             </div>        
     
     </div> <!-- AD - End of md-7 -->

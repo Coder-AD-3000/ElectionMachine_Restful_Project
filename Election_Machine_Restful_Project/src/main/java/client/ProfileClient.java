@@ -23,7 +23,7 @@ import data.Candidate;
 /**
  * Servlet implementation class ProfileClient
  */
-@WebServlet(urlPatterns = {"/readmyprofile"})
+@WebServlet(urlPatterns = {"/updatemyprofile", "/readmyprofile", "/deleteallmydata"})
 public class ProfileClient extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,40 +39,39 @@ public class ProfileClient extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
-
+		//Getting candidate_id from session object (login)
 		HttpSession session = request.getSession(true);						
 		String candidate_id = session.getAttribute("userid").toString();
-
-		Candidate candidate = readToUpdateCandidate(request, candidate_id);
-		request.setAttribute("candidate", candidate);
-	  
-		System.out.println("candidate name: " + candidate.getFirst_name());
-//	  
-		RequestDispatcher reqdisp=request.getRequestDispatcher("./jsp/profiletoupdateform.jsp");
-		reqdisp.forward(request, response);
-
 		
+		//Getting URI
+		String action = request.getServletPath();
 		
+		//Acting based on URI path
+		switch (action) {
+		//Will read profile data from DB so it can be amended
+		case "/readmyprofile":
+			Candidate candidate = readToUpdateCandidate(request, candidate_id);
+			request.setAttribute("candidate", candidate);
+		  
+			System.out.println("candidate name: " + candidate.getFirst_name());
+//		  
+			RequestDispatcher reqdisp=request.getRequestDispatcher("./jsp/profiletoupdateform.jsp");
+			reqdisp.forward(request, response);		
+			break;
+
+		default:
+			break;
+		}	
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-//		System.out.println(request.getParameter("first_name"));
-//		System.out.println(request.getParameter("last_name"));
-//		System.out.println(request.getParameter("party"));
-//		System.out.println(request.getParameter("age"));
-//		System.out.println(request.getParameter("mission"));
-//		System.out.println(request.getParameter("vision"));
-//		System.out.println(request.getParameter("pic"));
-//		System.out.println(request.getParameter("profession"));
-//		System.out.println(request.getParameter("username"));
-//		System.out.println(request.getParameter("password"));
+		// Will be used upon update (updateform)
 		
 		updateCandidate(request);
-		
+		response.sendRedirect("/readmyprofile");
 
 	}
 
@@ -104,8 +103,9 @@ public class ProfileClient extends HttpServlet {
 				request.getParameter("username"),
 				request.getParameter("password"));
 		
+		System.out.println("pic: " + request.getParameter("pic"));
 		System.out.println(candidate);
-		String uri = "http://127.0.0.1:8080/rest/candidateservice/updatecandidate";
+		String uri = "http://127.0.0.1:8080/rest/profileservice/updatecandidate";
 		Client client = ClientBuilder.newClient();
 		WebTarget webtarget = client.target(uri);
 		Builder builder = webtarget.request();
