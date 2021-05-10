@@ -495,7 +495,7 @@
         </table>
         
         <!-- AD - Portrait Upload field -->
-        <table class="table marginAmendment2">                    
+        <table class="table marginAmendment2 profileWidthAmendment">                    
                         
             <tbody>                    
                 <tr>               
@@ -508,7 +508,7 @@
                 
                 -->
                 
-                 <td class="tableAddBackground">                
+                 <td class="tableAddBackground profileWidthAmendment">                
                     <input onClick="" readonly type='text' name='pic' 
                     placeholder="Upload Portrait Picture"
                     onmouseover="this.style.cursor='pointer';"
@@ -519,7 +519,7 @@
             </tbody>                            
         </table>
         
-         <table class="table marginAmendment2">                    
+         <table class="table marginAmendment2 profileWidthAmendment">                    
             <thead class = "tableCustom1">
                 <tr>                                                                      
                     <th>GUIDANCE: Click UPDATE to update your profile
@@ -550,14 +550,14 @@
         -->
         
         <!-- AD - Portrait Upload field -->
-        <table class="table marginAmendment2">                    
+        <table class="table marginAmendment2 profileWidthAmendment">                    
                         
             <tbody>                    
                 <tr> 
                 
                 <!-- AD Button code -->
                 
-                <td class="tableAddBackground">					 
+                <td class="tableAddBackground profileWidthAmendment2">					 
 					 
 						<Button type = "button" id = "btnUpdateProfile" value='UPDATEvisible' onClick="toggleProfileUpdate(this); enableAll();">
 						<b class = "tableUpdate">EDIT PROFILE</b></Button>
@@ -568,7 +568,7 @@
 					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Profile Changes?</b></p>	
 					  		-->
 					  		
-					  		<table class="table profileWidthAmendment">                    
+					  		<table class="table profileWidthAmendment2">                    
 				            <thead class = "tableCustom1">
 				                <tr>                                                                      
 				                    <th><i style = "color:#cfdefe">NOTICE!</i> - You are about to update your profile.
@@ -608,14 +608,14 @@
                 
                 <!-- AD Button code -->
                 
-                <td class="tableAddBackground">					 
+                <td class="tableAddBackground profileWidthAmendment2">					 
 					 
 						<Button type = "button" id = "btnDeleteProfile" value='ADD' onClick="toggleProfileDelete(this)">
 						<b class = "tableCustom3">DELETE</b></Button>
 						
 						<div id ="dvDeleteProfile" style="display: none">							
 											  		 
-						  	<table class="table profileWidthAmendment">                    
+						  	<table class="table profileWidthAmendment2">                    
 				            <thead class = "tableCustom1">
 				                <tr>                                                                      
 				                    <th style = "color:#FFE4E1"><i style = "color:#ff4444">WARNING!</i> 
