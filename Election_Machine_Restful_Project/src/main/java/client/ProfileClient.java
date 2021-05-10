@@ -59,7 +59,11 @@ public class ProfileClient extends HttpServlet {
 			reqdisp.forward(request, response);		
 			break;
 
-		default:
+		case "/deleteallmydata":
+			deleteCandidate(request, candidate_id);
+			session.invalidate();
+			session = null;
+			response.sendRedirect("/jsp/loginPage.jsp");
 			break;
 		}	
 	}
@@ -119,4 +123,14 @@ public class ProfileClient extends HttpServlet {
 		return returnedList;
 	}
 	
+	private void deleteCandidate(HttpServletRequest request, String candidate_id) {
+		String uri = "http://127.0.0.1:8080/rest/profileservice/deletecandidate/"+candidate_id;
+		Client client = ClientBuilder.newClient();
+		WebTarget webtarget = client.target(uri);
+		Builder builder = webtarget.request();
+		//Create a GenericType to be able to get List of objects
+		//This will be the second parameter of post method
+		GenericType<List<Candidate>> genericList = new GenericType<List<Candidate>>() {};		
+		builder.delete(genericList);
+	}
 }
