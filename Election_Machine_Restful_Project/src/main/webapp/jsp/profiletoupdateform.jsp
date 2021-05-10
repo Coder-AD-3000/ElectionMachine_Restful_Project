@@ -638,6 +638,9 @@
 								 	  		style="font-weight:bold;">
 								 	  	 </td> 							  
 									  	 <td>
+									  	 	<a class = "button-main button1"
+											href='../deleteallmydata?candidaten_id=${requestScope.candidate.candidate_id }'>
+											<b>DELETE</b></a>
 										   <Button type = "button" value='' onClick="window.location.reload();">
 										   <b>CANCEL</b></Button>
 										   <!-- AD 
