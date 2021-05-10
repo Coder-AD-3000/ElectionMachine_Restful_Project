@@ -32,14 +32,19 @@
         
         <!-- EK - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
-        <h3 class = "adminTextCorrection1">ADMIN PORTAL: Update Candidates</h3>
+        <h3 class = "adminTextCorrection1">ADMIN PORTAL: New Questions Database</h3>
         </div>
        
         <!-- EK - A small container to amend the admin note background section-->
         <div class="container4">             
             <!-- EK - Introductory statement about the ADMIN: Update Candidates page -->
-            <h5 class = "adminTextCorrection2">ADMIN NOTE: Once logged in, this page allows for a 'Global Herald Newspaper' 
-                IT Admin to add, edit and remove candidate information.
+            <h5 class = "adminTextCorrection2">ADMIN NOTE: Once logged in, this page allows for a 
+                'Global Herald Newspaper' IT Admin to add, edit and remove new questions for eventual 
+                inclusion into the Election Machine questionnaire. 
+                <br><br>
+                The new questions will initially be stored for review in our developmental database. 
+                Upon successful review and approval, the approved new questions will be transferred to
+                the live questionnaire, before the beginning of the next questionnaire cycle.
                 <br><br>
                 Regular users and candidates do not have access to this page 
                 (or its functionality).

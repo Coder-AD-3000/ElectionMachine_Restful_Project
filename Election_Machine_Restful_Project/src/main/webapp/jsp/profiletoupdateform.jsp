@@ -39,8 +39,8 @@
         <div class="container4">             
             <!-- AD - Introductory statement about the ADMIN: Update Candidates page -->
             <h5 class = "adminTextCorrection2">CANDIDATE NOTE: Greetings candidate! 
-            This profile page allows you to update your profile data which is stored in our
-            database.
+            This profile page allows you to update your profile data, which is stored in our
+            Election Machine database.
                 <br><br>
                 Only Global Herald IT Admins and yourself have access to your confidential
                 profile data.
