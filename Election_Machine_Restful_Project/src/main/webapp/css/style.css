@@ -1538,3 +1538,16 @@ on the candidate page */
 	color-stop(0.3, #264653)) 21 30 30 21 repeat repeat; 
 }
 
+/* AD - adjustments to the candidate portraits 
+on the profile page */
+.profilePortraitBorder {  
+  padding: 1rem;
+  color: white;
+  border-width: 1px;
+  border-style: solid;
+ -webkit-border-image: 
+	-webkit-gradient(linear, left top, left bottom, 
+	from(#F4A261), to(#E9C46A), color-stop(0.3, #E9C46A), 
+	color-stop(0.3, #264653)) 21 30 30 21 repeat repeat;	
+}
+

@@ -481,7 +481,8 @@
                 
  
                  <td class="tableAddBackground ">
-                 	<img src="img/${candidate.pic}" style="max-width: 150px;"> 
+                 	<img class = "profilePortraitBorder" 
+                 	src="img/${candidate.pic}" style="max-width: 150px;"> 
                  	<!--                        
                     <textarea disabled rows="8" cols="20" name='pic' 
                     placeholder="Portrait Picture"
