@@ -17,7 +17,7 @@
 <body>
 
 	<!-- EK - A message in the top left to show an active session message -->
-	<div class = "adminSession"><i>Admin Session Active ${requestScope.fromfilter }</i></div> 
+	<div class = "adminSession"><i>Admin Session Active ${requestScope.fromfilter}</i></div> 
 
     <!-- EK - includes the navbarBootstrap component, 
     		which is modified version of our regular navbar,
@@ -100,7 +100,7 @@
 			
 			
 		<ol>
-			<c:forEach var="newquestion" items="${requestScope.newquestionlist }">
+			<c:forEach var="newquestion" items="${requestScope.newquestionlist}">
 			
 			<table class="table">                    
 	                <thead class = "tableCustom1">
