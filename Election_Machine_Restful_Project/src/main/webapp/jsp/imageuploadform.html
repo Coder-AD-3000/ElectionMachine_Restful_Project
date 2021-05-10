@@ -10,5 +10,19 @@
     Select a file : <input type="file" name="file" accept=".jpg" /><br>
     <input type="submit" value="Upload" />
 </form>
+
+
+<form name="uploadform" method="post" enctype="multipart/form-data" action="/rest/uploadservice/uploadiamge">
+Select a file : <input type="file" name="file" accept=".jpg" /><br>
+<button onClick="submitform()">UPLOAD</button>
+</form>
+<script type="text/javascript">
+function submitform()
+{
+  document.uploadform.submit();
+}
+</script>
+
+
 </body>
 </html>
