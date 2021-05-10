@@ -28,6 +28,7 @@ public class NewquestionService {
 	public List<Newquestion> readNewquestion() {
 //Creation of the EntityManager from the EntityManagerFactory
 		EntityManager em=emf.createEntityManager();
+//When using default (RESOURCE-LOCAL) transaction type every transaction must begin and end.
 		em.getTransaction().begin();	
 //Reading all the data from the database table newquestion and returns a list of objects in JSON string format
 		List<Newquestion> list=em.createQuery("select xyx from Newquestion xyx").getResultList();		

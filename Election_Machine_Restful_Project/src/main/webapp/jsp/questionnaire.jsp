@@ -99,25 +99,32 @@
                                     <label class = "questionnaireSelect">
                                         <b class = "customText1">SELECT :</b>
                                     </label>
-                                    <label> <b>(1)</b>
+                                    <label> 
                                     <input type = "radio" name = "selected${question.id}"  value="1" required>
+                                    <b>(1)</b>
                                     </label>
-                                    <label> <b>(2)</b>
+                                    <label> 
                                     <input type = "radio" name = "selected${question.id}" value = "2" required>
+                                    <b>(2)</b>
                                     </label>
-                                    <label> <b>(3)</b>
+                                    <label> 
                                     <input type = "radio" name = "selected${question.id}" value = "3" required checked ="checked"> <!-- checked ="checked" - FOR Testing purposes -->
+                                    <b>(3)</b>
                                     </label>
-                                    <label> <b>(4)</b>
+                                    <label> 
                                     <input type = "radio" name = "selected${question.id}" value = "4" required>
+                                    <b>(4)</b>
                                     </label>
-                                    <label> <b>(5)</b>
+                                    <label>                                    
                                     <input type = "radio" name = "selected${question.id}" value = "5" required>
                                     </label>
+                                    <b>(5)</b>
+                                    </label> 
+                          
                                     <!-- DK - used in score assessmnet! -->
                                     <input type = "hidden" name = "min_answer" value = "1">
                                     <input type = "hidden" name = "max_answer" value = "5"> 
-                                                                                                                             
+
 							</div>						
 	        		    
 	        		    </c:forEach> <!-- AD End of forEach loop -->         		        		    

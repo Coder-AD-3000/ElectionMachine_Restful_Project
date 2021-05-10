@@ -18,7 +18,7 @@
 	<body>
 	
 	<!-- AD - A message in the top left to show an active session message -->
-	<div class = "candidateSession"><i>Candidate Session Active ${requestScope.fromfilter }</i></div>
+	<div class = "adminSession"><i>Admin Session Active ${requestScope.fromfilter }</i></div>
 	 <!-- AD - includes the navbarBootstrap component, 
     		which is modified version of our regular navbar,
     		in order to offset some negative effects
@@ -31,14 +31,14 @@
         
         <!-- AD - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
-        <h3 class = "adminTextCorrection1">ADMIN PORTAL: Update Candidates</h3>
+        <h3 class = "adminTextCorrection1">ADMIN PORTAL: Candidate Data</h3>
         </div>
        
         <!-- AD - A small container to amend the admin note background section-->
         <div class="container4">             
             <!-- AD - Introductory statement about the ADMIN: Update Candidates page -->
             <h5 class = "adminTextCorrection2">ADMIN NOTE: Once logged in, this page allows for a 'Global Herald Newspaper' 
-                IT Admin to add, edit and remove candidate information.
+                IT Admin to add, edit and remove candidate information from our Election Machine database.
                 <br><br>
                 Regular users and candidates do not have access to this page 
                 (or its functionality).
