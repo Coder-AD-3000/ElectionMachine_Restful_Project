@@ -58,13 +58,17 @@ public class Newquestionnaire extends HttpServlet {
 	private Newquestion readtoupdatenewquestion(HttpServletRequest request) {
 		String newquestion_id=request.getParameter("newquestion_id");
 		String uri = "http://127.0.0.1:8080/rest/newquestionservice/readtoupdatenewquestion/"+newquestion_id;
+//Creation of a new Client object using ClientBuilder
 		Client c=ClientBuilder.newClient();
+//Create a new WebTarget object using the Client object just created. 
+//The creation of WebTarget needs the URL to the service as a parameter.
 		WebTarget wt=c.target(uri);
+//Create a new Builder object using WebTarget object just created.
 		Builder b=wt.request();
 		Newquestion newquestion=b.get(Newquestion.class);
 		return newquestion;
 	}
-
+//
 	private List<Newquestion> addnewquestion(HttpServletRequest request) {
 		//A Newquestion object to send to our web-service 
 		Newquestion nq=new Newquestion(request.getParameter("new_question"));

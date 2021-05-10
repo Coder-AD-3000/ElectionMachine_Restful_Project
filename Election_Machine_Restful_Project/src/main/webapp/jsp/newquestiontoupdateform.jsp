@@ -81,10 +81,10 @@
             		<tr>
             			<td> 	
 						<input readonly class = "greyed-background" style = "width:25%" 
-						type='text' name='newquestion_id' value='${requestScope.newquestion.newquestionId }'>
+						type='text' name='newquestion_id' value='${requestScope.newquestion.newquestionId}'>
 						</td>
 						<td>
-						<input style = "width:100%" type='text' name='new_question' value='${requestScope.newquestion.newquestion }'>
+						<input style = "width:100%" type='text' name='new_question' value='${requestScope.newquestion.newquestion}'>
 						</td>
 						
 											
@@ -248,7 +248,7 @@
 			</script>      
 		
 	
- <!-- AD - includes the footer component into this page 
+ <!-- EK - includes the footer component into this page 
 	    (albeit not visible) -->
     
 	<%@ include file="../components/footer.jsp" %> 
