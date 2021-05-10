@@ -32,7 +32,7 @@
         
         <!-- AD - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
-        <h3 class = "adminTextCorrection1">ADMIN PORTAL: Candidate Database</h3>
+        <h3 class = "adminTextCorrection1">ADMIN PORTAL: Candidate Data</h3>
         </div>
        
         <!-- AD - A small container to amend the admin note background section-->
