@@ -1523,4 +1523,6 @@ on the adminUpdateCandidate page */
   background: linear-gradient(0deg, #E76F51, 70%, #F4A261);
 }
 
-
+.imageCandidateResize {
+	min-width: 200px;
+}
