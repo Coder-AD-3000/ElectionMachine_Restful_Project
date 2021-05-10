@@ -464,7 +464,7 @@
     </div> <!-- AD - End of md-7 -->
   
   	<div class="col-md-3">
-   		
+   		 
 		<table class="table marginAmendment">                    
             <thead class = "tableCustom1">
                 <tr>                                                                      
@@ -475,12 +475,18 @@
                 <tr> 
                 
                 <!-- AD - Portrait Display Area -->
-                 <td class="tableAddBackground ">                
+                
+                
+ 
+                 <td class="tableAddBackground ">
+                 	<img src="img/${candidate.pic}" style="max-width: 150px;"> 
+                 	<!--                        
                     <textarea disabled rows="8" cols="20" name='pic' 
                     placeholder="Portrait Picture"
-                    style="font-weight:bold; background-color:#87CEFA;"></textarea>
-                 </td>                                     
-	                                        	                                        
+                    style="font-weight:bold; background-color:#87CEFA;">                    
+                    </textarea>
+                    -->
+                 </td>                                                               	                                        
                 </tr>	                     
             </tbody>                            
         </table>
@@ -718,7 +724,9 @@
 		    <span class="close">&times;</span>
 		    <h1>Select file to upload</h1>
 			<form name="uploadform" method="post" enctype="multipart/form-data" action="/rest/uploadservice/uploadiamge">
-				Select a file : <input type="file" name="file" accept=".jpg" /><br>
+				Select a file : 
+				<input type="file" name="file" accept=".jpg" /><br>
+				<input type="hidden" name="candidate_id" value="${candidate.candidate_id}" /><br>
 				<button onClick="submitform()">UPLOAD</button>
 			</form>
 		  </div>
