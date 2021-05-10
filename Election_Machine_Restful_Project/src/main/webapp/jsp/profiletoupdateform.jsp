@@ -62,7 +62,7 @@
     	<!-- AD - This will need fixing 
       <form action='../updatecandidate' method='post'> 
       -->
-      <form action='' method='post'> 
+      <form action='/readmyprofile' method='post'> 
                                                                                               
         <!-- AD - Responsive columns 
         
@@ -127,7 +127,6 @@
 	                        -->
 	                         <td class="tableAddBackground ">                
 	                            <input readonly type='text' class = "greyed-background"
-	                            name='candidate_id' 
 	                            placeholder="Candidate Number"
 	                            style="font-weight:bold;">
 	                         </td> 
@@ -158,14 +157,14 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='first_name' 
+	                            <input readonly type='text' 
 	                            placeholder="First Name"
 	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input required 
+	                            <input class="switch" disabled="disabled" required 
 	                            type='text' name='first_name' 
 	                            value='${requestScope.candidate.first_name }'>
 	                         </td>	                                        
@@ -191,14 +190,14 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='last_name' 
+	                            <input readonly type='text'
 	                            placeholder="Last Name"
 	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input required
+	                            <input class="switch" disabled="disabled" required
 	                            type='text' name='last_name' 
 	                            value='${requestScope.candidate.last_name }'>
 	                         </td>	                                        
@@ -222,14 +221,14 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='party' 
+	                            <input readonly type='text'
 	                            placeholder="Political Party"
 	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input required 
+	                            <input class="switch" disabled="disabled" required 
 	                            type='text' name='party' 
 	                            value='${requestScope.candidate.party }'>
 	                         </td>	                                        
@@ -253,14 +252,14 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='location' 
+	                            <input readonly type='text'
 	                            placeholder="Location"
 	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input required 
+	                            <input class="switch" disabled="disabled" required 
 	                            type='text' name='location' 
 	                            value='${requestScope.candidate.location }'>
 	                         </td>	                                        
@@ -285,17 +284,17 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='number' name='age' 
+	                            <input readonly type='number'
 	                            placeholder="Age"
 	                            class = "colourAmendment"
-	                            style="font-weight:bold; width: 50%;">
+	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input required type='number' 
+	                            <input class="switch" disabled="disabled" required type='number' 
 	                            name='age' value='${requestScope.candidate.age }' 
 	                            min="18" max="100"
-	                            style = "width: 100%;">
+	                            >
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
@@ -318,14 +317,14 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='mission' 
+	                            <input readonly type='text'
 	                            placeholder="Mission"
 	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input required 
+	                            <input class="switch" disabled="disabled" required 
 	                            type='text' name='mission' 
 	                            value='${requestScope.candidate.mission }'>
 	                         </td>	                                        
@@ -348,14 +347,14 @@
 	                    <tbody>                    
 	                        <tr>	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='vision' 
+	                            <input readonly type='text'
 	                            placeholder="Vision"
 	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input required 
+	                            <input class="switch" disabled="disabled" required 
 	                            type='text' name='vision' 
 	                            value='${requestScope.candidate.vision }'>
 	                         </td>	                                        
@@ -380,14 +379,14 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='profession' 
+	                            <input readonly type='text'
 	                            placeholder="Profession"
 	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input required 
+	                            <input class="switch" disabled="disabled" required 
 	                            type='text' name='profession' 
 	                            value='${requestScope.candidate.profession }'>
 	                         </td>	                                        
@@ -412,14 +411,14 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='username' 
+	                            <input readonly type='text'
 	                            placeholder="Username"
 	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input required
+	                            <input readonly class="greyed-background" required
 	                            type='text' name='username' 
 	                            value='${requestScope.candidate.username }'>
 	                         </td>	                                        
@@ -445,14 +444,14 @@
 	                        <tr> 
 	                        
 	                         <td class="tableAddBackground">                
-	                            <input readonly type='text' name='password' 
+	                            <input readonly type='text' 
 	                            placeholder="Password"
 	                            class = "colourAmendment"
 	                            style="font-weight:bold;">
 	                         </td> 
 	                         
 	                         <td>
-	                            <input required
+	                            <input class="switch" disabled="disabled" required
 	                            type='password' name='password'
 	                            value='${requestScope.candidate.password }'>
 	                            <!-- AD - This will need to be linked later -->	                            
@@ -499,11 +498,12 @@
                 value='${requestScope.candidate.pic }'></td>
                 
                 -->
+                
                  <td class="tableAddBackground">                
-                    <input readonly type='text' name='pic' 
+                    <input onClick="" readonly type='text' name='pic' 
                     placeholder="Upload Portrait Picture"
                     onmouseover="this.style.cursor='pointer';"
-                    class = "colourAmendment"
+                    class = "colourAmendment myBtn-class" id="popup"
                     style="font-weight:bold; text-align: center;">
                  </td>                                	                                        
                 </tr>	                     
@@ -550,7 +550,7 @@
                 
                 <td class="tableAddBackground">					 
 					 
-						<Button type = "button" id = "btnUpdateProfile" value='UPDATEvisible' onClick="toggleProfileUpdate(this)">
+						<Button type = "button" id = "btnUpdateProfile" value='UPDATEvisible' onClick="toggleProfileUpdate(this); enableAll();">
 						<b class = "tableUpdate">EDIT PROFILE</b></Button>
 						
 						<div id ="dvUpdateProfile" style="display: none">
@@ -709,7 +709,58 @@
        							    
 
         <!-- AD - End of the central (yellow container)-->
-    </div>      
+    </div> 
+    
+    <!-- The Modal -->
+	<div id="myModal" class="modal">	
+		  <!-- Modal content -->
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <h1>Select file to upload</h1>
+			<form name="uploadform" method="post" enctype="multipart/form-data" action="/rest/uploadservice/uploadiamge">
+				Select a file : <input type="file" name="file" accept=".jpg" /><br>
+				<button onClick="submitform()">UPLOAD</button>
+			</form>
+		  </div>
+	</div>
+         
+         		<script type="text/javascript">
+					function submitform()
+					{
+					  document.uploadform.submit();
+					}
+				</script>
+         		
+    			<script>
+    			
+    			// Get the modal
+                var modal = document.getElementById("myModal");
+               
+            	// Get the button that opens the modal
+				var btn = document.getElementById("popup");
+            	btn.onclick = function() {
+            		modal.style.display = "block";
+            	}
+            	
+            	//Get the span (x)
+               	var span = document.getElementsByClassName("close")[0];
+               	span.onclick = function() {
+	                   modal.style.display = "none";
+	                 }
+               	
+    			</script>
+    
+    			<script type="text/javascript">
+    				
+    				function enableAll(){
+    					
+    					var x = document.getElementsByClassName('switch');
+    					var i;
+    					for (i = 0; i < x.length; i++) {
+    					  x[i].removeAttribute("disabled");
+    					}
+            		}
+                </script>
                   
     			<!-- 			
     			
@@ -792,6 +843,7 @@
 					setInterval(refreshTime, 1000);
 					
 					</script>     
+                	
                 	
 
 	 <!-- AD - includes the footer component into this page 

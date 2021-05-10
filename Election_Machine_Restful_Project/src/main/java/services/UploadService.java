@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.URI;
 
 import javax.servlet.ServletContext;
 import javax.ws.rs.Consumes;
@@ -24,7 +25,7 @@ public class UploadService {
 	@POST
 	@Path("/uploadiamge")
 	@Consumes({MediaType.MULTIPART_FORM_DATA})
-	public Response uploadImage( @FormDataParam("file") InputStream fileInputStream,
+	public void uploadImage( @FormDataParam("file") InputStream fileInputStream,
             @FormDataParam("file") FormDataContentDisposition fileMetaData,
             @Context ServletContext sc) 
             		throws Exception
@@ -32,7 +33,8 @@ public class UploadService {
 		System.out.println("upload service started");
 		System.out.println("fileMetaData: " + fileMetaData);
 		System.out.println("fileMetaData: " + fileMetaData.getFileName());
-		String UPLOAD_PATH = System.getProperty("user.home") + "/git/ElectionMachine_Restful_Project/Election_Machine_Restful_Project/src/main/webapp/tmp/";
+		String UPLOAD_PATH = System.getProperty("user.home") + "/git/ElectionMachine_Restful_Project/Election_Machine_Restful_Project/src/main/webapp/img/";
+//		String UPLOAD_PATH = System.getProperty("user.home") + "/git/ElectionMachine_Restful_Project/Election_Machine_Restful_Project/src/main/webapp/tmp/";
 	    try{
 	        int read = 0;
 	        byte[] bytes = new byte[1024];
@@ -49,11 +51,17 @@ public class UploadService {
 	        out.flush();
 	        out.close();
 	        
+	        
+	        
 	    } 
 	    catch (IOException e){
 	        throw new WebApplicationException("Error while uploading file. Please try again !!");
 	    }
-	    return Response.ok("Data uploaded successfully !!").build();
+//	    URI location = new URI("../jsp/profiletoupdateform.jsp");
+//	    URI location = new URI("../jsp/index.jsp?msg=A_User_Added");
+//	    return Response.temporaryRedirect(location).build();
+//	    return Response.ok().link("/readmyprofile", "wdad").build();
+//	    return Response.ok("Data uploaded successfully !!").build();
 	}
 	
 	@POST
