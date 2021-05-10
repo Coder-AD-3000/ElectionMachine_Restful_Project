@@ -294,6 +294,7 @@
 	                            <input class="switch" disabled="disabled" required type='number' 
 	                            name='age' value='${requestScope.candidate.age }' 
 	                            min="18" max="100"
+	                            style="width:182.4px;"
 	                            >
 	                         </td>	                                        
 	                        </tr>	                     

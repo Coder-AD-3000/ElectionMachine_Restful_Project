@@ -238,7 +238,8 @@
 	                         <td>
 	                            <input readonly 
 	                            type='number' name='age' 
-	                            placeholder="52">
+	                            placeholder="52"
+	                            style="width:182.4px;">
 	                         </td>	                                        
 	                        </tr>	                     
 	                    </tbody>                            
