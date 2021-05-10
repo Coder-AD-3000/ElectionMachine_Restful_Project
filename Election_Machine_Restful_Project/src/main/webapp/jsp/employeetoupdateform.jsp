@@ -25,11 +25,11 @@ Version: 1
     <div class="containerMainUpdateCandidates">
         <a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>
         <div class="container6a"> 
-        <h3 class = "adminTextCorrection1">ADMIN PORTAL: Update Employees</h3>
+        <h3 class = "adminTextCorrection1">ADMIN PORTAL: Employee Data</h3>
         </div>
         <div class="container4">             
             <h5 class = "adminTextCorrection2">ADMIN NOTE: Once logged in, this page allows for a 'Global Herald Newspaper' 
-                IT Admin to update employee information.
+                IT Admin to update employee information from our Election Machine Database.
                 <br>
                 <br>
                 Regular users and candidates do not have access to this page 

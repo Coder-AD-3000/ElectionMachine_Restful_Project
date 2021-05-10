@@ -15,6 +15,9 @@
 </head>
 <body>
 
+	<!-- AD - A message in the top left to show an active session message -->
+	<div class = "adminSession"><i>Admin Session Active ${requestScope.fromfilter }</i></div>
+
     <!-- AD - includes the navbar component, into this page -->
     <%@ include file="../components/navbar.jsp" %>    
     
