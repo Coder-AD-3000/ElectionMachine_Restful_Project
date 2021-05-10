@@ -480,7 +480,7 @@
                 
                 
  
-                 <td class="tableAddBackground ">
+                 <td class="tableAddBackground profileWidthAmendment">
                  	<img class = "profilePortraitBorder" 
                  	src="img/${candidate.pic}" style="max-width: 150px;"> 
                  	<!--                        
@@ -615,7 +615,7 @@
 						
 						<div id ="dvDeleteProfile" style="display: none">							
 											  		 
-						  	<table style = "width:215px" class="table">                    
+						  	<table class="table profileWidthAmendment">                    
 				            <thead class = "tableCustom1">
 				                <tr>                                                                      
 				                    <th style = "color:#FFE4E1"><i style = "color:#ff4444">WARNING!</i> 
