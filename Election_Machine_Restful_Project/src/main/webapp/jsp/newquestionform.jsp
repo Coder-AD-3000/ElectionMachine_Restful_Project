@@ -119,7 +119,7 @@
         	<div class="containerInnerCandidatesTable1">
         	
         		<div class="containerInnerCandidatesTable2">
-					<li><b class="buttonColourMod2">New Question Number: </b>${newquestion}</li> 
+					<li><b class="buttonColourMod2">New Question Number: </b>${newquestion.newquestion}</li> 
 				</div>
 				<hr>
 				 

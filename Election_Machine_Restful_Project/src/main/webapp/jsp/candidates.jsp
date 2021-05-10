@@ -158,7 +158,7 @@
              
                 <button class="button-main button1"><a href="../index.jsp"><b>Home</b></a></button>
                 
-                <button class="button-main button1" onclick="window.location.href='/ShowQuestions'"><b>Take Quiz</b></button>
+                <button class="button-main button1" onclick="window.location.href='/readallquestion'"><b>Take Quiz</b></button>
 
             </div>
         
