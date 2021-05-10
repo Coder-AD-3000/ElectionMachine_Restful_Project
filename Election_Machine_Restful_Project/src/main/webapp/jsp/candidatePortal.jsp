@@ -34,7 +34,7 @@
                     <hr>  
                     <table>                    
                     <tr><td><b class = "adminPortal4">Access:</b><a href="/jsp/index.jsp" target="_blank"> <u><b>Home Page </b></u></a></td></tr>
-                    <tr><td><b class = "adminPortal4">Access:</b><a href="/jsp/profileform.jsp" target="_blank"> <u><b>My Profile </b></u></a></td></tr>         
+                    <tr><td><b class = "adminPortal4">Access:</b><a href="/readmyprofile" target="_blank"> <u><b>My Profile </b></u></a></td></tr>         
                     <tr><td><b class = "adminPortal4">Access:</b><a href="/answerclient" target="_blank"> <u><b>Take Questionnaire </b></u></a></td></tr>                                                
                     <tr>                    		                    
                     </tr>                   
