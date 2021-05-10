@@ -156,7 +156,7 @@
             <!-- AD - button container, containing buttons-->
             <div class="container3">
              
-                <button class="button-main button1"><a href="../index.jsp"><b>Home</b></a></button>
+                <button class="button-main button1"><a href="../jsp/index.jsp"><b>Home</b></a></button>
                 
                 <button class="button-main button1" onclick="window.location.href='/readallquestion'"><b>Take Quiz</b></button>
 
