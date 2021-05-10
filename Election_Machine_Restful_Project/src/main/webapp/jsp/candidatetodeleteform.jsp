@@ -18,7 +18,7 @@
 	<body>
 	
 	<!-- AD - A message in the top left to show an active session message -->
-	<div class = "candidateSession"><i>Candidate Session Active ${requestScope.fromfilter }</i></div>
+	<div class = "adminSession"><i>Admin Session Active ${requestScope.fromfilter }</i></div>
 	 <!-- AD - includes the navbarBootstrap component, 
     		which is modified version of our regular navbar,
     		in order to offset some negative effects
