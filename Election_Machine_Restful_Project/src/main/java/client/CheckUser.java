@@ -80,7 +80,7 @@ public class CheckUser extends HttpServlet {
 			
 			// Redirect page based on DB matches
 			if (isMatching) {
-				response.sendRedirect("/jsp/index.jsp");
+				response.sendRedirect("/jsp/candidatePortal.jsp");
 			}
 			else {
 				response.sendRedirect("/jsp/loginPage.jsp");
