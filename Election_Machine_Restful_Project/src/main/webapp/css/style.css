@@ -1551,3 +1551,7 @@ on the profile page */
 	color-stop(0.3, #264653)) 21 30 30 21 repeat repeat;	
 }
 
+.profileWidthAmendment {
+	min-width: 218.4px;	
+}
+

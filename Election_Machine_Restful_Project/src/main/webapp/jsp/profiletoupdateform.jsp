@@ -533,7 +533,7 @@
                 
                 <!-- AD - Displays Current time and date
                 		 via the utilisation of a JS script -->
-                 <td class="tableAddBackground">
+                 <td class="tableAddBackground profileWidthAmendment">
                  	Time and date (Europe / Helsinki):                
                     <textarea id="displayTimeAndDate"                    
                     disabled rows="1" cols="18" name='pic'                    
@@ -568,7 +568,7 @@
 					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Profile Changes?</b></p>	
 					  		-->
 					  		
-					  		<table style = "width:215px" class="table">                    
+					  		<table class="table profileWidthAmendment">                    
 				            <thead class = "tableCustom1">
 				                <tr>                                                                      
 				                    <th><i style = "color:#cfdefe">NOTICE!</i> - You are about to update your profile.
