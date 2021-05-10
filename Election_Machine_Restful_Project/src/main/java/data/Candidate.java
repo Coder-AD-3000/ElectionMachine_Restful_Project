@@ -6,8 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedNativeQuery;
-import javax.persistence.Table;
 import javax.persistence.Transient;
 
 /**
@@ -15,10 +13,6 @@ import javax.persistence.Transient;
  *
  */
 @Entity
-@Table(name = "candidate")
-@NamedNativeQuery(
-    name = "Candidate.updatePicOnly",
-    query = "SET pic FROM candidate WHERE candidate_id=?")
 public class Candidate {
 	
 	/**
@@ -42,6 +36,8 @@ public class Candidate {
 	// Transient will prevent this attribute being persisted
 	@Transient
 	private List<Question> questionList;
+	@Transient
+	private int totalScore;
 	
 	public Candidate() {
 		
@@ -297,6 +293,20 @@ public class Candidate {
 		this.role = role;
 	}
 	
+	/**
+	 * @return totalScore
+	 */
+	public int getTotalScore() {
+		return totalScore;
+	}
+
+	/**
+	 * @param totalScore is the score calculated while comparing answers with the voter
+	 */
+	public void setTotalScore(int totalScore) {
+		this.totalScore = totalScore;
+	}
+	
 	public String toString() {
 		return this.candidate_id + ": "
 		+ this.first_name + " / " 
@@ -311,6 +321,8 @@ public class Candidate {
 		+ this.username + " / "
 		+ this.password;
 	}
+
+
 
 	
 }

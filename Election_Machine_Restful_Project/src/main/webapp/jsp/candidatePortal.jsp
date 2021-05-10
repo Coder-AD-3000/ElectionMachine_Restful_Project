@@ -15,6 +15,9 @@
 </head>
 <body>
 
+	<!-- AD - A message in the top left to show an active session message -->
+	<div class = "candidateSession"><i>Candidate Session Active ${requestScope.fromfilter }</i></div>
+
     <!-- AD - includes the navbar component, into this page -->
     <%@ include file="../components/navbar.jsp" %>    
 
@@ -34,8 +37,8 @@
                     <hr>  
                     <table>                    
                     <tr><td><b class = "adminPortal4">Access:</b><a href="/jsp/index.jsp" target="_blank"> <u><b>Home Page </b></u></a></td></tr>
-                    <tr><td><b class = "adminPortal4">Access:</b><a href="/jsp/profileform.jsp" target="_blank"> <u><b>My Profile </b></u></a></td></tr>         
-                    <tr><td><b class = "adminPortal4">Access:</b><a href="/answerclient" target="_blank"> <u><b>Take Questionnaire </b></u></a></td></tr>                                                
+                    <tr><td><b class = "adminPortal4">Access:</b><a href="/readmyprofile" target="_blank"> <u><b>My Profile </b></u></a></td></tr>         
+                    <tr><td><b class = "adminPortal4">Access:</b><a href="/readallquestion" target="_blank"> <u><b>Take Questionnaire </b></u></a></td></tr>                                                
                     <tr>                    		                    
                     </tr>                   
                     </table>

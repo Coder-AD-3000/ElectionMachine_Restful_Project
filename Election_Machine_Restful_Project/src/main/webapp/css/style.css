@@ -1523,4 +1523,18 @@ on the adminUpdateCandidate page */
   background: linear-gradient(0deg, #E76F51, 70%, #F4A261);
 }
 
+/* AD - adjustments to the candidate portraits 
+on the candidate page */
+.imageCandidateResize {
+  margin: 20px 0px 0px 30px;
+  max-width: 25%;
+  padding: 1rem;
+  color: white;
+  border-width: 1px;
+  border-style: solid;
+ -webkit-border-image: 
+	-webkit-gradient(linear, left top, left bottom, 
+	from(#F4A261), to(#E9C46A), color-stop(0.3, #E9C46A), 
+	color-stop(0.3, #264653)) 21 30 30 21 repeat repeat; 
+}
 

@@ -17,7 +17,7 @@
 <body>
 
 	<!-- EK - A message in the top left to show an active session message -->
-	<div class = "adminSession"><i>Admin Session Active ${requestScope.fromfilter }</i></div> 
+	<div class = "adminSession"><i>Admin Session Active ${requestScope.fromfilter}</i></div> 
 
     <!-- EK - includes the navbarBootstrap component, 
     		which is modified version of our regular navbar,
@@ -32,14 +32,19 @@
         
         <!-- EK - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
-        <h3 class = "adminTextCorrection1">ADMIN PORTAL: Update Candidates</h3>
+        <h3 class = "adminTextCorrection1">ADMIN PORTAL: New Questions Data</h3>
         </div>
        
         <!-- EK - A small container to amend the admin note background section-->
         <div class="container4">             
             <!-- EK - Introductory statement about the ADMIN: Update Candidates page -->
-            <h5 class = "adminTextCorrection2">ADMIN NOTE: Once logged in, this page allows for a 'Global Herald Newspaper' 
-                IT Admin to add, edit and remove candidate information.
+            <h5 class = "adminTextCorrection2">ADMIN NOTE: Once logged in, this page allows for a 
+                'Global Herald Newspaper' IT Admin to add, edit and remove new questions for eventual 
+                inclusion into the Election Machine questionnaire. 
+                <br><br>
+                The new questions will initially be stored for review in our developmental database. 
+                Upon successful review and approval, the approved new questions will be transferred to
+                the live questionnaire, before the beginning of the next questionnaire cycle.
                 <br><br>
                 Regular users and candidates do not have access to this page 
                 (or its functionality).
@@ -100,7 +105,7 @@
 			
 			
 		<ol>
-			<c:forEach var="newquestion" items="${requestScope.newquestionlist }">
+			<c:forEach var="newquestion" items="${requestScope.newquestionlist}">
 			
 			<table class="table">                    
 	                <thead class = "tableCustom1">
@@ -114,7 +119,7 @@
         	<div class="containerInnerCandidatesTable1">
         	
         		<div class="containerInnerCandidatesTable2">
-					<li><b class="buttonColourMod2">New Question Number: </b>${newquestion}</li> 
+					<li><b class="buttonColourMod2">New Question Number: </b>${newquestion.newquestion}</li> 
 				</div>
 				<hr>
 				 
