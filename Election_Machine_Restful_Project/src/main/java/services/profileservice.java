@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -43,6 +44,21 @@ public class profileservice {
 		}
 		entitymanager.getTransaction().commit();
 		//Calling the method readCandidate() of this service		
+	}
+	
+	@DELETE
+	@Path("/deletecandidate/{candidate_id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void deleteCandidate(@PathParam("candidate_id") int candidate_id) {
+		EntityManager entitymanager=emf.createEntityManager();
+		entitymanager.getTransaction().begin();
+		Candidate cand = entitymanager.find(Candidate.class, candidate_id);
+		if (cand!=null) {
+			entitymanager.remove(cand);//The actual insertion line
+		}
+		entitymanager.getTransaction().commit();	
 	}	
+	
 
 }

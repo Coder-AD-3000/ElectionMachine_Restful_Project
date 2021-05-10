@@ -118,7 +118,9 @@
 						<td><input required type='number' name='age' placeholder="Number" value='' min="18" max="100"></td>  
 						<td><input required type='text' name='mission' placeholder="Cannot be blank" value=''></td>  
 						<td><input required type='text' name='vision' placeholder="Cannot be blank" value=''></td>  
-				        <td><input readonly class="greyed-background" type='text' name='pic' placeholder="Portrait pic will go here" value=''></td>  
+				        <td><input readonly class="greyed-background" type='text' name='pic' 
+						        	placeholder="Portrait pic will go here" value='default.jpg'></td> 
+						        	<!-- DK: should be changed if image is altered. -->  
 				        <td><input required type='text' name='profession' placeholder="Cannot be blank" value=''></td>   
 						<td><input required type='text' name='username' placeholder="Cannot be blank" value=''></td>  
 						<td><input required type='text' name='password' placeholder="Cannot be blank" value=''></td>	                        
