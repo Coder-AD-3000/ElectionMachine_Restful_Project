@@ -49,18 +49,19 @@
         <hr>
         
         
+        <!-- AD - This is the Example Container (with a default picture) -->
         <div class="container8">
             <!-- AD - Intro / overview statement about the candidates -->
             <div class = "containerDynamicCandidate" >
                
               <h3 class = "customCandidateHeading1 customCandidateText1">    
               <c:out value = "Mikko Savolainen - Centrist party"/>
-                  
-                <img class = "imageCandidateResize" src = "/img/default.jpg"> 
-                          	            	
+                 
+                <br>   
+                <img class = "imageCandidateResize" src = "/img/default.jpg">                          	            	
             	</h3>            	
                	<hr>
-               	
+               	               	
                	<h5>
                	<i class = "customCandidateText2">
                 Age:
@@ -87,11 +88,7 @@
                
             </div>
         </div>
-        
-        
-        
-        
-        
+  
          
         <!-- AD - Candidate 1 intro colourings and text -->
         <c:forEach begin="1" var="candidate" items="${requestScope.candidatelist}">

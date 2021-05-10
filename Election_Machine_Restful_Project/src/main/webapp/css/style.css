@@ -1523,6 +1523,52 @@ on the adminUpdateCandidate page */
   background: linear-gradient(0deg, #E76F51, 70%, #F4A261);
 }
 
+/* AD - adjustments to the candidate portraits 
+on the candidate page */
 .imageCandidateResize {
-	min-width: 200px;
+  margin: 20px 0px 0px 30px;
+  max-width: 25%;
+  padding: 1rem;
+  color: white;
+  border-width: 1px;
+  border-style: solid;
+ -webkit-border-image: 
+	-webkit-gradient(linear, left top, left bottom, 
+	from(#F4A261), to(#E9C46A), color-stop(0.3, #E9C46A), 
+	color-stop(0.3, #264653)) 21 30 30 21 repeat repeat;
+	/*
+	linear-gradient(270deg, #264653, 30%, #2A9D8F)
+	 max-width: 250px;
+	  padding: 1rem;
+	  color: white;
+	  border-width: 3px;
+	  border-style: solid;
+	  border-image: 
+    linear-gradient(
+      to bottom, 
+      red, 
+      rgba(0, 0, 0, 0)
+    ) 1 100%;
+    
+	
+	-webkit-border-image: 
+	-webkit-gradient(linear, left top, left bottom, 
+	from(#00abeb), to(#fff), color-stop(0.5, #fff), 
+	color-stop(0.5, #66cc00)) 21 30 30 21 repeat repeat;
+	
+	
+	
+	
+	width: 30%;
+	margin: 20px 0px 0px 30px;	
+	border-radius: 10px;	
+	padding:1px;
+	border: 5px solid linear-gradient(0deg,#F4A261, 10%, #E9C46A);
+	
+	
+	
+	border: 5px solid linear-gradient(0deg,#F4A261, 10%, #E9C46A);
+	
+	*/	 	 
 }
+
