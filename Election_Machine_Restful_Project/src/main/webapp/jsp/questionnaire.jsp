@@ -113,7 +113,11 @@
                                     </label>
                                     <label> <b>(5)</b>
                                     <input type = "radio" name = "selected${question.id}" value = "5" required>
-                                    </label>                                                                                         
+                                    </label>
+                                    <!-- DK - used in score assessmnet! -->
+                                    <input type = "hidden" name = "min_answer" value = "1">
+                                    <input type = "hidden" name = "max_answer" value = "5"> 
+                                                                                                                             
 							</div>						
 	        		    
 	        		    </c:forEach> <!-- AD End of forEach loop -->         		        		    

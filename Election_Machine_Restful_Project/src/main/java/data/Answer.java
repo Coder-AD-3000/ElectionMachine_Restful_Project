@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.TableGenerator;
 import javax.persistence.Transient;
 
 /**
@@ -16,22 +15,9 @@ import javax.persistence.Transient;
 @Entity
 public class Answer {
 	
-	
-	/**
-	 * AD - Id specifies the primary key of an entity
-	 */
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.SEQUENCE)
-	
-//	@Id 
-//	@GeneratedValue(strategy=GenerationType.TABLE) 
-	
 	@Id 
 	@GeneratedValue(strategy=GenerationType.AUTO) 
-	
+	private int answer_id;
 	private int question_id;
 	private int candidate_id;
 	private int answer;
@@ -67,7 +53,14 @@ public class Answer {
 		this.question_id = question_id;
 		this.answer = Integer.parseInt(answer);
 	}
-	 
+	
+	public int getAnswerId() {
+		return answer_id;
+	}
+	public void setAnswerId(int answer_id) {
+		this.answer_id = answer_id;
+	}
+	
 	public int getCandidateId() {
 		return candidate_id;
 	}

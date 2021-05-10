@@ -23,10 +23,10 @@ import data.Question;
 
 @WebServlet(urlPatterns = {"answerclient", "/addallanswer", "/showresults"})
 public class AnswerClient extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	  private static final long serialVersionUID = 1L;
 	
 
-	@Override
+	  @Override
 	  public void doPost(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
 		  doGet(request, response);
@@ -41,10 +41,10 @@ public class AnswerClient extends HttpServlet {
 //		  Read all questions
 		  List<Question> questionList = readAllQuestion(request);
 		  
-//		  Read all answers
-		  List<Answer> answerList = getAllAnswer(request, questionList);
+//		  Collect all the submitted answers
+		  List<Answer> answerListSubmitted = getAllAnswer(request, questionList);
 		  
-		  for (Answer answer : answerList) {
+		  for (Answer answer : answerListSubmitted) {
 			System.out.println("answer: " + answer.getAnswer());
 		}
 	
@@ -56,27 +56,66 @@ public class AnswerClient extends HttpServlet {
 		  
 		  switch (role) {
 //		  Voter's answers will be evaluated and matched
-		  default:
-//			  Read all answers from DB
-			  
+		  default:			  
 //			  Read all candidates profile from DB (stacked data)
 			  List<Candidate> candidateListStacked = readAllCandidates(request);
+			  
+//			  Assess questionnaire
 			  for (Candidate c : candidateListStacked) {
+//				  Will be used for questionnaire evaluation
+				  int score = 0;
+				  
+//				  Print to console
+				  System.out.println("****************************** CANDIDATE ********************************");
+				  System.out.println("candidate: " + c);
+				  System.out.println("*************************************************************************");
 //				  Getting candidate_id and reading associated answers from DB
 				  int candidateId = c.getCandidate_id();
 				  List<Answer> oneCandidateAnswers = readOneCandidateAnswers(request, candidateId);
-				  System.out.println("answers of " + candidateId + oneCandidateAnswers);
-				  
-			}
 			  
-
+				  
+//				  For each candidate the ans will be listed and compared
+				  for (Answer answer : oneCandidateAnswers) {
+//					  Print to console
+					  System.out.println("answer id: " + answer.getAnswerId() 
+					  + " - question id: " + answer.getQuestionId() 
+					  + " - candidate id: " + answer.getCandidateId() 
+					  + " - answer: " + answer.getAnswer());
+					  System.out.println("======================================================");		
+				  }  
+				  
+				  
+				  for (int i = 0; i < oneCandidateAnswers.size(); i++) {
+					  Answer answerC = oneCandidateAnswers.get(i);
+					  Answer answerV = answerListSubmitted.get(i);
+  
+					  if (answerC.getQuestionId() == answerV.getQuestionId()) {
+						  score = score + Math.abs(answerV.getAnswer() - answerC.getAnswer()); 
+					  }
+					  else {
+						  System.out.println("Question IDs are not matching!");
+					  }
+				  }
+//				  Amend candidate data with total score value
+				  int numberOfQuestions = questionList.size();
+				  int maxDiffPerQuestion = Integer.parseInt(request.getParameter("max_answer")) - Integer.parseInt(request.getParameter("min_answer"));
+				  int maxPossibleScore = maxDiffPerQuestion * numberOfQuestions;				  
+				  int scoreInPercent = 100 - (100 * score / maxPossibleScore); // smallest score means better accuracy
+				  
+				  c.setTotalScore(scoreInPercent);
+				  System.out.println("Candidate ID: " + c.getCandidate_id() + " -> Score is: " + scoreInPercent + "%");
+				  
+  
+			  }
+			  
+			  
 			  break;
 //		  Candidate's answers will be saved in the DB		  
 		  case "candidate":
 //			  list = addAllAnswer(request);
-			  addAllAnswer(request, answerList);
+			  addAllAnswer(request, answerListSubmitted);
 			  System.out.println("Case: addallanswer");
-			  System.out.println("ArrList: " + answerList);
+			  System.out.println("ArrList: " + answerListSubmitted);
 			  break;
 	  }
   }
@@ -193,7 +232,7 @@ public class AnswerClient extends HttpServlet {
 	  }
 	  
 	  private List<Answer> readOneCandidateAnswers(HttpServletRequest request, int candidate_id) {
-			String uri = "http://127.0.0.1:8080/rest/candidateservice/readtodeletecandidate/"+candidate_id;
+			String uri = "http://127.0.0.1:8080/rest/answerservice/readonecandidateanswers/"+candidate_id;
 			Client client = ClientBuilder.newClient();
 			WebTarget webtarget = client.target(uri);
 			Builder builder = webtarget.request();

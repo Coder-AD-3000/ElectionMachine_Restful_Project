@@ -36,6 +36,7 @@ public class Candidate {
 	// Transient will prevent this attribute being persisted
 	@Transient
 	private List<Question> questionList;
+	@Transient
 	private int totalScore;
 	
 	public Candidate() {
