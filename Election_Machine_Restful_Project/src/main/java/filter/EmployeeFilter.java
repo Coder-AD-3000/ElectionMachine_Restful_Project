@@ -24,7 +24,7 @@ import javax.servlet.http.HttpSession;
 				DispatcherType.ERROR
 		}
 		, urlPatterns = { "/jsp/candidatePortal.jsp","/jsp/imageuploadform.jsp","/jsp/profileform.jsp"
-				,"/jsp/profiletoupdateform.jsp"})
+				,"/jsp/profiletoupdateform.jsp","/jsp/questionnaire.jsp","/jsp/questionnaireResults.jsp"})
 public class EmployeeFilter implements Filter {
 
     /**

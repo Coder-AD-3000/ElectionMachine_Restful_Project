@@ -25,7 +25,7 @@ import javax.servlet.http.HttpSession;
 		}
 		, urlPatterns = { "/jsp/adminPortal.jsp","/jsp/adminUpdateCandidates.jsp","/jsp/adminNewQuestions.jsp"
 				,"/jsp/newquestiontoupdateform.jsp","/jsp/candidatetodeleteform.jsp","/jsp/newquestionform.jsp"
-				,"/jsp/candidatetoupdateform.jsp","/jsp/employeeform.jsp","/jsp/employeetoupdateform.jsp"})
+				,"/jsp/candidatetoupdateform.jsp","/jsp/employeeform.jsp","/jsp/employeetoupdateform.jsp","/jsp/questionnaireResults.jsp"})
 //, urlPatterns = { "/jsp/adminPortal.jsp","/jsp/adminUpdateCandidates.jsp", "/rest/candidateservice/*" })
 public class CandidateFilter implements Filter {
 
