@@ -41,43 +41,7 @@
 	            that suits you best. Carry on reading below to review your answers.
 	            <br>           
 	        </h5>
-        </div>
-        
-        <!-- AD - Start of the User Answers section-->
-
-            <div class="container7b">
-                <h6 class = "textRestyle1">Your answers (click to view):</h6>
-            </div>  
-
-            <!-- AD - button container, containing the UserResults 
-            ShowHide Toggle button -->
-            <div class="container3">
-
-                <input class = "buttonShowHide2 button1" id = "btnUserResults" 
-                type="button" value="ANSWERS" onclick="ShowHideToggle4(this)" >                
-
-            </div>
-            <br>
-                
-
-  <!-- AD - This 'hidden div' shows the User Results (answers).
-            The div becomes visible once the 'ANSWERS'
-            button is pressed. Conversely, the div disappears once the
-            button is pressed again (toggle button).-->
-            <div id="dvUserResults" style="display: none">
-				<p>Answers</p>
-				<c:forEach var="question" items="${requestScope.questionList}" >
-                <div class="containerUserAnswers">
-          
-                    <h5><c:out value = "${question.questionId}/${fn:length(requestScope.selectionList)} - ${question.question}"/>
-                        <br><br>
-                        Your answer (number): <c:out value = "${question.answer}"/>  
-                    </h5>
-         
-                </div>
-				</c:forEach>               
-            </div>
-            
+        </div>                  
 
             <!-- AD - This container customises the heading to the candidate overviews-->
             <hr>        

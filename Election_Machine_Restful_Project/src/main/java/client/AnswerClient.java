@@ -36,6 +36,8 @@ public class AnswerClient extends HttpServlet {
 	  @Override
 	  public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
+//		  ************ GET SESSION DATA ********************************************************************************************
+		  
 //		  ************ COLLECT ANSWERS AND QUESTIONS *******************************************************************************
 		  System.out.println("AnswerClient.java");
 		  
@@ -120,7 +122,7 @@ public class AnswerClient extends HttpServlet {
 					  userId, 
 					  questionId, 
 					  answerValue, 
-					  "candidate answer");
+					  "Answer to question");
 			  answers.add(a);
 			  }
 			  // For regular users (voters)
