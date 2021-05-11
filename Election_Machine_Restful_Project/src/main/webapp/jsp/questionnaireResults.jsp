@@ -71,7 +71,7 @@
                         button is pressed again (toggle button).-->
                 <div id="dvCandResults1" style="display: none">               
                     <div class="container6">         
-                        <h5 ><b class = "customMatchHeading">1st Place Match</b> (<b class = "customPercentage"><c:out value="${requestScope.candidate_1st.totalScore}%"></c:out></b>):                        
+                        <h5><b class = "customMatchHeading">1st Place Match</b> (<b class = "customPercentage"><c:out value="${requestScope.candidate_1st.totalScore}%"></c:out></b>):                        
                         <c:out value="${requestScope.candidate_1st.first_name} ${requestScope.candidate_1st.last_name} - ${requestScope.candidate_1st.party}"></c:out>                  
                             <br>
                             <br>
@@ -142,7 +142,7 @@
                 <div id="dvCandResults2" style="display: none">             
                     <!-- AD - This section shows the top suitable candidate(s)-->
                     <div class="container6">         
-                        <h5>2nd Place Match (<c:out value="${requestScope.candidate_2nd.totalScore}%"></c:out>):
+                        <h5><b class = "customMatchHeading">2nd Place Match</b> (<b class = "customPercentage"><c:out value="${requestScope.candidate_2nd.totalScore}%"></c:out></b>):
                         <c:out value="${requestScope.candidate_2nd.first_name} ${requestScope.candidate_2nd.last_name} - ${requestScope.candidate_2nd.party}"></c:out>                  
                             <br>
                             <br>
@@ -216,7 +216,7 @@
                 
                     <!-- AD - This section shows the top suitable candidate(s)-->
                     <div class="container6">         
-                        <h5>3rd Place Match (<c:out value="${requestScope.candidate_3rd.totalScore}%"></c:out>):
+                        <h5><b class = "customMatchHeading">3rd Place Match</b> (<b class = "customPercentage"><c:out value="${requestScope.candidate_3rd.totalScore}%"></c:out></b>):
                         <c:out value="${requestScope.candidate_3rd.first_name} ${requestScope.candidate_3rd.last_name} - ${requestScope.candidate_3rd.party}"></c:out>                  
                             <br>
                             <br>

@@ -1616,27 +1616,13 @@ on the login page */
     color: rgba(255, 255, 255, 0.829);
     box-shadow: 0 2px 16px 2px #264653; 
     background: linear-gradient(0deg, rgb(91, 59, 180), 90%, rgb(168, 168, 241)); 
-    padding: 3px 10px 3px 13px;
-    
-    /*
-    
-    background: linear-gradient(0deg, rgb(91, 59, 180), 90%, rgb(168, 168, 241));
-    border: none;
-    color: rgba(255, 255, 255, 0.829);
-    
-    
-    
-    
-    color: rgba(255, 255, 255, 0.829);
-    box-shadow: 0 2px 16px 2px #264653; 
-    background: linear-gradient(270deg, #264653, 30%, #2A9D8F);  
-    */
-   
+    padding: 3px 10px 3px 13px;   
 }
 
 .customMatchHeading {
 	color: rgba(255, 255, 255, 0.829);
 	background: linear-gradient(0deg, rgb(91, 59, 180), 90%, rgb(168, 168, 241));
-	padding: 3px 10px 3px 13px;     	
+	padding: 3px 10px 3px 13px;
+	border-radius: 10px;      	
 }
 
