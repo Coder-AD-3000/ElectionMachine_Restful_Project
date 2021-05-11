@@ -79,7 +79,10 @@ public class AnswerClient extends HttpServlet {
 			  request.setAttribute("candidate_2nd", scoredCandidateListStacked.get(1));
 			  request.setAttribute("candidate_3rd", scoredCandidateListStacked.get(2));
 			  
-//			  5) Forward top 3 candidates
+//			  5) Store voter's answers as attribute
+			  request.setAttribute("answerListVoter", answerListSubmitted);
+			  
+//			  6) Forward top 3 candidates
 			  RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/jsp/questionnaireResults.jsp"); 
 			  dispatcher.forward(request, response);
 			  

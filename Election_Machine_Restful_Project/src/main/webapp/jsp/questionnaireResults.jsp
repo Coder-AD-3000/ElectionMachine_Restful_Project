@@ -65,7 +65,7 @@
             button is pressed. Conversely, the div disappears once the
             button is pressed again (toggle button).-->
             <div id="dvUserResults" style="display: none">
-				
+				<p>Answers</p>
 				<c:forEach var="question" items="${requestScope.questionList}" >
                 <div class="containerUserAnswers">
           
@@ -75,8 +75,7 @@
                     </h5>
          
                 </div>
-				</c:forEach>
-                
+				</c:forEach>               
             </div>
             
 
@@ -107,23 +106,23 @@
                         button is pressed again (toggle button).-->
                 <div id="dvCandResults1" style="display: none">               
                     <div class="container6">         
-                        <h5>1st Place Match:
-                        <c:out value="${requestScope.profile_1st.FName} ${requestScope.profile_1st.SName} - ${requestScope.profile_1st.party}"></c:out>                  
+                        <h5>1st Place Match (<c:out value="${requestScope.candidate_1st.totalScore}%"></c:out>):                        
+                        <c:out value="${requestScope.candidate_1st.first_name} ${requestScope.candidate_1st.last_name} - ${requestScope.candidate_1st.party}"></c:out>                  
                             <br>
                             <br>
                             <hr>
                             <br>
                             
-							Age: <c:out value="${requestScope.profile_1st.age}"></c:out>
+							Age: <c:out value="${requestScope.candidate_1st.age}"></c:out>
 							<br>
-							Occupation: <c:out value="${requestScope.profile_1st.profession}"></c:out>
+							Occupation: <c:out value="${requestScope.candidate_1st.profession}"></c:out>
 							<br>
-                            Location: <c:out value="${requestScope.profile_1st.location}"></c:out>
+                            Location: <c:out value="${requestScope.candidate_1st.location}"></c:out>
                             <br>
                             <br>
-                            Goals: <c:out value="${requestScope.profile_1st.goals}"></c:out>
+                            Goals: <c:out value="${requestScope.candidate_1st.vision}"></c:out>
                             <br><br>
-                           	Reason: <c:out value="${requestScope.profile_1st.reason}"></c:out>
+                           	Reason: <c:out value="${requestScope.candidate_1st.mission}"></c:out>
                            	<br>
                            	<br>
                            	<hr>
@@ -143,32 +142,16 @@
 	            button is pressed. Conversely, the div disappears once the
 	            button is pressed again (toggle button).-->
 	            <div id="dvCompareResults" style="display: none">
-	
-	                <div class="containerCompareAnswers">
-	          
-	                    <h5>Q1: "I think that parliament should do more for the environment..."
-	                        <br><br>
-	                        Your answer (number): 4    
-	                    </h5>
-	                    
-	                </div>
-	
-	                <div class="containerCompareAnswers">
-	
-	                    <h5>Q2: "I think that parliament should do more for the environment..."
-	                        <br><br>
-	                        Your answer (number): 3    
-	                    </h5>
-	                </div>
-	                
-	                <div class="containerCompareAnswers">
-	                   
-	                    <h5>Q3: "I think that parliament should do more for the environment..."
-	                        <br><br>
-	                        Your answer (number): 1   
-	                    </h5>
-	                </div>               
-	
+            		<c:forEach var="question" items="${requestScope.candidate_1st.questionList}" >
+	                    <div class="containerCompareAnswers">
+		                    <h5><c:out value = "${question.id}) ${question.question}"/>
+		                        <br><br>
+		                        Your answer: <c:out value = "${requestScope.answerListVoter[question.id-1].answer}"/>
+		                        <br>
+		                        Candidate's answer: <c:out value = "${requestScope.candidate_1st.answerList[question.id-1].answer}"/>  
+		                    </h5>
+	                    </div>
+					</c:forEach>
 	            </div>             
 
 
@@ -179,23 +162,23 @@
                 <div id="dvCandResults2" style="display: none">             
                     <!-- AD - This section shows the top suitable candidate(s)-->
                     <div class="container6">         
-                        <h5>2nd Place Match:
-                        <c:out value="${requestScope.profile_2nd.FName} ${requestScope.profile_2nd.SName} - ${requestScope.profile_2nd.party}"></c:out>                  
+                        <h5>2nd Place Match (<c:out value="${requestScope.candidate_2nd.totalScore}%"></c:out>):
+                        <c:out value="${requestScope.candidate_2nd.first_name} ${requestScope.candidate_2nd.last_name} - ${requestScope.candidate_2nd.party}"></c:out>                  
                             <br>
                             <br>
                             <hr>
                             <br>
                             
-							Age: <c:out value="${requestScope.profile_2nd.age}"></c:out>
+							Age: <c:out value="${requestScope.candidate_2nd.age}"></c:out>
 							<br>
-							Occupation: <c:out value="${requestScope.profile_2nd.profession}"></c:out>
+							Occupation: <c:out value="${requestScope.candidate_2nd.profession}"></c:out>
 							<br>
-                            Location: <c:out value="${requestScope.profile_2nd.location}"></c:out>
+                            Location: <c:out value="${requestScope.candidate_2nd.location}"></c:out>
                             <br>
                             <br>
-                            Goals: <c:out value="${requestScope.profile_2nd.goals}"></c:out>
+                            Goals: <c:out value="${requestScope.candidate_2nd.vision}"></c:out>
                             <br><br>
-                           	Reason: <c:out value="${requestScope.profile_2nd.reason}"></c:out>
+                           	Reason: <c:out value="${requestScope.candidate_2nd.mission}"></c:out>
                            	<br>
                            	<br>
                            	<hr>
@@ -217,33 +200,17 @@
 	            button is pressed. Conversely, the div disappears once the
 	            button is pressed again (toggle button).-->
 	            <div id="dvCompareResults2" style="display: none">
-	
-	                <div class="containerCompareAnswers">
-	          
-	                    <h5>Q1: "I think that parliament should do more for the environment..."
-	                        <br><br>
-	                        Your answer (number): 4    
-	                    </h5>
-	                    
-	                </div>
-	
-	                <div class="containerCompareAnswers">
-	
-	                    <h5>Q2: "I think that parliament should do more for the environment..."
-	                        <br><br>
-	                        Your answer (number): 3    
-	                    </h5>
-	                </div>
-	                
-	                <div class="containerCompareAnswers">
-	                   
-	                    <h5>Q3: "I think that parliament should do more for the environment..."
-	                        <br><br>
-	                        Your answer (number): 1   
-	                    </h5>
-	                </div>               
-	
-	            </div>  
+            		<c:forEach var="question" items="${requestScope.candidate_2nd.questionList}" >
+	                    <div class="containerCompareAnswers">
+		                    <h5><c:out value = "${question.id}) ${question.question}"/>
+		                        <br><br>
+		                        Your answer: <c:out value = "${requestScope.answerListVoter[question.id-1].answer}"/>
+		                        <br>
+		                        Candidate's answer: <c:out value = "${requestScope.candidate_2nd.answerList[question.id-1].answer}"/>  
+		                    </h5>
+	                    </div>
+					</c:forEach>
+	            </div>   
                      
 
                 <!-- AD - This 'hidden div' shows the 3rd place suitable candidate.
@@ -254,23 +221,23 @@
                 
                     <!-- AD - This section shows the top suitable candidate(s)-->
                     <div class="container6">         
-                        <h5>3rd Place Match:
-                        <c:out value="${requestScope.profile_3rd.FName} ${requestScope.profile_3rd.SName} - ${requestScope.profile_3rd.party}"></c:out>                  
+                        <h5>3rd Place Match (<c:out value="${requestScope.candidate_3rd.totalScore}%"></c:out>):
+                        <c:out value="${requestScope.candidate_3rd.first_name} ${requestScope.candidate_3rd.last_name} - ${requestScope.candidate_3rd.party}"></c:out>                  
                             <br>
                             <br>
                             <hr>
                             <br>
                             
-							Age: <c:out value="${requestScope.profile_3rd.age}"></c:out>
+							Age: <c:out value="${requestScope.candidate_3rd.age}"></c:out>
 							<br>
-							Occupation: <c:out value="${requestScope.profile_3rd.profession}"></c:out>
+							Occupation: <c:out value="${requestScope.candidate_3rd.profession}"></c:out>
 							<br>
-                            Location: <c:out value="${requestScope.profile_3rd.location}"></c:out>
+                            Location: <c:out value="${requestScope.candidate_3rd.location}"></c:out>
                             <br>
                             <br>
-                            Goals: <c:out value="${requestScope.profile_3rd.goals}"></c:out>
+                            Goals: <c:out value="${requestScope.candidate_3rd.vision}"></c:out>
                             <br><br>
-                           	Reason: <c:out value="${requestScope.profile_3rd.reason}"></c:out>
+                           	Reason: <c:out value="${requestScope.candidate_3rd.mission}"></c:out>
                            	<br>
                            	<br>
                            	<hr>
@@ -294,32 +261,16 @@
 	            button is pressed. Conversely, the div disappears once the
 	            button is pressed again (toggle button).-->
 	            <div id="dvCompareResults3" style="display: none">
-	
-	                <div class="containerCompareAnswers">
-	          
-	                    <h5>Q1: "I think that parliament should do more for the environment..."
-	                        <br><br>
-	                        Your answer (number): 4    
-	                    </h5>
-	                    
-	                </div>
-	
-	                <div class="containerCompareAnswers">
-	
-	                    <h5>Q2: "I think that parliament should do more for the environment..."
-	                        <br><br>
-	                        Your answer (number): 3    
-	                    </h5>
-	                </div>
-	                
-	                <div class="containerCompareAnswers">
-	                   
-	                    <h5>Q3: "I think that parliament should do more for the environment..."
-	                        <br><br>
-	                        Your answer (number): 1   
-	                    </h5>
-	                </div>               
-	
+            		<c:forEach var="question" items="${requestScope.candidate_3rd.questionList}" >
+	                    <div class="containerCompareAnswers">
+		                    <h5><c:out value = "${question.id}) ${question.question}"/>
+		                        <br><br>
+		                        Your answer: <c:out value = "${requestScope.answerListVoter[question.id-1].answer}"/>
+		                        <br>
+		                        Candidate's answer: <c:out value = "${requestScope.candidate_3rd.answerList[question.id-1].answer}"/>  
+		                    </h5>
+	                    </div>
+					</c:forEach>
 	            </div> 
  
 
