@@ -36,9 +36,10 @@
 	        <h5>Thank you for successfully completing our questionnaire!
 	            This section covers your results.
 	            <br><br>
-	            By analysing your questionnaire answers, this election machine 
-	            utilises innovative algorithm techniques to match you with the candidate 
-	            that suits you best. Carry on reading below to review your answers.
+	            By analysing your questionnaire answers, this Election Machine 
+	            utilises innovative algorithm techniques to match you with the 
+	            top three candidates that best align to your political views. 
+	            Carry on reading below to review your results.
 	            <br>           
 	        </h5>
         </div>                  
