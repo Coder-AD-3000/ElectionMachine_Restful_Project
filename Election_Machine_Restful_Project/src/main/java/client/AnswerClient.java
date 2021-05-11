@@ -3,6 +3,7 @@ package client;
 import java.io.*;
 import java.util.*;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,6 +36,8 @@ public class AnswerClient extends HttpServlet {
 	  @Override
 	  public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
+//		  ************ GET SESSION DATA ********************************************************************************************
+		  
 //		  ************ COLLECT ANSWERS AND QUESTIONS *******************************************************************************
 		  System.out.println("AnswerClient.java");
 		  
@@ -57,57 +60,33 @@ public class AnswerClient extends HttpServlet {
 		  switch (role) {
 //		  Voter's answers will be evaluated and matched
 		  default:			  
-//			  Read all candidates profile from DB (stacked data)
+//			  1) Fetch all candidates profile from DB (stacked data)
 			  List<Candidate> candidateListStacked = readAllCandidates(request);
 			  
-//			  Assess questionnaire
-			  for (Candidate c : candidateListStacked) {
-//				  Will be used for questionnaire evaluation
-				  int score = 0;
-				  
-//				  Print to console
-				  System.out.println("****************************** CANDIDATE ********************************");
-				  System.out.println("candidate: " + c);
-				  System.out.println("*************************************************************************");
-//				  Getting candidate_id and reading associated answers from DB
-				  int candidateId = c.getCandidate_id();
-				  List<Answer> oneCandidateAnswers = readOneCandidateAnswers(request, candidateId);
+//			  2) Compare all candidates with the voter
+			  List<Candidate> scoredCandidateListStacked = evaluateAllCandidates(request, 
+					  candidateListStacked, answerListSubmitted, questionList);
 			  
-				  
-//				  For each candidate the ans will be listed and compared
-				  for (Answer answer : oneCandidateAnswers) {
-//					  Print to console
-					  System.out.println("answer id: " + answer.getAnswerId() 
-					  + " - question id: " + answer.getQuestionId() 
-					  + " - candidate id: " + answer.getCandidateId() 
-					  + " - answer: " + answer.getAnswer());
-					  System.out.println("======================================================");		
-				  }  
-				  
-				  
-				  for (int i = 0; i < oneCandidateAnswers.size(); i++) {
-					  Answer answerC = oneCandidateAnswers.get(i);
-					  Answer answerV = answerListSubmitted.get(i);
-  
-					  if (answerC.getQuestionId() == answerV.getQuestionId()) {
-						  score = score + Math.abs(answerV.getAnswer() - answerC.getAnswer()); 
-					  }
-					  else {
-						  System.out.println("Question IDs are not matching!");
-					  }
-				  }
-//				  Amend candidate data with total score value
-				  int numberOfQuestions = questionList.size();
-				  int maxDiffPerQuestion = Integer.parseInt(request.getParameter("max_answer")) - Integer.parseInt(request.getParameter("min_answer"));
-				  int maxPossibleScore = maxDiffPerQuestion * numberOfQuestions;				  
-				  int scoreInPercent = 100 - (100 * score / maxPossibleScore); // smallest score means better accuracy
-				  
-				  c.setTotalScore(scoreInPercent);
-				  System.out.println("Candidate ID: " + c.getCandidate_id() + " -> Score is: " + scoreInPercent + "%");
-				  
-  
+//			  3) Sort Candidates into descending order
+			  Collections.sort(scoredCandidateListStacked , new Comparator<Candidate>() {
+				//Will organise elements into ascending order.
+				  @Override public int compare(Candidate o1, Candidate o2) {
+					  return o2.getTotalScore() - o1.getTotalScore(); }});
+			  for (Candidate c : scoredCandidateListStacked) {				
+				  System.out.println("***Candidate Id: " + c.getCandidate_id() + " - Score: " + c.getTotalScore());
 			  }
 			  
+//			  4) Store top 3 candidates as attributes
+			  request.setAttribute("candidate_1st", scoredCandidateListStacked.get(0));
+			  request.setAttribute("candidate_2nd", scoredCandidateListStacked.get(1));
+			  request.setAttribute("candidate_3rd", scoredCandidateListStacked.get(2));
+			  
+//			  5) Store voter's answers as attribute
+			  request.setAttribute("answerListVoter", answerListSubmitted);
+			  
+//			  6) Forward top 3 candidates
+			  RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/jsp/questionnaireResults.jsp"); 
+			  dispatcher.forward(request, response);
 			  
 			  break;
 //		  Candidate's answers will be saved in the DB		  
@@ -129,7 +108,7 @@ public class AnswerClient extends HttpServlet {
 		  // Getting candidate_id
 		  HttpSession session = request.getSession(true);			
 //		  String userId = session.getAttribute("userid").toString();
-		  String userId = "1034";
+		  String userId = "1038"; // dont remove will cause nullpointer
 		  
 		  // The answer params from the JSP will be amended with question_ids and saved as answer object => List.
 		  for (Question q : questionList) {
@@ -143,7 +122,7 @@ public class AnswerClient extends HttpServlet {
 					  userId, 
 					  questionId, 
 					  answerValue, 
-					  "candidate answer");
+					  "Answer to question");
 			  answers.add(a);
 			  }
 			  // For regular users (voters)
@@ -173,12 +152,10 @@ public class AnswerClient extends HttpServlet {
 			return result;
 	  }
 	  
-	  private void addAllAnswer(HttpServletRequest request, List<Answer> answerList) {
-		  
-		  
+	  private void addAllAnswer(HttpServletRequest request, List<Answer> answerList) {  
 		  for (Answer a : answerList) {
-			  System.out.println("question_id: " + a.getQuestionId() + "; candidate_id: " + a.getCandidateId() + "; answer value: " + a.getAnswer());
-			  
+//			  Print to console
+			  System.out.println("question_id: " + a.getQuestionId() + "; candidate_id: " + a.getCandidateId() + "; answer value: " + a.getAnswer());		  
 			  String uri = "http://127.0.0.1:8080/rest/answerservice/addoneanswer";
 			  Client c = ClientBuilder.newClient();
 			  WebTarget wt = c.target(uri);				
@@ -186,8 +163,7 @@ public class AnswerClient extends HttpServlet {
 	
 			  Entity<Answer> e = Entity.entity(a, MediaType.APPLICATION_JSON);	
 			  GenericType<ArrayList<Answer>> genericList = new GenericType<ArrayList<Answer>>() {};
-			  b.post(e, genericList);
-			
+			  b.post(e, genericList);		
 		}
 	
 			for (int j = 0; j < answerList.size(); j++) {		
@@ -196,40 +172,14 @@ public class AnswerClient extends HttpServlet {
 				WebTarget wt = c.target(uri);
 				Builder b = wt.request();
 				
-//				<<< DEBUGGING MSG >>>
-				System.out.println("Trying to create entities and generic list...");
-//				<<< ############# >>>
-				
-				Answer a = answerList.get(j);
-				
-				//Here we create an Entity of a Candidate object as JSON string format
+//				Print to console
+				System.out.println("Trying to create entities and generic list...");		
+				Answer a = answerList.get(j);				
 				Entity<Answer> e = Entity.entity(a, MediaType.APPLICATION_JSON);
-				//Create a GenericType to be able to get List of objects
-				//This will be the second parameter of post method
 				GenericType<ArrayList<Answer>> genericList = new GenericType<ArrayList<Answer>>() {};
-				//Posting data (Entity<ArrayList<DogBreed>> e) to the given address
 				b.post(e, genericList);
-				
-//				<<< DEBUGGING MSG >>>
-				System.out.println("Entity created...");
-//				<<< ############# >>>
-				
-				//return returnedList;
-				}
-		
-		}
-	  
-	  private List<Answer> readAnswers(HttpServletRequest request, int candidateId) {
-		  //String candidate_id = request.getParameter("candidate_id");
-		  String uri = "http://127.0.0.1:8080/rest/answerservice/readonecandidateanswers";
-		  Client client = ClientBuilder.newClient();
-		  WebTarget webtarget = client.target(uri);
-		  Builder builder = webtarget.request();
-		  GenericType<List<Answer>> genericList = new GenericType<List<Answer>>() {};
-		  List<Answer> returnedList = builder.get(genericList);
-
-		  return returnedList;
-	  }
+				}		
+		}	
 	  
 	  private List<Answer> readOneCandidateAnswers(HttpServletRequest request, int candidate_id) {
 			String uri = "http://127.0.0.1:8080/rest/answerservice/readonecandidateanswers/"+candidate_id;
@@ -250,6 +200,58 @@ public class AnswerClient extends HttpServlet {
 		  List<Candidate> returnedList = builder.get(genericList);
 
 		  return returnedList;
+	  }
+	  
+	  public List<Candidate> evaluateAllCandidates(HttpServletRequest request, 
+			  List<Candidate> candidateListStacked, 
+			  List<Answer> answerListSubmitted, 
+			  List<Question> questionList) {
+//		  List to be returned at the end
+		  List<Candidate> scoredCandidateListStacked = new ArrayList<Candidate>();
+		  for (Candidate c : candidateListStacked) {
+//			  Will be used for questionnaire evaluation
+			  int score = 0;
+			  
+//			  Print to console
+			  System.out.println("****************************** CANDIDATE ********************************");
+			  System.out.println("candidate: " + c);
+			  System.out.println("*************************************************************************");
+//			  Getting candidate_id and reading associated answers from DB
+			  int candidateId = c.getCandidate_id();
+			  List<Answer> oneCandidateAnswers = readOneCandidateAnswers(request, candidateId);
+		  
+			  
+//			  For each candidate the ans will be listed and compared  
+			  for (int i = 0; i < oneCandidateAnswers.size(); i++) {
+				  Answer answerC = oneCandidateAnswers.get(i);
+				  Answer answerV = answerListSubmitted.get(i);
+
+				  if (answerC.getQuestionId() == answerV.getQuestionId()) {
+					  score = score + Math.abs(answerV.getAnswer() - answerC.getAnswer()); 
+				  }
+				  else {
+					  System.out.println("Question IDs are not matching!");
+				  }
+			  }
+			  
+//			  Amend candidate data with total score value
+			  int numberOfQuestions = questionList.size();
+			  int maxDiffPerQuestion = Integer.parseInt(request.getParameter("max_answer")) - Integer.parseInt(request.getParameter("min_answer"));
+			  int maxPossibleScore = maxDiffPerQuestion * numberOfQuestions;				  
+			  int scoreInPercent = 100 - (100 * score / maxPossibleScore); // smallest score means better accuracy
+			  
+			  c.setTotalScore(scoreInPercent);
+			  c.setQuestionList(questionList);
+			  c.setAnswerList(oneCandidateAnswers);
+			  scoredCandidateListStacked.add(c);
+			  System.out.println("Candidate ID: " + c.getCandidate_id() + " -> Score is: " + scoreInPercent + "%");
+		  }
+//		  Print to console
+		  for (Candidate c : scoredCandidateListStacked) {
+			  System.out.println("Candidate with score: " + c);
+			
 		}
+		return scoredCandidateListStacked;
+	  }
 
 }
