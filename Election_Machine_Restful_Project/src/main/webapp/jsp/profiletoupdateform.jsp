@@ -510,9 +510,9 @@
                 
                  <td class="tableAddBackground profileWidthAmendment">                
                     <input onClick="" readonly type='text' name='pic' 
-                    placeholder="Upload Portrait Picture"
+                    placeholder="UPLOAD PORTRAIT"
                     onmouseover="this.style.cursor='pointer';"
-                    class = "colourAmendment myBtn-class" id="popup"
+                    class = "colourAmendment myBtn-class profilePageButtonMod1" id="popup"
                     style="font-weight:bold; text-align: center;">
                  </td>                                	                                        
                 </tr>	                     
