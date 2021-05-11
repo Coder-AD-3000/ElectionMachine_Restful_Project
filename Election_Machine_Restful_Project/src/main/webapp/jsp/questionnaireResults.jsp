@@ -147,6 +147,21 @@
                             <br>
                             <br>
                             <hr>
+                            
+                               <!-- AD - This section adds and centers the matched candidate picture -->                            
+	                           <table class="table marginAmendmentResults">			                       
+					            <tbody>                    
+					                <tr>
+				                	<td class="marginAmendmentResults">
+				                 	<img class = "profilePortraitBorder" 
+				                 	src="img/${requestScope.candidate_2nd.pic}" style="max-width: 150px;"> 
+				                                            	 						
+					                 </td>                                                               	                                        
+					                </tr>	                     
+					            </tbody>                            
+					        	</table>            
+                            
+                            <hr>
                             <br>
                             
 							Age: <c:out value="${requestScope.candidate_2nd.age}"></c:out>
@@ -205,6 +220,21 @@
                         <c:out value="${requestScope.candidate_3rd.first_name} ${requestScope.candidate_3rd.last_name} - ${requestScope.candidate_3rd.party}"></c:out>                  
                             <br>
                             <br>
+                            <hr>
+                            
+                             <!-- AD - This section adds and centers the matched candidate picture -->                            
+	                           <table class="table marginAmendmentResults">			                       
+					            <tbody>                    
+					                <tr>
+				                	<td class="marginAmendmentResults">
+				                 	<img class = "profilePortraitBorder" 
+				                 	src="img/${requestScope.candidate_3rd.pic}" style="max-width: 150px;"> 
+				                                            	 						
+					                 </td>                                                               	                                        
+					                </tr>	                     
+					            </tbody>                            
+					        	</table>                            
+                            
                             <hr>
                             <br>
                             
