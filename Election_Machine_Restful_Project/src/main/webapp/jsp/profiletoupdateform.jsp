@@ -726,13 +726,22 @@
 		    <a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>
 		    <hr>
 		    <div style = "font-size: 22px">Thank you for accessing
-		    the Election Machine picture upload Feature.</div>
+		    the picture upload.</div>
 		    <h1>Please select portrait picture to upload</h1>
-			<form name="uploadform" method="post" enctype="multipart/form-data" action="/rest/uploadservice/uploadiamge">
-				Select a file : 
+			<form name="uploadform" method="post" 
+			enctype="multipart/form-data" action="/rest/uploadservice/uploadiamge">
+				<div style = "font-size: 16px">Select a file :</div> 
 				<input type="file" name="file" accept=".jpg" /><br>
 				<input type="hidden" name="candidate_id" value="${candidate.candidate_id}" /><br>
 				<button onClick="submitform()">UPLOAD</button>
+			
+			<!-- 
+			<input type='submit' name='ok' value='UPDATE' class = "tableUpdate" 
+						 	  		style="font-weight:bold;">			
+			 -->
+			
+			
+			
 			</form>
 		  </div>
 	</div>
