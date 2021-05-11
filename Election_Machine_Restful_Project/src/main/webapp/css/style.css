@@ -1566,7 +1566,8 @@ on the profile page */
 
 .profileModal1 {
  background: linear-gradient(0deg, #E76F51, 70%, #F4A261);
- 
+ width: 60%;
+ margin: 100px auto;
  
  /*
  background: linear-gradient(0deg, #E76F51, 70%, #F4A261);

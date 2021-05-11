@@ -723,7 +723,11 @@
 		  <!-- Modal content -->
 		  <div class="modal-content profileModal1">
 		    <span class="close">&times;</span>
-		    <h1>Select file to upload</h1>
+		    <a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>
+		    <hr>
+		    <div style = "font-size: 22px">Thank you for accessing
+		    the Election Machine picture upload Feature.</div>
+		    <h1>Please select portrait picture to upload</h1>
 			<form name="uploadform" method="post" enctype="multipart/form-data" action="/rest/uploadservice/uploadiamge">
 				Select a file : 
 				<input type="file" name="file" accept=".jpg" /><br>
@@ -818,28 +822,7 @@
                  	              	
                  	<!-- AD - This script is for the AJAX -->
                  	<script>
-					function sendData(){
-						//Create a new Javascript object
-						var prey=new Object();
-						prey.breed=document.getElementById("breed").value;
-						prey.weight=document.getElementById("weight").value;
-						
-						var jsonPrey=JSON.stringify(prey);
-						var xhttp = new XMLHttpRequest();
-						
-						xhttp.onreadystatechange = function() {
-						  if (this.readyState == 4 && this.status == 200) {
-						   document.getElementById("responseView").innerHTML = this.responseText;
-						   var returned=JSON.parse(this.responseText);
-						   document.getElementById("inparts").innerHTML="ID="+returned.id+" Breed="+returned.breed+" Weight="+returned.weight;
-						  }
-						};
-						
-						xhttp.open("POST","./rest/hunterservice2/addprey",true);
-						xhttp.setRequestHeader("Content-type","application/json");
-						xhttp.send(jsonPrey);					
-					}		
-					
+								
 					/* AD - JS function to show the current time */
 					var displayTimeAndDate = document.getElementById("displayTimeAndDate");
 
