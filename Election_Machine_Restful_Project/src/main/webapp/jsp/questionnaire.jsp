@@ -72,7 +72,7 @@
 			            
                 <!-- AD - The main blue questionnaire container 
                     where the questions will be placed dynamically-->
-                <div class="container5a">                  
+                <div class="container5a containerCustomHeight">                  
             
 					<span id="spnError" class="error" style="display: none">Please select.</span>
                      

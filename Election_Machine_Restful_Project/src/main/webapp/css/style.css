@@ -1626,3 +1626,7 @@ on the login page */
 	border-radius: 10px;      	
 }
 
+.containerCustomHeight {
+	height:160px !important;
+}
+
