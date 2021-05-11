@@ -84,14 +84,17 @@
 	                        												 
 								  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Deletion?</b></p>							  
 										  
-										  <!-- AD this div is for the loading animation -->
+										  <!-- AD - this div is for the loading animation -->
 					  		 				<div class="loaderDelete"></div> 
 										  
 										  <table class="table-responsive">
 											  <tbody>
 												  <tr>
-													 <td class="tableAddBackground">									 	
-													 			
+													 <td class="tableAddBackground">
+													 									 	
+													 	<!-- AD - Here data is passed to a RESTful web service via an HTML form (JSP in this case).
+											          			  The HTML form makes a POST type request, and as such, the service method
+											          			  receives data via FormParams. -->  		
 													 	<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>		
 													 						
 											 	  		<input type='submit' name='ok' value='DELETE' class = "tableCustom3" 

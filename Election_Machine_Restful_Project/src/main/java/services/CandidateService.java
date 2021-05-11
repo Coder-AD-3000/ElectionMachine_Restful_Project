@@ -77,8 +77,6 @@ public class CandidateService {
 	}	
 	
 	
-	
-	
 	/**
 	 * @param candidate
 	 * @return
@@ -110,7 +108,10 @@ public class CandidateService {
 	 * @param candidate_id
 	 * @return
 	 * 
-	 * 
+	 * AD - The function 'remove' is utilised to delete from the database.
+	 * 		Only one parameter is required - the object to be removed.
+	 * 		
+	 * 		Significantly, 'find' is used to first ensure that there is in fact an object to delete.
 	 */
 	@DELETE
 	@Path("/deletecandidate/{candidate_id}")
