@@ -76,6 +76,12 @@
         max-width: 60% !important;
     }
 
+	/* AD - Ensures that the 'footer' container
+	on the login page, still looks good on smaller screens*/
+    .containerLoginFooter {
+        max-width: 60% !important;
+    }	
+	
     /* AD - Ensures that the registration page box inside of the
         main yellow box, still looks good on smaller screens*/
        .container1b {
@@ -123,7 +129,13 @@
     .container1 {
     max-width: 100% !important;
     margin: 50px 0px 0px 0px !important;
-    }  
+    }
+    
+    /* AD - Ensures that the 'footer' container
+	on the login page, still looks good on smaller screens*/
+    .containerLoginFooter {
+    max-width: 100% !important;   
+    }	 
 
     /* AD - Ensures that the registration page box inside of the
     main yellow box, still looks good on smaller screens*/
@@ -1579,7 +1591,7 @@ on the profile page */
 }
 
 /* AD - Customises the 'footer' container
-on the adminUpdateCandidate page */
+on the login page */
 .containerLoginFooter{      
     max-width: 41%;
     padding: 20px;

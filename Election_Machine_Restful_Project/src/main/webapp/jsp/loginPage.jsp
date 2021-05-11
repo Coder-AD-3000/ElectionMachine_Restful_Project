@@ -59,11 +59,12 @@
 	        <!-- AD - A small container to amend the login note background section-->
 	        <div class="container4">             
 	            <!-- AD - Introductory statement about the ADMIN: Update Candidates page -->
-	            <h5 class = "adminTextCorrection2">LOGIN NOTE: If you forgot your username 
-	            or password, or if you experience any technical issues, please contact our IT Admin team 
+	            <h5 class = "adminTextCorrection2">LOGIN NOTE: For login queries, 
+	            or if you experience technical issues, please contact our IT Admin team 
 	        	(support@theherald.com).
 	            <br><br>
 	            Only Global Herald IT Admins and yourself have access to your confidential data.
+	            All rights reserved.
 	            </h5>        
 	        </div> 
 		</div>
