@@ -1603,3 +1603,12 @@ on the login page */
     justify-content: center;            
 }
 
+/* AD - Margin amendments for the 
+   questionnaire results page */
+.marginAmendmentResults {
+	margin: 10px 20px 0px 50px;
+	/*
+	margin: 10px 20px 0px 23px;
+	*/	  
+}
+
