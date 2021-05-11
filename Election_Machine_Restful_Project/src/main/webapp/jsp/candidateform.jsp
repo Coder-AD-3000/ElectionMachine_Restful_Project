@@ -55,6 +55,8 @@
     <div class="containerUpdateCandidatesTable">                                                                                                
        <div class="table-responsive">    
               
+              
+          <!-- AD  -->    
           <form action='../addcandidate' method='post'>  
                 
             <table class="table">                    
@@ -236,32 +238,7 @@
                     }                                    
                   	                 
                  	</script>                  	         	
-                 	              	
-                 	<!-- AD - This script is for the AJAX -->
-                 	<script>
-					function sendData(){
-						//Create a new Javascript object
-						var prey=new Object();
-						prey.breed=document.getElementById("breed").value;
-						prey.weight=document.getElementById("weight").value;
-						
-						var jsonPrey=JSON.stringify(prey);
-						var xhttp = new XMLHttpRequest();
-						
-						xhttp.onreadystatechange = function() {
-						  if (this.readyState == 4 && this.status == 200) {
-						   document.getElementById("responseView").innerHTML = this.responseText;
-						   var returned=JSON.parse(this.responseText);
-						   document.getElementById("inparts").innerHTML="ID="+returned.id+" Breed="+returned.breed+" Weight="+returned.weight;
-						  }
-						};
-						
-						xhttp.open("POST","./rest/hunterservice2/addprey",true);
-						xhttp.setRequestHeader("Content-type","application/json");
-						xhttp.send(jsonPrey);					
-					}			
-					
-					</script>     
+                 	                
                 	
 	 <!-- AD - includes the footer component into this page 
 	    (albeit not visible) -->

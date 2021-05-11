@@ -30,7 +30,7 @@ public class Candidate {
 	private int age;
 	private String mission;
 	private String vision;
-	private String pic; /* This variable type will need to be changed, perhaps to @Lob private Byte[] image; */	
+	private String pic; /* AD - This variable type may later need to be changed, perhaps to @Lob private Byte[] image; */	
 	private String profession; 
 	private String username;
 	private String password;
