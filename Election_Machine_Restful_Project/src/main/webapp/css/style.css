@@ -1187,8 +1187,8 @@ color: #414141;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0,0,0); /* Backdrop colour */
+  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -1566,15 +1566,15 @@ on the profile page */
 
 .profileModal1 {
  background: linear-gradient(0deg, #E76F51, 70%, #F4A261);
- width: 60%;
- margin: 100px auto;
- 
- /*
- background: linear-gradient(0deg, #E76F51, 70%, #F4A261);
- color: #f9d9d0;
- opacity: 0.3;
- 
- */
+ width: 55%;
+ margin: 100px auto; 
+}
+
+/* AD - customising the modal button */
+.tableAddBackground2 {
+  padding: 30px;
+  border-radius: 10px;         
+  background-color:rgba(214, 214, 214, 0.822);
 }
 
 
