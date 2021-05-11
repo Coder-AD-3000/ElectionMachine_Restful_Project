@@ -5,6 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
+/**
+ * This class represents the database table newquestion where the new entries are saved.
+ * @author Team LEAD
+ *Version 1.0
+ */
 @Entity
 public class Newquestion {
 	@Id
@@ -37,6 +43,10 @@ public class Newquestion {
 		this.setNewquestionId(newquestion_id);
 		this.new_question=new_question;
 	}
+	/**
+	 * This method returns the id of the new question from the new newquestion entries.
+	 * @return
+	 */
 	public int getNewquestionId() {
 		return newquestion_id;
 	}
