@@ -325,7 +325,7 @@
 	                         </td> 
 	                         
 	                         <td>
-	                            <input class="switch" disabled="disabled" required 
+	                            <input class="switch profileCustomInput" disabled="disabled" required 
 	                            type='text' name='mission' 
 	                            value='${requestScope.candidate.mission }'>
 	                         </td>	                                        
@@ -355,7 +355,7 @@
 	                         </td> 
 	                         
 	                         <td>
-	                            <input class="switch" disabled="disabled" required 
+	                            <input class="switch profileCustomInput" disabled="disabled" required 
 	                            type='text' name='vision' 
 	                            value='${requestScope.candidate.vision }'>
 	                         </td>	                                        
@@ -480,8 +480,9 @@
                 
                 
  
-                 <td class="tableAddBackground ">
-                 	<img src="img/${candidate.pic}" style="max-width: 150px;"> 
+                 <td class="tableAddBackground profileWidthAmendment">
+                 	<img class = "profilePortraitBorder" 
+                 	src="img/${candidate.pic}" style="max-width: 150px;"> 
                  	<!--                        
                     <textarea disabled rows="8" cols="20" name='pic' 
                     placeholder="Portrait Picture"
@@ -494,7 +495,7 @@
         </table>
         
         <!-- AD - Portrait Upload field -->
-        <table class="table marginAmendment2">                    
+        <table class="table marginAmendment2 profileWidthAmendment">                    
                         
             <tbody>                    
                 <tr>               
@@ -507,18 +508,18 @@
                 
                 -->
                 
-                 <td class="tableAddBackground">                
+                 <td class="tableAddBackground profileWidthAmendment">                
                     <input onClick="" readonly type='text' name='pic' 
-                    placeholder="Upload Portrait Picture"
+                    placeholder="UPLOAD PORTRAIT"
                     onmouseover="this.style.cursor='pointer';"
-                    class = "colourAmendment myBtn-class" id="popup"
+                    class = "colourAmendment myBtn-class profilePageButtonMod1" id="popup"
                     style="font-weight:bold; text-align: center;">
                  </td>                                	                                        
                 </tr>	                     
             </tbody>                            
         </table>
         
-         <table class="table marginAmendment2">                    
+         <table class="table marginAmendment2 profileWidthAmendment">                    
             <thead class = "tableCustom1">
                 <tr>                                                                      
                     <th>GUIDANCE: Click UPDATE to update your profile
@@ -532,7 +533,7 @@
                 
                 <!-- AD - Displays Current time and date
                 		 via the utilisation of a JS script -->
-                 <td class="tableAddBackground">
+                 <td class="tableAddBackground profileWidthAmendment">
                  	Time and date (Europe / Helsinki):                
                     <textarea id="displayTimeAndDate"                    
                     disabled rows="1" cols="18" name='pic'                    
@@ -549,14 +550,14 @@
         -->
         
         <!-- AD - Portrait Upload field -->
-        <table class="table marginAmendment2">                    
+        <table class="table marginAmendment2 profileWidthAmendment">                    
                         
             <tbody>                    
                 <tr> 
                 
                 <!-- AD Button code -->
                 
-                <td class="tableAddBackground">					 
+                <td class="tableAddBackground profileWidthAmendment2">					 
 					 
 						<Button type = "button" id = "btnUpdateProfile" value='UPDATEvisible' onClick="toggleProfileUpdate(this); enableAll();">
 						<b class = "tableUpdate">EDIT PROFILE</b></Button>
@@ -567,7 +568,7 @@
 					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Profile Changes?</b></p>	
 					  		-->
 					  		
-					  		<table style = "width:215px" class="table">                    
+					  		<table class="table profileWidthAmendment2">                    
 				            <thead class = "tableCustom1">
 				                <tr>                                                                      
 				                    <th><i style = "color:#cfdefe">NOTICE!</i> - You are about to update your profile.
@@ -607,14 +608,14 @@
                 
                 <!-- AD Button code -->
                 
-                <td class="tableAddBackground">					 
+                <td class="tableAddBackground profileWidthAmendment2">					 
 					 
 						<Button type = "button" id = "btnDeleteProfile" value='ADD' onClick="toggleProfileDelete(this)">
 						<b class = "tableCustom3">DELETE</b></Button>
 						
 						<div id ="dvDeleteProfile" style="display: none">							
 											  		 
-						  	<table style = "width:215px" class="table">                    
+						  	<table class="table profileWidthAmendment2">                    
 				            <thead class = "tableCustom1">
 				                <tr>                                                                      
 				                    <th style = "color:#FFE4E1"><i style = "color:#ff4444">WARNING!</i> 
@@ -631,22 +632,17 @@
 					  							  								  
 							  <table class="table-responsive">
 								  <tbody>
-									  <tr>
-										 <td class="tableAddBackground">									 	
-										 						
-								 	  		<input type='submit' name='ok' value='DELETE' class = "tableCustom3" 
-								 	  		style="font-weight:bold;">
-								 	  	 </td> 							  
-									  	 <td>
-									  	 	<a class = "button-main button1"
-											href='../deleteallmydata?candidaten_id=${requestScope.candidate.candidate_id }'>
-											<b>DELETE</b></a>
-										   <Button type = "button" value='' onClick="window.location.reload();">
-										   <b>CANCEL</b></Button>
-										   <!-- AD 
-										   Add prevent default										   
-										    -->
-									  	</td>
+									  <tr>									  									  
+										<td>
+									  	<a href='../deleteallmydata?candidaten_id=${requestScope.candidate.candidate_id }'>
+										<button type = "button"><b class = "tableCustom3">DELETE</b></button>
+										</a>
+										
+									   <td>
+									   <Button type = "button" value='' onClick="window.location.reload();">
+									   <b>CANCEL</b>
+									   </Button>
+									   </td>								  	
 									  </tr>								  
 								  </tbody>						  
 							   </table>
@@ -725,14 +721,22 @@
     <!-- The Modal -->
 	<div id="myModal" class="modal">	
 		  <!-- Modal content -->
-		  <div class="modal-content">
+		  <div class="modal-content profileModal1">
 		    <span class="close">&times;</span>
-		    <h1>Select file to upload</h1>
-			<form name="uploadform" method="post" enctype="multipart/form-data" action="/rest/uploadservice/uploadiamge">
-				Select a file : 
+		    <a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>
+		    <hr>
+		    <div style = "font-size: 22px">Thank you for accessing
+		    picture upload.</div>
+		    <h1>Please select portrait picture to upload.</h1>
+			<form class = "tableAddBackground2" name="uploadform" method="post" 
+			enctype="multipart/form-data" action="/rest/uploadservice/uploadiamge">
+				<div style = "font-size: 16px">Select a file :</div> 
 				<input type="file" name="file" accept=".jpg" /><br>
-				<input type="hidden" name="candidate_id" value="${candidate.candidate_id}" /><br>
-				<button onClick="submitform()">UPLOAD</button>
+				<input type="hidden" name="candidate_id" value="${candidate.candidate_id}" /><br>				
+				<button class = "tableCustom3" onClick="submitform()"><b>UPLOAD</b></button>
+				<hr>
+				<div style = "font-size: 16px">USER NOTE: Please click 'UPLOAD' once only. Uploads may take a moment to process.</div>
+				
 			</form>
 		  </div>
 	</div>
@@ -822,28 +826,7 @@
                  	              	
                  	<!-- AD - This script is for the AJAX -->
                  	<script>
-					function sendData(){
-						//Create a new Javascript object
-						var prey=new Object();
-						prey.breed=document.getElementById("breed").value;
-						prey.weight=document.getElementById("weight").value;
-						
-						var jsonPrey=JSON.stringify(prey);
-						var xhttp = new XMLHttpRequest();
-						
-						xhttp.onreadystatechange = function() {
-						  if (this.readyState == 4 && this.status == 200) {
-						   document.getElementById("responseView").innerHTML = this.responseText;
-						   var returned=JSON.parse(this.responseText);
-						   document.getElementById("inparts").innerHTML="ID="+returned.id+" Breed="+returned.breed+" Weight="+returned.weight;
-						  }
-						};
-						
-						xhttp.open("POST","./rest/hunterservice2/addprey",true);
-						xhttp.setRequestHeader("Content-type","application/json");
-						xhttp.send(jsonPrey);					
-					}		
-					
+								
 					/* AD - JS function to show the current time */
 					var displayTimeAndDate = document.getElementById("displayTimeAndDate");
 

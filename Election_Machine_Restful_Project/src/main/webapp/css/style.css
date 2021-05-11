@@ -76,6 +76,12 @@
         max-width: 60% !important;
     }
 
+	/* AD - Ensures that the 'footer' container
+	on the login page, still looks good on smaller screens*/
+    .containerLoginFooter {
+        max-width: 60% !important;
+    }	
+	
     /* AD - Ensures that the registration page box inside of the
         main yellow box, still looks good on smaller screens*/
        .container1b {
@@ -122,8 +128,14 @@
        yellow box, still looks good on very small screens*/
     .container1 {
     max-width: 100% !important;
-    margin: 50px 0px 60px 0px !important;
-    }  
+    margin: 50px 0px 0px 0px !important;
+    }
+    
+    /* AD - Ensures that the 'footer' container
+	on the login page, still looks good on smaller screens*/
+    .containerLoginFooter {
+    max-width: 100% !important;   
+    }	 
 
     /* AD - Ensures that the registration page box inside of the
     main yellow box, still looks good on smaller screens*/
@@ -271,7 +283,7 @@
     /* LH - Media query for the inner container
     	on the employee page */
     containerUpdateEmployeeTable {
-    max-width: 99% !important; /* AD - Important might need to be removed */ 
+    max-width: 99% !important; /* AD - Important might need to be removed later */ 
     }
     
     /* LH - For the employee create container */
@@ -304,8 +316,8 @@ on the adminUpdateCandidate page */
 }
 
 /* AD - Customises the main container
-on the admin candidate database page 
-(containing candidate database data) */
+on the admin candidate data page 
+(containing candidate data) */
 .containerUpdateCandidatesTable{            
     max-width: 95%;
     padding: 20px;
@@ -325,14 +337,15 @@ on the admin candidate database page
     margin: 25px auto 60px auto;                
 }
 
-/* AD - Customises the registration page main yellow container */
+/* AD - Customises the registration page main 
+		container (might not be necessary later on) */
 .container1{            
     max-width: 40%;
     padding: 30px;
     border-radius: 10px;         
     background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);
     box-shadow: 0 2px 16px 2px #264653;         
-    margin: 70px auto 60px auto;    
+    margin: 70px auto 0px auto;    
     display: flex;
     justify-content: center;             
 }
@@ -345,7 +358,7 @@ on the admin candidate database page
     border-radius: 10px;    
     margin: 10px auto;
     padding: 10px;
-    max-width: 30%;
+    max-width: 40%;
     text-align: center;
     height: 80%;
     color: rgba(255, 255, 255, 0.829) !important; 
@@ -1187,8 +1200,8 @@ color: #414141;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0,0,0); /* Backdrop colour */
+  background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -1463,7 +1476,7 @@ on the candidate profile page */
 	padding: 20px 20px 20px 20px;
 }
 
-/* AD - Customises the main yellow container
+/* AD - Customises the the 'footer'container
 on the adminUpdateCandidate page */
 .containerProfileFooter{            
     max-width: 70%;
@@ -1536,5 +1549,61 @@ on the candidate page */
 	-webkit-gradient(linear, left top, left bottom, 
 	from(#F4A261), to(#E9C46A), color-stop(0.3, #E9C46A), 
 	color-stop(0.3, #264653)) 21 30 30 21 repeat repeat; 
+}
+
+/* AD - adjustments to the candidate portraits 
+on the profile page */
+.profilePortraitBorder {  
+  padding: 1rem;
+  color: white;
+  border-width: 1px;
+  border-style: solid;
+ -webkit-border-image: 
+	-webkit-gradient(linear, left top, left bottom, 
+	from(#F4A261), to(#E9C46A), color-stop(0.3, #E9C46A), 
+	color-stop(0.3, #264653)) 21 30 30 21 repeat repeat;	
+}
+
+/* AD - Amendments to the profile page buttons */
+.profileWidthAmendment {
+	min-width: 205px;	
+}
+
+.profileWidthAmendment2 {
+	min-width: 195px;	
+}
+
+.colourAmendment2 {
+ background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);	
+}
+
+.profileModal1 {
+ background: linear-gradient(0deg, #E76F51, 70%, #F4A261);
+ width: 55%;
+ margin: 100px auto; 
+}
+
+/* AD - customising the modal button */
+.tableAddBackground2 {
+  padding: 30px;
+  border-radius: 10px;         
+  background-color:rgba(214, 214, 214, 0.822);
+}
+
+/* AD - Customises the 'footer' container
+on the login page */
+.containerLoginFooter{      
+    max-width: 41%;
+    padding: 20px;
+    border-radius: 10px;         
+    background-color:rgba(214, 214, 214, 0.822);
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 10px auto 0px auto;    
+    display: flex;
+    justify-content: center;            
+}
+
+.profileCustomInput {
+	width: 350px;	
 }
 
