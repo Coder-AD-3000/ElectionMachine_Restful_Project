@@ -10,7 +10,9 @@ import javax.persistence.Transient;
 
 /**
  * @author ashley - specifies that the target is an entity
- *
+ * AD - For the candidate part of the restful web services,
+ * 		this normal java class has been utilised, inside the 
+ * 		'data' package.
  */
 @Entity
 public class Candidate {
@@ -40,7 +42,7 @@ public class Candidate {
 	@Transient //Transient will prevent this attribute being persisted
 	private List<Question> questionList;
 	/**
-	 * Contains all the answers provided by the candidate for the  questionnaire
+	 * Contains all the answers provided by the candidate for the questionnaire
 	 */
 	@Transient
 	private List<Answer> answerList;	
@@ -54,6 +56,20 @@ public class Candidate {
 		
 	}
 	
+	/**
+	 * @param candidate_id
+	 * @param first_name
+	 * @param last_name
+	 * @param party
+	 * @param location
+	 * @param age
+	 * @param mission
+	 * @param vision
+	 * @param pic
+	 * @param profession
+	 * @param username
+	 * @param password
+	 */
 	public Candidate(int candidate_id, String first_name, 
 					 String last_name, String party, String location, 
 					 int age, String mission, String vision, String pic,
