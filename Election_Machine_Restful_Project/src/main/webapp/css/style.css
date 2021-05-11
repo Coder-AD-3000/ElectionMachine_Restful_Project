@@ -1551,6 +1551,7 @@ on the profile page */
 	color-stop(0.3, #264653)) 21 30 30 21 repeat repeat;	
 }
 
+/* AD - Amendments to the profile page buttons */
 .profileWidthAmendment {
 	min-width: 205px;	
 }
@@ -1561,6 +1562,18 @@ on the profile page */
 
 .colourAmendment2 {
  background: linear-gradient(0deg,#F4A261, 10%, #E9C46A);	
+}
+
+.profileModal1 {
+ background: linear-gradient(0deg, #E76F51, 70%, #F4A261);
+ 
+ 
+ /*
+ background: linear-gradient(0deg, #E76F51, 70%, #F4A261);
+ color: #f9d9d0;
+ opacity: 0.3;
+ 
+ */
 }
 
 

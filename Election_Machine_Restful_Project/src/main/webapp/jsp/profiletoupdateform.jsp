@@ -721,7 +721,7 @@
     <!-- The Modal -->
 	<div id="myModal" class="modal">	
 		  <!-- Modal content -->
-		  <div class="modal-content">
+		  <div class="modal-content profileModal1">
 		    <span class="close">&times;</span>
 		    <h1>Select file to upload</h1>
 			<form name="uploadform" method="post" enctype="multipart/form-data" action="/rest/uploadservice/uploadiamge">
