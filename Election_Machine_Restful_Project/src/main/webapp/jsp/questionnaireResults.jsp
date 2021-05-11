@@ -71,7 +71,7 @@
                         button is pressed again (toggle button).-->
                 <div id="dvCandResults1" style="display: none">               
                     <div class="container6">         
-                        <h5>1st Place Match (<c:out value="${requestScope.candidate_1st.totalScore}%"></c:out>):                        
+                        <h5>1st Place Match (<b class = "customPercentage"><c:out value="${requestScope.candidate_1st.totalScore}%"></c:out></b>):                        
                         <c:out value="${requestScope.candidate_1st.first_name} ${requestScope.candidate_1st.last_name} - ${requestScope.candidate_1st.party}"></c:out>                  
                             <br>
                             <br>

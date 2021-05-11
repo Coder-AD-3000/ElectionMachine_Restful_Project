@@ -1606,15 +1606,18 @@ on the login page */
 /* AD - Margin amendments for the 
    questionnaire results page */
 .marginAmendmentResults {
-	margin: 10px auto;	
-	
-	/*
-	
-	margin: 10px 20px 0px 75px;	
-	
-	width: 10% !important;
-	
-	margin: 10px 20px 0px 23px;
-	*/	  
+	margin: 10px auto;	  
+}
+
+/* AD - This is for the percentage styling
+		on the Results page */
+		
+.customPercentage {
+	border-radius: 10px;         
+    color: rgba(255, 255, 255, 0.829);
+    box-shadow: 0 2px 16px 2px #264653; 
+    background: linear-gradient(270deg, #264653, 30%, #2A9D8F);  
+    padding: 3px 10px 3px 13px;
+   
 }
 
