@@ -78,7 +78,7 @@
                      
                     <!-- AD - This div contains and centers the 'Start' button -->
                     <div class="container3">  
-                    <button class="button-main button1 questionnaireButton" onclick="onStart()" id="start"><b>Start</b></button>
+                    <button class="button-main button1 questionnaireButton customButtonMargin1" onclick="onStart()" id="start"><b>Start</b></button>
                     </div>
                     
                     <div class="input-radio">

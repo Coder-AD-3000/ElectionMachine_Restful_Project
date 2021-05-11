@@ -1630,3 +1630,7 @@ on the login page */
 	height:160px !important;
 }
 
+.customButtonMargin1 {
+	margin: 60px auto;
+}
+
