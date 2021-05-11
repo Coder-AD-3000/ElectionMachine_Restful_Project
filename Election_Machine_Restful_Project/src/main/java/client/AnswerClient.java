@@ -69,7 +69,7 @@ public class AnswerClient extends HttpServlet {
 			  Collections.sort(scoredCandidateListStacked , new Comparator<Candidate>() {
 				//Will organise elements into ascending order.
 				  @Override public int compare(Candidate o1, Candidate o2) {
-					  return o1.getTotalScore() - o2.getTotalScore(); }});
+					  return o2.getTotalScore() - o1.getTotalScore(); }});
 			  for (Candidate c : scoredCandidateListStacked) {				
 				  System.out.println("***Candidate Id: " + c.getCandidate_id() + " - Score: " + c.getTotalScore());
 			  }
@@ -80,7 +80,7 @@ public class AnswerClient extends HttpServlet {
 			  request.setAttribute("candidate_3rd", scoredCandidateListStacked.get(2));
 			  
 //			  5) Forward top 3 candidates
-			  RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/questionnaireResults.jsp"); 
+			  RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/jsp/questionnaireResults.jsp"); 
 			  dispatcher.forward(request, response);
 			  
 			  break;
