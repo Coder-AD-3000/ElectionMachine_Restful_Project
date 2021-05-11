@@ -36,9 +36,10 @@
 	        <h5>Thank you for successfully completing our questionnaire!
 	            This section covers your results.
 	            <br><br>
-	            By analysing your questionnaire answers, this election machine 
-	            utilises innovative algorithm techniques to match you with the candidate 
-	            that suits you best. Carry on reading below to review your answers.
+	            By analysing your questionnaire answers, this Election Machine 
+	            utilises innovative algorithm techniques to match you with the 
+	            top three candidates that best align to your political views. 
+	            Carry on reading below to review your results.
 	            <br>           
 	        </h5>
         </div>                  
@@ -70,12 +71,27 @@
                         button is pressed again (toggle button).-->
                 <div id="dvCandResults1" style="display: none">               
                     <div class="container6">         
-                        <h5>1st Place Match (<c:out value="${requestScope.candidate_1st.totalScore}%"></c:out>):                        
+                        <h5><b class = "customMatchHeading">1st Place Match</b> (<b class = "customPercentage"><c:out value="${requestScope.candidate_1st.totalScore}%"></c:out></b>):                        
                         <c:out value="${requestScope.candidate_1st.first_name} ${requestScope.candidate_1st.last_name} - ${requestScope.candidate_1st.party}"></c:out>                  
                             <br>
                             <br>
+                            <hr> 
+                               
+                               <!-- AD - This section adds and centers the matched candidate picture -->                            
+	                           <table class="table marginAmendmentResults">			                       
+					            <tbody>                    
+					                <tr>
+				                	<td class="marginAmendmentResults">
+				                 	<img class = "profilePortraitBorder" 
+				                 	src="img/${requestScope.candidate_1st.pic}" style="max-width: 150px;"> 
+				                                            	 						
+					                 </td>                                                               	                                        
+					                </tr>	                     
+					            </tbody>                            
+					        	</table>        			                 	                     
+                            
                             <hr>
-                            <br>
+                            <br>                  
                             
 							Age: <c:out value="${requestScope.candidate_1st.age}"></c:out>
 							<br>
@@ -126,10 +142,25 @@
                 <div id="dvCandResults2" style="display: none">             
                     <!-- AD - This section shows the top suitable candidate(s)-->
                     <div class="container6">         
-                        <h5>2nd Place Match (<c:out value="${requestScope.candidate_2nd.totalScore}%"></c:out>):
+                        <h5><b class = "customMatchHeading">2nd Place Match</b> (<b class = "customPercentage"><c:out value="${requestScope.candidate_2nd.totalScore}%"></c:out></b>):
                         <c:out value="${requestScope.candidate_2nd.first_name} ${requestScope.candidate_2nd.last_name} - ${requestScope.candidate_2nd.party}"></c:out>                  
                             <br>
                             <br>
+                            <hr>
+                            
+                               <!-- AD - This section adds and centers the matched candidate picture -->                            
+	                           <table class="table marginAmendmentResults">			                       
+					            <tbody>                    
+					                <tr>
+				                	<td class="marginAmendmentResults">
+				                 	<img class = "profilePortraitBorder" 
+				                 	src="img/${requestScope.candidate_2nd.pic}" style="max-width: 150px;"> 
+				                                            	 						
+					                 </td>                                                               	                                        
+					                </tr>	                     
+					            </tbody>                            
+					        	</table>            
+                            
                             <hr>
                             <br>
                             
@@ -185,10 +216,25 @@
                 
                     <!-- AD - This section shows the top suitable candidate(s)-->
                     <div class="container6">         
-                        <h5>3rd Place Match (<c:out value="${requestScope.candidate_3rd.totalScore}%"></c:out>):
+                        <h5><b class = "customMatchHeading">3rd Place Match</b> (<b class = "customPercentage"><c:out value="${requestScope.candidate_3rd.totalScore}%"></c:out></b>):
                         <c:out value="${requestScope.candidate_3rd.first_name} ${requestScope.candidate_3rd.last_name} - ${requestScope.candidate_3rd.party}"></c:out>                  
                             <br>
                             <br>
+                            <hr>
+                            
+                             <!-- AD - This section adds and centers the matched candidate picture -->                            
+	                           <table class="table marginAmendmentResults">			                       
+					            <tbody>                    
+					                <tr>
+				                	<td class="marginAmendmentResults">
+				                 	<img class = "profilePortraitBorder" 
+				                 	src="img/${requestScope.candidate_3rd.pic}" style="max-width: 150px;"> 
+				                                            	 						
+					                 </td>                                                               	                                        
+					                </tr>	                     
+					            </tbody>                            
+					        	</table>                            
+                            
                             <hr>
                             <br>
                             
