@@ -68,7 +68,7 @@ public class CandidateService {
 	public List<Candidate> addCandidate(Candidate candidate) {
 		EntityManager entitymanager = emf.createEntityManager();
 		entitymanager.getTransaction().begin();
-		// AD - The method persist makse an insertion everytime, regardless if the object to be persisted, had an id with an existing value in the emachinedb.
+		// AD - The method persist makes an insertion everytime, regardless if the object to be persisted, had an id with an existing value in the emachinedb.
 		entitymanager.persist(candidate);// AD - a new 'candidate' object is inserted into the candidate table.
 		entitymanager.getTransaction().commit();
 		//This calls the method readCandidate() of this service
@@ -87,6 +87,9 @@ public class CandidateService {
 	 * 
 	 * 		Before the merge takes place, there is a call of function 'find' to ensure that 
 	 * 		in the databe is a record with the same id.
+	 * 
+	 * 		PUT is similar to POST, but it is designed for the purpose of updating something.
+	 * 		The data sent is not seen in the browser bar.
 	 */
 	@PUT
 	@Path("/updatecandidate")
@@ -112,6 +115,12 @@ public class CandidateService {
 	 * 		Only one parameter is required - the object to be removed.
 	 * 		
 	 * 		Significantly, 'find' is used to first ensure that there is in fact an object to delete.
+	 * 		DELETE behaves similar to get (to get something), yet its purpose is to DELETE something.
+	 * 		A client can make a request, via PathParam, which instructs which object is to be deleted
+	 * 		from the database.
+	 * 
+	 * 		On the client side the request method is now delete. On the server side the annotation is
+	 * 		"@DELETE". Furthermore, data sent is visible in the browser's location bar.
 	 */
 	@DELETE
 	@Path("/deletecandidate/{candidate_id}")
@@ -129,6 +138,17 @@ public class CandidateService {
 		List<Candidate> list=readCandidate();		
 		return list;
 	}	
+	/**
+	 * @param candidate_id 
+	 * @return
+	 * 
+	 * 	AD - A candidate type object with the id value of 'candidate_id'
+	 * 		is read from the database. Two parameters are required by they 
+	 * 		find function. The class of 'entity' and an 'id.'
+	 * 
+	 * 		The first parameter (Candidate.class) instructs the table
+	 * 		name where to search. 
+	 */
 	@GET
 	@Path("/readtoupdatecandidate/{candidate_id}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -141,7 +161,7 @@ public class CandidateService {
 		return cand;
 	}
 	
-	/* AD - This is a useful addition */	
+	/* AD - This method operates in a similar fashion to 'readtoupdatecandidate'*/
 	@GET
 	@Path("/readtodeletecandidate/{candidate_id}")
 	@Produces(MediaType.APPLICATION_JSON)
