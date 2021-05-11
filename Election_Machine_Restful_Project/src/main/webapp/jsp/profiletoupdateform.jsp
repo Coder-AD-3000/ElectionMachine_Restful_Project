@@ -325,7 +325,7 @@
 	                         </td> 
 	                         
 	                         <td>
-	                            <input class="switch" disabled="disabled" required 
+	                            <input class="switch profileCustomInput" disabled="disabled" required 
 	                            type='text' name='mission' 
 	                            value='${requestScope.candidate.mission }'>
 	                         </td>	                                        
@@ -355,7 +355,7 @@
 	                         </td> 
 	                         
 	                         <td>
-	                            <input class="switch" disabled="disabled" required 
+	                            <input class="switch profileCustomInput" disabled="disabled" required 
 	                            type='text' name='vision' 
 	                            value='${requestScope.candidate.vision }'>
 	                         </td>	                                        
