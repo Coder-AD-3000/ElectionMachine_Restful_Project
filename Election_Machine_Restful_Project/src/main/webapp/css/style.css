@@ -1607,6 +1607,7 @@ on the login page */
    questionnaire results page */
 .marginAmendmentResults {
 	margin: 10px 20px 0px 50px;
+	max-width: 25%;
 	/*
 	margin: 10px 20px 0px 23px;
 	*/	  

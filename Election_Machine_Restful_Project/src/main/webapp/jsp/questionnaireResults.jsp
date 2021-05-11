@@ -78,8 +78,7 @@
                             <hr>                           
 		                 	<img class = "table marginAmendmentResults 
 		                    profilePortraitBorder profileWidthAmendment" 
-		                 	src="img/${requestScope.candidate_1st.pic}" 
-		                 	style="max-width: 100px;">                     
+		                 	src="img/${requestScope.candidate_1st.pic}">                     
                             <hr>
                             <br>
                             
