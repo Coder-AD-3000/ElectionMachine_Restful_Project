@@ -712,9 +712,13 @@
 			enctype="multipart/form-data" action="/rest/uploadservice/uploadiamge">
 				<div style = "font-size: 16px">Select a file :</div> 
 				<input type="file" name="file" accept=".jpg" required/><br>
-				<input type="hidden" name="candidate_id" value="${candidate.candidate_id}" /><br>
-				<input type="submit" value="Submit">		
+				<input type="hidden" name="candidate_id" value="${candidate.candidate_id}" /><br>			
+				<input class = "tableCustom3" type="submit" value="Submit" style = "font-weight:bold;">
+								
+				<!-- AD the old version (Might delete later)						
 				<button class = "tableCustom3" onClick="submitform()"><b>UPLOAD</b></button>
+				-->
+				
 				<hr>
 				<div style = "font-size: 16px">USER NOTE: Please click 'UPLOAD' once only. Uploads may take a moment to process.</div>
 				
