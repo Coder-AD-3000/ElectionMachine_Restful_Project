@@ -50,9 +50,12 @@ public class CandidateFilter implements Filter {
 		// TODO Auto-generated method stub
 		// place your code here
 		HttpSession session = ((HttpServletRequest)request).getSession(true);
-		String role = (String) session.getAttribute("role");
+		String role = "undefined";
+		if (session.getAttribute("role") != null) {
+			role = (String) session.getAttribute("role");
+		}
 		System.out.println("Candidate filter for role: " + role);
-		if (role == null || !role.equals("employee")) {
+		if (role.equals("candidate")) {
 			((HttpServletResponse) response).sendRedirect("/jsp/index.jsp");
 			return;
 		}

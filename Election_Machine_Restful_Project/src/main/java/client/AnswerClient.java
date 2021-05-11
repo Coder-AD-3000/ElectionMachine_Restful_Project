@@ -53,8 +53,11 @@ public class AnswerClient extends HttpServlet {
 	
 		  
 //		  ************ EVALUATE OR SAVE BASED ON ROLE *******************************************************************************  
-		  String role = request.getSession().getAttribute("role").toString();
-//		  String role = "voter";
+		  String role = "voter";
+//		  if(request.getSession().getAttribute("role") != null) {
+//			 role = request.getSession().getAttribute("role").toString(); 
+//		  }
+		  
 		  System.out.println("role from session is: " + role);
 		  
 		  switch (role) {

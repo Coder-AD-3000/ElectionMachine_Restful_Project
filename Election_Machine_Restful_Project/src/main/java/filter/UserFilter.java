@@ -23,14 +23,15 @@ import javax.servlet.http.HttpSession;
 				DispatcherType.INCLUDE, 
 				DispatcherType.ERROR
 		}
-		, urlPatterns = { "/jsp/candidatePortal.jsp","/jsp/imageuploadform.jsp","/jsp/profileform.jsp"
-				,"/jsp/profiletoupdateform.jsp","/jsp/questionnaire.jsp","/jsp/questionnaireResults.jsp"})
-public class EmployeeFilter implements Filter {
+		, urlPatterns = { "/jsp/candidatePortal.jsp", "/jsp/adminPortal.jsp", "/jsp/profileform.jsp","/jsp/profiletoupdateform.jsp",
+				"/jsp/adminUpdateCandidates.jsp","/jsp/newquestionform.jsp", "/jsp/newquestiontoupdateform.jsp","/jsp/candidatetodeleteform.jsp",		
+				"/jsp/candidatetoupdateform.jsp","/jsp/employeeform.jsp","/jsp/employeetoupdateform.jsp"})
+public class UserFilter implements Filter {
 
     /**
      * Default constructor. 
      */
-    public EmployeeFilter() {
+    public UserFilter() {
         // TODO Auto-generated constructor stub
     }
 
@@ -47,15 +48,10 @@ public class EmployeeFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// TODO Auto-generated method stub
 		// place your code here
-		HttpSession session = ((HttpServletRequest)request).getSession(true);
-		String role = "undefined";
-		if (session.getAttribute("role") != null) {
-			role = (String) session.getAttribute("role");
-		}
+		HttpSession session = ((HttpServletRequest)request).getSession(true);		
+		System.out.println("User filter for role: " + session.getAttribute("role"));
 		
-		System.out.println("Employee filter for role: " + role);
-		
-		if (role.equals("employee")) {
+		if (session.getAttribute("role") == null) {
 			((HttpServletResponse) response).sendRedirect("/jsp/index.jsp");
 			return;
 		}
