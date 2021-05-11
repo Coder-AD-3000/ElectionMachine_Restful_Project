@@ -632,54 +632,17 @@
 					  							  								  
 							  <table class="table-responsive">
 								  <tbody>
-									  <tr>
-									  
-									  	<!-- AD - The original working version
-										   
-										 <td class="tableAddBackground">									 	
-										 						
-								 	  		<input type='submit' name='ok' value='DELETE' class = "tableCustom3" 
-								 	  		style="font-weight:bold;">
-								 	  	 </td> 							  
-									  	 <td>
-									  	 	<a class = "button-main button1"
-											href='../deleteallmydata?candidaten_id=${requestScope.candidate.candidate_id }'>
-											<b>DELETE</b></a>
-										   <Button type = "button" value='' onClick="window.location.reload();">
-										   <b>CANCEL</b></Button>
-										   </td>
-										   									   
-										    -->
-										    
-										    <!--
-										    
-										    <td class="tableAddBackground">									 						
-								 	  		<input type='submit' name='ok' value='DELETE' class = "tableCustom3" 
-								 	  		style="font-weight:bold;">
-								 	  	 	</td> 
-								 	  	 	
-								 	  	 	-->
-										   
-								 	  	 
-								 	  	 	<!--								 	  	 	 		  
-									  	 	<td>
-									  	 	<a class = "button-main button1"
-											href='../deleteallmydata?candidaten_id=${requestScope.candidate.candidate_id }'>
-											<b>DELETE</b>
-											</a>
-											-->
-											
-											<td>
-									  	 	<a href='../deleteallmydata?candidaten_id=${requestScope.candidate.candidate_id }'>
-											<button type = "button"><b class = "tableCustom3">DELETE</b></button>
-											</a>
-											
-										   <td>
-										   <Button type = "button" value='' onClick="window.location.reload();">
-										   <b>CANCEL</b>
-										   </Button>
-										   </td>					   
-									  	
+									  <tr>									  									  
+										<td>
+									  	<a href='../deleteallmydata?candidaten_id=${requestScope.candidate.candidate_id }'>
+										<button type = "button"><b class = "tableCustom3">DELETE</b></button>
+										</a>
+										
+									   <td>
+									   <Button type = "button" value='' onClick="window.location.reload();">
+									   <b>CANCEL</b>
+									   </Button>
+									   </td>								  	
 									  </tr>								  
 								  </tbody>						  
 							   </table>
