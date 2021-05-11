@@ -76,6 +76,27 @@
                             <br>
                             <br>
                             <hr>
+                            <table class="table marginAmendment">                    
+				                       
+				            <tbody>                    
+				                <tr>
+				                	<td class="profileWidthAmendment">
+				                 	<img class = "profilePortraitBorder" 
+				                 	src="img/${requestScope.candidate_1st.pic}" style="max-width: 150px;"> 
+				                         
+				                        	 <!--               
+				                    <textarea disabled rows="8" cols="20" name='pic' 
+				                    placeholder="Portrait Picture"
+				                    style="font-weight:bold; background-color:#87CEFA;">                    
+				                    </textarea>
+                   	 						-->
+                   	 						
+					                 </td>                                                               	                                        
+					                </tr>	                     
+					            </tbody>                            
+					        </table> 
+                            
+                            <hr>
                             <br>
                             
                             <!-- 
