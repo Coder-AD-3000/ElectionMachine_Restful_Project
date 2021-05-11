@@ -69,10 +69,33 @@
 
         <!-- AD - Team member 1 intro colourings and text -->
         <div class="container8">
-            <!-- AD - Intro / overview statement about the candidate -->
+            <!-- AD - Intro / overview statement about the project participant -->            
             <h5>(HAMK's Finest) Team member 1:
                 <br><br>
-                <i class = "customAboutHeading">Daniel Kovacs (Project Manager)</i>
+                <i class = "customAboutHeading">Ashley Davis (Project Manager)</i>
+                <br><br>
+                <hr>
+                <br>
+                Overview: There is no rest in RESTful web services, but it was fun!
+                <br><br>
+                For most of our team, JPA and RESTful web services were completely 
+                new topics to get to grips with. Nevertheless, with a bit of persistence 
+                and determination, the team worked hard, and things fell into place. 
+                During this project, my main contributions were towards creating the
+                candidate CRUD system, team management, programming the profile page UI 
+                and other UI aspects, as well as creating some of the JavaScript 'dynamic' 
+                functionality. Our team worked very well together, despite the project challenges, 
+                and it was a real pleasure to be part of such an interesting project 
+                and motivated team.
+            </h5>   
+        </div>
+
+        <!-- AD - Team member 2 intro colourings and text -->
+        <div class="container8">
+            <!-- AD - Intro / overview statement about the project participant -->            
+             <h5>(HAMK's Finest) Team member 2:
+                <br><br>
+                <i class = "customAboutHeading">Daniel Kovacs (Server Programmer)</i>
                 <br><br>
                 <hr>
                 <br>
@@ -82,17 +105,18 @@
                 Only then, were we able to formulate, implement and execute a complex 
                 programming strategy. Once our research and learning phase was over, 
                 however, the team pulled through to produce a nicely, executed finished 
-                project. My main contributions to the project, revolved around the DAO, 
-                servlet implementation, JavaScript and algorithm creation. 
-                In addition, I ensured that various disparate project components, 
-                were correctly brought together for a smooth overall project execution.
-            </h5>
+                project. My main contributions to the project, revolved around programming
+                the profile page back-end functionality, questionnaire functionality, as well as
+                JavaScript and algorithm creation. In addition, 
+                I ensured that various disparate project components, were correctly brought 
+                together for a smooth overall project execution.
+            </h5> 
         </div>
 
-        <!-- AD - Team member 2 intro colourings and text -->
+        <!-- AD - Team member 3 intro colourings and text -->
         <div class="container8">
-            <!-- AD - Intro / overview statement about the candidate -->
-            <h5>(HAMK's Finest) Team member 2:
+            <!-- AD - Intro / overview statement about the project participant -->            
+              <h5>(HAMK's Finest) Team member 3:
                 <br><br>
                 <i class = "customAboutHeading">Lorand Heidrich (Server Programmer)</i>
                 <br><br>
@@ -100,41 +124,20 @@
                 <br>
                 Overview: Whilst challenging, this project was rewarding in the end!
                 <br><br>
-                I learned a lot from this project. Java servlets are 
+                I learned a lot from this project. JPA and RESTful Web Services are 
                 certainly challenging at first, but rewarding in the end. 
                 I'm sure the database management skills I have acquired 
                 will come in handy in my future endeavours. 
-                My main contributions to the vaalikone project were 
-                within the scope of DAO/CRUD and login related issues 
-                where I had the chance to work with Evangelos. 
-            </h5>
-        </div>
-
-        <!-- AD - Team member 3 intro colourings and text -->
-        <div class="container8">
-            <!-- AD - Intro / overview statement about the candidate -->
-            <h5>(HAMK's Finest) Team member 3:
-                <br><br>
-                <i class = "customAboutHeading">Ashley Davis (Server Programmer)</i>
-                <br><br>
-                <hr>
-                <br>
-                Overview: Server cookies are tough cookies, but they're pretty tasty!
-                <br><br>
-                For most of our team, servlets, DAO, and cookies were completely 
-                new topics to get to grips with. Nevertheless, with a bit of persistence 
-                and determination, the team worked hard, and things fell into place. 
-                During this project, my main contributions were towards programming the UI, 
-                programming Java servlet links, Scrum planning, as well as some of the 
-                application's JavaScript 'dynamic' functionality. Our team worked 
-                very well together, despite the project challenges, and it was a real 
-                pleasure to be part of such an interesting project and motivated team.
-            </h5>
+                My main contributions to the Election Machine project were 
+                revolved around creating the Employee CRUD system, as well as 
+                creating some of the JavaScript and UI aspects of the project. In addition,
+                I assisted with some of the project planning tasks.                
+            </h5>             
         </div>
 
         <!-- AD - Team member 4 intro colourings and text -->
         <div class="container8">
-            <!-- AD - Intro / overview statement about the candidate -->
+            <!-- AD - Intro / overview statement about the project participant -->
             <h5>(HAMK's Finest) Team member 4:
                 <br><br>
                 <i class = "customAboutHeading">Evangelos Kaikas (Server Programmer)</i>
@@ -148,9 +151,10 @@
                 Nevertheless, despite the monumental task at hand, our team learned a lot 
                 and we had a lot of fun during this server programming marathon. 
                 As a member of the team, my main areas of responsibility revolved around 
-                collaborating with my colleague Lorand to work on the login system, 
-                cookies and session implementation. In addition, I worked on certain 
-                aspects of the admin database functionality.
+                creating the New Question CRUD system, as well as assisting with the creation
+                of some of the JavaScript 'dynamic' functionality for the buttons.
+                Furthermore, I was responsible for the research and implementation of 
+                MySQL foreign keys into the project.
             </h5>
         </div>
 
@@ -160,16 +164,13 @@
         <!-- AD - Beginning of the selection button section (answers)-->
         <div class="container2">           
             <!-- AD - A small container to amend the disclaimer background section-->
-            <div class="container5">  
-            
+            <div class="container5">            
                 <!-- AD - Questionnaire guidance for the user -->
 		    <h5>DISCLAIMER: Neither the 'Global Herald Newspaper' or 'HAMK's Finest'
                 are to be held liable for any views or comments expressed by the candidates 
                 or users of this site. Your data is confidential and will not be shared or
-                sold in any capacity. All rights reserved.</h5>
-            
-            </div>
-		    
+                sold in any capacity. All rights reserved.</h5>            
+            </div>		    
             <hr>      
     
             <!-- AD - button container, containing buttons-->
