@@ -8,12 +8,14 @@ import javax.persistence.Persistence;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import data.Answer;
+import data.Candidate;
 
 @Path("/answerservice")
 public class AnswerService {
@@ -23,14 +25,29 @@ public class AnswerService {
 	@Path("/addoneanswer")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void saveOneAnswer(Answer answer) {
+	public void saveCandidateAnswers(Answer answer) {
 			EntityManager em = emf.createEntityManager();
 			em.getTransaction().begin();
 			em.persist(answer); //The actual insertion line
 			em.getTransaction().commit();
 			
 			System.out.println("answers saved into the db");
+	}
+	
+	@PUT
+	@Path("/updateanswers")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void updateCandidate(Answer answer) {
+		EntityManager entitymanager = emf.createEntityManager();
+		entitymanager.getTransaction().begin();
+		Answer a = entitymanager.find(Answer.class, answer.getAnswerId());
+		if (a!=null) {
+			entitymanager.merge(answer);//The actual update line
 		}
+		entitymanager.getTransaction().commit();
+
+	}
 	
 	@SuppressWarnings("unchecked")
 	@GET

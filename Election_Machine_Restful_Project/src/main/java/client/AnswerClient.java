@@ -45,7 +45,7 @@ public class AnswerClient extends HttpServlet {
 		  List<Question> questionList = readAllQuestion(request);
 		  
 //		  Collect all the submitted answers
-		  List<Answer> answerListSubmitted = getAllAnswer(request, questionList);
+		  List<Answer> answerListSubmitted = returnSubmittedAnswers(request, questionList);
 		  
 		  for (Answer answer : answerListSubmitted) {
 			System.out.println("answer: " + answer.getAnswer());
@@ -53,8 +53,8 @@ public class AnswerClient extends HttpServlet {
 	
 		  
 //		  ************ EVALUATE OR SAVE BASED ON ROLE *******************************************************************************  
-//		  String role = request.getSession().getAttribute("role").toString();
-		  String role = "voter";
+		  String role = request.getSession().getAttribute("role").toString();
+//		  String role = "voter";
 		  System.out.println("role from session is: " + role);
 		  
 		  switch (role) {
@@ -90,52 +90,32 @@ public class AnswerClient extends HttpServlet {
 			  
 			  break;
 //		  Candidate's answers will be saved in the DB		  
-		  case "candidate":
-//			  list = addAllAnswer(request);
-			  addAllAnswer(request, answerListSubmitted);
+		  case "candidate":			  
+			  int candidate_id = (int) request.getAttribute("userid");
+			  System.out.println("candidate id: " + candidate_id);
+			  
+			  List<Answer> oneCandidateAnswers = readOneCandidateAnswers(request, candidate_id);
+			  if(oneCandidateAnswers != null) {
+				  System.out.println("Updating answer table...");
+				  updateCandidateAnswers(request, answerListSubmitted);
+			  }
+			  else {
+				  saveCandidateAnswers(request, answerListSubmitted);
+			  }
+			  
+			  
 			  System.out.println("Case: addallanswer");
 			  System.out.println("ArrList: " + answerListSubmitted);
+			  
+//			  Redirect to index
+			  getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
 			  break;
 	  }
   }
 	  
 //	  *************************************************************************************************************************
-//	  ***************** CUSTOM METHODS ****************************************************************************************
-//	  *************************************************************************************************************************
-	  private List<Answer> getAllAnswer(HttpServletRequest request, List<Question> questionList) {
-		  List<Answer> answers = new ArrayList<Answer>();
-		  
-		  // Getting candidate_id
-		  HttpSession session = request.getSession(true);			
-//		  String userId = session.getAttribute("userid").toString();
-		  String userId = "1038"; // dont remove will cause nullpointer
-		  
-		  // The answer params from the JSP will be amended with question_ids and saved as answer object => List.
-		  for (Question q : questionList) {
-			  // Getting questions and answers
-			  int questionId = q.getId();
-			  String answerValue = request.getParameter("selected" + q.getId());
-			  
-			  // For candidates
-			  if(userId != null) {
-			  Answer a = new Answer(
-					  userId, 
-					  questionId, 
-					  answerValue, 
-					  "Answer to question");
-			  answers.add(a);
-			  }
-			  // For regular users (voters)
-			  else {
-				  Answer a = new Answer(
-						  questionId, 
-						  answerValue);
-				  answers.add(a);
-			  }
-		  }	
-		  return answers;
-	  }
-	  
+//	  ***************** SERVICE METHODS ***************************************************************************************
+//	  *************************************************************************************************************************  
 	  private List<Question> readAllQuestion(HttpServletRequest request) {
 			
 			String uri = "http://127.0.0.1:8080/rest/questionservice/readquestion";
@@ -152,7 +132,7 @@ public class AnswerClient extends HttpServlet {
 			return result;
 	  }
 	  
-	  private void addAllAnswer(HttpServletRequest request, List<Answer> answerList) {  
+	  private void saveCandidateAnswers(HttpServletRequest request, List<Answer> answerList) {  
 		  for (Answer a : answerList) {
 //			  Print to console
 			  System.out.println("question_id: " + a.getQuestionId() + "; candidate_id: " + a.getCandidateId() + "; answer value: " + a.getAnswer());		  
@@ -179,7 +159,13 @@ public class AnswerClient extends HttpServlet {
 				GenericType<ArrayList<Answer>> genericList = new GenericType<ArrayList<Answer>>() {};
 				b.post(e, genericList);
 				}		
-		}	
+		}
+	  
+	  private void updateCandidateAnswers(HttpServletRequest request, List<Answer> answerList) {
+		  
+		  //TODO
+		  
+	  }
 	  
 	  private List<Answer> readOneCandidateAnswers(HttpServletRequest request, int candidate_id) {
 			String uri = "http://127.0.0.1:8080/rest/answerservice/readonecandidateanswers/"+candidate_id;
@@ -201,6 +187,44 @@ public class AnswerClient extends HttpServlet {
 
 		  return returnedList;
 	  }
+	  
+//	  ******************************************************************************************************************
+//	  ************************ CUSTOM METHODS **************************************************************************
+//	  ******************************************************************************************************************
+	  private List<Answer> returnSubmittedAnswers(HttpServletRequest request, List<Question> questionList) {
+		  List<Answer> answers = new ArrayList<Answer>();
+		  
+//		  Getting Session
+//		  HttpSession session = request.getSession(false);
+		  System.out.println(request.getSession(false).getId());
+		  System.out.println(request.getSession(false).getAttribute("userid"));
+		  
+		  // The answer params from the JSP will be amended with question_ids and saved as answer object => List.
+		  for (Question q : questionList) {
+			  // Getting questions and answers
+			  int questionId = q.getId();
+			  String answerValue = request.getParameter("selected" + q.getId());
+			  
+			  // For candidates
+			  if(request.getSession(false).getAttribute("userid") != null) {
+				  String userId = request.getSession(false).getAttribute("userid").toString();
+				  Answer a = new Answer(
+						  userId,
+						  questionId, 		  
+						  answerValue,   
+						  "Answer to question");
+				  answers.add(a);
+			  }
+			  // For regular users (voters)
+			  else {
+				  Answer a = new Answer(
+						  questionId, 
+						  answerValue);
+				  answers.add(a);
+			  }
+		  }	
+		  return answers;
+	  }	  
 	  
 	  public List<Candidate> evaluateAllCandidates(HttpServletRequest request, 
 			  List<Candidate> candidateListStacked, 
