@@ -6,8 +6,9 @@
     
     <%@ page import="java.util.ArrayList" %>   
 	<%@ page import="data.Question" %>   
-	<%@ page import="data.Answer" %> 
-  <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+	<%@ page import="data.Answer" %>
+	<%@ page import="data.Candidate" %>  
+  	<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
      
     <title>Questionnaire Results</title>
     
@@ -65,10 +66,10 @@
             button is pressed again (toggle button).-->
             <div id="dvUserResults" style="display: none">
 				
-				<c:forEach var="question" items="${requestScope.selectionList}" >
+				<c:forEach var="question" items="${requestScope.questionList}" >
                 <div class="containerUserAnswers">
           
-                    <h5><c:out value = "${question.QId}/${fn:length(requestScope.selectionList)} - ${question.QTxt}"/>
+                    <h5><c:out value = "${question.questionId}/${fn:length(requestScope.selectionList)} - ${question.question}"/>
                         <br><br>
                         Your answer (number): <c:out value = "${question.answer}"/>  
                     </h5>
