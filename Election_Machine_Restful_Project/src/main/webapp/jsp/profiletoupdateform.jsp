@@ -733,7 +733,9 @@
 				<div style = "font-size: 16px">Select a file :</div> 
 				<input type="file" name="file" accept=".jpg" /><br>
 				<input type="hidden" name="candidate_id" value="${candidate.candidate_id}" /><br>				
-				<button class = "tableUpdate" onClick="submitform()"><b>UPLOAD</b></button>
+				<button class = "tableCustom3" onClick="submitform()"><b>UPLOAD</b></button>
+				<hr>
+				<div style = "font-size: 16px">USER NOTE: Please click 'UPLOAD' once only. Uploads may take a moment to process.</div>
 				
 			</form>
 		  </div>
