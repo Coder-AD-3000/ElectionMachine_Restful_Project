@@ -1603,7 +1603,34 @@ on the login page */
     justify-content: center;            
 }
 
-.profileCustomInput {
-	width: 350px;	
+/* AD - Margin amendments for the 
+   questionnaire results page */
+.marginAmendmentResults {
+	margin: 10px auto;	  
+}
+
+/* AD - This is for the percentage styling
+		on the Results page */		
+.customPercentage {
+	border-radius: 10px;         
+    color: rgba(255, 255, 255, 0.829);
+    box-shadow: 0 2px 16px 2px #264653; 
+    background: linear-gradient(0deg, rgb(91, 59, 180), 90%, rgb(168, 168, 241)); 
+    padding: 3px 10px 3px 13px;   
+}
+
+.customMatchHeading {
+	color: rgba(255, 255, 255, 0.829);
+	background: linear-gradient(0deg, rgb(91, 59, 180), 90%, rgb(168, 168, 241));
+	padding: 3px 10px 3px 13px;
+	border-radius: 10px;      	
+}
+
+.containerCustomHeight {
+	height:155px !important;
+}
+
+.customButtonMargin1 {
+	margin: 60px auto;
 }
 

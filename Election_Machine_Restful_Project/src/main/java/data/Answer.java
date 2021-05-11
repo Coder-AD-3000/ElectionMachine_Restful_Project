@@ -16,7 +16,7 @@ import javax.persistence.Transient;
 public class Answer {
 	
 	@Id 
-	@GeneratedValue(strategy=GenerationType.AUTO) 
+	@GeneratedValue(strategy=GenerationType.IDENTITY) 
 	private int answer_id;
 	private int question_id;
 	private int candidate_id;

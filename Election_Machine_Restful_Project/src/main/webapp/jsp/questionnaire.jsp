@@ -72,13 +72,13 @@
 			            
                 <!-- AD - The main blue questionnaire container 
                     where the questions will be placed dynamically-->
-                <div class="container5a">                  
+                <div class="container5a containerCustomHeight">                  
             
 					<span id="spnError" class="error" style="display: none">Please select.</span>
                      
                     <!-- AD - This div contains and centers the 'Start' button -->
                     <div class="container3">  
-                    <button class="button-main button1 questionnaireButton" onclick="onStart()" id="start"><b>Start</b></button>
+                    <button class="button-main button1 questionnaireButton customButtonMargin1" onclick="onStart()" id="start"><b>Start</b></button>
                     </div>
                     
                     <div class="input-radio">
