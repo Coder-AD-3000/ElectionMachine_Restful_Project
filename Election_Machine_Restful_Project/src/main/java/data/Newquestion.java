@@ -15,9 +15,19 @@ public class Newquestion {
 	public Newquestion() {
 		
 	}
+	
+	/**
+	 * 
+	 * @param new_question
+	 */
 	public Newquestion(String new_question) {
 		this.new_question=new_question;
 	}
+	/**
+	 * This constructs a New question with a specified newquestion_id and newquestion.
+	 * @param newquestion_id the id of the new question.
+	 * @param new_question the new question entered by the admin.
+	 */
 	public Newquestion(int newquestion_id, String new_question) {
 		this.newquestion_id=newquestion_id;
 		this.new_question=new_question;

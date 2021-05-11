@@ -33,9 +33,20 @@ public class Candidate {
 	private String username;
 	private String password;
 	private String role;
-	// Transient will prevent this attribute being persisted
-	@Transient
+	
+	/**
+	 * Contains all the questions displayed in the questionnaire
+	 */
+	@Transient //Transient will prevent this attribute being persisted
 	private List<Question> questionList;
+	/**
+	 * Contains all the answers provided by the candidate for the  questionnaire
+	 */
+	@Transient
+	private List<Answer> answerList;	
+	/**
+	 * TotalScore based on the voter-candidate comparison
+	 */
 	@Transient
 	private int totalScore;
 	
@@ -306,6 +317,33 @@ public class Candidate {
 	public void setTotalScore(int totalScore) {
 		this.totalScore = totalScore;
 	}
+	
+	/**
+	 * @param questionList takes the list of quiz questions
+	 */
+	public void setQuestionList(List<Question> questionList) {
+		this.questionList = questionList;
+	}
+	/**
+	 * @return question list containing the quiz's questions
+	 */
+	public List<Question> getQuestionList() {
+		return questionList;
+	}
+	
+	/**
+	 * @param answerList takes a list of candidate answers
+	 */
+	public void setAnswerList(List<Answer> answerList) {
+		this.answerList = answerList;
+	}
+	/**
+	 * @return answer list containing the candidate's answers to the quiz questions
+	 */
+	public List<Answer> getAnswerList() {
+		return answerList;
+	}
+	
 	
 	public String toString() {
 		return this.candidate_id + ": "
