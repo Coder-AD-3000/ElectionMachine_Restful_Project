@@ -713,9 +713,10 @@
 				<div style = "font-size: 16px">Select a file :</div> 
 				<input type="file" name="file" accept=".jpg" required/><br>
 				<input type="hidden" name="candidate_id" value="${candidate.candidate_id}" /><br>			
-				<input class = "tableCustom3" type="submit" value="Submit" style = "font-weight:bold;">
+				<input class = "tableCustom3" type="submit" 
+				value="Submit" style = "font-weight:bold;">
 								
-				<!-- AD the old version (Might delete later)						
+				<!-- AD the old version (Might need later)						
 				<button class = "tableCustom3" onClick="submitform()"><b>UPLOAD</b></button>
 				-->
 				
@@ -748,7 +749,7 @@
                	var span = document.getElementsByClassName("close")[0];
                	span.onclick = function() {
 	                   modal.style.display = "none";
-	                 }
+	                 }               	             	
                	
     			</script>
     
@@ -762,6 +763,7 @@
     					  x[i].removeAttribute("disabled");
     					}
             		}
+    				    				
                 </script>
                   
     			<!-- 			
