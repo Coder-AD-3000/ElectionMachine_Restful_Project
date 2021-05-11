@@ -1,7 +1,5 @@
 package services;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -17,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 import data.Candidate;
 
 @Path("/profileservice")
-public class profileservice {
+public class ProfileService {
 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("emachinedb");
 	@GET
 	@Path("/readtoupdateprofile/{candidate_id}")
