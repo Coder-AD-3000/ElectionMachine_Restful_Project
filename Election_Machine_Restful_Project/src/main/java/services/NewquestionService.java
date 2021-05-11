@@ -89,7 +89,7 @@ public class NewquestionService {
 	public Newquestion readToUpdateNewquestion(@PathParam("newquestion_id") int newquestion_id) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-//In the code below a Newquestion type object with id value id is read from the database. 
+//In the code below a Newquestion type object with id value newquestion_id is read from the database. 
 //The find function needs two parameters: the class of entity and an id. 
 //The first parameter (here: Newquestion.class) tells the table name where to search.		
 		Newquestion nq=em.find(Newquestion.class, newquestion_id);
