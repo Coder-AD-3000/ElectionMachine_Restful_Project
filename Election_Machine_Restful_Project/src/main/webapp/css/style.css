@@ -1463,7 +1463,7 @@ on the candidate profile page */
 	padding: 20px 20px 20px 20px;
 }
 
-/* AD - Customises the main yellow container
+/* AD - Customises the the 'footer'container
 on the adminUpdateCandidate page */
 .containerProfileFooter{            
     max-width: 70%;
@@ -1577,4 +1577,14 @@ on the profile page */
   background-color:rgba(214, 214, 214, 0.822);
 }
 
+/* AD - Customises the 'footer' container
+on the adminUpdateCandidate page */
+.containerLoginFooter{            
+    max-width: 70%;
+    padding: 20px;
+    border-radius: 10px;         
+    background-color:rgba(214, 214, 214, 0.822);
+    box-shadow: 0 2px 16px 2px #264653;         
+    margin: 25px auto 25px auto;                
+}
 
