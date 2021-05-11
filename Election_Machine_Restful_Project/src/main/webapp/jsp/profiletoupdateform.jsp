@@ -731,8 +731,9 @@
 			<form class = "tableAddBackground2" name="uploadform" method="post" 
 			enctype="multipart/form-data" action="/rest/uploadservice/uploadiamge">
 				<div style = "font-size: 16px">Select a file :</div> 
-				<input type="file" name="file" accept=".jpg" /><br>
-				<input type="hidden" name="candidate_id" value="${candidate.candidate_id}" /><br>				
+				<input type="file" name="file" accept=".jpg" required/><br>
+				<input type="hidden" name="candidate_id" value="${candidate.candidate_id}" /><br>
+				<input type="submit" value="Submit">		
 				<button class = "tableCustom3" onClick="submitform()"><b>UPLOAD</b></button>
 				<hr>
 				<div style = "font-size: 16px">USER NOTE: Please click 'UPLOAD' once only. Uploads may take a moment to process.</div>
