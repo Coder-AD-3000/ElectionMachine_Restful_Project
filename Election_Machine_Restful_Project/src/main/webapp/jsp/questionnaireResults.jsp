@@ -75,34 +75,23 @@
                         <c:out value="${requestScope.candidate_1st.first_name} ${requestScope.candidate_1st.last_name} - ${requestScope.candidate_1st.party}"></c:out>                  
                             <br>
                             <br>
-                            <hr>                           
-		                 	<img class = "table marginAmendmentResults 
-		                    profilePortraitBorder profileWidthAmendment" 
-		                 	src="img/${requestScope.candidate_1st.pic}">                     
-                            <hr>
-                            <br>
-                            
-                            <!-- 
-                            
-                             <br>
-                            <br>
-                            <hr>
-                            <table class="table marginAmendment">			                       
+                            <hr> 
+                               
+                               <!-- AD - This section adds and centers the matched candidate picture -->                            
+	                           <table class="table marginAmendmentResults">			                       
 					            <tbody>                    
 					                <tr>
-				                	<td class="profileWidthAmendment">
+				                	<td class="marginAmendmentResults">
 				                 	<img class = "profilePortraitBorder" 
 				                 	src="img/${requestScope.candidate_1st.pic}" style="max-width: 150px;"> 
 				                                            	 						
 					                 </td>                                                               	                                        
 					                </tr>	                     
 					            </tbody>                            
-					        </table> 
+					        	</table>        			                 	                     
                             
                             <hr>
-                            <br>                
-                            
-                             -->
+                            <br>                  
                             
 							Age: <c:out value="${requestScope.candidate_1st.age}"></c:out>
 							<br>
