@@ -115,7 +115,8 @@ public class CandidateClient extends HttpServlet {
 		//Create a GenericType to be able to get List of objects
 		//This will be the second parameter of post method
 		GenericType<List<Candidate>> genericList = new GenericType<List<Candidate>>() {};		
-		 
+		
+		//Posting data (Entity<ArrayList<Candidate>> e) to the given address
 		List<Candidate> returnedList=builder.post(e, genericList);
 		return returnedList;
 	}
@@ -130,6 +131,7 @@ public class CandidateClient extends HttpServlet {
 		//This will be the second parameter of post method
 		GenericType<List<Candidate>> genericList = new GenericType<List<Candidate>>() {};
 		
+		//Posting data (Entity<ArrayList<Candidate>> e) to the given address
 		List<Candidate> returnedList = builder.get(genericList);
 		return returnedList;
 	}
