@@ -56,7 +56,9 @@
        <div class="table-responsive">    
               
               
-          <!-- AD  -->    
+          <!-- AD - Here data is passed to a RESTful web service via an HTML form (JSP in this case).
+          			The HTML form makes a POST type request, and as such, the service method
+          			receives data via FormParams. -->    
           <form action='../addcandidate' method='post'>  
                 
             <table class="table">                    
@@ -199,9 +201,7 @@
 									<td><textarea disabled name='profession' >${candidate.profession }</textarea></td> 
 									<td><textarea disabled name='username' >${candidate.username }</textarea></td> 
 									<td><input readonly class = "greyed-background" type='password' name='password' value='${candidate.password }'></td> 
-									<!--  
-									<td><textarea disabled name='password' >${candidate.password }</textarea></td> 
-								   	-->
+								
 								   </tr>	                        
 			                     </tbody>		                     
 	                    	</table>      

@@ -19,7 +19,12 @@ import javax.ws.rs.core.MediaType;
 import data.Candidate;
 
 @Path("/candidateservice")
-public class CandidateService {
+public class CandidateService {	
+	
+	/**
+	 * AD - At the beginning of this class here, the 'EntityManagerFactory' object 'emf'
+	 * 		is created from the 'emachinedb' persistence unit.
+	 */
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("emachinedb");
 	@GET
 	@Path("/readcandidate")
@@ -32,6 +37,17 @@ public class CandidateService {
 		entitymanager.getTransaction().commit();
 		return list;
 	}	
+	/**
+	 * @param candidate
+	 * @return
+	 *  AD - This method receives the values (e.g first_name, last_name, party etc 
+	 *  from the html form (JSP in this case). The form sends a POST type request.
+	 *  
+	 *  Each method's name (signature) must differ from the other methods of the class.
+	 *  
+	 *  When the data is sent, the POST request is utilised, and so, no data is visible
+	 *  in the browser's URL bar.
+	 */	
 	@POST
 	@Path("/addcandidate")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -39,7 +55,7 @@ public class CandidateService {
 	public List<Candidate> addCandidate(Candidate candidate) {
 		EntityManager entitymanager = emf.createEntityManager();
 		entitymanager.getTransaction().begin();
-		entitymanager.persist(candidate);//The actual insertion line
+		entitymanager.persist(candidate);// AD - a new 'candidate' object is inserted into the candidate table.
 		entitymanager.getTransaction().commit();
 		//Calling the method readCandidate() of this service
 		List<Candidate> list=readCandidate();		

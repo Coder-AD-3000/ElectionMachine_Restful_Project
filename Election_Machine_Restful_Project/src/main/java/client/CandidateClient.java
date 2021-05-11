@@ -19,6 +19,11 @@ import javax.ws.rs.core.MediaType;
 
 import data.Candidate;
 
+/**
+ * @author ashle
+ *	AD - Here a servlet is utilised as the client. In servlets, a 'writer' 
+ *		is utilised, which is made available via the response object.
+ */
 @WebServlet(urlPatterns = {"/addcandidate", "/deletecandidate",
 		"/updatecandidate","/readcandidate",
 		"/readtodeletecandidate","/readtoupdatecandidate"})
