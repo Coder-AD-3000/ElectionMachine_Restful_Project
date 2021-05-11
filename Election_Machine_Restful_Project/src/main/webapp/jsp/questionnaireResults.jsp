@@ -78,6 +78,35 @@
                             <hr>
                             <br>
                             
+                            <!-- 
+                            
+                            <table class="table marginAmendment">                    
+				            <thead class = "tableCustom1">
+				                <tr>                                                                      
+				                    <th>CANDIDATE PORTRAIT</th>                                      
+				                </tr>
+				            </thead>            
+				            <tbody>                    
+				                <tr> 
+				                
+		                 	AD - Portrait Display Area            
+		 
+		                 	<td class="tableAddBackground profileWidthAmendment">
+		                 	<img class = "profilePortraitBorder" 
+		                 	src="img/${candidate.pic}" style="max-width: 150px;"> 
+		                                      
+		                    <textarea disabled rows="8" cols="20" name='pic' 
+		                    placeholder="Portrait Picture"
+		                    style="font-weight:bold; background-color:#87CEFA;">                    
+		                    </textarea>
+                   	 
+					                 </td>                                                               	                                        
+					                </tr>	                     
+					            </tbody>                            
+					        </table>                  
+                            
+                             -->
+                            
 							Age: <c:out value="${requestScope.candidate_1st.age}"></c:out>
 							<br>
 							Occupation: <c:out value="${requestScope.candidate_1st.profession}"></c:out>

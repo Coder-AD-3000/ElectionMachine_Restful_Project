@@ -8,7 +8,7 @@
 	<!-- AD - includes the meta component, into this page -->
     <%@ include file="../components/meta.jsp" %>
  
-    <title>Candidate Form</title>
+    <title>Candidate Profile</title>
     
     <!-- AD - includes the header component, into this page -->
     <%@ include file="../components/headerBootstrap.jsp" %>    
