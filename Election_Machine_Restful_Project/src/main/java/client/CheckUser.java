@@ -54,7 +54,8 @@ public class CheckUser extends HttpServlet {
 				if (c.getUsername().equals(user) && c.getPassword().equals(pwd)) {						
 							
 					System.out.println("login match with userId: " + c.getCandidate_id() + " & username: " + c.getUsername());
-					
+				
+//					Creating session for candidate
 					HttpSession session = request.getSession(true);
 					session.setAttribute("username", c.getUsername());						
 					session.setAttribute("userid", c.getCandidate_id());
@@ -70,6 +71,7 @@ public class CheckUser extends HttpServlet {
 								
 						System.out.println("login match with userId: " + e.getEmployee_id() + " & username: " + e.getUsername());
 						
+//						Creating session for employee
 						HttpSession session = request.getSession(true);
 						session.setAttribute("username", e.getUsername());						
 						session.setAttribute("userid", e.getEmployee_id());
