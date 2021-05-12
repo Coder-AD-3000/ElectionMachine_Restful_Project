@@ -25,6 +25,17 @@ import data.Candidate;
  *		is utilised, which is made available via the response object.
  *
  *		To be able to make a request to a service, we need a Client, WebTarget and a Builder.
+ *
+ *
+ *		These methods contain window builder instructions (commands)
+ *		With these commands we are preparing entities for sending to the RESTFUL service
+ *		
+ *		So the builder is preparing the entities to send to the RESTful service
+ *		Then in the RESTful method, it will handle the database entries
+ *		eg you can update and delete etc...
+ *
+ *		So the client is a controller and it makes decisions, and the RESTful will execute
+ *		a method based on the decision.
  *		
  */
 @WebServlet(urlPatterns = {"/addcandidate", "/deletecandidate",

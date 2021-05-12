@@ -61,7 +61,7 @@ public class CandidateService {
 	 *  When the data is sent, the POST request is utilised, and so, no data is visible
 	 *  in the browser's URL bar.
 	 */	
-	@POST
+	@POST // We want to create an entry 
 	@Path("/addcandidate")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -91,7 +91,7 @@ public class CandidateService {
 	 * 		PUT is similar to POST, but it is designed for the purpose of updating something.
 	 * 		The data sent is not seen in the browser bar.
 	 */
-	@PUT
+	@PUT // Updating in a database
 	@Path("/updatecandidate")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -122,7 +122,7 @@ public class CandidateService {
 	 * 		On the client side the request method is now delete. On the server side the annotation is
 	 * 		"@DELETE". Furthermore, data sent is visible in the browser's location bar.
 	 */
-	@DELETE
+	@DELETE // Delete 
 	@Path("/deletecandidate/{candidate_id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
