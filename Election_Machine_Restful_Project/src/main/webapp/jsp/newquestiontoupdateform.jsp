@@ -121,58 +121,7 @@
 								  </tbody>						  
 							   </table>
 						</div>	
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						<!--  
-						 <td>
-						 <input class = "buttonShowHide2 button1 buttonColourMod1 "type='submit' name='ok' value='UPDATE'>					 
-						 </td>
-						-->
-						
-						
-						
-						
-						<!-- 
-						
-						<td class="tableAddBackground">					 
-					 
-						<Button id = "btnAddEntry" value='ADD' onClick="ShowHideToggle1(this)">
-						<b class = "tableAdd">ADD</b></Button>
-						
-						<div id ="dvAddEntry" style="display: none">					 
-					  		<p style = "width:125px"><b style = "color: rgba(255, 255, 255, 0.555)">Confirm Addition?</b></p>	
-					  		
-					  			
-					  		 AD this div is for the loading animation 
-					  		 <div class="loader"></div> 
-					  							  								  
-							  <table class="table-responsive">
-								  <tbody>
-									  <tr>
-										 <td class="tableAddBackground">									 	
-										 						
-								 	  		<input type='submit' name='ok' value='ADD ENTRY' class = "tableAdd" 
-								 	  		style="font-weight:bold;">
-								 	  	 </td> 							  
-									  	 <td>
-										   <Button value='' onClick="window.location = '../jsp/candidateform.jsp';">
-										   <b>CANCEL</b></Button>
-									  	</td>
-									  </tr>								  
-								  </tbody>						  
-							   </table>
-						</div>							
-												
-						 -->
-						
+											
 					</tr>
             	</tbody>
 			</table>			
@@ -183,26 +132,7 @@
 			</form>		
  		</div>
 	</div>
-	
-	
-							<!-- EK - Loading animation bar 
-							<div id="myProgress">
-						  		<div id="myBar">10%</div>
-							</div>
-							-->
-						
-						
-						
-							<!-- EK 
-							
-							<br>
-							
-							<button onclick="move()">Click Me
-							</button> 
-							-->
-	
-	
-	
+		
 			<!-- EK - animation JavaScript script -->
 			<script>			
 			var i = 0;

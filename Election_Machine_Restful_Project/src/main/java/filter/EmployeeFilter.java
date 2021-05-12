@@ -17,6 +17,10 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class AuthFilter
  */
+/**
+ * @author Daniel
+ *
+ */
 @WebFilter(dispatcherTypes = {
 				DispatcherType.REQUEST, 
 				DispatcherType.FORWARD, 
@@ -43,10 +47,11 @@ public class EmployeeFilter implements Filter {
 
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
+	 * Will block unwanted page access
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
+
+//		Getting session and identifying user role
 		HttpSession session = ((HttpServletRequest)request).getSession(true);
 		String role = "undefined";
 		if (session.getAttribute("role") != null) {

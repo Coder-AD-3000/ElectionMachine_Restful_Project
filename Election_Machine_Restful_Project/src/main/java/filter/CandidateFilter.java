@@ -17,6 +17,10 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class AuthFilter
  */
+/**
+ * @author Daniel
+ *
+ */
 @WebFilter(dispatcherTypes = {
 				DispatcherType.REQUEST, 
 				DispatcherType.FORWARD, 
@@ -26,7 +30,6 @@ import javax.servlet.http.HttpSession;
 		, urlPatterns = { "/jsp/adminPortal.jsp","/jsp/adminUpdateCandidates.jsp","/jsp/adminNewQuestions.jsp"
 				,"/jsp/newquestiontoupdateform.jsp","/jsp/candidatetodeleteform.jsp","/jsp/newquestionform.jsp"
 				,"/jsp/candidatetoupdateform.jsp","/jsp/employeeform.jsp","/jsp/employeetoupdateform.jsp","/jsp/questionnaireResults.jsp"})
-//, urlPatterns = { "/jsp/adminPortal.jsp","/jsp/adminUpdateCandidates.jsp", "/rest/candidateservice/*" })
 public class CandidateFilter implements Filter {
 
     /**
@@ -45,10 +48,12 @@ public class CandidateFilter implements Filter {
 
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
+	 *
+	 *Will block unwanted page access
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// place your code here
+
+//		Getting session and identiyfing role
 		HttpSession session = ((HttpServletRequest)request).getSession(true);
 		String role = "undefined";
 		if (session.getAttribute("role") != null) {

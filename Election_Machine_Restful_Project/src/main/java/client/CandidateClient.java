@@ -19,6 +19,14 @@ import javax.ws.rs.core.MediaType;
 
 import data.Candidate;
 
+/**
+ * @author ashle
+ *	AD - Here a servlet is utilised as the client. In servlets, a 'writer' 
+ *		is utilised, which is made available via the response object.
+ *
+ *		To be able to make a request to a service, we need a Client, WebTarget and a Builder.
+ *		
+ */
 @WebServlet(urlPatterns = {"/addcandidate", "/deletecandidate",
 		"/updatecandidate","/readcandidate",
 		"/readtodeletecandidate","/readtoupdatecandidate"})
@@ -70,10 +78,21 @@ public class CandidateClient extends HttpServlet {
 
 	private Candidate readToUpdateCandidate(HttpServletRequest request) {
 		String candidate_id=request.getParameter("candidate_id");
+		/* AD - Here, the local variable uri has 
+		 * 		the value of the whole URL to the service.
+		 * 		
+		 * 		A Client, WebTarget and Builder are required in order to make a request to the service.*/
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/readtoupdatecandidate/"+candidate_id;
 		Client client = ClientBuilder.newClient();
 		WebTarget webtarget = client.target(uri);
 		Builder builder = webtarget.request();
+		/* AD - Via the Builder type object we make a request.
+		 * 		Here a GET type request is executed, as the service requires.
+		 * 
+		 * 		A Candidate object is returned from the service and Jersey converts it
+		 * 		into JSON. The JSON in this client application is received, and we give 
+		 * 		Candidate.class as a parameter to the method "get" of the builder object.
+		 * 		Jersey converts the JSON string back into a Candidate type object.*/
 		Candidate candidate = builder.get(Candidate.class);  
 		return candidate;
 	}
@@ -115,7 +134,8 @@ public class CandidateClient extends HttpServlet {
 		//Create a GenericType to be able to get List of objects
 		//This will be the second parameter of post method
 		GenericType<List<Candidate>> genericList = new GenericType<List<Candidate>>() {};		
-		 
+		
+		//Posting data (Entity<ArrayList<Candidate>> e) to the given address
 		List<Candidate> returnedList=builder.post(e, genericList);
 		return returnedList;
 	}
@@ -130,6 +150,7 @@ public class CandidateClient extends HttpServlet {
 		//This will be the second parameter of post method
 		GenericType<List<Candidate>> genericList = new GenericType<List<Candidate>>() {};
 		
+		//Posting data (Entity<ArrayList<Candidate>> e) to the given address
 		List<Candidate> returnedList = builder.get(genericList);
 		return returnedList;
 	}

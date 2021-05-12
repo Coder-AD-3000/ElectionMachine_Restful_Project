@@ -22,10 +22,22 @@ import javax.ws.rs.core.MediaType;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
+/**
+ * @author Daniel
+ *
+ */
 @Path("/uploadservice")
 public class UploadService {
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("emachinedb");
 	
+	/**
+	 * Method will uplad pic to an internal folder and store its name in the DB
+	 * @param candidate_id identifyies candidate
+	 * @param fileInputStream containing img data
+	 * @param fileMetaData containing img data
+	 * @param sc
+	 * @throws Exception
+	 */
 	@POST
 	@Path("/uploadiamge")
 	@Consumes({MediaType.MULTIPART_FORM_DATA})
