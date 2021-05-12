@@ -17,7 +17,7 @@ import javax.ws.rs.core.MediaType;
 import data.Answer;
 
 /**
- * @author Daniel Kovacs
+ * @author Daniel
  * 
  * Service class processing AnswerClient requests
  *

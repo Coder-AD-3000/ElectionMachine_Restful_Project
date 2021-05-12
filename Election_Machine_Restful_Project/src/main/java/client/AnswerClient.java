@@ -22,7 +22,7 @@ import data.Candidate;
 import data.Question;
 
 /**
- * @author Daniel Kovacs
+ * @author Daniel
  * 
  * AnswerClient will process the submitted questionnaire answers for both voters and candidates.
  * User will be identified based on the session data (user_id and role), which will determine the chain of actions.

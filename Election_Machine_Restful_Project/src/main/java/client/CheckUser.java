@@ -16,9 +16,13 @@ import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.core.GenericType;
 
 import data.Candidate;
+import data.Employee;
 
 /**
+ * @author Daniel
  * Servlet implementation class CheckUser
+ * Will check user data upon login attempt
+ * 
  */
 @WebServlet(urlPatterns = {"/checkuser", "/logout"})
 public class CheckUser extends HttpServlet {
@@ -44,7 +48,8 @@ public class CheckUser extends HttpServlet {
 			String pwd = request.getParameter("pwd");
 			boolean isMatching = false;
 			
-			List<Candidate> candidateList = readCandidate(request);		
+			System.out.println("Login: Checking Candidate table...");
+			List<Candidate> candidateList = readCandidate(request);	
 			for (Candidate c: candidateList)					
 				if (c.getUsername().equals(user) && c.getPassword().equals(pwd)) {						
 							
@@ -57,27 +62,22 @@ public class CheckUser extends HttpServlet {
 					isMatching = true;
 				}
 			
-//			List<Employee> EmployeeList = readEmployee(request);
-//			for (Employee e: employeeList)					
-//				if (e.getUsername().equals(user) && e.getPassword().equals(pwd)) {						
-//							
-//					System.out.println("login match with userId: " + e.getCandidate_id() + " & username: " + c.getUsername());
-//					
-//					HttpSession session = request.getSession(true);
-//					session.setAttribute("username", e.getUsername());						
-//					session.setAttribute("userid", e.getEmployee_id());
-//					session.setAttribute("role", e.getRole());
-//					isMatching = true;
-//				}
-			
-			if (user.compareTo("employee") == 0 && pwd.compareTo("employee") == 0) {
-				HttpSession session = request.getSession(true);
-				session.setAttribute("username", "employee");						
-				session.setAttribute("userid", 1);
-				session.setAttribute("role", "employee");
-				isMatching = true;
+			System.out.println("Login: Checking Employee table...");
+			if (isMatching == false) {
+				List<Employee> employeeList = readEmployee(request);
+				for (Employee e: employeeList)					
+					if (e.getUsername().equals(user) && e.getPassword().equals(pwd)) {						
+								
+						System.out.println("login match with userId: " + e.getEmployee_id() + " & username: " + e.getUsername());
+						
+						HttpSession session = request.getSession(true);
+						session.setAttribute("username", e.getUsername());						
+						session.setAttribute("userid", e.getEmployee_id());
+						session.setAttribute("role", e.getRole());
+						isMatching = true;
+					}				
 			}
-			
+						
 			// Redirect page based on DB matches
 			if (isMatching) {
 				response.sendRedirect("/jsp/candidatePortal.jsp");
@@ -96,30 +96,32 @@ public class CheckUser extends HttpServlet {
 		}	
 	}
 	
+	/**
+	 * @param request
+	 * @return The list of all available candidate
+	 */
 	private List<Candidate> readCandidate(HttpServletRequest request) {
-
 		String uri = "http://127.0.0.1:8080/rest/loginservice/readcandidate";
 		Client client = ClientBuilder.newClient();
 		WebTarget webtarget = client.target(uri);
 		Builder builder = webtarget.request();
-
-		GenericType<List<Candidate>> genericList = new GenericType<List<Candidate>>() {};
-		
+		GenericType<List<Candidate>> genericList = new GenericType<List<Candidate>>() {};		
 		List<Candidate> returnedList = builder.get(genericList);
 		return returnedList;
 	}
-/*	
+	
+	/**
+	 * @param request
+	 * @return The list of all available employee
+	 */
 	private List<Employee> readEmployee(HttpServletRequest request) {
-
 		String uri = "http://127.0.0.1:8080/rest/loginservice/reademployee";
 		Client client = ClientBuilder.newClient();
 		WebTarget webtarget = client.target(uri);
 		Builder builder = webtarget.request();
-
-		GenericType<List<Employee>> genericList = new GenericType<List<Employee>>() {};
-		
+		GenericType<List<Employee>> genericList = new GenericType<List<Employee>>() {};	
 		List<Employee> returnedList = builder.get(genericList);
 		return returnedList;
 	}
-*/
+
 }
