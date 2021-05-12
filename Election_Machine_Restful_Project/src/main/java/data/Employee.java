@@ -37,6 +37,10 @@ public class Employee {
 	 * String based value for password column in employee table
 	 */
 	private String password;
+	/**
+	 * String based value for role column in employee table
+	 */
+	private String role;
 	
 	
 	/***************************************************************************
@@ -189,6 +193,19 @@ public class Employee {
 		this.password = password;
 	}
 
+	/**
+	 * @return String based value of role
+	 */
+	public String getRole() {
+		return role;
+	}
+
+	/**
+	 * @param role takes String based arg of role
+	 */
+	public void setRole(String role) {
+		this.role = role;
+	}
 	
 	/***************************************************************************
 	 ***************************   METHODS   *********************************** 
@@ -201,5 +218,7 @@ public class Employee {
 		return "Employee [employee_id=" + employee_id + ", first_name=" + first_name + ", last_name=" + last_name
 				+ ", username=" + username + ", password=" + password + "]";
 	}
+
+
 	
 }

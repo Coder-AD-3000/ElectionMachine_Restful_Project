@@ -31,6 +31,19 @@ public class ProfileService {
 		return cand;
 	}
 	
+	@SuppressWarnings("unchecked")
+	@GET
+	@Path("/readallcandidate")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public List<Candidate> readAllCandidate() {
+		EntityManager entitymanager=emf.createEntityManager();
+		entitymanager.getTransaction().begin();
+		List<Candidate> list=entitymanager.createQuery("select x from Candidate x").getResultList();
+		entitymanager.getTransaction().commit();
+		return list;
+	}
+	
 	@PUT
 	@Path("/updatecandidate")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -58,7 +71,5 @@ public class ProfileService {
 			entitymanager.remove(cand);//The actual insertion line
 		}
 		entitymanager.getTransaction().commit();	
-	}	
-	
-
+	}		
 }

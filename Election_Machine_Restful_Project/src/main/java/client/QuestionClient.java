@@ -1,7 +1,6 @@
 package client;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -18,6 +17,10 @@ import javax.ws.rs.core.GenericType;
 import data.Question;
 
 
+/**
+ * @author Daniel
+ *
+ */
 @WebServlet(urlPatterns = {"/readallquestion"})
 public class QuestionClient extends HttpServlet{
 	
@@ -43,14 +46,20 @@ public class QuestionClient extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 		throws IOException, ServletException {
 		
+//		Fetching questions from DB
 		List<Question> arrlist = readQuestion(request);
 		
+//		Forwarding questions to view page
 		request.setAttribute("questionlist", arrlist);
 		RequestDispatcher rd = request.getRequestDispatcher("./jsp/questionnaire.jsp");
 		  rd.forward(request, response);
 	}
 	  
 	
+	/**
+	 * @param request
+	 * @return List of Question objects conatining all available question from DB.
+	 */
 	private List<Question> readQuestion(HttpServletRequest request) {
 		
 		String uri = "http://127.0.0.1:8080/rest/questionservice/readquestion";

@@ -15,12 +15,20 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import data.Answer;
-import data.Candidate;
 
+/**
+ * @author Daniel
+ * 
+ * Service class processing AnswerClient requests
+ *
+ */
 @Path("/answerservice")
 public class AnswerService {
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("emachinedb");
 	
+	/**
+	 * @param answer object contains all the answer info for one question to be stored in DB
+	 */
 	@POST
 	@Path("/addoneanswer")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -34,8 +42,11 @@ public class AnswerService {
 			System.out.println("answers saved into the db");
 	}
 	
+	/**
+	 * @param answer conatins all info to be updated in the DB
+	 */
 	@PUT
-	@Path("/updateanswers")
+	@Path("/updateoneanswer")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void updateCandidate(Answer answer) {
@@ -49,6 +60,10 @@ public class AnswerService {
 
 	}
 	
+	/**
+	 * @param candidate_id identifies the selected candidate
+	 * @return all candidate answers submitted for the questionnaire
+	 */
 	@SuppressWarnings("unchecked")
 	@GET
 	@Path("/readonecandidateanswers/{candidate_id}")
