@@ -123,15 +123,17 @@ public class AnswerClient extends HttpServlet {
 							  updateOneCandidateAnswer(request, answer_new);  			
 						  }  
 					  }
-				  } 
+				  }
+				  request.setAttribute("message", "Your submission was updated successfully!");
 			  }
 //			  b) If there is none => INSERT
 			  else {
 				  System.out.println("Saving answers into DB ...");
 				  saveCandidateAnswers(request, answerListSubmitted);
+				  request.setAttribute("message", "Your submission was uploaded successfully! You may do a re-take any time.");
 			  }			  
 			  			  
-//			  3) Redirect to index
+//			  3) Redirect to index			  
 			  getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
 			  break;
 	  }

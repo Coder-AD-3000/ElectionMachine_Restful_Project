@@ -715,6 +715,7 @@
 				<input type="hidden" name="candidate_id" value="${candidate.candidate_id}" /><br>			
 				<input class = "tableCustom3" type="submit" 
 				value="Submit" style = "font-weight:bold;">
+				${requestScope.message}
 								
 				<!-- AD the old version (Might need later)						
 				<button class = "tableCustom3" onClick="submitform()"><b>UPLOAD</b></button>

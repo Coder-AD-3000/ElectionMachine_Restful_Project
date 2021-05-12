@@ -71,7 +71,5 @@ public class ProfileService {
 			entitymanager.remove(cand);//The actual insertion line
 		}
 		entitymanager.getTransaction().commit();	
-	}	
-	
-
+	}		
 }

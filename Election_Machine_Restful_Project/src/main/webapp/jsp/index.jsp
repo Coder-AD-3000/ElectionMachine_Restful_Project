@@ -41,7 +41,20 @@
 
         <!-- AD - This container customises the 'please register' message-->
         <div class="container7">
-          <h3>Please click the 'Take Quiz' button to start the questionnaire!</h3>
+	     	<c:set var="msg" scope="session" value="${requestScope.message}"/>
+	     	<c:set var="role" scope="session" value="${sessionScope.role}"/>
+			<c:choose>
+			  <c:when test="${role == 'employee'}">
+			    <h3>You are logged in as employee: <c:out value="${sessionScope.username}"></c:out></h3>
+			  </c:when>
+			  <c:when test="${msg != null}">
+					<h3><c:out value="${msg}"></c:out></h3>
+			  </c:when>			  
+			  <c:otherwise>
+			    	<h3>Please click the 'Take Quiz' button to start the questionnaire!</h3>
+			  </c:otherwise>
+			</c:choose>        
+          	
         </div>
     
         <hr>   
@@ -62,9 +75,18 @@
             <hr>      
     
             <!-- AD - button container, containing buttons-->
-            <div class="container3">                
+            <div class="container3">
+            	    <c:set var="role" scope="session" value="${sessionScope.role}"/>
+					<c:choose>
+					  <c:when test="${role == 'employee'}">
+					    <button class="button-main button1" onclick="window.location.href='/jsp/adminPortal.jsp'"><b>My Portal</b></button>
+					  </c:when>
+					  <c:otherwise>
+					    <button class="button-main button1" onclick="window.location.href='/readallquestion'"><b>Take Quiz</b></button>
+					  </c:otherwise>
+					</c:choose>                 
 
-                <button class="button-main button1" onclick="window.location.href='/readallquestion'"><b>Take Quiz</b></button>
+                
               
             </div>
         

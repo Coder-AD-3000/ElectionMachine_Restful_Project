@@ -2,17 +2,12 @@ package client;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -66,12 +61,17 @@ public class UploadClient extends HttpServlet {
 		    Response resp = target.request().post(Entity.entity(multipart, multipart.getMediaType()));
 		    System.out.println("Response created: " + resp);
 		     
-		    //Use response object to verify upload success
+//		    Use response object to verify upload success
 		    if (Response.Status.OK.toString().equals(resp.getStatusInfo().toString())) {
+		    	request.setAttribute("message", "Your image is being processesed... Refresh this page so you can see the changes made.");
+//		    	Print to console
 		    	System.out.println("Upload OK!");
 		    	System.out.println(resp.readEntity(String.class));
+		    	
 		    }
 		    else {
+		    	request.setAttribute("message", "Something went wrong! Please try it later...");
+//		    	Print to console
 		    	System.out.println("Response is: " + resp);
 		    	System.out.println("Upload NOT OK!");
 		    }
