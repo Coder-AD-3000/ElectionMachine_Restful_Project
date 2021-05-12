@@ -22,7 +22,10 @@ import data.Candidate;
 import data.Question;
 
 /**
- * @author kovac
+ * @author Daniel Kovacs
+ * 
+ * AnswerClient will process the submitted questionnaire answers for both voters and candidates.
+ * User will be identified based on the session data (user_id and role), which will determine the chain of actions.
  *
  */
 @WebServlet(urlPatterns = {"answerclient", "/addallanswer", "/showresults"})
@@ -38,9 +41,6 @@ public class AnswerClient extends HttpServlet {
 	  @Override
 	  public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
-//		  ************ GET SESSION DATA ********************************************************************************************
-//		  Print to console
-		  System.out.println("User role is: " + request.getSession(false).getAttribute("role"));
 		  
 //		  ************ COLLECT ANSWERS AND QUESTIONS *******************************************************************************	  
 //		  Reading all questions
@@ -53,9 +53,8 @@ public class AnswerClient extends HttpServlet {
 		  for (Answer answer : answerListSubmitted) {
 			System.out.println("answer: " + answer.getAnswer());
 		}
-	
 		  
-//		  ************ EVALUATE OR SAVE BASED ON ROLE *******************************************************************************  
+//		  ************ GET SESSION DATA ********************************************************************************************
 		  String role;
 		  if(request.getSession().getAttribute("role") != null) {
 			  role = request.getSession().getAttribute("role").toString(); 
@@ -66,6 +65,7 @@ public class AnswerClient extends HttpServlet {
 //		  Print to console		  
 		  System.out.println("role from session is: " + role);
 		  
+//		  ************ EVALUATE OR SAVE BASED ON ROLE *******************************************************************************  
 		  switch (role) {
 //		  A: Voter's answers will be evaluated and matched
 		  default:			  
