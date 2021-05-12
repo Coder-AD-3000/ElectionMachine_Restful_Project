@@ -1,6 +1,7 @@
 package client;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -23,7 +24,7 @@ import data.Candidate;
 /**
  * Servlet implementation class ProfileClient
  */
-@WebServlet(urlPatterns = {"/updatemyprofile", "/readmyprofile", "/deleteallmydata"})
+@WebServlet(urlPatterns = {"/updatemyprofile", "/readmyprofile", "/deleteallmydata", "readallprofile"})
 public class ProfileClient extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -41,7 +42,11 @@ public class ProfileClient extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		//Getting candidate_id from session object (login)
 		HttpSession session = request.getSession(true);						
-		String candidate_id = session.getAttribute("userid").toString();
+		String candidate_id = "0";
+		if (session.getAttribute("userid") != null) {
+			candidate_id = session.getAttribute("userid").toString();
+		}
+		
 		
 		//Getting URI
 		String action = request.getServletPath();
@@ -65,6 +70,13 @@ public class ProfileClient extends HttpServlet {
 			session = null;
 			response.sendRedirect("/jsp/loginPage.jsp");
 			break;
+			
+		case "/readallprofile":
+			List<Candidate> allCanddiateList = readAllCandidate(request);
+			Collections.reverse(allCanddiateList);
+			request.setAttribute("profilelist", allCanddiateList);
+			request.getRequestDispatcher("./jsp/candidates.jsp").forward(request, response);;
+			break;
 		}	
 	}
 
@@ -82,6 +94,16 @@ public class ProfileClient extends HttpServlet {
 //	**************************************************************************************************
 //	************ CUSTOM METHODS *********************************************************************
 //	**************************************************************************************************
+	private List<Candidate> readAllCandidate(HttpServletRequest request) {
+		String uri = "http://127.0.0.1:8080/rest/profileservice/readallcandidate";
+		Client client = ClientBuilder.newClient();
+		WebTarget webtarget = client.target(uri);
+		Builder builder = webtarget.request();
+		GenericType<List<Candidate>> genericList = new GenericType<List<Candidate>>() {};	
+		List<Candidate> returnedList = builder.get(genericList);
+		return returnedList;
+	}
+	
 	private Candidate readToUpdateCandidate(HttpServletRequest request, String candidate_id) {
 		String uri = "http://127.0.0.1:8080/rest/profileservice/readtoupdateprofile/"+candidate_id;
 		Client client = ClientBuilder.newClient();
