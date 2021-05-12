@@ -21,10 +21,13 @@ import data.Answer;
 import data.Candidate;
 import data.Question;
 
+/**
+ * @author kovac
+ *
+ */
 @WebServlet(urlPatterns = {"answerclient", "/addallanswer", "/showresults"})
 public class AnswerClient extends HttpServlet {
 	  private static final long serialVersionUID = 1L;
-	
 
 	  @Override
 	  public void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -137,7 +140,11 @@ public class AnswerClient extends HttpServlet {
 //	  *************************************************************************************************************************
 //	  ***************** SERVICE METHODS ***************************************************************************************
 //	  *************************************************************************************************************************  
-	  private List<Question> readAllQuestion(HttpServletRequest request) {			
+	  /**
+	 * @param request
+	 * @return List of Question type containing all thw questions from DB
+	 */
+	private List<Question> readAllQuestion(HttpServletRequest request) {			
 			String uri = "http://127.0.0.1:8080/rest/questionservice/readquestion";			
 			Client c = ClientBuilder.newClient();
 			WebTarget wt = c.target(uri);
@@ -149,7 +156,12 @@ public class AnswerClient extends HttpServlet {
 			return result;
 	  }
 	  
-	  private void saveCandidateAnswers(HttpServletRequest request, List<Answer> answerList) {  
+	  /**
+	 * @param request
+	 * @param answerList takes a List of Answer type containing all the submitted questionnaire answers 
+	 * to be saved into the DB
+	 */
+	private void saveCandidateAnswers(HttpServletRequest request, List<Answer> answerList) {  
 		  for (Answer a : answerList) {
 //			  Print to console
 			  System.out.println("question_id: " + a.getQuestionId() + "; candidate_id: " + a.getCandidateId() + "; answer value: " + a.getAnswer());		  
@@ -163,7 +175,11 @@ public class AnswerClient extends HttpServlet {
 		  }			
 	  }
 	  
-	  private void updateOneCandidateAnswer(HttpServletRequest request, Answer answer_new) {		  
+	  /**
+	 * @param request
+	 * @param answer_new takes an Answer object containing all the new information to be stored in the DB
+	 */
+	private void updateOneCandidateAnswer(HttpServletRequest request, Answer answer_new) {		  
 			  String uri = "http://127.0.0.1:8080/rest/answerservice/updateoneanswer/";
 			  Client c = ClientBuilder.newClient();
 			  WebTarget wt = c.target(uri);				
@@ -173,7 +189,13 @@ public class AnswerClient extends HttpServlet {
 			  b.put(e, genericList);				  		  
 	  }
 	  
-	  private List<Answer> readOneCandidateAnswers(HttpServletRequest request, int candidate_id) {			
+	  /**
+	 * @param request
+	 * @param candidate_id takes an int, that will be used as a path param to read the selected 
+	 * candidate's answers from the DB
+	 * @return List of Answer that conatins a certain candidate's answers to the questionnaire
+	 */
+	private List<Answer> readOneCandidateAnswers(HttpServletRequest request, int candidate_id) {			
 		  String uri = "http://127.0.0.1:8080/rest/answerservice/readonecandidateanswers/"+candidate_id;
 		  Client client = ClientBuilder.newClient();
 		  WebTarget webtarget = client.target(uri);	
@@ -184,7 +206,11 @@ public class AnswerClient extends HttpServlet {
 		  return returnedList;
 	  }
 	
-	  private List<Candidate> readAllCandidates(HttpServletRequest request) {
+	  /**
+	 * @param request
+	 * @return List of Candidate object containing all the candidate profile data (stacked data)
+	 */
+	private List<Candidate> readAllCandidates(HttpServletRequest request) {
 		  String uri = "http://127.0.0.1:8080/rest/candidateservice/readcandidate";
 		  Client client = ClientBuilder.newClient();
 		  WebTarget webtarget = client.target(uri);
@@ -198,7 +224,13 @@ public class AnswerClient extends HttpServlet {
 //	  ******************************************************************************************************************
 //	  ************************ CUSTOM METHODS **************************************************************************
 //	  ******************************************************************************************************************
-	  private List<Answer> returnSubmittedAnswers(HttpServletRequest request, List<Question> questionList) {
+	  /**
+	 * @param request
+	 * @param questionList takes a List of Question objects containing all information regarding 
+	 * to the current questionnaire questions
+	 * @return List of Answer objects containing all the submitted questionnaire answer data
+	 */
+	private List<Answer> returnSubmittedAnswers(HttpServletRequest request, List<Question> questionList) {
 		  List<Answer> answers = new ArrayList<Answer>();		  	  
 		  // The answer params from the JSP will be amended with question_ids and saved as answer object => List.
 		  for (Question q : questionList) {
@@ -228,7 +260,14 @@ public class AnswerClient extends HttpServlet {
 		  return answers;
 	  }	  
 	  
-	  public List<Candidate> evaluateAllCandidates(HttpServletRequest request, 
+	  /**
+	 * @param request
+	 * @param candidateListStacked List of Candidate objects containing all the available candidate profile data
+	 * @param answerListSubmitted contains all the submitted answer data as a List of Answer type
+	 * @param questionList conatins all the question data associated with the questionnaire
+	 * @return
+	 */
+	public List<Candidate> evaluateAllCandidates(HttpServletRequest request, 
 			  List<Candidate> candidateListStacked, 
 			  List<Answer> answerListSubmitted, 
 			  List<Question> questionList) {
