@@ -15,7 +15,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import data.Answer;
-import data.Candidate;
 
 @Path("/answerservice")
 public class AnswerService {
@@ -35,7 +34,7 @@ public class AnswerService {
 	}
 	
 	@PUT
-	@Path("/updateanswers")
+	@Path("/updateoneanswer")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void updateCandidate(Answer answer) {

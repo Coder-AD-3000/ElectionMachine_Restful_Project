@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -37,31 +36,35 @@ public class AnswerClient extends HttpServlet {
 	  public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
 //		  ************ GET SESSION DATA ********************************************************************************************
+//		  Print to console
+		  System.out.println("User role is: " + request.getSession(false).getAttribute("role"));
 		  
-//		  ************ COLLECT ANSWERS AND QUESTIONS *******************************************************************************
-		  System.out.println("AnswerClient.java");
-		  
-//		  Read all questions
+//		  ************ COLLECT ANSWERS AND QUESTIONS *******************************************************************************	  
+//		  Reading all questions
 		  List<Question> questionList = readAllQuestion(request);
 		  
-//		  Collect all the submitted answers
+//		  Collecting all the submitted answers
 		  List<Answer> answerListSubmitted = returnSubmittedAnswers(request, questionList);
 		  
+//		  Print to console
 		  for (Answer answer : answerListSubmitted) {
 			System.out.println("answer: " + answer.getAnswer());
 		}
 	
 		  
 //		  ************ EVALUATE OR SAVE BASED ON ROLE *******************************************************************************  
-		  String role = "voter";
-//		  if(request.getSession().getAttribute("role") != null) {
-//			 role = request.getSession().getAttribute("role").toString(); 
-//		  }
-		  
+		  String role;
+		  if(request.getSession().getAttribute("role") != null) {
+			  role = request.getSession().getAttribute("role").toString(); 
+		  }
+		  else {
+			  role = "voter";
+		  }
+//		  Print to console		  
 		  System.out.println("role from session is: " + role);
 		  
 		  switch (role) {
-//		  Voter's answers will be evaluated and matched
+//		  A: Voter's answers will be evaluated and matched
 		  default:			  
 //			  1) Fetch all candidates profile from DB (stacked data)
 			  List<Candidate> candidateListStacked = readAllCandidates(request);
@@ -92,25 +95,40 @@ public class AnswerClient extends HttpServlet {
 			  dispatcher.forward(request, response);
 			  
 			  break;
-//		  Candidate's answers will be saved in the DB		  
-		  case "candidate":			  
-			  int candidate_id = (int) request.getAttribute("userid");
+//		  B: Candidate's answers will be saved in the DB		  
+		  case "candidate":
+//			  1) Getting candidate_id from session
+			  int candidate_id = (int) request.getSession().getAttribute("userid");
 			  System.out.println("candidate id: " + candidate_id);
 			  
-			  List<Answer> oneCandidateAnswers = readOneCandidateAnswers(request, candidate_id);
-			  if(oneCandidateAnswers != null) {
+//			  2) Checking for answers in the DB
+			  List<Answer> candidateOldAnswers = readOneCandidateAnswers(request, candidate_id);
+			  System.out.println("candidateOldAnswers size: " + candidateOldAnswers.size());
+			  
+//			  a) If there is any => UPDATE
+			  if(candidateOldAnswers.size() > 0) {
+//				  Print to console
 				  System.out.println("Updating answer table...");
-				  updateCandidateAnswers(request, answerListSubmitted);
+//				  Iterating through the List of answers and replacing them in the DB
+				  for (Answer answer_old : candidateOldAnswers) {
+					  for (Answer answer_new : answerListSubmitted) {
+//						  Selecting answer with the same question_id
+						  if (answer_old.getQuestionId() == answer_new.getQuestionId()) {
+//							  Amending submitted answer with DB answer_id
+							  answer_new.setAnswerId(answer_old.getAnswerId());
+//							  Executing update
+							  updateOneCandidateAnswer(request, answer_new);  			
+						  }  
+					  }
+				  } 
 			  }
+//			  b) If there is none => INSERT
 			  else {
+				  System.out.println("Saving answers into DB ...");
 				  saveCandidateAnswers(request, answerListSubmitted);
-			  }
-			  
-			  
-			  System.out.println("Case: addallanswer");
-			  System.out.println("ArrList: " + answerListSubmitted);
-			  
-//			  Redirect to index
+			  }			  
+			  			  
+//			  3) Redirect to index
 			  getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
 			  break;
 	  }
@@ -119,16 +137,12 @@ public class AnswerClient extends HttpServlet {
 //	  *************************************************************************************************************************
 //	  ***************** SERVICE METHODS ***************************************************************************************
 //	  *************************************************************************************************************************  
-	  private List<Question> readAllQuestion(HttpServletRequest request) {
-			
-			String uri = "http://127.0.0.1:8080/rest/questionservice/readquestion";
-			
+	  private List<Question> readAllQuestion(HttpServletRequest request) {			
+			String uri = "http://127.0.0.1:8080/rest/questionservice/readquestion";			
 			Client c = ClientBuilder.newClient();
 			WebTarget wt = c.target(uri);
 			Builder b = wt.request();
 			
-			//Create a GenericType to be able to get List of objects
-			//This will be the second parameter of post method
 			GenericType<List<Question>> gl = new GenericType<List<Question>>() {};
 			List<Question> result = b.get(gl);
 			
@@ -142,42 +156,32 @@ public class AnswerClient extends HttpServlet {
 			  String uri = "http://127.0.0.1:8080/rest/answerservice/addoneanswer";
 			  Client c = ClientBuilder.newClient();
 			  WebTarget wt = c.target(uri);				
-			  Builder b = wt.request();
-	
+			  Builder b = wt.request();			  
 			  Entity<Answer> e = Entity.entity(a, MediaType.APPLICATION_JSON);	
 			  GenericType<ArrayList<Answer>> genericList = new GenericType<ArrayList<Answer>>() {};
 			  b.post(e, genericList);		
-		}
-	
-			for (int j = 0; j < answerList.size(); j++) {		
-				String uri = "http://127.0.0.1:8080/rest/answerservice/addoneanswer";
-				Client c = ClientBuilder.newClient();
-				WebTarget wt = c.target(uri);
-				Builder b = wt.request();
-				
-//				Print to console
-				System.out.println("Trying to create entities and generic list...");		
-				Answer a = answerList.get(j);				
-				Entity<Answer> e = Entity.entity(a, MediaType.APPLICATION_JSON);
-				GenericType<ArrayList<Answer>> genericList = new GenericType<ArrayList<Answer>>() {};
-				b.post(e, genericList);
-				}		
-		}
-	  
-	  private void updateCandidateAnswers(HttpServletRequest request, List<Answer> answerList) {
-		  
-		  //TODO
-		  
+		  }			
 	  }
 	  
-	  private List<Answer> readOneCandidateAnswers(HttpServletRequest request, int candidate_id) {
-			String uri = "http://127.0.0.1:8080/rest/answerservice/readonecandidateanswers/"+candidate_id;
-			Client client = ClientBuilder.newClient();
-			WebTarget webtarget = client.target(uri);
-			Builder builder = webtarget.request();
-			GenericType<List<Answer>> genericList = new GenericType<List<Answer>>() {};
-			List<Answer> returnedList = builder.get(genericList); 
-			return returnedList;
+	  private void updateOneCandidateAnswer(HttpServletRequest request, Answer answer_new) {		  
+			  String uri = "http://127.0.0.1:8080/rest/answerservice/updateoneanswer/";
+			  Client c = ClientBuilder.newClient();
+			  WebTarget wt = c.target(uri);				
+			  Builder b = wt.request();	
+			  Entity<Answer> e = Entity.entity(answer_new, MediaType.APPLICATION_JSON);	
+			  GenericType<List<Answer>> genericList = new GenericType<List<Answer>>() {};
+			  b.put(e, genericList);				  		  
+	  }
+	  
+	  private List<Answer> readOneCandidateAnswers(HttpServletRequest request, int candidate_id) {			
+		  String uri = "http://127.0.0.1:8080/rest/answerservice/readonecandidateanswers/"+candidate_id;
+		  Client client = ClientBuilder.newClient();
+		  WebTarget webtarget = client.target(uri);	
+		  Builder builder = webtarget.request();	
+		  GenericType<List<Answer>> genericList = new GenericType<List<Answer>>() {};
+		  List<Answer> returnedList = builder.get(genericList); 
+		  
+		  return returnedList;
 	  }
 	
 	  private List<Candidate> readAllCandidates(HttpServletRequest request) {
@@ -195,13 +199,7 @@ public class AnswerClient extends HttpServlet {
 //	  ************************ CUSTOM METHODS **************************************************************************
 //	  ******************************************************************************************************************
 	  private List<Answer> returnSubmittedAnswers(HttpServletRequest request, List<Question> questionList) {
-		  List<Answer> answers = new ArrayList<Answer>();
-		  
-//		  Getting Session
-//		  HttpSession session = request.getSession(false);
-		  System.out.println(request.getSession(false).getId());
-		  System.out.println(request.getSession(false).getAttribute("userid"));
-		  
+		  List<Answer> answers = new ArrayList<Answer>();		  	  
 		  // The answer params from the JSP will be amended with question_ids and saved as answer object => List.
 		  for (Question q : questionList) {
 			  // Getting questions and answers
@@ -209,7 +207,7 @@ public class AnswerClient extends HttpServlet {
 			  String answerValue = request.getParameter("selected" + q.getId());
 			  
 			  // For candidates
-			  if(request.getSession(false).getAttribute("userid") != null) {
+			  if(request.getSession(false).getAttribute("userid") != null) {  
 				  String userId = request.getSession(false).getAttribute("userid").toString();
 				  Answer a = new Answer(
 						  userId,
@@ -226,6 +224,7 @@ public class AnswerClient extends HttpServlet {
 				  answers.add(a);
 			  }
 		  }	
+		  
 		  return answers;
 	  }	  
 	  
@@ -275,8 +274,7 @@ public class AnswerClient extends HttpServlet {
 		  }
 //		  Print to console
 		  for (Candidate c : scoredCandidateListStacked) {
-			  System.out.println("Candidate with score: " + c);
-			
+			  System.out.println("Candidate with score: " + c);			
 		}
 		return scoredCandidateListStacked;
 	  }
