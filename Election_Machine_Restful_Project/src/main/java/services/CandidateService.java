@@ -32,7 +32,7 @@ public class CandidateService {
 	@GET
 	@Path("/readcandidate")
 	@Produces(MediaType.APPLICATION_JSON) /* AD - returns a list of objects in JSON string format*/
-	@Consumes(MediaType.APPLICATION_JSON) /* AD - This has no meaning here, as this method does not consume (get) any data*/
+	@Consumes(MediaType.APPLICATION_JSON) 
 	public List<Candidate> readCandidate() {
 		EntityManager entitymanager=emf.createEntityManager();
 		entitymanager.getTransaction().begin();
