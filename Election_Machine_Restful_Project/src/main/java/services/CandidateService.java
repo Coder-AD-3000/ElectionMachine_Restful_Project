@@ -18,6 +18,13 @@ import javax.ws.rs.core.MediaType;
 
 import data.Candidate;
 
+/**
+ * @author ashley
+ * 
+ * REST service which handles the candidate entity.
+ * The candidate table is also persisted via JPA.
+ *
+ */
 @Path("/candidateservice")
 public class CandidateService {	
 	
@@ -86,7 +93,7 @@ public class CandidateService {
 	 * 		object to be updated. If there is no such existing id, the insertion will happen.
 	 * 
 	 * 		Before the merge takes place, there is a call of function 'find' to ensure that 
-	 * 		in the databe is a record with the same id.
+	 * 		in the database is a record with the same id.
 	 * 
 	 * 		PUT is similar to POST, but it is designed for the purpose of updating something.
 	 * 		The data sent is not seen in the browser bar.
