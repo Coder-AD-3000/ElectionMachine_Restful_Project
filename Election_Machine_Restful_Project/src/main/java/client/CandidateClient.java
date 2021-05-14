@@ -38,6 +38,10 @@ import data.Candidate;
  *		a method based on the decision.
  *		
  */
+/**
+ * @author ashley
+ *
+ */
 @WebServlet(urlPatterns = {"/addcandidate", "/deletecandidate",
 		"/updatecandidate","/readcandidate",
 		"/readtodeletecandidate","/readtoupdatecandidate"})
@@ -45,7 +49,10 @@ import data.Candidate;
 
 public class CandidateClient extends HttpServlet {
 
-	  @Override
+	  /**
+	 *
+	 */
+	@Override
 	  public void doPost(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
 		  doGet(request, response);

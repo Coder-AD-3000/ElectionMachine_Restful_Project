@@ -32,10 +32,13 @@ public class CandidateService {
 	 * AD - At the beginning of this class here, the 'EntityManagerFactory' object 'emf'
 	 * 		is created from the 'emachinedb' persistence unit.
 	 * 
-	 * 				
+	 * 		This links the candidate entity to the database.		
 	 * 
 	 */
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("emachinedb");
+	/**    This method reads out the candidate table, into list format.
+	 * @return a list of all entries in the candidate table
+	 */
 	@GET
 	@Path("/readcandidate")
 	@Produces(MediaType.APPLICATION_JSON) /* AD - returns a list of objects in JSON string format*/
@@ -58,8 +61,11 @@ public class CandidateService {
 		return list;
 	}	
 	/**
-	 * @param candidate
-	 * @return
+	 * Adds a candidate
+	 * 
+	 * @param candidate takes the candidate object as an argument (in order to add a new candidate to the list)
+	 * @return a list of candidates from the candidate table (includes added candidate)
+	 * 
 	 *  AD - This method receives the values (e.g first_name, last_name, party etc 
 	 *  from the html form (JSP in this case). The form sends a POST type request.
 	 *  
@@ -85,8 +91,10 @@ public class CandidateService {
 	
 	
 	/**
-	 * @param candidate
-	 * @return
+	 * Updates the candidate information
+	 * 
+	 * @param candidate takes a candidate object instance as the argument. In this way, the candidate data can be updated.
+	 * @return a list of candidates from the candidate table (with the amended data included).
 	 * 
 	 * AD - Updating happens via method merge. When updating (merging) an object,
 	 * 		it is assumed that the database already contains a record with the same id as the 
@@ -115,8 +123,10 @@ public class CandidateService {
 		return list;
 	}	
 	/**
-	 * @param candidate_id
-	 * @return
+	 * This method deletes a candidate from the candidate table.
+	 * 
+	 * @param candidate_id takes the argument of Path param, which designates the candidate id to be deleted.
+	 * @return updated candidate table data is returned as a list
 	 * 
 	 * AD - The function 'remove' is utilised to delete from the database.
 	 * 		Only one parameter is required - the object to be removed.
@@ -128,6 +138,7 @@ public class CandidateService {
 	 * 
 	 * 		On the client side the request method is now delete. On the server side the annotation is
 	 * 		"@DELETE". Furthermore, data sent is visible in the browser's location bar.
+	 * 
 	 */
 	@DELETE // Delete 
 	@Path("/deletecandidate/{candidate_id}")
@@ -146,8 +157,10 @@ public class CandidateService {
 		return list;
 	}	
 	/**
-	 * @param candidate_id 
-	 * @return
+	 * candidate_id is used to designate which candidate to update.
+	 * 
+	 * @param candidate_id takes the argument path parameter of candidate_id to designate which candidate to update.
+	 * @return candidate instance object, determined via the candidate_id
 	 * 
 	 * 	AD - A candidate type object with the id value of 'candidate_id'
 	 * 		is read from the database. Two parameters are required by they 
@@ -168,7 +181,11 @@ public class CandidateService {
 		return cand;
 	}
 	
-	/* AD - This method operates in a similar fashion to 'readtoupdatecandidate'*/
+	/* candidate_id is used to designate which candidate to delete.
+	/**
+	 * @param candidate_id takes the argument path parameter of candidate_id to designate which candidate to delete.
+	 * @return candidate instance object, determined via the candidate_id
+	 */
 	@GET
 	@Path("/readtodeletecandidate/{candidate_id}")
 	@Produces(MediaType.APPLICATION_JSON)
