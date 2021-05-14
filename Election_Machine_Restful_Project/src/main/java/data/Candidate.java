@@ -23,10 +23,16 @@ public class Candidate {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private int candidate_id;
+	/**
+	 * first_name String based value for the first_name column in the candidate table.
+	 */
 	private String first_name;
 	private String last_name;	 
 	private String party;
 	private String location;
+	/**
+	 * int age
+	 */
 	private int age;
 	private String mission;
 	private String vision;
@@ -57,6 +63,8 @@ public class Candidate {
 	}
 	
 	/**
+	 * parameterised constructor (some ints, but mostly Strings) for the candidate class
+	 * 
 	 * @param candidate_id
 	 * @param first_name
 	 * @param last_name
@@ -92,6 +100,8 @@ public class Candidate {
 	
  
 	/**
+	 * parameterised constructor (String-based) for the candidate class
+	 * 
 	 * Used when we add a new candidate
 	 * @param candidate_id
 	 * @param first_name
@@ -128,14 +138,23 @@ public class Candidate {
 	}	
 	
 	
+	/**
+	 * @return candidate_id (int value) from the candidate table.
+	 */
 	public int getCandidate_id() {
 		return candidate_id;
 	}
+	/**
+	 * @param candidate_id setter
+	 */
 	public void setCandidate_id(int candidate_id) {
 		this.candidate_id = candidate_id;
 	}
 	
 	 
+	/**
+	 * @param candidate_id takes argument String candidate_id
+	 */
 	public void setCandidate_id(String candidate_id) {
 		try {
 			this.candidate_id = Integer.parseInt(candidate_id);

@@ -39,6 +39,9 @@ import data.Candidate;
  *		
  */
 /**
+ * 
+ * Servlet implementation CandidateClient class
+ * 
  * @author ashley
  *
  */
@@ -58,7 +61,10 @@ public class CandidateClient extends HttpServlet {
 		  doGet(request, response);
 	  }
 	  
-	  @Override
+	  /**
+	 *
+	 */
+	@Override
 	  public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
 	  String action = request.getServletPath();
@@ -94,6 +100,10 @@ public class CandidateClient extends HttpServlet {
 	  reqdisp.forward(request, response);
   }
 
+	/**
+	 * @param request
+	 * @return This method will update a candidate and return candidate instance object
+	 */
 	private Candidate readToUpdateCandidate(HttpServletRequest request) {
 		String candidate_id=request.getParameter("candidate_id");
 		/* AD - Here, the local variable uri has 
@@ -117,6 +127,10 @@ public class CandidateClient extends HttpServlet {
 	
 	
 	// AD - I added this for read to delete
+	/**
+	 * @param request
+	 * @return returns a candidate instance object
+	 */
 	private Candidate readToDeleteCandidate(HttpServletRequest request) {
 		String candidate_id=request.getParameter("candidate_id");
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/readtodeletecandidate/"+candidate_id;
@@ -127,6 +141,10 @@ public class CandidateClient extends HttpServlet {
 		return candidate;
 	}
 
+	/**
+	 * @param request
+	 * @return an updated list of candidates, which includes the new addition.
+	 */
 	private List<Candidate> addCandidate(HttpServletRequest request) {
 		//A Candidate object to send to our web-service 
 		Candidate candidate = new Candidate(request.getParameter("candidate_id"), 
@@ -158,6 +176,10 @@ public class CandidateClient extends HttpServlet {
 		return returnedList;
 	}
 	
+	/**
+	 * @param request
+	 * @return a list of candidate objects containing all candidates from the candidate table.
+	 */
 	private List<Candidate> readCandidate(HttpServletRequest request) {
 		//String candidate_id = request.getParameter("candidate_id"); /* AD - I can't see a use for this line */
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/readcandidate";
@@ -203,6 +225,10 @@ public class CandidateClient extends HttpServlet {
 		return returnedList;
 	}
 	
+	/**
+	 * @param request
+	 * @return an updated list of candidates, with the deleted candidate data no longer present in the database.
+	 */
 	private List<Candidate> deleteCandidate(HttpServletRequest request) {
 		String candidate_id=request.getParameter("candidate_id");
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/deletecandidate/"+candidate_id;
