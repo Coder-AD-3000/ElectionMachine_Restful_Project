@@ -19,7 +19,11 @@ import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.media.multipart.file.FileDataBodyPart;
 
 /**
+ * @author Daniel
  * Servlet implementation class UploadClient
+ * This class can be used to upload images using a servlet
+ * Currently it is not in use.
+ *
  */
 @WebServlet("/uploadclient")
 @MultipartConfig //Req. for request.getParts() method - Servlet 3.0 and above
@@ -27,6 +31,8 @@ public class UploadClient extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
+     * This class can be used to upload images using a servlet
+     * Currently it is not in use.
      * @see HttpServlet#HttpServlet()
      */
     public UploadClient() {
