@@ -64,7 +64,7 @@ public class Newquestion {
 	}
 	/**
 	 * This method returns the id of the new question from the new newquestion entries.
-	 * @return
+	 * @return newquestion_id as int
 	 */
 	public int getNewquestionId() {
 		return newquestion_id;
