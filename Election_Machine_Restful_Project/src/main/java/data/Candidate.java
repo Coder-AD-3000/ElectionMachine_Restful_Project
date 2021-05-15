@@ -151,7 +151,6 @@ public class Candidate {
 	 * @param profession - String based argument taken for the parameterised constructor
 	 * @param username - String based argument taken for the parameterised constructor
 	 * @param password - String based argument taken for the parameterised constructor
-	 * @param role - String based argument taken for the parameterised constructor
 	 */
 	public Candidate(String candidate_id, String first_name, 
 					 String last_name, String party, String location, 
@@ -268,6 +267,10 @@ public class Candidate {
 	}
 	
  
+	/**
+	 * Setter method for age attribute
+	 * @param age takes age String
+	 */
 	public void setAge(String age) {
 		try {
 			this.age = Integer.parseInt(age);

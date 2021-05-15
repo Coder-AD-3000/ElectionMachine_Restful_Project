@@ -15,7 +15,6 @@ public class HelloAppEngineTest {
 
 /**
  * Test method>>disregard
- * @throws IOException
  */
 @Test
   public void test() throws IOException {

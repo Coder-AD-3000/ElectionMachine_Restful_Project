@@ -37,8 +37,7 @@ public class UploadService {
 	 * @param candidate_id identifyies candidate
 	 * @param fileInputStream containing img data
 	 * @param fileMetaData containing img data
-	 * @param sc
-	 * @throws Exception
+	 * @param sc takes servlet context arg
 	 */
 	@POST
 	@Path("/uploadiamge")

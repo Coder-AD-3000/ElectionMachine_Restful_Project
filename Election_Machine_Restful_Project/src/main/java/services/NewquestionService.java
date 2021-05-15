@@ -86,12 +86,12 @@ public class NewquestionService {
 		return list;
 	}	
 	/**
-	 * @param newquestion_id.
-.	 * @return
 	 * The function 'remove' is utilised to delete new question entries from the database.
 	 * Only one parameter is required - the object to be removed.
 	 * A client can make a request, via PathParam, which instructs which object is to be deleted
 	 * from the database.
+	 * @param newquestion_id.
+.	 * @return list of new questions from table that have been entered
 	 * 
 	 */
 	@DELETE
