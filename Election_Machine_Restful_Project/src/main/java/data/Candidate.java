@@ -13,7 +13,6 @@ import javax.persistence.Transient;
  * 		this normal java class has been utilised, inside the 
  * 		'data' package.
  * @author ashley - specifies that the target is an entity
- * 
  */
 @Entity
 public class Candidate {

@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Transient;
 
 /**
+ * This is the model class for all the answrs collected from the questionnaire
  * @author Daniel
  *
  */
