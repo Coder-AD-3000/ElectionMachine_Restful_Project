@@ -26,7 +26,7 @@ import data.Candidate;
 public class ProfileService {
 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("emachinedb");
 	/**
-	 * @param candidate_id
+	 * @param candidate_id takes arg from path param
 	 * @return the Candidate object was selected for editing
 	 */
 	@GET

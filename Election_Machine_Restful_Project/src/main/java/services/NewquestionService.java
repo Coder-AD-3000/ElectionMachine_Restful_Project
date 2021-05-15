@@ -92,7 +92,6 @@ public class NewquestionService {
 	 * from the database.
 	 * @param newquestion_id.
 .	 * @return list of new questions from table that have been entered
-	 * 
 	 */
 	@DELETE
 	@Path("/deletenewquestion/{newquestion_id}")
