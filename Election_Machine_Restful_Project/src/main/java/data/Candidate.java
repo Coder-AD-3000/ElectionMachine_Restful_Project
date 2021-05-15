@@ -9,10 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.Transient;
 
 /**
- * @author ashley - specifies that the target is an entity
  * AD - For the candidate part of the restful web services,
  * 		this normal java class has been utilised, inside the 
  * 		'data' package.
+ * @author ashley - specifies that the target is an entity
  */
 @Entity
 public class Candidate {
