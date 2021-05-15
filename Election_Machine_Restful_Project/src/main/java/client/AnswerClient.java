@@ -32,13 +32,19 @@ import data.Question;
 public class AnswerClient extends HttpServlet {
 	  private static final long serialVersionUID = 1L;
 
-	  @Override
+	  /**
+	 * doPost method taht will take the questionnaire answers
+	 */
+	@Override
 	  public void doPost(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
 		  doGet(request, response);
 	  }
 	  
-	  @Override
+	  /**
+	 * doGet method
+	 */
+	@Override
 	  public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
 		  
@@ -143,7 +149,7 @@ public class AnswerClient extends HttpServlet {
 //	  ***************** SERVICE METHODS ***************************************************************************************
 //	  *************************************************************************************************************************  
 	  /**
-	 * @param request
+	 * @param request takes current HTTP request as arg
 	 * @return List of Question type containing all thw questions from DB
 	 */
 	private List<Question> readAllQuestion(HttpServletRequest request) {			
@@ -159,7 +165,7 @@ public class AnswerClient extends HttpServlet {
 	  }
 	  
 	  /**
-	 * @param request
+	 * @param request takes current HTTP request as arg
 	 * @param answerList takes a List of Answer type containing all the submitted questionnaire answers 
 	 * to be saved into the DB
 	 */
@@ -178,7 +184,7 @@ public class AnswerClient extends HttpServlet {
 	  }
 	  
 	  /**
-	 * @param request
+	 * @param request takes current HTTP request as arg
 	 * @param answer_new takes an Answer object containing all the new information to be stored in the DB
 	 */
 	private void updateOneCandidateAnswer(HttpServletRequest request, Answer answer_new) {		  
@@ -192,7 +198,7 @@ public class AnswerClient extends HttpServlet {
 	  }
 	  
 	  /**
-	 * @param request
+	 * @param request takes current HTTP request as arg
 	 * @param candidate_id takes an int, that will be used as a path param to read the selected 
 	 * candidate's answers from the DB
 	 * @return List of Answer that conatins a certain candidate's answers to the questionnaire
@@ -209,7 +215,7 @@ public class AnswerClient extends HttpServlet {
 	  }
 	
 	  /**
-	 * @param request
+	 * @param request takes current HTTP request as arg
 	 * @return List of Candidate object containing all the candidate profile data (stacked data)
 	 */
 	private List<Candidate> readAllCandidates(HttpServletRequest request) {
@@ -227,7 +233,7 @@ public class AnswerClient extends HttpServlet {
 //	  ************************ CUSTOM METHODS **************************************************************************
 //	  ******************************************************************************************************************
 	  /**
-	 * @param request
+	 * @param request takes current HTTP request as arg
 	 * @param questionList takes a List of Question objects containing all information regarding 
 	 * to the current questionnaire questions
 	 * @return List of Answer objects containing all the submitted questionnaire answer data
