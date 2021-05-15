@@ -67,6 +67,7 @@ public class NewquestionService {
 	 * @param newquestion contains all info to be updated in the database.
 	 * @return a list with the database entries is returned.
 	 */
+	
 	@PUT
 	@Path("/updatenewquestion")
 	@Produces(MediaType.APPLICATION_JSON)
