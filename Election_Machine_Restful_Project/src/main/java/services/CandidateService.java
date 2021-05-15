@@ -65,14 +65,7 @@ public class CandidateService {
 	 * 
 	 * @param candidate takes the candidate object as an argument (in order to add a new candidate to the list)
 	 * @return a list of candidates from the candidate table (includes added candidate)
-	 * 
-	 *  AD - This method receives the values (e.g first_name, last_name, party etc 
-	 *  from the html form (JSP in this case). The form sends a POST type request.
-	 *  
-	 *  Each method's name (signature) must differ from the other methods of the class.
-	 *  
-	 *  When the data is sent, the POST request is utilised, and so, no data is visible
-	 *  in the browser's URL bar.
+	 * 	 *  
 	 */	
 	@POST // We want to create an entry 
 	@Path("/addcandidate")

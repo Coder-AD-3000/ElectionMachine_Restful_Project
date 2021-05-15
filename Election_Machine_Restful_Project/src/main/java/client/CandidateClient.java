@@ -62,7 +62,7 @@ public class CandidateClient extends HttpServlet {
 	  }
 	  
 	  /**
-	 *
+	 * AD - This section contains a switch with the different actionable options available.
 	 */
 	@Override
 	  public void doGet(HttpServletRequest request, HttpServletResponse response) 

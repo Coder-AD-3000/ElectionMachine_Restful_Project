@@ -90,11 +90,8 @@
 										  <table class="table-responsive">
 											  <tbody>
 												  <tr>
-													 <td class="tableAddBackground">
-													 									 	
-													 	<!-- AD - Here data is passed to a RESTful web service via an HTML form (JSP in this case).
-											          			  The HTML form makes a POST type request, and as such, the service method
-											          			  receives data via FormParams. -->  		
+													 <td class="tableAddBackground">													 									 	
+													 			
 													 	<form action='../deletecandidate?candidate_id=${candidate.candidate_id}' method='post'>		
 													 						
 											 	  		<input type='submit' name='ok' value='DELETE' class = "tableCustom3" 
