@@ -17,10 +17,20 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import data.Newquestion;
-
+/**
+ * @author EK
+ * @version 1.0
+ * Date: May 4, 2021
+ * Service class processing Newquestionnaire requests.
+ *
+ */
 @Path("/newquestionservice")
 public class NewquestionService {
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("emachinedb");
+	/**
+	 * Reads all columns and rows of newquestion table into a list.
+	 * @return a list with the database new question entries is returned.
+	 */
 	@GET
 	@Path("/readnewquestion")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -35,6 +45,10 @@ public class NewquestionService {
 		em.getTransaction().commit();
 		return list;
 	}	
+	/**
+	 * @param newquestion object contains all the newquestion info stored in the database. 
+	 * @return a list with the database entries is returned.
+	 */
 	@POST
 	@Path("/addnewquestion")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -48,7 +62,12 @@ public class NewquestionService {
 //The readNewquestion() method of this service is called.
 		List<Newquestion> list=readNewquestion();		
 		return list;
-	}	
+	}
+	/**
+	 * @param newquestion contains all info to be updated in the database.
+	 * @return a list with the database entries is returned.
+	 */
+	
 	@PUT
 	@Path("/updatenewquestion")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -66,6 +85,15 @@ public class NewquestionService {
 		List<Newquestion> list=readNewquestion();		
 		return list;
 	}	
+	/**
+	 * @param newquestion_id.
+.	 * @return
+	 * The function 'remove' is utilised to delete new question entries from the database.
+	 * Only one parameter is required - the object to be removed.
+	 * A client can make a request, via PathParam, which instructs which object is to be deleted
+	 * from the database.
+	 * 
+	 */
 	@DELETE
 	@Path("/deletenewquestion/{newquestion_id}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -82,6 +110,10 @@ public class NewquestionService {
 		List<Newquestion> list=readNewquestion();		
 		return list;
 	}	
+	/**
+	 * @param newquestion_id identifies the selected new question based on the id.
+	 * @return returns the new question based on the id that has been indentified.
+	 */
 	@GET
 	@Path("/readtoupdatenewquestion/{newquestion_id}")
 	@Produces(MediaType.APPLICATION_JSON)
