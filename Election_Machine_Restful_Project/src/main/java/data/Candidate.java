@@ -174,12 +174,14 @@ public class Candidate {
 	
 	
 	/**
+	 * candidate_id getter method
 	 * @return candidate_id (int value) from the candidate table.
 	 */
 	public int getCandidate_id() {
 		return candidate_id;
 	}
 	/**
+	 * candidate_id setter method
 	 * @param candidate_id setter
 	 */
 	public void setCandidate_id(int candidate_id) {
@@ -188,6 +190,7 @@ public class Candidate {
 	
 	 
 	/**
+	 * candidate_id setter method (parses to String)
 	 * @param candidate_id takes argument String candidate_id
 	 */
 	public void setCandidate_id(String candidate_id) {
@@ -201,12 +204,14 @@ public class Candidate {
 	 
 	
 	/**
+	 * first_name getter method
 	 * @return the first_name
 	 */
 	public String getFirst_name() {
 		return first_name;
 	}
 	/**
+	 * first_name setter method
 	 * @param first_name the first_name to set
 	 */
 	public void setFirst_name(String first_name) {
@@ -215,12 +220,14 @@ public class Candidate {
 	
 	
 	/**
+	 * last_name getter method
 	 * @return the last_name
 	 */
 	public String getLast_name() {
 		return last_name;
 	}
 	/**
+	 * last_name setter method
 	 * @param last_name the last_name to set
 	 */
 	public void setLast_name(String last_name) {
@@ -229,12 +236,14 @@ public class Candidate {
 	
 	
 	/**
+	 * party getter method
 	 * @return the party
 	 */
 	public String getParty() {
 		return party;
 	}
 	/**
+	 * party setter method
 	 * @param party the party to set
 	 */
 	public void setParty(String party) {
@@ -242,24 +251,28 @@ public class Candidate {
 	}
 	
 	/**
+	 * location getter method
 	 * @return the location
 	 */
 	public String getLocation() {
 		return location;
 	}
 	/**
+	 * location setter method
 	 * @param location the location to set
 	 */
 	public void setLocation(String location) {
 		this.location = location;
 	}
 	/**
+	 * age getter method
 	 * @return the age
 	 */
 	public int getAge() {
 		return age;
 	}
 	/**
+	 * age setter method
 	 * @param age the age to set
 	 */
 	public void setAge(int age) {
@@ -268,7 +281,7 @@ public class Candidate {
 	
  
 	/**
-	 * Setter method for age attribute
+	 * Setter method for age attribute (parses to String)
 	 * @param age takes age String
 	 */
 	public void setAge(String age) {
@@ -282,12 +295,14 @@ public class Candidate {
 	 
 	
 	/**
+	 * mission getter method
 	 * @return the mission
 	 */
 	public String getMission() {
 		return mission;
 	}
 	/**
+	 * mission setter method
 	 * @param mission the mission to set
 	 */
 	public void setMission(String mission) {
@@ -296,12 +311,14 @@ public class Candidate {
 	
 	
 	/**
+	 * vision getter method
 	 * @return the vision
 	 */
 	public String getVision() {
 		return vision;
 	}
 	/**
+	 * vision setter method
 	 * @param vision the vision to set
 	 */
 	public void setVision(String vision) {
@@ -310,12 +327,14 @@ public class Candidate {
 	
 		
 	/**
+	 * pic getter method
 	 * @return the pic
 	 */
 	public String getPic() {
 		return pic;
 	}
 	/**
+	 * pic setter method
 	 * @param pic the pic to set
 	 */
 	public void setPic(String pic) {
@@ -324,12 +343,14 @@ public class Candidate {
 	
 	
 	/**
+	 * profession getter method
 	 * @return the profession
 	 */
 	public String getProfession() {
 		return profession;
 	}
 	/**
+	 * profession setter method
 	 * @param profession the profession to set
 	 */
 	public void setProfession(String profession) {
@@ -338,12 +359,14 @@ public class Candidate {
 	
 	
 	/**
+	 * username getter method
 	 * @return the username
 	 */
 	public String getUsername() {
 		return username;
 	}
 	/**
+	 * username setter method
 	 * @param username the username to set
 	 */
 	public void setUsername(String username) {
@@ -352,12 +375,14 @@ public class Candidate {
 	
 	
 	/**
+	 * password getter method
 	 * @return the password
 	 */
 	public String getPassword() {
 		return password;
 	}
 	/**
+	 * password setter method
 	 * @param password the password to set
 	 */
 	public void setPassword(String password) {
@@ -365,6 +390,7 @@ public class Candidate {
 	}
 	
 	/**
+	 * role getter method
 	 * @return the user role
 	 */
 	public String getRole() {
@@ -372,6 +398,7 @@ public class Candidate {
 	}
 
 	/**
+	 * role setter method
 	 * @param role the role to set
 	 */
 	public void setRole(String role) {
@@ -379,6 +406,7 @@ public class Candidate {
 	}
 	
 	/**
+	 * getter method for totalscore
 	 * @return totalScore
 	 */
 	public int getTotalScore() {
@@ -386,6 +414,7 @@ public class Candidate {
 	}
 
 	/**
+	 * setter method for totalscore
 	 * @param totalScore is the score calculated while comparing answers with the voter
 	 */
 	public void setTotalScore(int totalScore) {
@@ -393,12 +422,14 @@ public class Candidate {
 	}
 	
 	/**
+	 * setter method for questionList
 	 * @param questionList takes the list of quiz questions
 	 */
 	public void setQuestionList(List<Question> questionList) {
 		this.questionList = questionList;
 	}
 	/**
+	 * getter method for questionList
 	 * @return question list containing the quiz's questions
 	 */
 	public List<Question> getQuestionList() {
@@ -406,12 +437,14 @@ public class Candidate {
 	}
 	
 	/**
+	 * setter method for answerList
 	 * @param answerList takes a list of candidate answers
 	 */
 	public void setAnswerList(List<Answer> answerList) {
 		this.answerList = answerList;
 	}
 	/**
+	 * getter method for answerList
 	 * @return answer list containing the candidate's answers to the quiz questions
 	 */
 	public List<Answer> getAnswerList() {

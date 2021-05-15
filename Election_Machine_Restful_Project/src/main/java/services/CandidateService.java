@@ -19,10 +19,12 @@ import javax.ws.rs.core.MediaType;
 import data.Candidate;
 
 /**
- * @author ashley
- * 
  * REST service which handles the candidate entity.
  * The candidate table is also persisted via JPA.
+ * 
+ * @author ashley
+ * 
+ * 
  *
  */
 @Path("/candidateservice")

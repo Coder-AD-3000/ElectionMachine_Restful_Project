@@ -20,7 +20,7 @@ import javax.ws.rs.core.MediaType;
 import data.Candidate;
 
 /**
- * @author ashle
+ * 
  *	AD - Here a servlet is utilised as the client. In servlets, a 'writer' 
  *		is utilised, which is made available via the response object.
  *
@@ -101,6 +101,7 @@ public class CandidateClient extends HttpServlet {
   }
 
 	/**
+	 * This method updates a candidate and returns a candidate object
 	 * @param request
 	 * @return This method will update a candidate and return candidate instance object
 	 */
@@ -125,9 +126,9 @@ public class CandidateClient extends HttpServlet {
 		return candidate;
 	}
 	
-	
-	// AD - I added this for read to delete
 	/**
+	 * A method to delete a candiade and then return a candidate object
+	 * 
 	 * @param request
 	 * @return returns a candidate instance object
 	 */
@@ -142,6 +143,8 @@ public class CandidateClient extends HttpServlet {
 	}
 
 	/**
+	 * A method to add a candidate
+	 * 
 	 * @param request
 	 * @return an updated list of candidates, which includes the new addition.
 	 */
@@ -177,6 +180,8 @@ public class CandidateClient extends HttpServlet {
 	}
 	
 	/**
+	 * This method reads out all candidate data from the candidate table.
+	 * 
 	 * @param request
 	 * @return a list of candidate objects containing all candidates from the candidate table.
 	 */
@@ -226,6 +231,8 @@ public class CandidateClient extends HttpServlet {
 	}
 	
 	/**
+	 * A method to delete a candidate, an updated candidate list is returned.
+	 * 
 	 * @param request
 	 * @return an updated list of candidates, with the deleted candidate data no longer present in the database.
 	 */
