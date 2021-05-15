@@ -56,9 +56,16 @@
        <div class="table-responsive">    
               
               
-          <!-- AD - Here data is passed to a RESTful web service via an HTML form (JSP in this case).
-          			The HTML form makes a POST type request, and as such, the service method
-          			receives data via FormParams. -->    
+          <!-- AD -  			
+          			So the post is sending to the POST type request to the
+          			(Candidate Client), then the client the prepares the entities (makes the decisions)
+          			then sends the entities to the RESTful service.
+          			
+          			And the RESTful service will execute will execute the database
+          			related.
+          			
+          			-->          			
+             
           <form action='../addcandidate' method='post'>  
                 
             <table class="table">                    
