@@ -175,6 +175,9 @@ public class CandidateService {
 	}
 	
 	/* candidate_id is used to designate which candidate to delete.
+	 * 
+	 */ 
+	
 	/**
 	 * @param candidate_id takes the argument path parameter of candidate_id to designate which candidate to delete.
 	 * @return candidate instance object, determined via the candidate_id

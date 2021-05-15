@@ -20,6 +20,9 @@ public class Candidate {
 	/**
 	 * AD - Id specifies the primary key of an entity
 	 */
+	/**
+	 * candidate_id - int based value for the candidate_id column in the candidate table.
+	 */ 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private int candidate_id;
@@ -27,19 +30,49 @@ public class Candidate {
 	 * first_name String based value for the first_name column in the candidate table.
 	 */
 	private String first_name;
+	/**
+	 * last_name - String based value for the last_name column in the candidate table.
+	 */
 	private String last_name;	 
+	/**
+	 * party - String based value for the party column in the candidate table.
+	 */
 	private String party;
+	/**
+	 * location - String based value for the location column in the candidate table.
+	 */
 	private String location;
 	/**
-	 * int age
+	 * age - int based value for the age column in the candidate table.
 	 */
 	private int age;
+	/**
+	 * mission - String based value for the mission column in the candidate table.
+	 */
 	private String mission;
+	/**
+	 * vision - String based value for the vision column in the candidate table.
+	 */
 	private String vision;
+	/**
+	 * pic - String based value for the pic column in the candidate table.
+	 */
 	private String pic; 	
+	/**
+	 * profession - String based value for the profession column in the candidate table.
+	 */
 	private String profession; 
+	/**
+	 * username - String based value for the username column in the candidate table.
+	 */
 	private String username;
+	/**
+	 * password - String based value for the password column in the candidate table.
+	 */
 	private String password;
+	/**
+	 * role - String based value for the role column in the candidate table.
+	 */
 	private String role;
 	
 	/**
@@ -59,7 +92,7 @@ public class Candidate {
 	private int totalScore;
 	
 	/**
-	 * 
+	 * Candidate non-parameterised constructor
 	 */
 	public Candidate() {
 		
@@ -68,18 +101,18 @@ public class Candidate {
 	/**
 	 * parameterised constructor (some ints, but mostly Strings) for the candidate class
 	 * 
-	 * @param candidate_id
-	 * @param first_name
-	 * @param last_name
-	 * @param party
-	 * @param location
-	 * @param age
-	 * @param mission
-	 * @param vision
-	 * @param pic
-	 * @param profession
-	 * @param username
-	 * @param password
+	 * @param candidate_id - int based argument taken for the parameterised constructor
+	 * @param first_name - String based argument taken for the parameterised constructor
+	 * @param last_name - String based argument taken for the parameterised constructor
+	 * @param party - String based argument taken for the parameterised constructor
+	 * @param location - String based argument taken for the parameterised constructor
+	 * @param age - int based argument taken for the parameterised constructor
+	 * @param mission - String based argument taken for the parameterised constructor
+	 * @param vision - String based argument taken for the parameterised constructor
+	 * @param pic - String based argument taken for the parameterised constructor
+	 * @param profession - String based argument taken for the parameterised constructor
+	 * @param username - String based argument taken for the parameterised constructor
+	 * @param password - String based argument taken for the parameterised constructor
 	 */
 	public Candidate(int candidate_id, String first_name, 
 					 String last_name, String party, String location, 
@@ -106,19 +139,19 @@ public class Candidate {
 	 * parameterised constructor (String-based) for the candidate class
 	 * 
 	 * Used when we add a new candidate
-	 * @param candidate_id
-	 * @param first_name
-	 * @param last_name
-	 * @param party
-	 * @param location
-	 * @param age
-	 * @param mission
-	 * @param vision
-	 * @param pic
-	 * @param profession
-	 * @param username
-	 * @param password
-	 * @param role
+	 * @param candidate_id - String based argument taken for the parameterised constructor
+	 * @param first_name - String based argument taken for the parameterised constructor
+	 * @param last_name - String based argument taken for the parameterised constructor
+	 * @param party - String based argument taken for the parameterised constructor
+	 * @param location - String based argument taken for the parameterised constructor
+	 * @param age - String based argument taken for the parameterised constructor
+	 * @param mission - String based argument taken for the parameterised constructor
+	 * @param vision - String based argument taken for the parameterised constructor
+	 * @param pic - String based argument taken for the parameterised constructor
+	 * @param profession - String based argument taken for the parameterised constructor
+	 * @param username - String based argument taken for the parameterised constructor
+	 * @param password - String based argument taken for the parameterised constructor
+	 * @param role - String based argument taken for the parameterised constructor
 	 */
 	public Candidate(String candidate_id, String first_name, 
 					 String last_name, String party, String location, 
@@ -383,6 +416,11 @@ public class Candidate {
 	}
 	
 	
+	/**
+	 * Returns a string representation of the object. 
+	 * In general, the toString method returns a string that"textually represents" this object.
+	 * So here, all of the candidate data is returned.
+	 */
 	public String toString() {
 		return this.candidate_id + ": "
 		+ this.first_name + " / " 
