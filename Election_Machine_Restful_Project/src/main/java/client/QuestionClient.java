@@ -57,6 +57,7 @@ public class QuestionClient extends HttpServlet{
 	  
 	
 	/**
+	 * Method will read all question data from DB
 	 * @param request
 	 * @return List of Question objects conatining all available question from DB.
 	 */

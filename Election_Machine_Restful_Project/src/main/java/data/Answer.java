@@ -84,12 +84,14 @@ public class Answer {
 	}
 	
 	/**
+	 * Method will get the answer_id attribute of the current object
 	 * @return answer_id identifies the answer from DB table
 	 */
 	public int getAnswerId() {
 		return answer_id;
 	}
 	/**
+	 * Method will set the answer_id attribute of the current object
 	 * @param answer_id identifies the answer from DB table
 	 */
 	public void setAnswerId(int answer_id) {
@@ -97,12 +99,14 @@ public class Answer {
 	}
 	
 	/**
+	 * Method will get the candidate_id attribute of the current object
 	 * @return candidate_id: a number representing candidate
 	 */
 	public int getCandidateId() {
 		return candidate_id;
 	}
 	/**
+	 * Method will set the candidate_id attribute of the current object
 	 * @param candidate_id: a number representing candidate
 	 */
 	public void setCandidateId(int candidate_id) {
@@ -110,6 +114,7 @@ public class Answer {
 	}
 	
 	/**
+	 * Method will set the candidate_id attribute of the current object
 	 * Attribute is taken as String
 	 * @param candidate_id: a number representing candidate
 	 */
@@ -124,6 +129,7 @@ public class Answer {
 	
 
 	/**
+	 * Method will get the answer (numeric value) attribute of the current object
 	 * @return answer: a number representing user answer
 	 */
 	public int getAnswer() {
@@ -131,12 +137,14 @@ public class Answer {
 	}
 	
 	/**
+	 * Method will set the answer (numeric value) attribute of the current object
 	 * @param answer: a number representing user answer
 	 */
 	public void setAnswer(int answer) {
 		this.answer = answer;
 	}
 	/**
+	 * Method will set the answer (numeric value) attribute of the current object
 	 * Uses String as param.
 	 * @param answer: a number representing user answer
 	 */
@@ -150,6 +158,7 @@ public class Answer {
 	}
 	
 	/**
+	 * Method will get the question_id attribute of the current object
 	 * @return question_id representing the current question
 	 */
 	public int getQuestionId() {
@@ -157,6 +166,7 @@ public class Answer {
 	}
 	
 	/**
+	 * Method will set the question_id attribute of the current object
 	 * @param question_id representing the current question
 	 */
 	public void setQuestionId(int question_id) {
@@ -164,12 +174,14 @@ public class Answer {
 	}
 	
 	/**
+	 * Method will get the comment attribute of the current object
 	 * @return comment is text conatining additional info associated with answer
 	 */
 	public String getComment() {
 		return comment;
 	}
 	/**
+	 * Method will set the comment attribute of the current object
 	 * @param comment is text conatining additional info associated with answer
 	 */
 	public void setComment(String comment) {

@@ -148,7 +148,8 @@ public class AnswerClient extends HttpServlet {
 //	  *************************************************************************************************************************
 //	  ***************** SERVICE METHODS ***************************************************************************************
 //	  *************************************************************************************************************************  
-	  /**
+	 /**
+	 * Method will fetch all Question data from DB
 	 * @param request takes current HTTP request as arg
 	 * @return List of Question type containing all thw questions from DB
 	 */
@@ -165,6 +166,7 @@ public class AnswerClient extends HttpServlet {
 	  }
 	  
 	  /**
+	   * Method will save all Candidate data to DB by utilizing the apropiate service class
 	 * @param request takes current HTTP request as arg
 	 * @param answerList takes a List of Answer type containing all the submitted questionnaire answers 
 	 * to be saved into the DB
@@ -184,6 +186,7 @@ public class AnswerClient extends HttpServlet {
 	  }
 	  
 	  /**
+	   * Method will update a single Candidate data in the DB by utilizing the apropiate service class
 	 * @param request takes current HTTP request as arg
 	 * @param answer_new takes an Answer object containing all the new information to be stored in the DB
 	 */
@@ -198,6 +201,7 @@ public class AnswerClient extends HttpServlet {
 	  }
 	  
 	  /**
+	   * Method will read a single Candidate data from DB by utilizing the apropiate service class
 	 * @param request takes current HTTP request as arg
 	 * @param candidate_id takes an int, that will be used as a path param to read the selected 
 	 * candidate's answers from the DB
@@ -215,6 +219,7 @@ public class AnswerClient extends HttpServlet {
 	  }
 	
 	  /**
+	   * Method will read all the Candidate data from DB by utilizing the apropiate service class
 	 * @param request takes current HTTP request as arg
 	 * @return List of Candidate object containing all the candidate profile data (stacked data)
 	 */
@@ -233,6 +238,7 @@ public class AnswerClient extends HttpServlet {
 //	  ************************ CUSTOM METHODS **************************************************************************
 //	  ******************************************************************************************************************
 	  /**
+	   * Method will save all collected answer values as a list of answer objects
 	 * @param request takes current HTTP request as arg
 	 * @param questionList takes a List of Question objects containing all information regarding 
 	 * to the current questionnaire questions
@@ -269,6 +275,7 @@ public class AnswerClient extends HttpServlet {
 	  }	  
 	  
 	  /**
+	   * Method will compare all candidate answers to the voter answers and assign a score based on the numerical differences
 	 * @param request takes current HTTP request as arg
 	 * @param candidateListStacked List of Candidate objects containing all the available candidate profile data
 	 * @param answerListSubmitted contains all the submitted answer data as a List of Answer type
