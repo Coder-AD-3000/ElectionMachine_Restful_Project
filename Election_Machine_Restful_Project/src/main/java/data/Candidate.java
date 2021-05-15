@@ -58,6 +58,9 @@ public class Candidate {
 	@Transient
 	private int totalScore;
 	
+	/**
+	 * 
+	 */
 	public Candidate() {
 		
 	}

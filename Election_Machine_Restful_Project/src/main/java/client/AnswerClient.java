@@ -263,11 +263,11 @@ public class AnswerClient extends HttpServlet {
 	  }	  
 	  
 	  /**
-	 * @param request
+	 * @param request takes current HTTP request as arg
 	 * @param candidateListStacked List of Candidate objects containing all the available candidate profile data
 	 * @param answerListSubmitted contains all the submitted answer data as a List of Answer type
 	 * @param questionList conatins all the question data associated with the questionnaire
-	 * @return
+	 * @return scored candidate list
 	 */
 	public List<Candidate> evaluateAllCandidates(HttpServletRequest request, 
 			  List<Candidate> candidateListStacked, 

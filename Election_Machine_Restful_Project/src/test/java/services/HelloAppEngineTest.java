@@ -5,9 +5,19 @@ import java.io.IOException;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * Built in class left here for testing purposes.
+ * 
+ * @author Les
+ *
+ */
 public class HelloAppEngineTest {
 
-  @Test
+/**
+ * Test method>>disregard
+ * @throws IOException
+ */
+@Test
   public void test() throws IOException {
     MockHttpServletResponse response = new MockHttpServletResponse();
     new HelloAppEngine().doGet(null, response);

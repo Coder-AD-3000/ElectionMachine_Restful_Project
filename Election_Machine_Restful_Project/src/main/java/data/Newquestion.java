@@ -37,7 +37,7 @@ public class Newquestion {
 	
 	/**
 	 * Constructor uses identical variable types for parameters as in the DB table
-	 * @param new_question
+	 * @param new_question takes String arg of the new question
 	 */
 	public Newquestion(String new_question) {
 		this.new_question=new_question;

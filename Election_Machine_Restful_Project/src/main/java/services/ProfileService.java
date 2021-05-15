@@ -16,9 +16,17 @@ import javax.ws.rs.core.MediaType;
 
 import data.Candidate;
 
+/**
+ * @author dblin
+ *
+ */
 @Path("/profileservice")
 public class ProfileService {
 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("emachinedb");
+	/**
+	 * @param candidate_id
+	 * @return
+	 */
 	@GET
 	@Path("/readtoupdateprofile/{candidate_id}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -31,6 +39,9 @@ public class ProfileService {
 		return cand;
 	}
 	
+	/**
+	 * @return
+	 */
 	@SuppressWarnings("unchecked")
 	@GET
 	@Path("/readallcandidate")
@@ -44,6 +55,9 @@ public class ProfileService {
 		return list;
 	}
 	
+	/**
+	 * @param candidate
+	 */
 	@PUT
 	@Path("/updatecandidate")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -59,6 +73,9 @@ public class ProfileService {
 		//Calling the method readCandidate() of this service		
 	}
 	
+	/**
+	 * @param candidate_id
+	 */
 	@DELETE
 	@Path("/deletecandidate/{candidate_id}")
 	@Produces(MediaType.APPLICATION_JSON)
