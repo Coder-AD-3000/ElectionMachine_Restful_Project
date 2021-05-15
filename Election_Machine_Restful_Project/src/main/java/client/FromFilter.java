@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * Can deliver messages to the view page upon site acces filtering
  * Servlet implementation class FromFilter
+ * @author Daniel
+ *
  */
 @WebServlet("/fromfilter")
 public class FromFilter extends HttpServlet {

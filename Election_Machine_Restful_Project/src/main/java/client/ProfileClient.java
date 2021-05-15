@@ -99,6 +99,7 @@ public class ProfileClient extends HttpServlet {
 //	************ CUSTOM METHODS *********************************************************************
 //	**************************************************************************************************
 	/**
+	 * Method will read all candidate data from DB
 	 * @param request
 	 * @return stacked List of candidate profiles
 	 */

@@ -16,8 +16,6 @@ import javax.servlet.http.HttpSession;
 
 /**
  * Servlet Filter implementation class AuthFilter
- */
-/**
  * @author Daniel
  *
  */
@@ -47,9 +45,9 @@ public class UserFilter implements Filter {
 	}
 
 	/**
+	 * Will block unwanted page access for users
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 * 
-	 * Will block unwanted page access
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 //		Getting session and identifying user role

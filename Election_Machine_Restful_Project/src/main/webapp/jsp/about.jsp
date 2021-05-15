@@ -79,8 +79,8 @@
                 Overview: There is no rest in RESTful web services, but it was fun!
                 <br><br>
                 For most of our team, JPA and RESTful web services were completely 
-                new topics to get to grips with. Nevertheless, with a bit of persistence 
-                and determination, the team worked hard, and things fell into place. 
+                new topics to get to grips with. Nevertheless, with a bit of <i>persistence</i> 
+                (get it?) and determination, the team worked hard, and things fell into place. 
                 During this project, my main contributions were towards creating the
                 candidate CRUD system, team management, programming the profile page UI 
                 and other UI aspects, as well as creating some of the JavaScript 'dynamic' 

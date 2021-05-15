@@ -24,6 +24,8 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 
 /**
  * @author Daniel
+ * 
+ * This class can be used to upload images inti img folder using a servlet using service method
  *
  */
 @Path("/uploadservice")
@@ -35,8 +37,7 @@ public class UploadService {
 	 * @param candidate_id identifyies candidate
 	 * @param fileInputStream containing img data
 	 * @param fileMetaData containing img data
-	 * @param sc
-	 * @throws Exception
+	 * @param sc takes servlet context arg
 	 */
 	@POST
 	@Path("/uploadiamge")

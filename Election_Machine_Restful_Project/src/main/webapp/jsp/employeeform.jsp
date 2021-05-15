@@ -1,6 +1,9 @@
 <!--
 JSP code creates view pane for performing post-create CRUD operations on employee.emachinedb
 
+Requests are initiated from this view pane, then picked up by EmployeeClient webservlet which acts as the controller,
+and utilizes RESTful-based CRUD methods in EmployeeService and data from Employee (these being the mode).
+
 Author: Les
 Date: May 7, 2021
 Version: 1

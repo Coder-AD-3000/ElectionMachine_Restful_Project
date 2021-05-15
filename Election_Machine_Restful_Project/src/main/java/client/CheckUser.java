@@ -99,6 +99,7 @@ public class CheckUser extends HttpServlet {
 	}
 	
 	/**
+	 * Method will read all candidate data from DB using the service class
 	 * @param request
 	 * @return The list of all available candidate
 	 */
@@ -113,6 +114,7 @@ public class CheckUser extends HttpServlet {
 	}
 	
 	/**
+	 * Method will read all employee data from DB using the service class
 	 * @param request
 	 * @return The list of all available employee
 	 */

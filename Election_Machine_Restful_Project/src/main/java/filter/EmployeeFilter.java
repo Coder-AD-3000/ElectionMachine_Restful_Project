@@ -16,8 +16,6 @@ import javax.servlet.http.HttpSession;
 
 /**
  * Servlet Filter implementation class AuthFilter
- */
-/**
  * @author Daniel
  *
  */
@@ -46,8 +44,8 @@ public class EmployeeFilter implements Filter {
 	}
 
 	/**
+	 *  Will block unwanted page access for employees
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
-	 * Will block unwanted page access
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 

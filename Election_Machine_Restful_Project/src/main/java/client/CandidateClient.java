@@ -20,12 +20,30 @@ import javax.ws.rs.core.MediaType;
 import data.Candidate;
 
 /**
- * @author ashle
+ * 
  *	AD - Here a servlet is utilised as the client. In servlets, a 'writer' 
  *		is utilised, which is made available via the response object.
  *
  *		To be able to make a request to a service, we need a Client, WebTarget and a Builder.
+ *
+ *
+ *		These methods contain window builder instructions (commands)
+ *		With these commands we are preparing entities for sending to the RESTFUL service
  *		
+ *		So the builder is preparing the entities to send to the RESTful service
+ *		Then in the RESTful method, it will handle the database entries
+ *		eg you can update and delete etc...
+ *
+ *		So the client is a controller and it makes decisions, and the RESTful will execute
+ *		a method based on the decision.
+ *		
+ */
+/**
+ * 
+ * Servlet implementation CandidateClient class
+ * 
+ * @author ashley
+ *
  */
 @WebServlet(urlPatterns = {"/addcandidate", "/deletecandidate",
 		"/updatecandidate","/readcandidate",
@@ -34,13 +52,19 @@ import data.Candidate;
 
 public class CandidateClient extends HttpServlet {
 
-	  @Override
+	  /**
+	 *
+	 */
+	@Override
 	  public void doPost(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
 		  doGet(request, response);
 	  }
 	  
-	  @Override
+	  /**
+	 * AD - This section contains a switch with the different actionable options available.
+	 */
+	@Override
 	  public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
 	  String action = request.getServletPath();
@@ -76,6 +100,11 @@ public class CandidateClient extends HttpServlet {
 	  reqdisp.forward(request, response);
   }
 
+	/**
+	 * This method updates a candidate and returns a candidate object
+	 * @param request
+	 * @return This method will update a candidate and return candidate instance object
+	 */
 	private Candidate readToUpdateCandidate(HttpServletRequest request) {
 		String candidate_id=request.getParameter("candidate_id");
 		/* AD - Here, the local variable uri has 
@@ -97,8 +126,12 @@ public class CandidateClient extends HttpServlet {
 		return candidate;
 	}
 	
-	
-	// AD - I added this for read to delete
+	/**
+	 * A method to delete a candiade and then return a candidate object
+	 * 
+	 * @param request
+	 * @return returns a candidate instance object
+	 */
 	private Candidate readToDeleteCandidate(HttpServletRequest request) {
 		String candidate_id=request.getParameter("candidate_id");
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/readtodeletecandidate/"+candidate_id;
@@ -109,6 +142,12 @@ public class CandidateClient extends HttpServlet {
 		return candidate;
 	}
 
+	/**
+	 * A method to add a candidate
+	 * 
+	 * @param request
+	 * @return an updated list of candidates, which includes the new addition.
+	 */
 	private List<Candidate> addCandidate(HttpServletRequest request) {
 		//A Candidate object to send to our web-service 
 		Candidate candidate = new Candidate(request.getParameter("candidate_id"), 
@@ -140,6 +179,12 @@ public class CandidateClient extends HttpServlet {
 		return returnedList;
 	}
 	
+	/**
+	 * This method reads out all candidate data from the candidate table.
+	 * 
+	 * @param request
+	 * @return a list of candidate objects containing all candidates from the candidate table.
+	 */
 	private List<Candidate> readCandidate(HttpServletRequest request) {
 		//String candidate_id = request.getParameter("candidate_id"); /* AD - I can't see a use for this line */
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/readcandidate";
@@ -185,6 +230,12 @@ public class CandidateClient extends HttpServlet {
 		return returnedList;
 	}
 	
+	/**
+	 * A method to delete a candidate, an updated candidate list is returned.
+	 * 
+	 * @param request
+	 * @return an updated list of candidates, with the deleted candidate data no longer present in the database.
+	 */
 	private List<Candidate> deleteCandidate(HttpServletRequest request) {
 		String candidate_id=request.getParameter("candidate_id");
 		String uri = "http://127.0.0.1:8080/rest/candidateservice/deletecandidate/"+candidate_id;

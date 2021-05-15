@@ -19,6 +19,15 @@ import javax.ws.rs.core.MediaType;
 
 import data.Newquestion;
 
+/**
+ * @author ΕΚ
+ * @version 1.0
+ * Date: May 4, 2021
+ * This servlet is used as the mid layer client and the 
+ * Client, WebTarget and a Builder are used to make requests
+ * to a service.
+ *		
+ */
 @WebServlet(urlPatterns = {"/addnewquestion", "/deletenewquestion","/updatenewquestion","/readnewquestion","/readtoupdatenewquestion"})
 public class Newquestionnaire extends HttpServlet {
 
@@ -32,6 +41,7 @@ public class Newquestionnaire extends HttpServlet {
 	  public void doGet(HttpServletRequest request, HttpServletResponse response) 
 	      throws IOException, ServletException {
 	  String action = request.getServletPath();
+//Newquestion is an instance of the Newquestion class.
 	  List<Newquestion> list=null;
 	  switch (action) {
 	  case "/addnewquestion":
@@ -54,7 +64,14 @@ public class Newquestionnaire extends HttpServlet {
 	  RequestDispatcher rd=request.getRequestDispatcher("./jsp/newquestionform.jsp");
 	  rd.forward(request, response);
   }
-
+	    /* 
+		 *  A Client, WebTarget and Builder are required in order to make a request to the service.
+		 *  The request is executed through the Builder type object.
+		 *  A Newquestion object is returned from the service and Jersey converts it
+		 * 	into JSON. The JSON in this client application is received, and we give the 
+		 * 	Newquestion class as a parameter to the method "get" of the builder object.
+		 * 	Jersey converts the JSON string back into a Newquestion type object.
+		 */
 	private Newquestion readtoupdatenewquestion(HttpServletRequest request) {
 		String newquestion_id=request.getParameter("newquestion_id");
 		String uri = "http://127.0.0.1:8080/rest/newquestionservice/readtoupdatenewquestion/"+newquestion_id;
@@ -68,7 +85,11 @@ public class Newquestionnaire extends HttpServlet {
 		Newquestion newquestion=b.get(Newquestion.class);
 		return newquestion;
 	}
-//
+	 	/**
+		 * @param request
+		 * @param nq, it adds new questions in the database
+		 * 
+		 */
 	private List<Newquestion> addnewquestion(HttpServletRequest request) {
 		//A Newquestion object to send to our web-service 
 		Newquestion nq=new Newquestion(request.getParameter("new_question"));
@@ -88,7 +109,10 @@ public class Newquestionnaire extends HttpServlet {
 		List<Newquestion> returnedList=b.post(e, genericList);
 		return returnedList;
 	}
-	
+	  /**
+	 * @param request
+	 * @return List of Newquestion type containing all the questions from DB.
+	 */
 	private List<Newquestion> readnewquestion(HttpServletRequest request) {
 		String newquestion_id=request.getParameter("newquestion_id");
 		String uri = "http://127.0.0.1:8080/rest/newquestionservice/readnewquestion";
@@ -102,7 +126,10 @@ public class Newquestionnaire extends HttpServlet {
 		List<Newquestion> returnedList=b.get(genericList);
 		return returnedList;
 	}
-	
+	  /**
+	 * @param request
+	 * @param nq takes an Newquestion object containing all the new information to be stored in the database.
+	 */
 	private List<Newquestion> updatenewquestion(HttpServletRequest request) {
 		//A Newquestion object to send to our web-service 
 		Newquestion nq=new Newquestion(request.getParameter("newquestion_id"), request.getParameter("new_question"));
@@ -121,7 +148,10 @@ public class Newquestionnaire extends HttpServlet {
 		List<Newquestion> returnedList=b.put(e, genericList);
 		return returnedList;
 	}
-	
+	/**
+	 * @param request
+	 * Database entries can be deleted based on their ID.
+	 */
 	private List<Newquestion> deletenewquestion(HttpServletRequest request) {
 		String newquestion_id=request.getParameter("newquestion_id");
 		String uri = "http://127.0.0.1:8080/rest/newquestionservice/deletenewquestion/"+newquestion_id;

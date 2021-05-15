@@ -23,6 +23,10 @@ public class LoginService {
 	
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("emachinedb");
 	
+	/**
+	 * Will fetch all candidate data out from database
+	 * @return list of candidate objects
+	 */
 	@SuppressWarnings("unchecked")
 	@GET
 	@Path("/readcandidate")
@@ -36,6 +40,10 @@ public class LoginService {
 		return list;
 	}
 	
+	/**
+	 * read all employee data out from database
+	 * @return list of employee objects
+	 */
 	@SuppressWarnings("unchecked")
 	@GET
 	@Path("/reademployee")

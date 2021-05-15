@@ -5,39 +5,39 @@
 <html>
 <head>
 
-	<!-- AD - includes the meta component, into this page -->
+	<!-- EK - includes the meta component, into this page -->
     <%@ include file="../components/meta.jsp" %>
  
     <title>New Question To Update Form</title>
     
-    <!-- AD - includes the header component, into this page -->
+    <!-- EK - includes the header component, into this page -->
     <%@ include file="../components/headerBootstrap.jsp" %>    
     
 </head>
 <body>
 
-	<!-- AD - A message in the top left to show an active session message -->
+	<!-- EK - A message in the top left to show an active session message -->
 	<div class = "adminSession"><i>Admin Session Active ${requestScope.fromfilter }</i></div> 
 
-    <!-- AD - includes the navbarBootstrap component, 
+    <!-- EK - includes the navbarBootstrap component, 
     		which is modified version of our regular navbar,
     		in order to offset some negative effects
     		caused by bootstrap, onto our code. -->
     <%@ include file="../components/navbarBootstrap.jsp" %>
     
     
-    <!-- AD - Beginning the central (yellow container)-->
+    <!-- EK - Beginning the central (yellow container)-->
     <div class="containerMainUpdateCandidates">
         <a href="../jsp/index.jsp"><i class="material-icons resize3">account_balance</i></a>
         
-        <!-- AD - customises the 'ADMIN: Updates Candidates' message-->
+        <!-- EK - customises the 'ADMIN: Updates Candidates' message-->
         <div class="container6a"> 
         <h3 class = "adminTextCorrection1">ADMIN PORTAL: New Questions Data</h3>
         </div>
        
-        <!-- AD - A small container to amend the admin note background section-->
+        <!-- EK - A small container to amend the admin note background section-->
         <div class="container4">             
-            <!-- AD - Introductory statement about the ADMIN: Update Candidates page -->
+            <!-- EK - Introductory statement about the ADMIN: Update Candidates page -->
             <h5 class = "adminTextCorrection2">ADMIN NOTE: Once logged in, this page allows for a 
                 'Global Herald Newspaper' IT Admin to add, edit and remove new questions for eventual 
                 inclusion into the Election Machine questionnaire. 
@@ -52,11 +52,11 @@
         </div>           
        							    
 
-        <!-- AD - End of the central (yellow container)-->
+        <!-- EK - End of the central (yellow container)-->
     </div>  
 
 	
-		<!-- AD - This container contains a form (with table) to add 
+		<!-- EK - This container contains a form (with table) to add 
     	candidates to the candidate table in the emachinedb database.-->
     <div class="containerUpdateCandidatesTable">                                                                                                
        <div class="table-responsive"> 

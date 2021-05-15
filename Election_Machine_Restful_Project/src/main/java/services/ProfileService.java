@@ -16,9 +16,19 @@ import javax.ws.rs.core.MediaType;
 
 import data.Candidate;
 
+/**
+ * Used for amending / deleting a candidate's profile
+ * 
+ * @author Daniel
+ *
+ */
 @Path("/profileservice")
 public class ProfileService {
 	EntityManagerFactory emf = Persistence.createEntityManagerFactory("emachinedb");
+	/**
+	 * @param candidate_id takes arg from path param
+	 * @return the Candidate object was selected for editing
+	 */
 	@GET
 	@Path("/readtoupdateprofile/{candidate_id}")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -31,6 +41,9 @@ public class ProfileService {
 		return cand;
 	}
 	
+	/**
+	 * @return List of All Candidate objects fetched from DB
+	 */
 	@SuppressWarnings("unchecked")
 	@GET
 	@Path("/readallcandidate")
@@ -44,6 +57,9 @@ public class ProfileService {
 		return list;
 	}
 	
+	/**
+	 * @param candidate object containing updated data for a candidate
+	 */
 	@PUT
 	@Path("/updatecandidate")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -59,6 +75,9 @@ public class ProfileService {
 		//Calling the method readCandidate() of this service		
 	}
 	
+	/**
+	 * @param candidate_id pointing to the candidate aim for removal
+	 */
 	@DELETE
 	@Path("/deletecandidate/{candidate_id}")
 	@Produces(MediaType.APPLICATION_JSON)
